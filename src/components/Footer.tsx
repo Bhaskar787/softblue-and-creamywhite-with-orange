@@ -21,9 +21,9 @@ export function Footer() {
                 />
               </div>
               <div>
-                <span className="font-display text-2xl sm:text-3xl font-bold tracking-widest text-orange-gradient block">
-                  Rudrantra
-                </span>
+     <span className="font-display text-base sm:text-lg font-bold tracking-widest text-orange-gradient block">
+  Rudrantra
+</span>
                 <span className="text-[10px] font-heading font-bold text-orange tracking-widest mt-1 block">ॐ नमः शिवाय</span>
               </div>
             </Link>
