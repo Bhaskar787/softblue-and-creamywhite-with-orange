@@ -46,7 +46,7 @@ export function WhyChoose() {
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-orange-gradient mb-4 sm:mb-6">
             Spiritual Tools for Your Journey
           </h2>
-          <p className="text-navy/70 font-body text-sm sm:text-lg md:text-xl opacity-100">
+          <p className="text-navy/90 font-body font-medium text-sm sm:text-lg md:text-xl">
             Beyond beautiful adornments, these are spiritual tools. Discover how authentic Rudraksha can transform your daily experience and inner life.
           </p>
         </div>
@@ -56,21 +56,21 @@ export function WhyChoose() {
           {reasons.map((item, i) => (
             <div 
               key={i} 
-              className="bg-white p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-orange/20 hover:border-orange hover:-translate-y-2 transition-all duration-500 shadow-sm hover:shadow-sacred-glow group flex flex-col relative overflow-hidden"
+              className="bg-white p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-navy/15 hover:border-orange hover:-translate-y-2 transition-all duration-500 shadow-sm hover:shadow-sacred-glow group flex flex-col relative overflow-hidden"
             >
               {/* Subtle top glow */}
               <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-orange-bright to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border border-orange/25 bg-orange/10 flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-white transition-colors duration-500 mb-5 sm:mb-6 md:mb-8 mx-auto lg:mx-0">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border border-orange/25 bg-orange/10 flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-navy-deep transition-colors duration-500 mb-5 sm:mb-6 md:mb-8 mx-auto lg:mx-0">
                 <item.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
               </div>
               
-              <h3 className="font-display text-lg sm:text-xl md:text-2xl text-orange mb-3 sm:mb-4 text-center lg:text-left">{item.title}</h3>
-              <p className="text-navy/65 font-body leading-relaxed flex-1 mb-5 sm:mb-6 md:mb-8 text-center lg:text-left text-xs sm:text-sm md:text-base">
+              <h3 className="font-display text-lg sm:text-xl md:text-2xl text-navy-deep font-bold mb-3 sm:mb-4 text-center lg:text-left group-hover:text-orange transition-colors">{item.title}</h3>
+              <p className="text-navy/85 font-body leading-relaxed flex-1 mb-5 sm:mb-6 md:mb-8 text-center lg:text-left text-xs sm:text-sm md:text-base">
                 {item.desc}
               </p>
               
-              <a href="#" className="inline-flex items-center justify-center lg:justify-start gap-2 text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-orange hover:text-orange-bright group/link mt-auto">
+              <a href="#" className="inline-flex items-center justify-center lg:justify-start gap-2 text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-navy-deep hover:text-orange group/link mt-auto">
                 Learn more
                 <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
               </a>

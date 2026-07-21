@@ -195,7 +195,7 @@ export function BestSellers() {
                 className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs md:text-sm font-heading font-semibold tracking-widest transition-all border ${
                   activeTab === tab
                     ? 'bg-orange text-navy-deep border-orange shadow-sacred-glow'
-                    : 'bg-white text-navy/60 border-orange/20 hover:border-orange/50 hover:text-orange'
+                    : 'bg-white text-navy/85 border-navy/20 hover:border-orange hover:text-orange'
                 }`}
               >
                 {tab}
@@ -214,18 +214,18 @@ export function BestSellers() {
             return (
               <div
                 key={product.id}
-                className="group relative flex flex-col bg-white border border-orange/20 shadow-sm rounded-lg sm:rounded-xl p-2.5 sm:p-4 hover:border-orange hover:shadow-sacred-glow transition-all duration-500"
+                className="group relative flex flex-col bg-white border border-navy/15 shadow-sm rounded-lg sm:rounded-xl p-2.5 sm:p-4 hover:border-orange hover:shadow-sacred-glow transition-all duration-500"
               >
                 {/* Image Container */}
-                <div className="relative aspect-square rounded-md sm:rounded-lg overflow-hidden border border-orange/10 mb-3 sm:mb-5">
+                <div className="relative aspect-square rounded-md sm:rounded-lg overflow-hidden border border-navy/10 mb-3 sm:mb-5">
                   <img
                     src={product.image}
                     alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 brightness-90 group-hover:brightness-100"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 brightness-95 group-hover:brightness-100"
                   />
                   
                   {/* Subtle inner shadow */}
-                  <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.5)] pointer-events-none" />
+                  <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.4)] pointer-events-none" />
 
                   {/* Badges */}
                   <div className="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 flex flex-col gap-1 sm:gap-2 items-start">
@@ -247,7 +247,7 @@ export function BestSellers() {
                       e.preventDefault();
                       toggleWishlist(product);
                     }}
-                    className="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 w-7 h-7 sm:w-9 sm:h-9 bg-white/90 backdrop-blur border border-orange/30 rounded-full flex items-center justify-center text-orange hover:bg-orange hover:text-white transition-all shadow-lg z-10"
+                    className="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 w-7 h-7 sm:w-9 sm:h-9 bg-white/90 backdrop-blur border border-navy/20 rounded-full flex items-center justify-center text-orange hover:bg-orange hover:text-white transition-all shadow-lg z-10"
                   >
                     <Heart
                       className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform ${
@@ -260,7 +260,7 @@ export function BestSellers() {
                   <div className="absolute bottom-0 left-0 w-full p-3 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hidden lg:block">
                     <button
                       onClick={() => addToCart(product)}
-                      className="w-full py-3 bg-navy/90 backdrop-blur text-orange border border-orange font-heading font-bold uppercase tracking-widest rounded hover:bg-orange hover:text-white transition-colors shadow-sacred-glow flex items-center justify-center gap-2 text-xs"
+                      className="w-full py-3 bg-navy-deep text-orange border border-orange font-heading font-bold uppercase tracking-widest rounded hover:bg-orange hover:text-navy-deep transition-colors shadow-sacred-glow flex items-center justify-center gap-2 text-xs"
                     >
                       <ShoppingBag className="w-4 h-4" /> Quick Add
                     </button>
@@ -275,39 +275,39 @@ export function BestSellers() {
                         <GiStarSattelites
                           key={i}
                           className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${
-                            i < Math.round(product.rating) ? 'text-orange' : 'text-orange/20'
+                            i < Math.round(product.rating) ? 'text-orange' : 'text-navy/20'
                           }`}
                         />
                       ))}
-                      <span className="text-[9px] sm:text-[10px] font-body text-navy/40 ml-1">({product.reviews})</span>
+                      <span className="text-[9px] sm:text-[10px] font-body text-navy/80 font-medium ml-1">({product.reviews})</span>
                     </div>
-                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-navy/55 uppercase tracking-widest border border-navy/15 px-1.5 sm:px-2 py-0.5 rounded">
+                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-navy/80 uppercase tracking-widest border border-navy/20 px-1.5 sm:px-2 py-0.5 rounded">
                       {product.origin}
                     </span>
                   </div>
 
-                  <h3 className="font-display text-sm sm:text-base md:text-lg text-orange font-semibold mb-1.5 sm:mb-2 line-clamp-2 leading-tight">
+                  <h3 className="font-display text-sm sm:text-base md:text-lg text-navy-deep font-bold mb-1.5 sm:mb-2 line-clamp-2 leading-tight group-hover:text-orange transition-colors">
                     {product.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-body text-navy/60 line-clamp-2 mb-3 sm:mb-4 flex-1">
+                  <p className="text-xs sm:text-sm font-body text-navy/85 line-clamp-2 mb-3 sm:mb-4 flex-1">
                     {product.desc}
                   </p>
 
-                  <div className="flex items-baseline gap-2 sm:gap-3 mt-auto pt-3 sm:pt-4 border-t border-orange/10">
-                    <span className="font-display text-base sm:text-lg md:text-xl font-bold text-navy">
+                  <div className="flex items-baseline gap-2 sm:gap-3 mt-auto pt-3 sm:pt-4 border-t border-navy/10">
+                    <span className="font-display text-base sm:text-lg md:text-xl font-bold text-navy-deep">
                       {formatPrice(product.price)}
                     </span>
                     {product.originalPrice && (
-                      <span className="text-xs sm:text-sm font-body text-navy/35 line-through">
+                      <span className="text-xs sm:text-sm font-body text-navy/45 line-through">
                         {formatPrice(product.originalPrice)}
                       </span>
                     )}
                   </div>
 
                   {/* Lab Certified Strip */}
-                  <div className="mt-3 sm:mt-4 bg-orange/10 border border-orange/20 py-1 sm:py-1.5 px-2 sm:px-3 rounded flex items-center justify-center gap-1.5 sm:gap-2">
-                    <img src="https://img.icons8.com/color/48/warranty.png" alt="cert" className="w-3.5 h-3.5 sm:w-4 sm:h-4 filter brightness-200 sepia opacity-80" />
-                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-orange uppercase tracking-widest">
+                  <div className="mt-3 sm:mt-4 bg-orange/10 border border-orange/25 py-1 sm:py-1.5 px-2 sm:px-3 rounded flex items-center justify-center gap-1.5 sm:gap-2">
+                    <img src="https://img.icons8.com/color/48/warranty.png" alt="cert" className="w-3.5 h-3.5 sm:w-4 sm:h-4 filter brightness-110 opacity-90" />
+                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-navy-deep uppercase tracking-widest">
                       Lab Certified
                     </span>
                   </div>
@@ -315,7 +315,7 @@ export function BestSellers() {
                   {/* Mobile Add Button */}
                   <button
                     onClick={() => addToCart(product)}
-                    className="mt-2.5 sm:mt-3 w-full py-2.5 sm:py-3 border border-orange text-orange text-[11px] sm:text-xs font-heading font-bold uppercase tracking-widest rounded hover:bg-orange hover:text-white transition-colors lg:hidden"
+                    className="mt-2.5 sm:mt-3 w-full py-2.5 sm:py-3 border border-orange bg-orange/5 text-navy-deep text-[11px] sm:text-xs font-heading font-bold uppercase tracking-widest rounded hover:bg-orange hover:text-navy-deep transition-colors lg:hidden"
                   >
                     Add to Cart
                   </button>

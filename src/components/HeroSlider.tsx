@@ -80,7 +80,7 @@ export function HeroSlider() {
             {slide.heading}
           </h1>
 
-          <p className="font-body text-gray-300 text-sm sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-10 max-w-xl">
+          <p className="font-body text-slate-100 font-medium text-sm sm:text-lg md:text-xl leading-relaxed mb-6 sm:mb-10 max-w-xl drop-shadow-md">
             {slide.sub}
           </p>
 

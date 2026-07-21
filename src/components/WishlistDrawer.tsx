@@ -112,9 +112,9 @@ export function WishlistDrawer() {
         <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-navy-deep">
           {items.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-peach-soft text-center animate-in fade-in zoom-in-95 duration-500">
-              <Heart className="w-12 h-12 sm:w-16 sm:h-16 mb-4 text-orange/40" />
-              <p className="font-heading text-base sm:text-lg mb-2">Your wishlist is empty</p>
-              <p className="text-xs sm:text-sm text-peach-soft/50 mb-6 max-w-[240px]">
+              <Heart className="w-12 h-12 sm:w-16 sm:h-16 mb-4 text-orange" />
+              <p className="font-heading text-base sm:text-lg mb-2 text-peach font-semibold">Your wishlist is empty</p>
+              <p className="text-xs sm:text-sm text-peach/85 mb-6 max-w-[240px]">
                 Save the beads and malas that speak to you — they'll wait for you here.
               </p>
               <button

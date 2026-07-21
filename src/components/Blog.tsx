@@ -184,11 +184,11 @@ export function Blog() {
                 <h3 className="font-display text-lg sm:text-2xl md:text-3xl text-peach leading-tight group-hover:text-orange transition-colors">{featured.title}</h3>
               </div>
             </div>
-            <p className="font-body text-navy/65 text-sm sm:text-base leading-relaxed mb-4 sm:mb-5 max-w-xl">{featured.excerpt}</p>
-            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] sm:text-xs font-heading uppercase tracking-widest text-orange/50">
+            <p className="font-body text-navy/85 text-sm sm:text-base leading-relaxed mb-4 sm:mb-5 max-w-xl">{featured.excerpt}</p>
+            <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] sm:text-xs font-heading uppercase tracking-widest text-navy/70">
               <span>{featured.date}</span>
-              <span className="w-1 h-1 rounded-full bg-orange/30" />
-              <span className="flex items-center gap-1"><Clock className="w-3 h-3" />{featured.readTime}</span>
+              <span className="w-1 h-1 rounded-full bg-navy/40" />
+              <span className="flex items-center gap-1"><Clock className="w-3 h-3 text-orange" />{featured.readTime}</span>
               <a href="#" className="ml-auto text-orange font-bold hover:text-orange-bright transition-colors flex items-center gap-1 group/link">
                 Read More <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
               </a>
@@ -198,21 +198,21 @@ export function Blog() {
           {/* Sidebar Posts */}
           <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6">
             {rest.map((post, i) => (
-              <div key={i} className="group flex gap-3.5 sm:gap-5 cursor-pointer p-3 sm:p-4 rounded-xl border border-orange/15 hover:border-orange/40 hover:bg-orange/5 bg-white shadow-sm transition-all duration-300">
-                <div className="w-20 h-20 sm:w-28 sm:h-24 shrink-0 rounded-lg sm:rounded-xl overflow-hidden border border-orange/15">
-                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-75 group-hover:brightness-90" />
+              <div key={i} className="group flex gap-3.5 sm:gap-5 cursor-pointer p-3 sm:p-4 rounded-xl border border-navy/15 hover:border-orange hover:bg-orange/5 bg-white shadow-sm transition-all duration-300">
+                <div className="w-20 h-20 sm:w-28 sm:h-24 shrink-0 rounded-lg sm:rounded-xl overflow-hidden border border-navy/15">
+                  <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-85 group-hover:brightness-100" />
                 </div>
                 <div className="flex flex-col justify-between flex-1 min-w-0">
                   <div>
                     <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
-                      <span className="text-[8px] sm:text-[9px] font-heading font-bold uppercase tracking-widest text-orange/60">{post.category}</span>
+                      <span className="text-[8px] sm:text-[9px] font-heading font-bold uppercase tracking-widest text-orange">{post.category}</span>
                       {post.badge && (
                         <span className="text-[7px] sm:text-[8px] font-heading font-bold uppercase bg-crimson text-white px-1.5 sm:px-2 py-0.5 rounded">{post.badge}</span>
                       )}
                     </div>
-                    <h4 className="font-heading text-xs sm:text-sm text-navy/80 leading-snug line-clamp-2 group-hover:text-orange transition-colors">{post.title}</h4>
+                    <h4 className="font-heading text-xs sm:text-sm text-navy-deep font-bold leading-snug line-clamp-2 group-hover:text-orange transition-colors">{post.title}</h4>
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-3 text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-orange/40 mt-2">
+                  <div className="flex items-center gap-2 sm:gap-3 text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-navy/70 font-semibold mt-2">
                     <span>{post.date}</span>
                     <span>·</span>
                     <span>{post.readTime}</span>

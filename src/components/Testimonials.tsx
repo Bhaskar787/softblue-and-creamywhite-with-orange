@@ -226,21 +226,21 @@ export function Testimonials() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-orange-gradient tracking-tight leading-tight px-2">
             Voices of Our Community
           </h2>
-          <p className="text-navy/65 font-body text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6 px-2">
+          <p className="text-navy/90 font-body font-medium text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6 px-2">
             Real experiences from seekers who trusted us with their spiritual journey — every review below is from a verified authentic purchase.
           </p>
         </div>
 
         {/* Stats Bar */}
-        <div className="grid sm:grid-cols-[auto_1fr] gap-6 sm:gap-8 md:gap-14 bg-white border border-orange/20 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 mb-10 sm:mb-14 md:mb-16 shadow-md">
+        <div className="grid sm:grid-cols-[auto_1fr] gap-6 sm:gap-8 md:gap-14 bg-white border border-navy/15 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 mb-10 sm:mb-14 md:mb-16 shadow-md">
           <div className="flex flex-col items-center justify-center text-center sm:border-r sm:border-orange/20 sm:pr-8 md:pr-14">
-            <span className="font-display text-4xl sm:text-5xl md:text-6xl text-orange mb-2">{avgRating}</span>
+            <span className="font-display text-4xl sm:text-5xl md:text-6xl text-orange font-bold mb-2">{avgRating}</span>
             <div className="flex items-center gap-1 sm:gap-1.5 mb-2 sm:mb-3">
               {[...Array(5)].map((_, i) => (
                 <GiStarMedal key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-orange drop-shadow-[0_0_5px_rgba(201,151,58,0.8)]" />
               ))}
             </div>
-            <span className="text-navy/50 font-heading text-[10px] sm:text-xs uppercase tracking-widest">{testimonials.length * 187}+ verified reviews</span>
+            <span className="text-navy/80 font-heading font-bold text-[10px] sm:text-xs uppercase tracking-widest">{testimonials.length * 187}+ verified reviews</span>
           </div>
           <div className="flex flex-col justify-center gap-2.5 sm:gap-3">
             {[5, 4, 3, 2, 1].map((star, i) => {
@@ -248,13 +248,13 @@ export function Testimonials() {
               const pct = Math.round((count / testimonials.length) * 100);
               return (
                 <div key={star} className="flex items-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-heading font-bold">
-                  <span className="w-12 sm:w-16 text-orange/80 shrink-0 text-right tracking-widest uppercase text-[10px] sm:text-xs">{star} Star</span>
+                  <span className="w-12 sm:w-16 text-navy-deep shrink-0 text-right tracking-widest uppercase text-[10px] sm:text-xs">{star} Star</span>
                   <div className="flex-1 h-1.5 rounded-full bg-orange/10 overflow-hidden">
                     <div className="h-full bg-gradient-to-r from-orange to-orange-bright rounded-full relative" style={{ width: `${pct || 2}%` }}>
                       <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
                     </div>
                   </div>
-                  <span className="w-8 sm:w-10 text-right text-orange/50 shrink-0 text-[10px] sm:text-sm">{pct}%</span>
+                  <span className="w-8 sm:w-10 text-right text-navy/70 shrink-0 text-[10px] sm:text-sm">{pct}%</span>
                 </div>
               );
             })}
@@ -270,7 +270,7 @@ export function Testimonials() {
               className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest transition-all border ${
                 activeFilter === f
                   ? 'bg-orange text-navy-deep border-orange shadow-sacred-glow'
-                  : 'bg-white text-navy/60 border-orange/25 hover:border-orange hover:text-orange'
+                  : 'bg-white text-navy/85 border-navy/20 hover:border-orange hover:text-orange'
               }`}
             >
               {f}
@@ -290,7 +290,7 @@ export function Testimonials() {
             <CarouselContent className="-ml-4 sm:-ml-6">
               {filtered.map((t, i) => (
                 <CarouselItem key={i} className="pl-4 sm:pl-6 sm:basis-1/2 lg:basis-1/3">
-                  <div className="flex flex-col h-full bg-white border border-orange/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 hover:border-orange/50 hover:shadow-sacred-glow transition-all duration-300 shadow-sm relative group">
+                  <div className="flex flex-col h-full bg-white border border-navy/15 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 hover:border-orange hover:shadow-sacred-glow transition-all duration-300 shadow-sm relative group">
                     <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-orange/5 to-transparent rounded-bl-full pointer-events-none" />
 
                     <div className="flex items-start justify-between mb-4 sm:mb-6 relative z-10">
@@ -314,39 +314,39 @@ export function Testimonials() {
                           </div>
                           {t.verified && (
                             <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
-                              <BadgeCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange fill-navy" />
+                              <BadgeCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange fill-navy-deep" />
                             </div>
                           )}
                         </div>
                         <div>
-                          <span className="font-heading font-bold text-sm sm:text-base text-navy block mb-0.5">{t.name}</span>
-                          <span className="text-orange/60 font-body text-[11px] sm:text-xs block">{t.location}</span>
+                          <span className="font-heading font-bold text-sm sm:text-base text-navy-deep block mb-0.5">{t.name}</span>
+                          <span className="text-navy/70 font-body text-[11px] sm:text-xs block font-medium">{t.location}</span>
                         </div>
                       </div>
                       {t.hasPhoto && (
-                        <span className="flex items-center gap-1 text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-orange/60 shrink-0">
-                          <ImageIcon className="w-3 h-3" /> Photo
+                        <span className="flex items-center gap-1 text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-navy/70 shrink-0 font-bold">
+                          <ImageIcon className="w-3 h-3 text-orange" /> Photo
                         </span>
                       )}
                     </div>
 
                     <div className="flex items-center gap-1 mb-3 sm:mb-4">
                       {[...Array(5)].map((_, j) => (
-                        <GiStarMedal key={j} className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${j < t.rating ? 'text-orange' : 'text-orange/20'}`} />
+                        <GiStarMedal key={j} className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${j < t.rating ? 'text-orange' : 'text-navy/20'}`} />
                       ))}
                     </div>
 
-                    <h4 className="font-display text-lg sm:text-xl text-orange-gradient mb-2 sm:mb-3 leading-snug">{t.title}</h4>
-                    <p className="text-navy/65 font-body text-sm sm:text-base leading-relaxed line-clamp-5 flex-1 mb-4 sm:mb-6">{t.text}</p>
+                    <h4 className="font-display text-lg sm:text-xl text-navy-deep font-bold mb-2 sm:mb-3 leading-snug">{t.title}</h4>
+                    <p className="text-navy/85 font-body text-sm sm:text-base leading-relaxed line-clamp-5 flex-1 mb-4 sm:mb-6">{t.text}</p>
 
-                    <div className="flex flex-col gap-2.5 sm:gap-3 pt-4 sm:pt-5 border-t border-orange/20">
-                      <span className="text-orange/90 font-heading text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+                    <div className="flex flex-col gap-2.5 sm:gap-3 pt-4 sm:pt-5 border-t border-navy/10">
+                      <span className="text-navy-deep font-heading text-[10px] sm:text-xs font-bold uppercase tracking-widest">
                         Item: {t.product}
                       </span>
                       <div className="flex items-center justify-between">
-                        <span className="text-navy/40 font-body text-[11px] sm:text-xs">{t.date}</span>
-                        <button className="flex items-center gap-1.5 text-orange/50 hover:text-orange transition-colors text-[10px] sm:text-xs font-heading uppercase">
-                          <ThumbsUp className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Helpful ({t.helpful})
+                        <span className="text-navy/60 font-body text-[11px] sm:text-xs font-medium">{t.date}</span>
+                        <button className="flex items-center gap-1.5 text-navy-deep hover:text-orange transition-colors text-[10px] sm:text-xs font-heading uppercase font-bold">
+                          <ThumbsUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange" /> Helpful ({t.helpful})
                         </button>
                       </div>
                     </div>

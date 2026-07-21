@@ -70,7 +70,7 @@ export function AuthenticityGrid() {
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-orange-gradient tracking-tight leading-tight mb-4 sm:mb-6 px-2">
             Trust, Verified at Every Step
           </h2>
-          <p className="font-body text-navy/65 text-sm sm:text-base md:text-lg leading-relaxed px-2">
+          <p className="font-body text-navy/90 font-medium text-sm sm:text-base md:text-lg leading-relaxed px-2">
             In a market flooded with imitations, our four-pillar authentication system ensures every bead that reaches you is exactly what the Shiva Purana describes.
           </p>
         </div>
@@ -78,15 +78,15 @@ export function AuthenticityGrid() {
         {/* Pillars Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-10 sm:mb-16 md:mb-20">
           {pillars.map((p, i) => (
-            <div key={i} className="group bg-white border border-orange/20 rounded-2xl shadow-sm p-6 sm:p-7 md:p-8 hover:border-orange/60 hover:shadow-[0_0_30px_rgba(201,151,58,0.1)] transition-all duration-500 flex flex-col">
-              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl border border-orange/25 bg-orange/10 flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-white transition-colors duration-500 mb-5 sm:mb-6">
+            <div key={i} className="group bg-white border border-navy/15 rounded-2xl shadow-sm p-6 sm:p-7 md:p-8 hover:border-orange hover:shadow-[0_0_30px_rgba(201,151,58,0.1)] transition-all duration-500 flex flex-col">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl border border-orange/25 bg-orange/10 flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-navy-deep transition-colors duration-500 mb-5 sm:mb-6">
                 <p.icon className="w-6 h-6 sm:w-7 sm:h-7" />
               </div>
-              <h3 className="font-display text-lg sm:text-xl text-orange mb-2.5 sm:mb-3 leading-tight">{p.title}</h3>
-              <p className="font-body text-navy/60 text-xs sm:text-sm leading-relaxed flex-1 mb-5 sm:mb-6">{p.desc}</p>
-              <div className="pt-4 sm:pt-5 border-t border-orange/15">
-                <span className="font-display text-2xl sm:text-3xl text-orange-bright block">{p.stat}</span>
-                <span className="text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-navy/45">{p.statLabel}</span>
+              <h3 className="font-display text-lg sm:text-xl text-navy-deep font-bold mb-2.5 sm:mb-3 leading-tight group-hover:text-orange transition-colors">{p.title}</h3>
+              <p className="font-body text-navy/85 text-xs sm:text-sm leading-relaxed flex-1 mb-5 sm:mb-6">{p.desc}</p>
+              <div className="pt-4 sm:pt-5 border-t border-navy/10">
+                <span className="font-display text-2xl sm:text-3xl text-orange font-bold block">{p.stat}</span>
+                <span className="text-[9px] sm:text-[10px] font-heading font-bold uppercase tracking-widest text-navy/70">{p.statLabel}</span>
               </div>
             </div>
           ))}

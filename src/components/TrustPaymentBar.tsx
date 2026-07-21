@@ -90,7 +90,7 @@ export function TrustPaymentBar() {
 
       {/* Store rating */}
       <div className="max-w-7xl mx-auto px-6 py-10 flex flex-col items-center text-center border-b border-orange/10">
-        <span className="text-[11px] font-heading font-bold uppercase tracking-[0.3em] text-navy/60 mb-3">
+        <span className="text-[11px] font-heading font-bold uppercase tracking-[0.3em] text-navy-deep/80 mb-3">
           Store Rating
         </span>
         <div className="flex items-center gap-3">
@@ -101,7 +101,7 @@ export function TrustPaymentBar() {
                 <Star key={i} className="w-4 h-4 fill-orange text-orange" />
               ))}
             </div>
-            <span className="text-xs font-heading tracking-widest text-navy/60 uppercase">
+            <span className="text-xs font-heading font-bold tracking-widest text-navy-deep/80 uppercase">
               1.6K+ Customer Reviews
             </span>
           </div>
@@ -116,10 +116,10 @@ export function TrustPaymentBar() {
               <badge.icon className="w-7 h-7" />
             </div>
             <div>
-              <h4 className="font-heading font-bold text-sm md:text-base uppercase tracking-wider text-navy mb-1.5">
+              <h4 className="font-heading font-bold text-sm md:text-base uppercase tracking-wider text-navy-deep mb-1.5">
                 {badge.title}
               </h4>
-              <p className="text-navy/60 font-body text-xs md:text-sm leading-relaxed max-w-[220px]">
+              <p className="text-navy/85 font-body text-xs md:text-sm leading-relaxed max-w-[220px]">
                 {badge.desc}
               </p>
             </div>

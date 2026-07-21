@@ -147,19 +147,19 @@ export function FAQ() {
           <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-orange-gradient tracking-tight leading-tight mb-4 sm:mb-6 px-2">
             Frequently Asked Questions
           </h2>
-          <p className="font-body text-navy/65 text-sm sm:text-base md:text-lg leading-relaxed px-2">
+          <p className="font-body text-navy/90 font-medium text-sm sm:text-base md:text-lg leading-relaxed px-2">
             Everything a sincere seeker needs to know before making their sacred choice.
           </p>
         </div>
 
         <div className="relative max-w-lg mx-auto mb-6 sm:mb-8">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-navy/40" />
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-navy/60" />
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search a question, e.g. shipping, mukhi, care..."
-            className="w-full pl-11 pr-4 py-2.5 sm:py-3 rounded-full border border-orange/25 bg-white text-xs sm:text-sm font-body text-navy placeholder:text-navy/35 focus:outline-none focus:border-orange transition-colors shadow-sm"
+            className="w-full pl-11 pr-4 py-2.5 sm:py-3 rounded-full border border-orange/30 bg-white text-xs sm:text-sm font-body text-navy-deep font-medium placeholder:text-navy/55 focus:outline-none focus:border-orange transition-colors shadow-sm"
           />
         </div>
 
@@ -171,7 +171,7 @@ export function FAQ() {
               className={`px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest border transition-all duration-300 ${
                 activeCategory === cat
                   ? 'bg-orange text-navy-deep border-orange shadow-[0_0_15px_rgba(201,151,58,0.3)]'
-                  : 'text-orange/70 border-orange/30 hover:border-orange hover:text-orange'
+                  : 'text-navy-deep/85 border-orange/30 bg-white hover:border-orange hover:text-orange'
               }`}
             >
               {cat}
@@ -184,7 +184,7 @@ export function FAQ() {
               otherwise position:sticky silently breaks. */}
           <div ref={listRef} className="flex flex-col gap-2.5 sm:gap-3 relative">
             {filtered.length === 0 && (
-              <div className="text-center py-12 sm:py-16 text-navy/50 border border-dashed border-orange/20 rounded-2xl text-sm sm:text-base px-4">
+              <div className="text-center py-12 sm:py-16 text-navy/70 border border-dashed border-orange/30 rounded-2xl text-sm sm:text-base px-4">
                 No questions match "{query}". Try a different search term, or ask us directly.
               </div>
             )}
@@ -227,8 +227,8 @@ export function FAQ() {
                     ref={(el) => { cardRefs.current[i] = el; }}
                     className={`relative rounded-xl border transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                       isOpen
-                        ? 'border-orange/50 bg-white shadow-[0_8px_30px_rgba(21,48,64,0.12)]'
-                        : 'border-orange/15 bg-white shadow-[0_3px_12px_rgba(21,48,64,0.08)] hover:border-orange/30'
+                        ? 'border-orange/60 bg-white shadow-[0_8px_30px_rgba(21,48,64,0.12)]'
+                        : 'border-navy/15 bg-white shadow-[0_3px_12px_rgba(21,48,64,0.08)] hover:border-orange/40'
                     }`}
                     style={{
                       transform: `translateY(${liftY}px) scale(${scale})`,
@@ -260,7 +260,7 @@ export function FAQ() {
                         >
                           <Icon className="w-4 h-4" />
                         </span>
-                        <span className={`font-heading text-sm sm:text-base leading-snug transition-colors duration-300 ${isOpen ? 'text-orange' : 'text-navy'}`}>
+                        <span className={`font-heading text-sm sm:text-base font-semibold leading-snug transition-colors duration-300 ${isOpen ? 'text-navy-deep font-bold' : 'text-navy-deep'}`}>
                           {faq.q}
                         </span>
                       </div>
@@ -283,7 +283,7 @@ export function FAQ() {
                           style={{ transform: isOpen ? 'translateY(0)' : 'translateY(-6px)' }}
                         >
                           <div className="h-px bg-orange/15 mb-3 sm:mb-4" />
-                          <p className="font-body text-navy/65 text-sm sm:text-base leading-relaxed">{faq.a}</p>
+                          <p className="font-body text-navy/85 text-sm sm:text-base leading-relaxed">{faq.a}</p>
                         </div>
                       </div>
                     </div>

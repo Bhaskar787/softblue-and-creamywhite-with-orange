@@ -102,9 +102,9 @@ export function CartDrawer() {
         <div className="relative z-10 flex-1 overflow-y-auto p-4 sm:p-6 bg-navy-deep/60">
           {items.length === 0 ? (
             <div className="h-full flex flex-col items-center justify-center text-peach-soft text-center animate-in fade-in zoom-in-95 duration-500">
-              <ShoppingCart className="w-10 h-10 sm:w-14 sm:h-14 mb-4 text-orange/40" />
-              <p className="font-heading text-base sm:text-lg mb-2">Your cart awaits its first bead</p>
-              <p className="text-xs sm:text-sm text-peach-soft/50 mb-6 max-w-[240px] italic">
+              <ShoppingCart className="w-10 h-10 sm:w-14 sm:h-14 mb-4 text-orange" />
+              <p className="font-heading text-base sm:text-lg mb-2 text-peach font-semibold">Your cart awaits its first bead</p>
+              <p className="text-xs sm:text-sm text-peach/85 mb-6 max-w-[240px] italic">
                 ॐ नमः शिवाय — begin your journey with a Rudraksha chosen for your intention.
               </p>
               <button
@@ -131,29 +131,29 @@ export function CartDrawer() {
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
                         <h4 className="font-heading text-orange text-xs sm:text-sm font-semibold mb-1 line-clamp-1">{item.name}</h4>
-                        <p className="text-peach text-[10px] sm:text-xs">{formatPrice(item.price)}</p>
+                        <p className="text-peach text-[10px] sm:text-xs font-medium">{formatPrice(item.price)}</p>
                       </div>
                       <div className="flex items-center justify-between mt-1 sm:mt-2">
                         <div className="flex items-center border border-orange/30 rounded bg-navy">
                           <button
                             onClick={() => updateQuantity(item.id, -1)}
                             aria-label="Decrease quantity"
-                            className="px-2 py-0.5 text-orange hover:bg-orange hover:text-navy transition-colors"
+                            className="px-2 py-0.5 text-orange hover:bg-orange hover:text-navy transition-colors font-bold"
                           >
                             -
                           </button>
-                          <span className="px-2 sm:px-3 text-[10px] sm:text-xs text-peach tabular-nums">{item.qty}</span>
+                          <span className="px-2 sm:px-3 text-[10px] sm:text-xs text-peach tabular-nums font-semibold">{item.qty}</span>
                           <button
                             onClick={() => updateQuantity(item.id, 1)}
                             aria-label="Increase quantity"
-                            className="px-2 py-0.5 text-orange hover:bg-orange hover:text-navy transition-colors"
+                            className="px-2 py-0.5 text-orange hover:bg-orange hover:text-navy transition-colors font-bold"
                           >
                             +
                           </button>
                         </div>
                         <button
                           onClick={() => handleRemove(item.id)}
-                          className="text-[10px] sm:text-xs text-crimson hover:underline"
+                          className="text-[10px] sm:text-xs text-crimson hover:underline font-bold"
                         >
                           Remove
                         </button>
@@ -168,17 +168,17 @@ export function CartDrawer() {
 
         {items.length > 0 && (
           <div className="relative z-10 p-4 sm:p-6 border-t border-orange/20 bg-navy-deep">
-            <p className="flex items-center justify-center gap-1.5 text-[10px] sm:text-[11px] font-heading tracking-widest uppercase text-orange/50 mb-3 sm:mb-4">
+            <p className="flex items-center justify-center gap-1.5 text-[10px] sm:text-[11px] font-heading tracking-widest uppercase text-orange mb-3 sm:mb-4 font-semibold">
               <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Energized at Pashupatinath before it ships
             </p>
             <div className="flex justify-between items-center mb-4 sm:mb-6">
-              <span className="font-heading text-peach text-sm sm:text-base">Subtotal</span>
-              <span className="font-heading text-orange text-lg sm:text-xl">{formatPrice(subtotal)}</span>
+              <span className="font-heading text-peach text-sm sm:text-base font-semibold">Subtotal</span>
+              <span className="font-heading text-orange text-lg sm:text-xl font-bold">{formatPrice(subtotal)}</span>
             </div>
-            <button className="w-full py-3 sm:py-4 bg-gradient-to-r from-orange to-orange-soft text-navy font-heading font-bold rounded-xl hover:shadow-sacred-glow transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
+            <button className="w-full py-3 sm:py-4 bg-gradient-to-r from-orange to-orange-soft text-navy-deep font-heading font-bold rounded-xl hover:shadow-sacred-glow transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
               <ShoppingBag className="w-4 h-4" /> Proceed to Checkout
             </button>
-            <p className="text-center text-[10px] sm:text-[11px] text-peach-soft/40 font-body italic mt-3 sm:mt-4">
+            <p className="text-center text-[10px] sm:text-[11px] text-peach/80 font-body italic mt-3 sm:mt-4">
               Namaste — every order is a small step on the path.
             </p>
           </div>

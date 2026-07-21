@@ -30,7 +30,7 @@ export default function MukhiGuidePage() {
           <span className="text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-widest text-orange bg-orange/5 border border-orange/30 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-block mb-4 sm:mb-6 shadow-[0_0_15px_rgba(201,151,58,0.2)]">
             Sacred Knowledge
           </span>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl font-display text-orange-gradient tracking-tight leading-tight px-2">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl font-display text-orange tracking-tight leading-tight px-2">
             The Complete Language of Mukhi
           </h2>
           <p className="text-peach/80 font-body text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6 px-4">

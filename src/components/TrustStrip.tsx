@@ -50,7 +50,7 @@ export function TrustStrip() {
               <h3 className="text-base sm:text-lg md:text-xl font-display font-bold text-orange mb-2 sm:mb-3 tracking-wide">
                 {item.title}
               </h3>
-              <p className="text-gray-300 font-body text-xs sm:text-sm leading-relaxed max-w-[200px]">
+              <p className="text-peach/90 font-body text-xs sm:text-sm font-medium leading-relaxed max-w-[220px]">
                 {item.desc}
               </p>
             </div>

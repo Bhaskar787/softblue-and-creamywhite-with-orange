@@ -82,13 +82,13 @@ export function MukhiCardGrid({ items }: MukhiCardGridProps) {
                         </div>
                       </div>
 
-                      <p className="text-xs sm:text-sm font-body text-peach-soft/80 line-clamp-3 leading-relaxed">
+                      <p className="text-xs sm:text-sm font-body text-peach/90 font-medium line-clamp-3 leading-relaxed">
                         {m.benefits}
                       </p>
                     </div>
 
                     {!isOpen && (
-                      <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-orange/20 text-[10px] sm:text-xs font-heading font-bold tracking-widest uppercase text-orange/70">
+                      <div className="flex justify-between items-center pt-3 sm:pt-4 border-t border-orange/20 text-[10px] sm:text-xs font-heading font-bold tracking-widest uppercase text-orange">
                         <span>Explore Details</span>
                         <ChevronRight className="w-4 h-4 text-orange" />
                       </div>
@@ -102,7 +102,7 @@ export function MukhiCardGrid({ items }: MukhiCardGridProps) {
                         <div className="flex justify-between items-start">
                           <div>
                             <span className="text-[9px] sm:text-[10px] font-heading tracking-widest text-orange-soft uppercase font-bold mb-1 block">Divine Energy Matrix</span>
-                            <h4 className="text-lg sm:text-2xl font-display text-peach">Detailed Attributes</h4>
+                            <h4 className="text-lg sm:text-2xl font-display text-peach font-bold">Detailed Attributes</h4>
                           </div>
                           <button
                             onClick={(e) => { e.stopPropagation(); setOpenId(null); }}
@@ -114,27 +114,27 @@ export function MukhiCardGrid({ items }: MukhiCardGridProps) {
 
                         <div className="grid grid-cols-2 gap-3 sm:gap-4 bg-navy border border-orange/20 p-3 sm:p-4 rounded-xl shadow-inner">
                           <div>
-                            <span className="text-[9px] sm:text-[10px] text-orange/60 font-heading font-bold block uppercase tracking-widest mb-1">Ruling Deity</span>
-                            <span className="text-xs sm:text-sm font-heading font-semibold text-orange-bright block">{m.deity}</span>
+                            <span className="text-[9px] sm:text-[10px] text-orange font-heading font-bold block uppercase tracking-widest mb-1">Ruling Deity</span>
+                            <span className="text-xs sm:text-sm font-heading font-bold text-orange-bright block">{m.deity}</span>
                           </div>
                           <div>
-                            <span className="text-[9px] sm:text-[10px] text-orange/60 font-heading font-bold block uppercase tracking-widest mb-1">Associated Planet</span>
-                            <span className="text-xs sm:text-sm font-heading font-semibold text-orange-bright block">{m.planet}</span>
+                            <span className="text-[9px] sm:text-[10px] text-orange font-heading font-bold block uppercase tracking-widest mb-1">Associated Planet</span>
+                            <span className="text-xs sm:text-sm font-heading font-bold text-orange-bright block">{m.planet}</span>
                           </div>
                         </div>
 
                         <div className="space-y-2">
-                          <span className="text-[9px] sm:text-[10px] font-heading tracking-widest font-bold text-orange/60 uppercase flex items-center gap-2"><span className="w-3 sm:w-4 h-px bg-orange/40"></span>Metaphysical Benefits</span>
+                          <span className="text-[9px] sm:text-[10px] font-heading tracking-widest font-bold text-orange uppercase flex items-center gap-2"><span className="w-3 sm:w-4 h-px bg-orange/40"></span>Metaphysical Benefits</span>
                           <p className="text-xs sm:text-sm font-body text-peach/90 leading-relaxed pl-4 sm:pl-6">{m.benefits}</p>
                         </div>
 
                         <div className="space-y-2">
-                          <span className="text-[9px] sm:text-[10px] font-heading tracking-widest font-bold text-orange/60 uppercase flex items-center gap-2"><span className="w-3 sm:w-4 h-px bg-orange/40"></span>Ideal Configuration</span>
+                          <span className="text-[9px] sm:text-[10px] font-heading tracking-widest font-bold text-orange uppercase flex items-center gap-2"><span className="w-3 sm:w-4 h-px bg-orange/40"></span>Ideal Configuration</span>
                           <p className="text-xs sm:text-sm font-body text-peach/90 leading-relaxed pl-4 sm:pl-6">{m.whom}</p>
                         </div>
                       </div>
 
-                      <div className="text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-orange/40 pt-3 border-t border-orange/10 text-center mt-4">
+                      <div className="text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-peach/70 font-semibold pt-3 border-t border-orange/10 text-center mt-4">
                         Click anywhere on card to close
                       </div>
                     </div>

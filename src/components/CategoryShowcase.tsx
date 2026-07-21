@@ -19,7 +19,7 @@ export function CategoryShowcase() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-orange-gradient mb-3 sm:mb-4 px-2">
             Sacred Collections
           </h2>
-          <p className="text-navy/65 font-body text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
+          <p className="text-navy/90 font-body font-medium text-sm sm:text-base md:text-lg max-w-2xl mx-auto px-2">
             Authentic Nepali Rudraksha, curated for your specific spiritual intentions.
           </p>
           <div className="h-px w-16 sm:w-24 bg-gradient-to-r from-transparent via-orange to-transparent mx-auto mt-6 sm:mt-8 opacity-50" />

@@ -125,7 +125,7 @@ export function SearchOverlay() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search sacred rudraksha, mukhis, or intentions..."
-            className="flex-1 bg-transparent border-none text-peach text-base md:text-xl px-3 md:px-4 py-2 focus:outline-none placeholder:text-peach/30 font-heading min-w-0"
+            className="flex-1 bg-transparent border-none text-peach text-base md:text-xl px-3 md:px-4 py-2 focus:outline-none placeholder:text-peach/60 font-heading min-w-0"
           />
           <button
             onClick={handleClose}
@@ -139,13 +139,13 @@ export function SearchOverlay() {
         <div className="max-h-[60vh] overflow-y-auto">
           {query.trim() === '' ? (
             <div className="p-5 sm:p-6 bg-navy/40">
-              <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-orange/60 mb-4">Popular Searches</h3>
+              <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-orange mb-4">Popular Searches</h3>
               <div className="flex flex-wrap gap-2">
                 {POPULAR_SEARCHES.map((term) => (
                   <button
                     key={term}
                     onClick={() => setQuery(term)}
-                    className="px-3 py-1.5 rounded-full border border-orange/20 text-peach-soft text-xs sm:text-sm hover:border-orange hover:text-orange transition-colors"
+                    className="px-3 py-1.5 rounded-full border border-orange/30 text-peach text-xs sm:text-sm font-medium hover:border-orange hover:bg-orange/10 hover:text-orange transition-colors"
                   >
                     {term}
                   </button>
@@ -154,13 +154,13 @@ export function SearchOverlay() {
             </div>
           ) : results.length === 0 ? (
             <div className="p-8 md:p-10 flex flex-col items-center text-center bg-navy/40 animate-in fade-in duration-200">
-              <SearchX className="w-8 h-8 md:w-10 md:h-10 text-orange/40 mb-3" />
-              <p className="font-heading text-peach mb-1 text-sm md:text-base">No results for "{query}"</p>
-              <p className="text-xs md:text-sm text-peach-soft/50">Try a mukhi number, mala type, or an intention like "prosperity".</p>
+              <SearchX className="w-8 h-8 md:w-10 md:h-10 text-orange mb-3" />
+              <p className="font-heading text-peach font-semibold mb-1 text-sm md:text-base">No results for "{query}"</p>
+              <p className="text-xs md:text-sm text-peach/80">Try a mukhi number, mala type, or an intention like "prosperity".</p>
             </div>
           ) : (
             <div className="p-3 sm:p-4 bg-navy/40 animate-in fade-in duration-200">
-              <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-orange/60 mb-3 px-2">
+              <h3 className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-orange mb-3 px-2">
                 {results.length} {results.length === 1 ? 'Result' : 'Results'}
               </h3>
               <div className="flex flex-col gap-1">

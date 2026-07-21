@@ -28,9 +28,9 @@ export function RudrakshaGuide() {
           <span className="text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-widest text-orange bg-orange/5 border border-orange/30 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-block mb-4 sm:mb-6 shadow-[0_0_15px_rgba(201,151,58,0.2)]">
             Sacred Knowledge
           </span>
-<h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-[hsl(17.84deg_72.55%_90%)] tracking-tight leading-tight mb-3 sm:mb-5">
-  The Language of Mukhi
-</h3>
+          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl text-orange tracking-tight leading-tight mb-3 sm:mb-5">
+            The Language of Mukhi
+          </h3>
           <p className="text-peach/80 font-body text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6 px-2">
             Explore the metaphysical signatures, ruling cosmic forces, and energetic applications behind each divine configuration as described in the Shiva Purana.
           </p>

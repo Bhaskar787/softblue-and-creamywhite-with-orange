@@ -74,8 +74,8 @@ export function MenuDrawer() {
             
             {/* Col 1: Shop */}
             <div className="flex flex-col gap-6 md:gap-8">
-              <h3 className="text-[10px] md:text-xs font-bold tracking-widest text-orange/50 uppercase flex items-center gap-2">
-                <span className="w-4 h-px bg-orange/30"></span> Shop
+              <h3 className="text-[10px] md:text-xs font-bold tracking-widest text-orange uppercase flex items-center gap-2">
+                <span className="w-4 h-px bg-orange/40"></span> Shop
               </h3>
               <nav className="flex flex-col gap-3 md:gap-5">
                 {['Pooja', 'Rudraksha Bracelet', 'Japa Mala', 'Combination', 'Shaligram', 'Murtis & Yantra'].map((item, i) => (
@@ -84,7 +84,7 @@ export function MenuDrawer() {
                     href="#"
                     onClick={() => setIsMenuOpen(false)}
                     style={{ animationDelay: `${i * 50}ms` }}
-                    className="text-xl sm:text-2xl text-white/90 hover:text-orange transition-colors group flex items-center justify-between border-b border-white/5 pb-2 md:pb-3 animate-in fade-in slide-in-from-left-2 fill-mode-both duration-500"
+                    className="text-xl sm:text-2xl text-peach hover:text-orange transition-colors group flex items-center justify-between border-b border-white/10 pb-2 md:pb-3 animate-in fade-in slide-in-from-left-2 fill-mode-both duration-500 font-medium"
                   >
                     {item}
                     <ChevronRight className="w-4 h-4 md:w-5 md:h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-orange" />
@@ -96,8 +96,8 @@ export function MenuDrawer() {
             {/* Col 2: Guidance & Company */}
             <div className="flex flex-col gap-8 md:gap-12">
               <div className="flex flex-col gap-4 md:gap-6">
-                <h3 className="text-[10px] md:text-xs font-bold tracking-widest text-orange/50 uppercase flex items-center gap-2">
-                  <span className="w-4 h-px bg-orange/30"></span> Guidance & Trust
+                <h3 className="text-[10px] md:text-xs font-bold tracking-widest text-orange uppercase flex items-center gap-2">
+                  <span className="w-4 h-px bg-orange/40"></span> Guidance & Trust
                 </h3>
                 <nav className="flex flex-col gap-3 md:gap-4 text-sm md:text-base">
                   {['Authenticity', 'Book Consultation', 'Custom Build', 'Read our Story'].map((link) => (
@@ -105,7 +105,7 @@ export function MenuDrawer() {
                       key={link}
                       href="#"
                       onClick={() => setIsMenuOpen(false)}
-                      className="text-white/60 hover:text-orange transition-colors"
+                      className="text-peach/85 hover:text-orange transition-colors font-medium"
                     >
                       {link}
                     </Link>
@@ -114,8 +114,8 @@ export function MenuDrawer() {
               </div>
 
               <div className="flex flex-col gap-4 md:gap-6">
-                <h3 className="text-[10px] md:text-xs font-bold tracking-widest text-orange/50 uppercase flex items-center gap-2">
-                  <span className="w-4 h-px bg-orange/30"></span> Company
+                <h3 className="text-[10px] md:text-xs font-bold tracking-widest text-orange uppercase flex items-center gap-2">
+                  <span className="w-4 h-px bg-orange/40"></span> Company
                 </h3>
                 <nav className="flex flex-col gap-3 md:gap-4 text-sm md:text-base">
                   {['About Us', 'Contact', 'Shipping & Returns', 'FAQ'].map((link) => (
@@ -123,7 +123,7 @@ export function MenuDrawer() {
                       key={link}
                       href="#"
                       onClick={() => setIsMenuOpen(false)}
-                      className="text-white/60 hover:text-orange transition-colors"
+                      className="text-peach/85 hover:text-orange transition-colors font-medium"
                     >
                       {link}
                     </Link>
