@@ -34,7 +34,7 @@ const pillars = [
 
 const galleryImages = [
   {
-    src: 'https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80',
+    src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfC2TRS5fS7n0XeFQsEMJ5k0RlBQtFrGHs0-JeqBSZJEI_6usvXSlX-h0&s=10',
     label: 'Pashupatinath Temple',
   },
   {
