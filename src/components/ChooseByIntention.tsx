@@ -548,7 +548,7 @@ export function ChooseByIntention() {
       >
         {/* Sticky Container */}
         <div className="sticky top-2 sm:top-6 z-10 flex flex-col justify-center min-h-[calc(100vh-2rem)] py-2 sm:py-4">
-          <div className="w-full max-w-5xl mx-auto px-3 sm:px-6 lg:px-8">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
             
             <SectionHeader />
 

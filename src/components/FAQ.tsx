@@ -139,7 +139,7 @@ export function FAQ() {
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         <div className="text-center mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto">
           <span className="inline-flex items-center gap-2 text-[9px] sm:text-[10px] font-heading font-bold uppercase tracking-widest text-orange border border-orange/30 bg-orange/5 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6">
             <GiLotusFlower className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Common Questions
