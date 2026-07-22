@@ -1,9 +1,10 @@
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { formatPrice } from '@/lib/utils';
-import { Heart, ShoppingBag } from 'lucide-react';
+import { Heart, ShoppingBag, Sparkles } from 'lucide-react';
 import { GiStarSattelites } from 'react-icons/gi';
 import { useMemo, useState } from 'react';
+import { Link } from 'wouter';
 
 interface Product {
   id: string;
@@ -18,9 +19,55 @@ interface Product {
   image: string;
   badge?: string;
   stockLeft?: number;
+  isNewLaunch?: boolean;
 }
 
 const products: Product[] = [
+  {
+    id: 'p-new-1',
+    name: '14 Mukhi Hanuman Siddha Bracelet',
+    mukhi: '14 Mukhi',
+    origin: 'Nepal',
+    desc: 'Fresh Arun Valley harvest, silver-capped. Ruled by Lord Hanuman & Saturn for protection.',
+    price: 38500,
+    originalPrice: 45000,
+    rating: 5.0,
+    reviews: 42,
+    image: 'https://m.media-amazon.com/images/I/815Ynn0E9wL._AC_UF1000,1000_QL80_.jpg',
+    badge: 'New Launch',
+    stockLeft: 3,
+    isNewLaunch: true,
+  },
+  {
+    id: 'p-new-2',
+    name: 'Rare 1 Mukhi Savar Rudraksha Locket',
+    mukhi: '1 Mukhi',
+    origin: 'Nepal',
+    desc: 'Natural cashew-shaped Single Mukhi encased in handcrafted 925 sterling silver locket.',
+    price: 124900,
+    originalPrice: 145000,
+    rating: 5.0,
+    reviews: 18,
+    image: 'https://images.unsplash.com/photo-1685419367862-1dd40253bf2b?auto=format&fit=crop&w=600&q=80&crop=focalpoint&fp-x=0.5&fp-y=0.3',
+    badge: 'New Launch',
+    stockLeft: 1,
+    isNewLaunch: true,
+  },
+  {
+    id: 'p-new-3',
+    name: '11 Mukhi Ekadash Rudra Mala (108 Beads)',
+    mukhi: '11 Mukhi',
+    origin: 'Nepal',
+    desc: 'Blessed with 11 Rudras for fearlessness, strung on red silk with traditional knotting.',
+    price: 14990,
+    originalPrice: 18500,
+    rating: 4.9,
+    reviews: 29,
+    image: 'https://himalayarudraksh.online/cdn/shop/files/1-13-mukhi-shiv-shakti-rudraksha-mala-nepal-origin-499218.png?v=1750001216&width=3840',
+    badge: 'New Launch',
+    stockLeft: 5,
+    isNewLaunch: true,
+  },
   {
     id: 'p1',
     name: '5 Mukhi Rudraksha Bracelet',
@@ -90,6 +137,7 @@ const products: Product[] = [
     image: 'https://images.unsplash.com/photo-1650809652935-2e5002ba40bf?auto=format&fit=crop&w=600&q=80',
     badge: 'Collector’s Choice',
     stockLeft: 4,
+    isNewLaunch: true,
   },
   {
     id: 'p6',
@@ -134,16 +182,17 @@ const products: Product[] = [
   },
 ];
 
-const filterTabs = ['All', 'Nepal Origin', 'Java Origin', 'Under ₹10,000'] as const;
+const filterTabs = ['New Launches', 'All', 'Nepal Origin', 'Java Origin', 'Under ₹10,000'] as const;
 type FilterTab = (typeof filterTabs)[number];
 
 export function BestSellers() {
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
-  const [activeTab, setActiveTab] = useState<FilterTab>('All');
+  const [activeTab, setActiveTab] = useState<FilterTab>('New Launches');
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
+      if (activeTab === 'New Launches') return p.isNewLaunch || p.badge?.toLowerCase().includes('new');
       if (activeTab === 'Nepal Origin') return p.origin === 'Nepal';
       if (activeTab === 'Java Origin') return p.origin === 'Java';
       if (activeTab === 'Under ₹10,000') return p.price < 10000;
@@ -176,31 +225,40 @@ export function BestSellers() {
             </h2>
           </div>
 
-          <a
-            href="#"
+          <Link
+            href="/all-products"
             className="hidden md:inline-flex items-center gap-2 text-orange font-heading font-bold uppercase tracking-wider text-sm hover:text-orange-bright transition-colors group"
           >
-            View All Best Sellers
+            View All Products
             <span className="w-8 h-px bg-orange group-hover:w-12 transition-all"></span>
-          </a>
+          </Link>
         </div>
 
         {/* Filter Tabs */}
         <div className="flex overflow-x-auto hide-scrollbar border-b border-orange/20 mb-8 sm:mb-10 -mx-4 px-4 md:mx-0 md:px-0 md:justify-center">
           <div className="flex gap-2.5 sm:gap-4 pb-3 sm:pb-4 whitespace-nowrap">
-            {filterTabs.map((tab) => (
-              <button
-                key={tab}
-                onClick={() => setActiveTab(tab)}
-                className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs md:text-sm font-heading font-semibold tracking-widest transition-all border ${
-                  activeTab === tab
-                    ? 'bg-orange text-navy-deep border-orange shadow-sacred-glow'
-                    : 'bg-white text-navy/85 border-navy/20 hover:border-orange hover:text-orange'
-                }`}
-              >
-                {tab}
-              </button>
-            ))}
+            {filterTabs.map((tab) => {
+              const isNewTab = tab === 'New Launches';
+              const isActive = activeTab === tab;
+              return (
+                <button
+                  key={tab}
+                  onClick={() => setActiveTab(tab)}
+                  className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs md:text-sm font-heading font-bold tracking-widest transition-all border flex items-center gap-1.5 ${
+                    isActive
+                      ? isNewTab
+                        ? 'bg-gradient-to-r from-orange via-orange-bright to-orange text-navy-deep border-orange shadow-[0_0_20px_rgba(201,151,58,0.55)] scale-105'
+                        : 'bg-orange text-navy-deep border-orange shadow-sacred-glow'
+                      : isNewTab
+                      ? 'bg-orange/15 text-navy-deep border-orange/50 hover:bg-orange hover:text-navy-deep'
+                      : 'bg-white text-navy/85 border-navy/20 hover:border-orange hover:text-orange'
+                  }`}
+                >
+                  {isNewTab && <Sparkles className="w-3.5 h-3.5 text-navy-deep" />}
+                  <span>{tab}</span>
+                </button>
+              );
+            })}
           </div>
         </div>
 
@@ -218,17 +276,19 @@ export function BestSellers() {
               >
                 {/* Image Container */}
                 <div className="relative aspect-square rounded-md sm:rounded-lg overflow-hidden border border-navy/10 mb-3 sm:mb-5">
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 brightness-95 group-hover:brightness-100"
-                  />
+                  <Link href={`/product/${product.id}`}>
+                    <img
+                      src={product.image}
+                      alt={product.name}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 brightness-95 group-hover:brightness-100 cursor-pointer"
+                    />
+                  </Link>
                   
                   {/* Subtle inner shadow */}
                   <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.4)] pointer-events-none" />
 
                   {/* Badges */}
-                  <div className="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 flex flex-col gap-1 sm:gap-2 items-start">
+                  <div className="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 flex flex-col gap-1 sm:gap-2 items-start pointer-events-none z-10">
                     {product.badge && (
                       <span className="bg-crimson text-white text-[8px] sm:text-[10px] font-heading font-bold uppercase tracking-widest px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-md border border-crimson/50">
                         {product.badge}
@@ -257,7 +317,7 @@ export function BestSellers() {
                   </button>
 
                   {/* Quick Add - Desktop Hover */}
-                  <div className="absolute bottom-0 left-0 w-full p-3 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hidden lg:block">
+                  <div className="absolute bottom-0 left-0 w-full p-3 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hidden lg:block z-10">
                     <button
                       onClick={() => addToCart(product)}
                       className="w-full py-3 bg-navy-deep text-orange border border-orange font-heading font-bold uppercase tracking-widest rounded hover:bg-orange hover:text-navy-deep transition-colors shadow-sacred-glow flex items-center justify-center gap-2 text-xs"
@@ -286,9 +346,11 @@ export function BestSellers() {
                     </span>
                   </div>
 
-                  <h3 className="font-display text-sm sm:text-base md:text-lg text-navy-deep font-bold mb-1.5 sm:mb-2 line-clamp-2 leading-tight group-hover:text-orange transition-colors">
-                    {product.name}
-                  </h3>
+                  <Link href={`/product/${product.id}`}>
+                    <h3 className="font-display text-sm sm:text-base md:text-lg text-navy-deep font-bold mb-1.5 sm:mb-2 line-clamp-2 leading-tight group-hover:text-orange transition-colors cursor-pointer">
+                      {product.name}
+                    </h3>
+                  </Link>
                   <p className="text-xs sm:text-sm font-body text-navy/85 line-clamp-2 mb-3 sm:mb-4 flex-1">
                     {product.desc}
                   </p>
@@ -327,12 +389,12 @@ export function BestSellers() {
 
         {/* Mobile Sub Anchor Link */}
         <div className="flex justify-center mt-8 sm:mt-12 md:hidden">
-          <a
-            href="#"
+          <Link
+            href="/all-products"
             className="text-orange font-heading font-bold uppercase tracking-widest text-xs border-b border-orange/30 pb-1"
           >
-            View All Best Sellers
-          </a>
+            View All Products
+          </Link>
         </div>
       </div>
     </section>

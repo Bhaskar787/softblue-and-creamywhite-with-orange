@@ -322,7 +322,7 @@ export function FAQ() {
                   href="https://wa.me/919876543210"
                   target="_blank"
                   rel="noreferrer"
-                  className="w-full py-2.5 sm:py-3 bg-[#25D366] text-white text-xs sm:text-sm font-heading font-bold uppercase tracking-wider rounded-xl text-center hover:shadow-[0_0_20px_rgba(37,211,102,0.4)] transition-all"
+                  className="w-full py-2.5 sm:py-3 bg-navy-deep text-orange border border-orange/40 text-xs sm:text-sm font-heading font-bold uppercase tracking-wider rounded-xl text-center hover:bg-orange hover:text-navy-deep transition-all shadow-sacred-glow"
                 >
                   Message on WhatsApp
                 </a>

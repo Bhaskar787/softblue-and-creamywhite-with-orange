@@ -4,6 +4,7 @@ import {
   GiAries, GiTaurus, GiGemini, GiCancer, GiLeo, GiVirgo,
   GiLibra, GiScorpio, GiSagittarius, GiCapricorn, GiAquarius, GiPisces,
 } from 'react-icons/gi';
+import { Link } from 'wouter';
 
 const zodiacIcons = [
   GiAries, GiTaurus, GiGemini, GiCancer, GiLeo, GiVirgo,
@@ -154,10 +155,13 @@ export function PromoBanners() {
               </div>
             </div>
 
-            <button className="relative z-10 inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange to-orange-soft text-navy-deep rounded-full text-xs sm:text-sm font-heading font-bold uppercase tracking-widest transition-all hover:brightness-110 hover:gap-4 group/btn w-full sm:w-auto">
-              Book Consultation
-              <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1" />
-            </button>
+          <Link
+  href="/consultation"
+  className="relative z-10 inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange to-orange-soft text-navy-deep rounded-full text-xs sm:text-sm font-heading font-bold uppercase tracking-widest transition-all hover:brightness-110 hover:gap-4 group/btn w-full sm:w-auto"
+>
+  Book Consultation
+  <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1" />
+</Link>
           </div>
 
           {/* Card 2 — Custom Creation */}
@@ -199,10 +203,13 @@ export function PromoBanners() {
               </div>
             </div>
 
-            <button className="relative z-10 inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-orange text-orange rounded-full text-xs sm:text-sm font-heading font-bold uppercase tracking-widest hover:bg-orange hover:text-navy-deep hover:gap-4 transition-all shadow-[0_0_15px_rgba(201,151,58,0.2)] group/btn w-full sm:w-auto">
-              Start Custom Order
-              <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1" />
-            </button>
+          <Link
+  href="/custom-order"
+  className="relative z-10 inline-flex items-center justify-center gap-2 sm:gap-3 px-6 sm:px-8 py-3 sm:py-4 border-2 border-orange text-orange rounded-full text-xs sm:text-sm font-heading font-bold uppercase tracking-widest hover:bg-orange hover:text-navy-deep hover:gap-4 transition-all shadow-[0_0_15px_rgba(201,151,58,0.2)] group/btn w-full sm:w-auto"
+>
+  Start Custom Order
+  <ArrowRight className="w-4 h-4 shrink-0 transition-transform duration-300 group-hover/btn:translate-x-1" />
+</Link>
           </div>
 
         </div>

@@ -74,7 +74,7 @@ export function Newsletter() {
                 <div className="bg-orange/10 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-orange/30 max-w-md animate-in zoom-in duration-500 shadow-sacred-glow">
                   <GiFlame className="w-8 h-8 sm:w-10 sm:h-10 text-orange mb-3 sm:mb-4" />
                   <span className="block text-lg sm:text-xl md:text-2xl font-display text-orange mb-2">
-                    Namaste! You've joined our sacred circle 🙏
+                    Namaste! You've joined our sacred circle 
                   </span>
                   <span className="block text-xs sm:text-sm font-body text-peach-soft/90 leading-relaxed">
                     Watch your inbox for our next Panchang update and rare bead arrival notification.

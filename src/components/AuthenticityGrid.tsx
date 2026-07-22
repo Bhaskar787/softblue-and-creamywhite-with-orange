@@ -118,8 +118,8 @@ export function AuthenticityGrid() {
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-white border border-orange/25 rounded-2xl shadow-md px-6 sm:px-8 md:px-10 py-6 sm:py-8 shadow-xl">
             <GiAllSeeingEye className="w-8 h-8 sm:w-10 sm:h-10 text-orange shrink-0" />
             <div className="text-center sm:text-left">
-              <h4 className="font-display text-lg sm:text-xl text-orange mb-1">Still have doubts?</h4>
-              <p className="font-body text-navy/60 text-xs sm:text-sm">Speak with our certified Vedic consultants before you buy — it's complimentary.</p>
+              <h4 className="font-display font-semibold  text-lg sm:text-xl text-orange mb-1">Still have doubts?</h4>
+              <p className="font-body text-navy/60 font-semibold  text-xs sm:text-sm">Speak with our certified Vedic consultants before you buy — it's complimentary.</p>
             </div>
             <a href="#" className="shrink-0 px-6 sm:px-7 py-2.5 sm:py-3 bg-gradient-to-r from-orange to-orange-soft text-navy-deep font-heading font-bold uppercase tracking-widest text-[11px] sm:text-xs rounded-full hover:shadow-[0_0_20px_rgba(201,151,58,0.4)] transition-all w-full sm:w-auto">
               Book Free Call

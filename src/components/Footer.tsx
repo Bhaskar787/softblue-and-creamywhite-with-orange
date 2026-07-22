@@ -38,11 +38,11 @@ export function Footer() {
               <span className="w-4 h-px bg-orange/50"></span> Collections
             </h4>
             <nav className="flex flex-col gap-4">
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Single Beads</Link>
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Mala & Rosaries</Link>
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Siddha Mala</Link>
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Bracelets</Link>
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Pooja Items</Link>
+              <Link href="/all-products" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">All Products</Link>
+              <Link href="/all-products?category=Rudraksha %26 Variants&subcategory=Rudraksha Beads" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Rudraksha Beads</Link>
+              <Link href="/all-products?category=Saligram" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Gandaki Saligram</Link>
+              <Link href="/all-products?category=Singing Bowl" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Singing Bowls</Link>
+              <Link href="/all-products?category=Pooja Samagri" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Pooja Items</Link>
             </nav>
           </div>
 
@@ -52,11 +52,11 @@ export function Footer() {
               <span className="w-4 h-px bg-orange/50"></span> Information
             </h4>
             <nav className="flex flex-col gap-4">
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">About Us</Link>
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Book Consultation</Link>
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Authenticity Guide</Link>
+              <Link href="/about" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">About Us</Link>
+              <Link href="/consultation" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Book Consultation</Link>
+              <Link href="/contact" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Contact Support</Link>
               <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">Shipping & Returns</Link>
-              <Link href="#" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">FAQ</Link>
+              <Link href="/faq" className="text-peach/85 hover:text-orange transition-colors text-sm font-heading tracking-wider">FAQ & Help Center</Link>
             </nav>
           </div>
 
@@ -77,7 +77,7 @@ export function Footer() {
               <a href="#" className="w-10 h-10 rounded-full border border-orange/30 bg-navy/50 flex items-center justify-center text-orange hover:bg-orange hover:text-navy-deep transition-all">
                 <Facebook className="w-4 h-4" />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full border border-orange/30 bg-navy/50 flex items-center justify-center text-orange hover:bg-[#25D366] hover:border-[#25D366] hover:text-white transition-all">
+              <a href="#" className="w-10 h-10 rounded-full border border-orange/30 bg-navy/50 flex items-center justify-center text-orange hover:bg-orange hover:border-orange hover:text-navy-deep transition-all">
                 <MessageCircle className="w-4 h-4" />
               </a>
             </div>

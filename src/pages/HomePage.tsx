@@ -4,6 +4,7 @@ import { HeroSlider } from '@/components/HeroSlider';
 import { TrustStrip } from '@/components/TrustStrip';
 import { SacredCollections } from '@/components/SacredCollections';
 import { WhyChoose } from '@/components/WhyChoose';
+import { NewLaunchesBanner } from '@/components/NewLaunchesBanner';
 import { BestSellers } from '@/components/BestSellers';
 import { ChooseByIntention } from '@/components/ChooseByIntention';
 import { CategoryShowcase } from '@/components/CategoryShowcase';
@@ -35,6 +36,7 @@ export default function HomePage() {
         <TrustStrip />
         <SacredCollections />
         <WhyChoose />
+        <NewLaunchesBanner />
         <BestSellers />
         <ChooseByIntention />
         <CategoryShowcase />

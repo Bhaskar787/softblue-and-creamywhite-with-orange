@@ -78,15 +78,24 @@ export function MenuDrawer() {
                 <span className="w-4 h-px bg-orange/40"></span> Shop
               </h3>
               <nav className="flex flex-col gap-3 md:gap-5">
-                {['Pooja', 'Rudraksha Bracelet', 'Japa Mala', 'Combination', 'Shaligram', 'Murtis & Yantra'].map((item, i) => (
+                {[
+                  { title: 'All Products', href: '/all-products' },
+                  { title: 'Rudraksha & Variants', href: '/all-products?category=Rudraksha %26 Variants' },
+                  { title: 'Saligram', href: '/all-products?category=Saligram' },
+                  { title: 'Shankha & Ghanti', href: '/all-products?category=Shankha %26 Ghanti' },
+                  { title: 'Singing Bowl', href: '/all-products?category=Singing Bowl' },
+                  { title: 'Gemstone', href: '/all-products?category=Gemstone' },
+                  { title: 'Statue & Sphatik', href: '/all-products?category=Statue %26 Sphatik' },
+                  { title: 'Pooja Samagri', href: '/all-products?category=Pooja Samagri' },
+                ].map((item, i) => (
                   <Link
-                    key={item}
-                    href="#"
+                    key={item.title}
+                    href={item.href}
                     onClick={() => setIsMenuOpen(false)}
                     style={{ animationDelay: `${i * 50}ms` }}
-                    className="text-xl sm:text-2xl text-peach hover:text-orange transition-colors group flex items-center justify-between border-b border-white/10 pb-2 md:pb-3 animate-in fade-in slide-in-from-left-2 fill-mode-both duration-500 font-medium"
+                    className="text-lg sm:text-xl text-peach hover:text-orange transition-colors group flex items-center justify-between border-b border-white/10 pb-2 md:pb-2.5 animate-in fade-in slide-in-from-left-2 fill-mode-both duration-500 font-medium"
                   >
-                    {item}
+                    {item.title}
                     <ChevronRight className="w-4 h-4 md:w-5 md:h-5 opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-orange" />
                   </Link>
                 ))}
@@ -100,16 +109,15 @@ export function MenuDrawer() {
                   <span className="w-4 h-px bg-orange/40"></span> Guidance & Trust
                 </h3>
                 <nav className="flex flex-col gap-3 md:gap-4 text-sm md:text-base">
-                  {['Authenticity', 'Book Consultation', 'Custom Build', 'Read our Story'].map((link) => (
-                    <Link
-                      key={link}
-                      href="#"
-                      onClick={() => setIsMenuOpen(false)}
-                      className="text-peach/85 hover:text-orange transition-colors font-medium"
-                    >
-                      {link}
-                    </Link>
-                  ))}
+                  <Link href="/mukhi-guide" onClick={() => setIsMenuOpen(false)} className="text-peach/85 hover:text-orange transition-colors font-medium">
+                    1:1 Mukhi Guide & Authenticity
+                  </Link>
+                  <Link href="/consultation" onClick={() => setIsMenuOpen(false)} className="text-peach/85 hover:text-orange transition-colors font-medium">
+                    Book 1:1 Consultation
+                  </Link>
+                  <Link href="/consultation" onClick={() => setIsMenuOpen(false)} className="text-peach/85 hover:text-orange transition-colors font-medium">
+                    Custom Order & Bespoke Mala
+                  </Link>
                 </nav>
               </div>
 
@@ -118,7 +126,28 @@ export function MenuDrawer() {
                   <span className="w-4 h-px bg-orange/40"></span> Company
                 </h3>
                 <nav className="flex flex-col gap-3 md:gap-4 text-sm md:text-base">
-                  {['About Us', 'Contact', 'Shipping & Returns', 'FAQ'].map((link) => (
+                  <Link
+                    href="/about"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-peach/85 hover:text-orange transition-colors font-medium"
+                  >
+                    About Us
+                  </Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-peach/85 hover:text-orange transition-colors font-medium"
+                  >
+                    Contact Us
+                  </Link>
+                  <Link
+                    href="/faq"
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-peach/85 hover:text-orange transition-colors font-medium"
+                  >
+                    FAQ & Help
+                  </Link>
+                  {['Shipping & Returns'].map((link) => (
                     <Link
                       key={link}
                       href="#"
