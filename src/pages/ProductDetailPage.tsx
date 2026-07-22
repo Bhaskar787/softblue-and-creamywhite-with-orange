@@ -1094,7 +1094,7 @@ export default function ProductDetailPage() {
               </div>
 
               <Link
-                href="/all-products"
+                href="/blog"
                 className="inline-flex items-center gap-1.5 text-xs font-heading font-bold text-orange uppercase tracking-wider hover:underline"
               >
                 <span>View All Articles</span>
@@ -1106,16 +1106,16 @@ export default function ProductDetailPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  id: 'b1',
+                  id: '1-mukhi-rudraksha-divine-bead',
                   category: 'Mukhi Guide',
-                  title: '10 Mukhi Rudraksha and Lord Vishnu: The 10-Directional Shield',
-                  excerpt: 'Discover why Lord Vishnu rules the 10 Mukhi bead and how it protects against all 10 directional negative energies.',
+                  title: '1 Mukhi Rudraksha | The Divine and Rarest Rudraksha Bead',
+                  excerpt: 'Discover why Lord Shiva rules the 1 Mukhi bead and how it confers spiritual focus, health, and enlightenment.',
                   date: '22 Feb 2026',
                   readTime: '5 min read',
                   image: 'https://images.pexels.com/photos/18723428/pexels-photo-18723428.jpeg?auto=compress&cs=tinysrgb&w=600',
                 },
                 {
-                  id: 'b2',
+                  id: 'rudraksha-shrawan-7-benefits',
                   category: 'Vedic Practice',
                   title: 'Prana Pratishtha: How to Energize Your Rudraksha at Home',
                   excerpt: 'Step-by-step Vedic ritual for cleansing, consecrating, and maintaining your beads with sacred mantras and sandalwood oil.',
@@ -1124,7 +1124,7 @@ export default function ProductDetailPage() {
                   image: 'https://images.pexels.com/photos/32442615/pexels-photo-32442615.jpeg?auto=compress&cs=tinysrgb&w=600',
                 },
                 {
-                  id: 'b3',
+                  id: 'gauri-shankar-rudraksha-benefits',
                   category: 'Authenticity',
                   title: '5 Proven Lab Tests to Identify Genuine Nepali Rudraksha',
                   excerpt: 'X-Ray analysis, specific gravity tests, and copper coin test — how to protect yourself against counterfeit market beads.',
@@ -1133,9 +1133,10 @@ export default function ProductDetailPage() {
                   image: 'https://images.pexels.com/photos/18723426/pexels-photo-18723426.jpeg?auto=compress&cs=tinysrgb&w=600',
                 },
               ].map((article) => (
-                <div
+                <Link
                   key={article.id}
-                  className="group bg-white border border-navy/15 rounded-2xl overflow-hidden shadow-sm hover:border-orange hover:shadow-sacred-glow transition-all duration-300 flex flex-col justify-between"
+                  href={`/article/${article.id}`}
+                  className="group bg-white border border-navy/15 rounded-2xl overflow-hidden shadow-sm hover:border-orange hover:shadow-sacred-glow transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
                     <div className="relative aspect-[16/9] overflow-hidden bg-navy-deep">
@@ -1169,7 +1170,7 @@ export default function ProductDetailPage() {
                       Read Article <ArrowRight className="w-3.5 h-3.5" />
                     </span>
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
 
