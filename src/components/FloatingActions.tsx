@@ -19,7 +19,7 @@ export function FloatingActions() {
     {
       id: 0,
       role: 'ai',
-      text: "Namaste 🙏 I'm RudraAI. Ask me about mukhis, malas, or which Rudraksha suits your intention.",
+      text: "Namaste I'm RudraAI. Ask me about mukhis, malas, or which Rudraksha suits your intention.",
     },
   ]);
 

@@ -111,11 +111,12 @@ export function BlogGiftOffers() {
   const [timer, setTimer] = useState({ hours: 3, minutes: 42, seconds: 18 });
   const arcContainerRef = useRef<HTMLDivElement>(null);
   const isScrollingRef = useRef(false);
+  const touchStartYRef = useRef<number | null>(null);
 
   // Check if current page is in the blog section
   const isBlogPage = location.startsWith('/blog') || location.startsWith('/article');
 
-  // AUTO-OPEN AFTER 3 SECONDS IF USER HAS NOT CLICKED THE GIFT BUTTON
+  // AUTO-OPEN AFTER 3 SECONDS IF USER HAS NOT INTERACTED
   useEffect(() => {
     if (!isBlogPage) return;
 
@@ -141,11 +142,12 @@ export function BlogGiftOffers() {
     return () => clearInterval(interval);
   }, []);
 
-  // PREVENT MAIN BODY SCROLL & SMOOTH 1-BY-1 WHEEL ROTATION
+  // SMOOTH 1-BY-1 WHEEL & TOUCH SWIPE ROTATION
   useEffect(() => {
     const el = arcContainerRef.current;
     if (!el || !isOpen) return;
 
+    // Desktop Mouse Wheel Scroll Handler
     const preventDefaultWheel = (e: WheelEvent) => {
       e.preventDefault();
       e.stopPropagation();
@@ -161,11 +163,55 @@ export function BlogGiftOffers() {
 
       setTimeout(() => {
         isScrollingRef.current = false;
-      }, 350);
+      }, 300);
+    };
+
+    // Mobile Touch Gesture Handlers
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartYRef.current = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (touchStartYRef.current === null) return;
+      e.preventDefault(); // Prevent page scroll when interacting with cards
+
+      const currentY = e.touches[0].clientY;
+      const diffY = touchStartYRef.current - currentY;
+
+      if (Math.abs(diffY) > 25 && !isScrollingRef.current) {
+        isScrollingRef.current = true;
+
+        if (diffY > 0) {
+          // Swipe Up -> Next Offer
+          setActiveIndex((prev) => (prev < OFFERS.length - 1 ? prev + 1 : 0));
+        } else {
+          // Swipe Down -> Previous Offer
+          setActiveIndex((prev) => (prev > 0 ? prev - 1 : OFFERS.length - 1));
+        }
+
+        touchStartYRef.current = currentY;
+
+        setTimeout(() => {
+          isScrollingRef.current = false;
+        }, 300);
+      }
+    };
+
+    const handleTouchEnd = () => {
+      touchStartYRef.current = null;
     };
 
     el.addEventListener('wheel', preventDefaultWheel, { passive: false });
-    return () => el.removeEventListener('wheel', preventDefaultWheel);
+    el.addEventListener('touchstart', handleTouchStart, { passive: true });
+    el.addEventListener('touchmove', handleTouchMove, { passive: false });
+    el.addEventListener('touchend', handleTouchEnd, { passive: true });
+
+    return () => {
+      el.removeEventListener('wheel', preventDefaultWheel);
+      el.removeEventListener('touchstart', handleTouchStart);
+      el.removeEventListener('touchmove', handleTouchMove);
+      el.removeEventListener('touchend', handleTouchEnd);
+    };
   }, [isOpen]);
 
   if (!isBlogPage) return null;
@@ -179,10 +225,12 @@ export function BlogGiftOffers() {
         }
       `}</style>
 
-      {/* GIFT BOX TRIGGER & CLOSE BUTTON (Inside main white body area below breadcrumbs bar at top-44 sm:top-48 when open) */}
-      <div className={`fixed right-4 sm:right-6 z-40 flex items-center transition-all duration-300 ${
-        isOpen ? 'top-44 sm:top-48' : 'top-1/2 -translate-y-1/2'
-      }`}>
+      {/* GIFT BOX TRIGGER & HIGH-PRIORITY CLOSE BUTTON (Positioned z-50 to avoid card overlap) */}
+      <div
+        className={`fixed right-3 sm:right-6 z-50 flex items-center transition-all duration-300 ${
+          isOpen ? 'top-16 sm:top-24' : 'top-1/2 -translate-y-1/2'
+        }`}
+      >
         {!isOpen ? (
           <div className="flex items-center gap-2">
             <button
@@ -190,10 +238,10 @@ export function BlogGiftOffers() {
                 setUserInteracted(true);
                 setIsOpen(true);
               }}
-              className="bg-navy-deep text-orange border border-orange/50 shadow-xl px-3.5 py-2 rounded-full text-xs font-heading font-bold uppercase tracking-wider flex items-center gap-1.5 animate-[gentle-float_2s_ease-in-out_infinite] hover:scale-105 transition-transform cursor-pointer"
+              className="bg-navy-deep text-orange border border-orange/50 shadow-xl px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-full text-[11px] sm:text-xs font-heading font-bold uppercase tracking-wider flex items-center gap-1.5 animate-[gentle-float_2s_ease-in-out_infinite] hover:scale-105 transition-transform cursor-pointer"
             >
               <Flame className="w-3.5 h-3.5 text-orange animate-pulse" />
-              <span> Grab Special Offers!</span>
+              <span>Grab Special Offers!</span>
             </button>
 
             <button
@@ -203,34 +251,34 @@ export function BlogGiftOffers() {
                 setIsOpen(true);
               }}
               aria-label="Open Special Offers"
-              className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-orange via-orange-bright to-orange text-navy-deep flex items-center justify-center shadow-[0_4px_25px_rgba(252,146,105,0.5)] hover:scale-110 transition-transform duration-300 shrink-0 cursor-pointer"
+              className="relative w-11 h-11 sm:w-14 sm:h-14 rounded-full bg-gradient-to-r from-orange via-orange-bright to-orange text-navy-deep flex items-center justify-center shadow-[0_4px_25px_rgba(252,146,105,0.5)] hover:scale-110 transition-transform duration-300 shrink-0 cursor-pointer"
             >
               <span className="absolute inset-0 rounded-full bg-orange animate-ping opacity-35" />
               <span className="absolute -inset-1 rounded-full bg-orange/40 animate-pulse opacity-50" />
-              <Gift className="w-6 h-6 relative z-10 text-navy-deep animate-bounce" />
+              <Gift className="w-5 h-5 sm:w-6 sm:h-6 relative z-10 text-navy-deep animate-bounce" />
             </button>
           </div>
         ) : (
-  <button
-  onClick={() => {
-    setUserInteracted(true);
-    setIsOpen(false);
-  }}
-  className="w-10 h-10 flex items-center justify-center bg-navy-deep text-orange border-2 border-orange shadow-xl rounded-full hover:bg-orange hover:text-navy-deep transition-all cursor-pointer"
-  aria-label="Close"
->
-  <X className="w-4 h-4" />
-</button>
+          <button
+            onClick={() => {
+              setUserInteracted(true);
+              setIsOpen(false);
+            }}
+            className="w-10 h-10 flex items-center justify-center bg-navy-deep text-orange border-2 border-orange shadow-2xl rounded-full hover:bg-orange hover:text-navy-deep transition-all cursor-pointer"
+            aria-label="Close"
+          >
+            <X className="w-5 h-5" />
+          </button>
         )}
       </div>
 
-      {/* STANDALONE CURVED CIRCLE ARC CARDS WHEEL (Centered Vertically on Right Side of Screen Height) */}
+      {/* CURVED CIRCLE ARC CARDS WHEEL (Centered & Touch-responsive on Mobile) */}
       {isOpen && (
         <div
           ref={arcContainerRef}
-          className="fixed top-1/2 -translate-y-1/2 right-4 sm:right-8 z-40 flex items-center justify-center select-none animate-in fade-in zoom-in-95 duration-500"
+          className="fixed top-1/2 -translate-y-1/2 right-2 sm:right-8 z-40 flex items-center justify-center select-none animate-in fade-in zoom-in-95 duration-500 touch-none"
         >
-          <div className="relative w-[280px] sm:w-[320px] h-[460px] sm:h-[500px] flex items-center justify-center">
+          <div className="relative w-[260px] xs:w-[280px] sm:w-[320px] h-[400px] sm:h-[500px] flex items-center justify-center">
             {OFFERS.map((offer, idx) => {
               let diff = idx - activeIndex;
               const total = OFFERS.length;
@@ -245,6 +293,10 @@ export function BlogGiftOffers() {
               let zIndex = 30;
               let isInteractive = true;
 
+              const isMobile = typeof window !== 'undefined' && window.innerWidth < 640;
+              const offsetY = isMobile ? 100 : 130;
+              const offsetX = isMobile ? 25 : 40;
+
               if (diff === 0) {
                 // Center Focused Card
                 translateY = 0;
@@ -255,24 +307,24 @@ export function BlogGiftOffers() {
                 zIndex = 40;
               } else if (diff === -1) {
                 // Top Arc Card
-                translateY = -130;
-                translateX = 40;
+                translateY = -offsetY;
+                translateX = offsetX;
                 rotateDeg = 10;
                 scale = 0.84;
                 opacity = 0.8;
                 zIndex = 30;
               } else if (diff === 1) {
                 // Bottom Arc Card
-                translateY = 130;
-                translateX = 40;
+                translateY = offsetY;
+                translateX = offsetX;
                 rotateDeg = -10;
                 scale = 0.84;
                 opacity = 0.8;
                 zIndex = 30;
               } else {
-                // Non-active cards smoothly hide off to the right edge
-                translateY = diff < 0 ? -220 : 220;
-                translateX = 180;
+                // Non-active cards hide off to the side
+                translateY = diff < 0 ? -offsetY * 1.8 : offsetY * 1.8;
+                translateX = 140;
                 rotateDeg = diff < 0 ? 20 : -20;
                 scale = 0.6;
                 opacity = 0;
@@ -290,27 +342,27 @@ export function BlogGiftOffers() {
                     zIndex,
                     pointerEvents: isInteractive ? 'auto' : 'none',
                   }}
-                  className={`absolute w-full bg-navy-deep text-peach border-2 border-orange rounded-3xl p-4 sm:p-5 shadow-[0_15px_45px_rgba(0,0,0,0.85)] transition-all duration-500 ease-out cursor-pointer ${
+                  className={`absolute w-full bg-navy-deep text-peach border-2 border-orange rounded-2xl sm:rounded-3xl p-3.5 sm:p-5 shadow-[0_15px_45px_rgba(0,0,0,0.85)] transition-all duration-300 ease-out cursor-pointer ${
                     diff === 0 ? 'ring-2 ring-orange/60 shadow-sacred-glow' : 'hover:opacity-95'
                   }`}
                 >
                   {/* Radar Wave Effect */}
                   {diff === 0 && (
                     <>
-                      <div className="absolute -inset-1 rounded-3xl bg-orange/20 animate-pulse pointer-events-none" />
-                      <div className="absolute -inset-2 rounded-3xl bg-orange/10 animate-ping opacity-30 pointer-events-none" />
+                      <div className="absolute -inset-1 rounded-2xl sm:rounded-3xl bg-orange/20 animate-pulse pointer-events-none" />
+                      <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-orange/10 animate-ping opacity-30 pointer-events-none" />
                     </>
                   )}
 
                   {/* Header Badge */}
-                  <div className="flex items-center justify-between gap-2 mb-3 relative z-10">
-                    <span className="inline-flex items-center gap-1.5 text-[9px] sm:text-[10px] font-heading font-bold uppercase tracking-wider text-orange bg-orange/15 border border-orange/40 px-2.5 py-1 rounded-full">
-                      <Flame className="w-3.5 h-3.5 text-orange animate-pulse" />
+                  <div className="flex items-center justify-between gap-1.5 mb-2.5 relative z-10">
+                    <span className="inline-flex items-center gap-1 text-[8px] sm:text-[10px] font-heading font-bold uppercase tracking-wider text-orange bg-orange/15 border border-orange/40 px-2 py-0.5 sm:px-2.5 sm:py-1 rounded-full">
+                      <Flame className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange animate-pulse" />
                       <span>{offer.badge}</span>
                     </span>
 
-                    <div className="flex items-center gap-1 text-[9px] font-heading text-peach/80 bg-navy px-2 py-0.5 rounded-full border border-orange/20">
-                      <Clock className="w-3 h-3 text-orange" />
+                    <div className="flex items-center gap-1 text-[8px] sm:text-[9px] font-heading text-peach/80 bg-navy px-1.5 py-0.5 rounded-full border border-orange/20">
+                      <Clock className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-orange" />
                       <span>
                         {String(timer.hours).padStart(2, '0')}:{String(timer.minutes).padStart(2, '0')}:{String(timer.seconds).padStart(2, '0')}
                       </span>
@@ -318,45 +370,45 @@ export function BlogGiftOffers() {
                   </div>
 
                   {/* Image & Main Info */}
-                  <div className="flex gap-3 items-center relative z-10">
-                    <div className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border border-orange/40 shrink-0 bg-white shadow-sm">
+                  <div className="flex gap-2.5 sm:gap-3 items-center relative z-10">
+                    <div className="relative w-14 h-14 sm:w-20 sm:h-20 rounded-xl sm:rounded-2xl overflow-hidden border border-orange/40 shrink-0 bg-white shadow-sm">
                       <img
                         src={offer.image}
                         alt={offer.title}
                         className="w-full h-full object-cover"
                       />
-                      <span className="absolute bottom-0 inset-x-0 text-[7px] font-heading uppercase text-center bg-orange text-navy-deep font-bold py-0.5">
+                      <span className="absolute bottom-0 inset-x-0 text-[6px] sm:text-[7px] font-heading uppercase text-center bg-orange text-navy-deep font-bold py-0.5">
                         {offer.discount}
                       </span>
                     </div>
 
-                    <div className="space-y-1 min-w-0 flex-1">
-                      <h4 className="font-display text-xs sm:text-sm font-bold text-peach line-clamp-2 leading-snug">
+                    <div className="space-y-0.5 sm:space-y-1 min-w-0 flex-1">
+                      <h4 className="font-display text-[11px] sm:text-sm font-bold text-peach line-clamp-2 leading-snug">
                         {offer.title}
                       </h4>
-                      <p className="text-[10px] font-body text-peach/70 line-clamp-1">
+                      <p className="text-[9px] sm:text-[10px] font-body text-peach/70 line-clamp-1">
                         {offer.subtitle}
                       </p>
 
-                      <div className="flex items-center gap-2 pt-0.5">
-                        <span className="text-sm font-heading font-bold text-orange">{offer.price}</span>
-                        <span className="text-[10px] line-through text-peach/50">{offer.originalPrice}</span>
+                      <div className="flex items-center gap-1.5 pt-0.5">
+                        <span className="text-xs sm:text-sm font-heading font-bold text-orange">{offer.price}</span>
+                        <span className="text-[9px] sm:text-[10px] line-through text-peach/50">{offer.originalPrice}</span>
                       </div>
                     </div>
                   </div>
 
                   {/* Perks & CTA Button */}
-                  <div className="mt-3 pt-2.5 border-t border-orange/20 space-y-2 relative z-10">
-                    <p className="text-[10px] font-body text-peach/80 line-clamp-1">
+                  <div className="mt-2.5 sm:mt-3 pt-2 sm:pt-2.5 border-t border-orange/20 space-y-1.5 sm:space-y-2 relative z-10">
+                    <p className="text-[9px] sm:text-[10px] font-body text-peach/80 line-clamp-1">
                       • {offer.perks}
                     </p>
 
                     <Link
                       href={offer.link}
                       onClick={() => setIsOpen(false)}
-                      className="w-full py-2 bg-gradient-to-r from-orange via-orange-bright to-orange text-navy-deep font-heading font-bold text-xs uppercase tracking-widest rounded-xl shadow-md hover:shadow-sacred-glow transition-all flex items-center justify-center gap-1.5"
+                      className="w-full py-1.5 sm:py-2 bg-gradient-to-r from-orange via-orange-bright to-orange text-navy-deep font-heading font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-lg sm:rounded-xl shadow-md hover:shadow-sacred-glow transition-all flex items-center justify-center gap-1.5"
                     >
-                      <ShoppingBag className="w-3.5 h-3.5" />
+                      <ShoppingBag className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
                       <span>Claim Deal Now →</span>
                     </Link>
                   </div>
