@@ -230,7 +230,14 @@ export function ChooseByIntention() {
       }
     }, sectionRef);
 
-    return () => ctx.revert();
+    const handleResize = () => {
+      ScrollTrigger.refresh();
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+      ctx.revert();
+    };
   }, []);
 
   const jumpToTab = (index: number) => {

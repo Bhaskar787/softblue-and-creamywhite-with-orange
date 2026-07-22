@@ -3,8 +3,12 @@ import { useWishlist } from '@/context/WishlistContext';
 import { formatPrice } from '@/lib/utils';
 import { Heart, ShoppingBag, Sparkles } from 'lucide-react';
 import { GiStarSattelites } from 'react-icons/gi';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { Link } from 'wouter';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 interface Product {
   id: string;
@@ -189,6 +193,14 @@ export function BestSellers() {
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
   const [activeTab, setActiveTab] = useState<FilterTab>('New Launches');
+
+  // Refresh GSAP ScrollTrigger whenever activeTab changes so ChooseByIntention pin position updates!
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      ScrollTrigger.refresh();
+    }, 120);
+    return () => clearTimeout(timer);
+  }, [activeTab]);
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
