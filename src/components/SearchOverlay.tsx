@@ -104,7 +104,7 @@ export function SearchOverlay() {
   const handleClose = () => setIsSearchOpen(false);
 
   return (
-    <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 sm:pt-24 md:pt-32 px-3 sm:px-4">
+    <div className="fixed inset-0 z-[150] flex items-start justify-center pt-20 sm:pt-24 md:pt-32 px-3 sm:px-4">
       <div
         className={`absolute inset-0 bg-navy-deep/90 backdrop-blur-md transition-opacity duration-200 ${
           isClosing ? 'opacity-0' : 'opacity-100'

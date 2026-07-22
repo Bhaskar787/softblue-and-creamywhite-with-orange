@@ -227,8 +227,8 @@ export function BlogGiftOffers() {
 
       {/* GIFT BOX TRIGGER & HIGH-PRIORITY CLOSE BUTTON (Positioned z-50 to avoid card overlap) */}
       <div
-        className={`fixed right-3 sm:right-6 z-50 flex items-center transition-all duration-300 ${
-          isOpen ? 'top-16 sm:top-24' : 'top-1/2 -translate-y-1/2'
+        className={`fixed right-3 sm:right-6 z-[120] flex items-center transition-all duration-300 ${
+          isOpen ? 'top-28 sm:top-32 md:top-36' : 'top-1/2 -translate-y-1/2'
         }`}
       >
         {!isOpen ? (

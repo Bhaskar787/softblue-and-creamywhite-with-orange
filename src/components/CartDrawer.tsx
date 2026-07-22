@@ -57,7 +57,7 @@ export function CartDrawer() {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex justify-end"
+      className="fixed inset-0 z-[150] flex justify-end"
       role="dialog"
       aria-modal="true"
       aria-label="Shopping cart"

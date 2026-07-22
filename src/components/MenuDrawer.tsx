@@ -41,7 +41,7 @@ export function MenuDrawer() {
   if (!shouldRender) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex" role="dialog" aria-modal="true" aria-label="Menu">
+    <div className="fixed inset-0 z-[150] flex" role="dialog" aria-modal="true" aria-label="Menu">
       {/* Backdrop */}
       <div
         className={`absolute inset-0 bg-navy-deep/90 backdrop-blur-md transition-opacity duration-300 ${
