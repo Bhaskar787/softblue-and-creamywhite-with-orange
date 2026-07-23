@@ -67,11 +67,11 @@ export function HeroSlider() {
       <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
 
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${isTransitioning ? 'opacity-0' : 'opacity-45'}`}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${isTransitioning ? 'opacity-0' : 'opacity-65'}`}
         style={{ backgroundImage: `url(${slide.image})` }}
       />
       
-      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0E1B26] via-[#0E1B26]/80 to-[#0E1B26]/20 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0E1B26] via-[#0E1B26]/55 to-transparent pointer-events-none" />
 
       {/* Content */}
       <div className="relative z-10 h-auto sm:h-full flex items-center max-w-7xl mx-auto px-3.5 sm:px-6 md:px-12 py-2 sm:py-0">
