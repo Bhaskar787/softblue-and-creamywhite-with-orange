@@ -24,6 +24,8 @@ import { FloatingActions } from '@/components/FloatingActions';
 import { SearchOverlay } from '@/components/SearchOverlay';
 import { CartDrawer } from '@/components/CartDrawer';
 import { WishlistDrawer } from '@/components/WishlistDrawer';
+import { FeaturedCollectionSpotlight } from '@/components/FeaturedCollectionSpotlight';
+import { LeftReviewsDrawer } from '@/components/LeftReviewsDrawer';
 
 export default function HomePage() {
   return (
@@ -34,9 +36,12 @@ export default function HomePage() {
       <main className="flex-1">
         <HeroSlider />
         <TrustStrip />
+       
         <SacredCollections />
         <WhyChoose />
+         <FeaturedCollectionSpotlight />
         <NewLaunchesBanner />
+
         <BestSellers />
         <ChooseByIntention />
         <CategoryShowcase />
@@ -59,6 +64,7 @@ export default function HomePage() {
       <SearchOverlay />
       <CartDrawer />
       <WishlistDrawer />
+      <LeftReviewsDrawer />
 
       {/* Floating action buttons: WhatsApp, Ask AI, Scroll-to-top */}
       <FloatingActions />

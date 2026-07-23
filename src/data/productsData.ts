@@ -16,6 +16,8 @@ export interface Product {
   isFeatured?: boolean;
   isNewLaunch?: boolean;
   isBestSeller?: boolean;
+  specifications?: Record<string, string>;
+  benefits?: string[];
 }
 
 export const ALL_CATEGORIES = [
@@ -68,7 +70,7 @@ export const PROMO_OFFERS = [
 ];
 
 export const productsData: Product[] = [
-  // ── Rudraksha & Variants: Rudraksha Beads ─────────────────────
+  // ── 1. Rudraksha & Variants: Rudraksha Beads ─────────────────────
   {
     id: 'rud-b-1',
     name: '1 Mukhi Savar Rudraksha Bead (Nepal)',
@@ -86,6 +88,8 @@ export const productsData: Product[] = [
     inStock: true,
     isFeatured: true,
     isNewLaunch: true,
+    benefits: ['Brings extreme mental clarity', 'Attracts supreme spiritual energy', 'Removes fear and anxiety'],
+    specifications: { 'Ruling Deity': 'Lord Shiva', 'Ruling Planet': 'Sun', 'Origin': 'Nepal', 'Certification': 'IRL Lab Certified' }
   },
   {
     id: 'rud-b-2',
@@ -103,6 +107,8 @@ export const productsData: Product[] = [
     stockCount: 5,
     inStock: true,
     isFeatured: true,
+    benefits: ['Harmonizes marital relationships', 'Balances Moon energies', 'Enhances inner calm'],
+    specifications: { 'Ruling Deity': 'Ardhanarishvara', 'Ruling Planet': 'Moon', 'Origin': 'Nepal', 'Certification': 'X-Ray Certified' }
   },
   {
     id: 'rud-b-3',
@@ -110,7 +116,7 @@ export const productsData: Product[] = [
     category: 'Rudraksha & Variants',
     subCategory: 'Rudraksha Beads',
     origin: 'Nepal',
-    desc: 'Ruled by Lord Agni. Clears past karma, boosts confidence, and purifies mind and spirit. Ruled by Lord Agni. Clears past karma, boosts confidence, and purifies mind and spirit. Ruled by Lord Agni. Clears past karma, boosts confidence, and purifies mind and spirit. Ruled by Lord Agni. Clears past karma, boosts confidence, and purifies mind and spirit.',
+    desc: 'Ruled by Lord Agni. Clears past karma, boosts self-confidence, and purifies mind, body and spirit.',
     price: 1586,
     originalPrice: 1999,
     rating: 4.8,
@@ -119,6 +125,8 @@ export const productsData: Product[] = [
     badge: 'Bestseller',
     stockCount: 18,
     inStock: true,
+    benefits: ['Destroys past karmic burdens', 'Ignites digestive fire & vitality', 'Eliminates laziness'],
+    specifications: { 'Ruling Deity': 'Lord Agni', 'Ruling Planet': 'Mars', 'Origin': 'Nepal', 'Certification': 'Government Certified' }
   },
   {
     id: 'rud-b-5',
@@ -126,7 +134,7 @@ export const productsData: Product[] = [
     category: 'Rudraksha & Variants',
     subCategory: 'Rudraksha Beads',
     origin: 'Nepal',
-    desc: 'Most widely worn Rudraksha. Promotes mental peace, good health, and overall well-being.',
+    desc: 'Most widely worn Rudraksha. Promotes mental peace, healthy blood pressure, and overall well-being.',
     price: 794,
     originalPrice: 999,
     rating: 4.9,
@@ -136,6 +144,26 @@ export const productsData: Product[] = [
     stockCount: 45,
     inStock: true,
     isBestSeller: true,
+    benefits: ['Normalizes blood pressure', 'Protects against premature negative thoughts', 'Enhances concentration'],
+    specifications: { 'Ruling Deity': 'Kalagni Rudra', 'Ruling Planet': 'Jupiter', 'Origin': 'Nepal', 'Certification': 'Authentic Seed Test Passed' }
+  },
+  {
+    id: 'rud-b-7',
+    name: '7 Mukhi Mahalaxmi Rudraksha Bead',
+    category: 'Rudraksha & Variants',
+    subCategory: 'Rudraksha Beads',
+    origin: 'Nepal',
+    desc: 'Blessed by Goddess Mahalaxmi. Attracts financial abundance, career growth, and removes Saturn dosha.',
+    price: 2850,
+    originalPrice: 3500,
+    rating: 4.9,
+    reviews: 88,
+    image: 'https://images.pexels.com/photos/31430346/pexels-photo-31430346.jpeg?auto=compress&cs=tinysrgb&w=600',
+    badge: 'Wealth Bead',
+    stockCount: 12,
+    inStock: true,
+    benefits: ['Unlocks wealth opportunities', 'Mitigates Shani Sade Sati', 'Improves business success'],
+    specifications: { 'Ruling Deity': 'Goddess Mahalaxmi', 'Ruling Planet': 'Saturn', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
   },
   {
     id: 'rud-b-14',
@@ -153,9 +181,11 @@ export const productsData: Product[] = [
     stockCount: 3,
     inStock: true,
     isFeatured: true,
+    benefits: ['Awakens sixth sense & intuition', 'Bestows courage and strength', 'Protects against black magic'],
+    specifications: { 'Ruling Deity': 'Lord Hanuman', 'Ruling Planet': 'Saturn & Mars', 'Origin': 'Nepal', 'Certification': 'X-Ray Verified' }
   },
 
-  // ── Rudraksha & Variants: Rudraksha Mala ──────────────────────
+  // ── 2. Rudraksha & Variants: Rudraksha Mala ──────────────────────
   {
     id: 'rud-m-1',
     name: '108 Bead 5 Mukhi Nepal Japa Mala',
@@ -172,6 +202,8 @@ export const productsData: Product[] = [
     stockCount: 22,
     inStock: true,
     isBestSeller: true,
+    benefits: ['Ideal for daily Shiva mantra Japa', 'Cools the bodily system', 'Spiritual energy reservoir'],
+    specifications: { 'Bead Count': '108 + 1 Bindu', 'Bead Size': '8mm', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
   },
   {
     id: 'rud-m-2',
@@ -179,7 +211,7 @@ export const productsData: Product[] = [
     category: 'Rudraksha & Variants',
     subCategory: 'Rudraksha Mala',
     origin: 'Nepal',
-    desc: 'Blessed with 11 Rudras for fearlessness, spiritual discipline, and sharp focus.',
+    desc: 'Blessed with 11 Rudras for fearlessness, spiritual discipline, and sharp focus during meditation.',
     price: 14990,
     originalPrice: 18500,
     rating: 4.9,
@@ -189,9 +221,47 @@ export const productsData: Product[] = [
     stockCount: 8,
     inStock: true,
     isNewLaunch: true,
+    benefits: ['Invokes 11 divine Rudra energies', 'Enhances yogic power', 'Brings victory in legal matters'],
+    specifications: { 'Bead Count': '108 Beads', 'Bead Size': '10mm', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
+  },
+  {
+    id: 'rud-m-3',
+    name: 'Chikna 5 Mukhi Smooth Meditation Mala (108+1)',
+    category: 'Rudraksha & Variants',
+    subCategory: 'Rudraksha Mala',
+    origin: 'Java',
+    desc: 'Lightweight and smooth Java origin 5 Mukhi beads carefully knotted with red thread and tassel.',
+    price: 2450,
+    originalPrice: 3200,
+    rating: 4.8,
+    reviews: 95,
+    image: 'https://images.pexels.com/photos/18723426/pexels-photo-18723426.jpeg?auto=compress&cs=tinysrgb&w=600',
+    badge: 'Meditation Essential',
+    stockCount: 30,
+    inStock: true,
+    benefits: ['Comfortable for long meditation hours', 'Promotes calmness', 'Durable stringing'],
+    specifications: { 'Bead Count': '108 + 1', 'Bead Size': '6mm', 'Origin': 'Java', 'Certification': 'Authentic Seed Test' }
+  },
+  {
+    id: 'rud-m-4',
+    name: '7 Mukhi Mahalakshmi Wealth Japa Mala',
+    category: 'Rudraksha & Variants',
+    subCategory: 'Rudraksha Mala',
+    origin: 'Nepal',
+    desc: '108 Natural 7 Mukhi Nepal beads hand-bound for invoking sustained wealth and business luck.',
+    price: 18500,
+    originalPrice: 22000,
+    rating: 5.0,
+    reviews: 24,
+    image: 'https://m.media-amazon.com/images/I/815Ynn0E9wL._AC_UF1000,1000_QL80_.jpg',
+    badge: 'Wealth & Success',
+    stockCount: 5,
+    inStock: true,
+    benefits: ['Attracts commercial prosperity', 'Dissolves financial stagnancy', 'Blesses with prosperity'],
+    specifications: { 'Bead Count': '108 Beads', 'Bead Size': '12mm', 'Origin': 'Nepal', 'Certification': 'X-Ray Certified' }
   },
 
-  // ── Rudraksha & Variants: Siddha Mala ─────────────────────────
+  // ── 3. Rudraksha & Variants: Siddha Mala ─────────────────────────
   {
     id: 'sid-m-1',
     name: 'Sarva Siddha Mala (1 to 14 Mukhi + Gauri Shankar + Ganesh)',
@@ -208,6 +278,8 @@ export const productsData: Product[] = [
     stockCount: 2,
     inStock: true,
     isFeatured: true,
+    benefits: ['Complete 9-planetary balance', 'Fulfills all righteous desires', 'Supreme protection for family'],
+    specifications: { 'Mukhi Range': '1 to 14 Mukhi + GS + Ganesh', 'Metal': 'Pure Capped Thread/Silver', 'Origin': 'Nepal', 'Certification': 'Individual Bead X-Ray Certs' }
   },
   {
     id: 'sid-m-2',
@@ -220,13 +292,33 @@ export const productsData: Product[] = [
     originalPrice: 42000,
     rating: 4.8,
     reviews: 64,
-    image: 'https://images.pexels.com/photos/18723426/pexels-photo-18723426.jpeg?auto=compress&cs=tinysrgb&w=600',
+    image: 'https://himalayarudraksh.online/cdn/shop/files/1-13-mukhi-shiv-shakti-rudraksha-mala-nepal-origin-499218.png?v=1750001216&width=3840',
     badge: 'Best Value',
     stockCount: 6,
     inStock: true,
+    benefits: ['Smooth comfortable daily wear', 'All chakra activation', 'Budget friendly power mala'],
+    specifications: { 'Mukhi Range': '1 to 14 Mukhi Java', 'Origin': 'Java', 'Certification': 'Lab Certified' }
+  },
+  {
+    id: 'sid-m-3',
+    name: 'Pashupatinath Maha Siddha Mala (1 to 21 Mukhi Nepal)',
+    category: 'Rudraksha & Variants',
+    subCategory: 'Siddha Mala',
+    origin: 'Nepal',
+    desc: 'Rare royal collection comprising 1 to 21 Mukhi collector Nepali seeds. Worn by spiritual leaders & monarchs.',
+    price: 485000,
+    originalPrice: 550000,
+    rating: 5.0,
+    reviews: 9,
+    image: 'https://images.pexels.com/photos/31471596/pexels-photo-31471596.jpeg?auto=compress&cs=tinysrgb&w=600',
+    badge: 'Royal Collector',
+    stockCount: 1,
+    inStock: true,
+    benefits: ['Grandest spiritual empowerment', 'Supreme prosperity and sovereignty', 'Highest vibrational aura'],
+    specifications: { 'Mukhi Range': '1 to 21 Mukhi', 'Origin': 'Nepal (Arun Valley)', 'Certification': 'GIA & IGI Verified' }
   },
 
-  // ── Rudraksha & Variants: Rudraksha Bracelet ──────────────────
+  // ── 4. Rudraksha & Variants: Rudraksha Bracelet ──────────────────
   {
     id: 'rud-br-1',
     name: '925 Sterling Silver 5 Mukhi Rudraksha Bracelet',
@@ -243,6 +335,8 @@ export const productsData: Product[] = [
     stockCount: 15,
     inStock: true,
     isBestSeller: true,
+    benefits: ['Sleek modern spiritual design', 'Maintains energetic balance', 'Tarnish-free 925 silver'],
+    specifications: { 'Metal': '925 Sterling Silver', 'Bead Size': '10mm', 'Origin': 'Nepal', 'Certification': 'Silver Hallmarked' }
   },
   {
     id: 'rud-br-2',
@@ -260,9 +354,29 @@ export const productsData: Product[] = [
     stockCount: 10,
     inStock: true,
     isNewLaunch: true,
+    benefits: ['Empowers physical courage', 'Removes fear of failure', 'Protects from negative energies'],
+    specifications: { 'Center Bead': '14 Mukhi Nepal', 'Metal': 'Silver Capped', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
+  },
+  {
+    id: 'rud-br-3',
+    name: '7 Mukhi Mahalakshmi Silver Adjustable Wristlet',
+    category: 'Rudraksha & Variants',
+    subCategory: 'Rudraksha Bracelet',
+    origin: 'Nepal',
+    desc: 'Single natural 7 Mukhi bead framed in intricate filigree silver casing with adjustable chain link.',
+    price: 4250,
+    originalPrice: 5200,
+    rating: 4.8,
+    reviews: 62,
+    image: 'https://japam.in/cdn/shop/files/Gold_plated_Modern_Bracelet_and_Brown_Rudraksha_Mala_combo.jpg?v=1726560930&width=1214',
+    badge: 'Wealth & Charm',
+    stockCount: 14,
+    inStock: true,
+    benefits: ['Attracts financial luck', 'Elegant everyday wear', 'Adjustable wrist fit'],
+    specifications: { 'Center Bead': '7 Mukhi Nepal', 'Metal': 'Silver Plated/925', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
   },
 
-  // ── Rudraksha & Variants: Combination & Kawach ────────────────
+  // ── 5. Rudraksha & Variants: Combination & Kawach ────────────────
   {
     id: 'rud-c-1',
     name: 'Dhan Laxmi Prosperity Kawach (7 + 10 + 13 Mukhi)',
@@ -278,9 +392,47 @@ export const productsData: Product[] = [
     badge: 'Featured',
     stockCount: 7,
     inStock: true,
+    benefits: ['Unlocks wealth & career doors', 'Protects from negative intentions', 'Enhances social magnetic charm'],
+    specifications: { 'Combination': '7, 10, 13 Mukhi Nepal', 'Design': 'Silver Capped Pendant', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
+  },
+  {
+    id: 'rud-c-2',
+    name: 'Swasthya Health & Healing Kawach (3 + 5 + 11 Mukhi)',
+    category: 'Rudraksha & Variants',
+    subCategory: 'Combination & Kawach',
+    origin: 'Nepal',
+    desc: 'Specially crafted energetic set designed to purify blood, boost immunity, and clear anxiety.',
+    price: 8500,
+    originalPrice: 10500,
+    rating: 4.9,
+    reviews: 38,
+    image: 'https://images.unsplash.com/photo-1650809652935-2e5002ba40bf?auto=format&fit=crop&w=600&q=80',
+    badge: 'Health Armor',
+    stockCount: 11,
+    inStock: true,
+    benefits: ['Restores bodily vitality', 'Purifies energy meridians', 'Calms nerve strain'],
+    specifications: { 'Combination': '3, 5, 11 Mukhi', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
+  },
+  {
+    id: 'rud-c-3',
+    name: 'Saraswati Wisdom & Focus Kawach (4 + 6 Mukhi Twin)',
+    category: 'Rudraksha & Variants',
+    subCategory: 'Combination & Kawach',
+    origin: 'Nepal',
+    desc: 'Blessed by Goddess Saraswati and Lord Kartikeya. Ideal for students, scholars, and creative thinkers.',
+    price: 5990,
+    originalPrice: 7500,
+    rating: 5.0,
+    reviews: 84,
+    image: 'https://images.pexels.com/photos/18723427/pexels-photo-18723427.jpeg?auto=compress&cs=tinysrgb&w=600',
+    badge: 'Student Special',
+    stockCount: 16,
+    inStock: true,
+    benefits: ['Sharpens memory power', 'Enhances vocal expression', 'Removes exam nervousness'],
+    specifications: { 'Combination': '4 Mukhi & 6 Mukhi', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
   },
 
-  // ── Saligram ──────────────────────────────────────────────────
+  // ── 6. Saligram ──────────────────────────────────────────────────
   {
     id: 'sal-1',
     name: 'Authentic Gandaki River Lakshmi Narayan Shaligram Shila',
@@ -297,6 +449,8 @@ export const productsData: Product[] = [
     inStock: true,
     isFeatured: true,
     isNewLaunch: true,
+    benefits: ['Installs permanent presence of Lord Vishnu', 'Blesses home with peace', 'Purifies home Vastu'],
+    specifications: { 'Shila Type': 'Lakshmi Narayan', 'Location': 'Kali Gandaki River, Mustang', 'Weight': '280 grams', 'Authenticity': '100% Non-Carved Natural' }
   },
   {
     id: 'sal-2',
@@ -308,13 +462,32 @@ export const productsData: Product[] = [
     originalPrice: 11000,
     rating: 4.9,
     reviews: 33,
-    image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
     badge: 'Lab Verified',
     stockCount: 6,
     inStock: true,
+    benefits: ['Destroys evil eye & negative energies', 'Shields residence', 'Ideal for daily Tulsi Abhishekam'],
+    specifications: { 'Shila Type': 'Sudarshan Chakra', 'Accessories': 'Pure Silver Display Pedestal', 'Weight': '190 grams', 'Origin': 'Mustang, Nepal' }
+  },
+  {
+    id: 'sal-3',
+    name: 'Hayagriva Wisdom & Intellect Shaligram Shila',
+    category: 'Saligram',
+    origin: 'Nepal',
+    desc: 'Rare natural formation representing Lord Hayagriva. Invokes divine knowledge, speech mastery, and victory.',
+    price: 16500,
+    originalPrice: 20000,
+    rating: 5.0,
+    reviews: 18,
+    image: 'https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80',
+    badge: 'Rare Formation',
+    stockCount: 2,
+    inStock: true,
+    benefits: ['Grants supreme academic success', 'Awakens higher wisdom', 'Purifies intellect'],
+    specifications: { 'Shila Type': 'Hayagriva Shila', 'Origin': 'Gandaki River', 'Authenticity': 'Self-Manifested (Swayambhu)' }
   },
 
-  // ── Shankha & Ghanti ──────────────────────────────────────────
+  // ── 7. Shankha & Ghanti ──────────────────────────────────────────
   {
     id: 'shk-1',
     name: 'Natural Vamavarti Sacred Ritual Blowing Shankha (Conch)',
@@ -330,6 +503,8 @@ export const productsData: Product[] = [
     stockCount: 12,
     inStock: true,
     isBestSeller: true,
+    benefits: ['Purifies atmosphere with Om acoustic vibration', 'Expands lung capacity when blown', 'Dispels negative energies'],
+    specifications: { 'Type': 'Vamavarti Blowing Shankha', 'Length': '7.5 Inches', 'Sound Tone': 'Deep Resonant Om', 'Material': 'Natural Ocean Conch' }
   },
   {
     id: 'shk-2',
@@ -341,13 +516,32 @@ export const productsData: Product[] = [
     originalPrice: 2800,
     rating: 4.9,
     reviews: 142,
-    image: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
     badge: 'Handmade',
     stockCount: 20,
     inStock: true,
+    benefits: ['Clears heavy atmospheric energies', 'Creates peaceful sanctuary tone', 'Durable Panchdhatu alloy'],
+    specifications: { 'Composition': '5-Metal Panchdhatu Brass', 'Height': '6 Inches', 'Weight': '450 grams', 'Top Figure': 'Nandi Bull' }
+  },
+  {
+    id: 'shk-3',
+    name: 'Dakshinavarti Lakshmi Wealth Conch Shell',
+    category: 'Shankha & Ghanti',
+    origin: 'India',
+    desc: 'Extremely rare right-handed Valampuri Shankha. Kept in altars to draw perpetual financial grace.',
+    price: 18500,
+    originalPrice: 24000,
+    rating: 5.0,
+    reviews: 29,
+    image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
+    badge: 'Rare Wealth Conch',
+    stockCount: 3,
+    inStock: true,
+    benefits: ['Brings Goddess Lakshmi blessing', 'Kept in cash box or mandir', 'Non-blowing sacred idol'],
+    specifications: { 'Type': 'Right Handed Dakshinavarti', 'Length': '6 Inches', 'Certification': 'Natural Shell Guaranteed' }
   },
 
-  // ── Singing Bowl ──────────────────────────────────────────────
+  // ── 8. Singing Bowl ──────────────────────────────────────────────
   {
     id: 'sng-1',
     name: '7 Chakra Hand-Beaten Tibetan Singing Bowl Set (7-inch)',
@@ -363,13 +557,15 @@ export const productsData: Product[] = [
     stockCount: 9,
     inStock: true,
     isFeatured: true,
+    benefits: ['Balances 7 body chakras', 'Relieves chronic stress & insomnia', 'Tuned to 432Hz harmonic scale'],
+    specifications: { 'Diameter': '7 Inches', 'Material': '7-Metal Bronze Alloy', 'Accessories': 'Rosewood Striker & Cushion', 'Origin': 'High Plateau Tibet' }
   },
   {
     id: 'sng-2',
     name: 'Full Moon Energized Tibetan Healing Singing Bowl',
     category: 'Singing Bowl',
     origin: 'Nepal',
-    desc: 'Handcrafted exclusively on Full Moon nights in Kathmandu Valley. Reverberates long harmonic tones for deep meditation and stress release.',
+    desc: 'Handcrafted exclusively on Full Moon nights in Kathmandu Valley. Reverberates long harmonic tones for deep meditation.',
     price: 11490,
     originalPrice: 14000,
     rating: 4.9,
@@ -378,9 +574,28 @@ export const productsData: Product[] = [
     badge: 'Full Moon Edition',
     stockCount: 4,
     inStock: true,
+    benefits: ['Infused with lunar prana', 'Long sustain vibration (>45 seconds)', 'Ideal for sound baths'],
+    specifications: { 'Crafting': 'Full Moon Night Hammered', 'Diameter': '9 Inches', 'Frequency': 'Solffeggio Frequencies', 'Origin': 'Kathmandu Valley' }
+  },
+  {
+    id: 'sng-3',
+    name: 'Engraved Om Mani Padme Hum Meditation Bowl',
+    category: 'Singing Bowl',
+    origin: 'Nepal',
+    desc: 'Beautifully etched Tibetan mantra bowl with golden relief details and soothing acoustic resonance.',
+    price: 4950,
+    originalPrice: 6200,
+    rating: 4.8,
+    reviews: 81,
+    image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=600&q=80',
+    badge: 'Mantra Etched',
+    stockCount: 15,
+    inStock: true,
+    benefits: ['Ease into deep meditative trance', 'Stunning artistic decor piece', 'Smooth sustained ring'],
+    specifications: { 'Diameter': '5.5 Inches', 'Inscriptions': 'Om Mani Padme Hum', 'Includes': 'Padded Mallet' }
   },
 
-  // ── Gemstone ──────────────────────────────────────────────────
+  // ── 9. Gemstone ──────────────────────────────────────────────────
   {
     id: 'gem-1',
     name: 'Certified Natural Ceylon Yellow Sapphire (Pukhraj) 5.25 Ratti',
@@ -395,6 +610,8 @@ export const productsData: Product[] = [
     badge: 'IGI Certified',
     stockCount: 3,
     inStock: true,
+    benefits: ['Empowers Jupiter (Guru) planet', 'Attracts higher education & wealth', 'Promotes harmonious marriage'],
+    specifications: { 'Gem Species': 'Natural Corundum', 'Weight': '5.25 Ratti / 4.8 Carats', 'Clarity': 'Eye Clean AAA+', 'Certification': 'IGI / GIA Lab Certificate' }
   },
   {
     id: 'gem-2',
@@ -410,9 +627,28 @@ export const productsData: Product[] = [
     badge: 'Navagraha Shield',
     stockCount: 8,
     inStock: true,
+    benefits: ['Harmonizes all 9 planets simultaneously', 'Prevents negative planetary transits', 'Premium silver ring frame'],
+    specifications: { 'Gems Included': 'Ruby, Pearl, Coral, Emerald, Yellow Sapphire, Diamond/Zircon, Blue Sapphire, Hessonite, Cat Eye', 'Metal': '925 Silver' }
+  },
+  {
+    id: 'gem-3',
+    name: 'Natural Zambian Emerald (Panna) 4.5 Ratti',
+    category: 'Gemstone',
+    origin: 'India',
+    desc: 'Deep vibrant green untreated natural Emerald. Ruled by Mercury for sharp intelligence, communication, and business success.',
+    price: 28900,
+    originalPrice: 34000,
+    rating: 5.0,
+    reviews: 41,
+    image: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&w=600&q=80',
+    badge: 'Mercury Gem',
+    stockCount: 4,
+    inStock: true,
+    benefits: ['Sharpens intellect & communication', 'Boosts business trade profits', 'Calms speech stutter'],
+    specifications: { 'Gem Species': 'Natural Beryl Emerald', 'Weight': '4.5 Ratti', 'Color': 'Deep Lush Green', 'Certification': 'Government Lab Certified' }
   },
 
-  // ── Statue & Sphatik ──────────────────────────────────────────
+  // ── 10. Statue & Sphatik ──────────────────────────────────────────
   {
     id: 'sph-1',
     name: 'Natural Pure Sphatik (Quartz Crystal) Shivling (150 grams)',
@@ -428,6 +664,8 @@ export const productsData: Product[] = [
     stockCount: 11,
     inStock: true,
     isBestSeller: true,
+    benefits: ['Radiates soothing cooling energy', 'Removes electrostatic & mental stress', 'Ideal for Panchamrut Abhishekam'],
+    specifications: { 'Material': '100% Natural Himalayan Quartz Crystal', 'Weight': '150 grams', 'Clarity': 'High Transparency', 'Origin': 'Himalayan Ranges' }
   },
   {
     id: 'sph-2',
@@ -443,9 +681,28 @@ export const productsData: Product[] = [
     badge: 'Artisan Crafted',
     stockCount: 14,
     inStock: true,
+    benefits: ['Removes obstacles (Vighnaharta)', 'Attracts new beginnings', 'Solid heavy metal build'],
+    specifications: { 'Material': 'Panchdhatu (Gold, Silver, Copper, Zinc, Iron)', 'Height': '6 Inches', 'Weight': '780 grams' }
+  },
+  {
+    id: 'sph-3',
+    name: 'Himalayan Crystal Sphatik Mala 108 Beads',
+    category: 'Statue & Sphatik',
+    origin: 'India',
+    desc: 'Cooling natural clear quartz 108 bead mala for Japa of Goddess Lakshmi & Saraswati.',
+    price: 5500,
+    originalPrice: 6800,
+    rating: 4.9,
+    reviews: 64,
+    image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80',
+    badge: 'Lab Certified',
+    stockCount: 9,
+    inStock: true,
+    benefits: ['Lowers body heat & hypertension', 'Promotes serene focus', 'Pure diamond cut beads'],
+    specifications: { 'Bead Count': '108 + 1', 'Bead Size': '8mm', 'Certification': 'Gem Testing Lab Certified' }
   },
 
-  // ── Pooja Samagri ─────────────────────────────────────────────
+  // ── 11. Pooja Samagri ─────────────────────────────────────────────
   {
     id: 'ps-1',
     name: 'Sacred Pashupatinath Abhishekam Pooja Box Set',
@@ -456,11 +713,13 @@ export const productsData: Product[] = [
     originalPrice: 3200,
     rating: 4.9,
     reviews: 215,
-    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
     badge: 'Complete Ritual Kit',
     stockCount: 30,
     inStock: true,
     isBestSeller: true,
+    benefits: ['Everything required for authentic Abhishekam', 'Sourced directly from Pashupatinath', 'Pure organic ingredients'],
+    specifications: { 'Contents': 'Chandan, Bhasma, Gangajal, Kumkum, Dhoop, Diya', 'Origin': 'Kathmandu, Nepal', 'Shelf Life': '24 Months' }
   },
   {
     id: 'ps-2',
@@ -476,5 +735,24 @@ export const productsData: Product[] = [
     badge: 'Organic Pure',
     stockCount: 40,
     inStock: true,
+    benefits: ['Divine natural aroma', 'Cools forehead chakra', 'Authentic daily puja ingredient'],
+    specifications: { 'Quantity': '100 Grams Glass Jar', 'Ingredients': 'White Sandalwood & Kashmiri Kesar', 'Origin': 'Nepal' }
+  },
+  {
+    id: 'ps-3',
+    name: 'Original Sacred Holy Gangajal Water from Gangotri (500ml)',
+    category: 'Pooja Samagri',
+    origin: 'India',
+    desc: 'Untouched pure glacial water sealed at Gangotri origin. Used for cleansing Rudraksha beads and consecration.',
+    price: 550,
+    originalPrice: 750,
+    rating: 5.0,
+    reviews: 310,
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
+    badge: 'Gangotri Origin',
+    stockCount: 50,
+    inStock: true,
+    benefits: ['Purifies any space or item instantly', 'Sealed non-perishable holy water', 'Rich in natural minerals'],
+    specifications: { 'Volume': '500 ml Copper Plated Container', 'Origin': 'Gangotri Dham' }
   },
 ];

@@ -469,73 +469,60 @@ export default function AllProductsPage() {
       <AnnouncementBar />
       <Navbar />
 
-      {/* Main Layout (Left Edge Sidebar + Right Products Grid Area) */}
-      <div className="flex-1 flex flex-col md:flex-row w-full min-h-[calc(100vh-140px)]">
-        
-        {/* DESKTOP LEFT CORNER SIDEBAR (Matching Image 2 flush layout) */}
-        <aside className="hidden md:block w-72 lg:w-80 shrink-0 bg-white border-r border-gray-200/90 p-5 lg:p-6 min-h-full">
-          <FilterSidebarContent />
-        </aside>
-
-        {/* RIGHT MAIN CONTENT AREA */}
-        <main className="flex-1 p-4 sm:p-6 md:p-8 pb-16 sm:pb-24 space-y-6 max-w-full overflow-x-hidden">
+      {/* ── STICKY HANGING TOP SEARCH, FILTER & SORT BAR UNDER NAVBAR ── */}
+      <div className="bg-white/95 backdrop-blur-md border-b border-orange/20 sticky top-16 sm:top-20 z-40 shadow-xs py-3 px-4 sm:px-6 md:px-8 transition-all duration-300">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-center relative gap-3 sm:gap-4">
           
-          {/* Top Search Input Bar (Matching Image 2) */}
-          <div className="bg-white border border-gray-200/80 rounded-xl p-3 sm:p-4 shadow-sm flex flex-col sm:flex-row items-center justify-between gap-4">
-            
-            {/* Search Input Box */}
-            <div className="relative w-full max-w-xl">
-              <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-gray-400" />
-              <input
-                type="text"
-                value={searchQuery}
-                onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search products..."
-                className="w-full pl-10 pr-9 py-2.5 bg-[#faf7f4] border border-gray-200 rounded-lg text-xs sm:text-sm font-sans text-navy focus:outline-none focus:border-navy-deep transition-all"
-              />
-              {searchQuery && (
-                <button
-                  onClick={() => setSearchQuery('')}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-navy"
-                >
-                  <X className="w-4 h-4" />
-                </button>
-              )}
-            </div>
-
-            {/* Mobile Filter Drawer Button */}
-            <button
-              onClick={() => setIsMobileFilterOpen(true)}
-              className="md:hidden w-full sm:w-auto flex items-center justify-center gap-2 px-4 py-2.5 bg-navy-deep text-white rounded-lg text-xs font-sans font-bold uppercase tracking-wider"
-            >
-              <SlidersHorizontal className="w-4 h-4" />
-              <span>Filters</span>
-            </button>
-
+          {/* Centered Search Input Box */}
+          <div className="relative w-full md:w-1/2 lg:w-5/12 mx-auto">
+            <Search className="w-4 h-4 absolute left-3.5 top-1/2 -translate-y-1/2 text-navy/40" />
+            <input
+              type="text"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              placeholder="Search all products by name, Mukhi, category, origin..."
+              className="w-full pl-10 pr-9 py-2 sm:py-2.5 bg-[#faf7f4] border border-orange/25 rounded-xl text-xs sm:text-sm font-body text-navy focus:outline-none focus:border-orange transition-all shadow-2xs"
+            />
+            {searchQuery && (
+              <button
+                onClick={() => setSearchQuery('')}
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-navy/40 hover:text-navy"
+              >
+                <X className="w-4 h-4" />
+              </button>
+            )}
           </div>
 
-          {/* Title Header & Counter Bar */}
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-200 pb-4">
-            <div>
-              <h1 className="font-sans font-bold text-2xl sm:text-3xl text-navy-deep tracking-tight">
-                {selectedCategory === 'All Categories' ? 'All Products' : selectedCategory}
-              </h1>
-              <p className="text-xs sm:text-sm font-sans text-gray-600 mt-1">
-                Showing 1 - <span className="font-bold text-navy">{sortedProducts.length}</span> of{' '}
-                <span className="font-bold text-navy">{productsData.length}</span> products
-              </p>
-            </div>
+          {/* Controls: Filter Button (Mobile Only), Sort Selector, Clear All (Right-aligned on Desktop) */}
+          <div className="flex items-center gap-2.5 w-full md:w-auto md:absolute md:right-0 justify-between md:justify-end shrink-0">
+            {/* Filter Toggle Button (MOBILE ONLY - Hidden on Desktop) */}
+            <button
+              onClick={() => setIsMobileFilterOpen(true)}
+              className="md:hidden flex items-center justify-center gap-2 px-3.5 py-2 bg-navy-deep hover:bg-navy text-white rounded-xl text-xs font-heading font-bold uppercase tracking-wider transition-colors shadow-xs"
+            >
+              <SlidersHorizontal className="w-3.5 h-3.5 text-orange" />
+              <span>Filters</span>
+              {(selectedCategory !== 'All Categories' ||
+                selectedSubCategories.length > 0 ||
+                selectedProductTypes.length > 0 ||
+                selectedOrigins.length > 0 ||
+                searchQuery !== '' ||
+                inStockOnly ||
+                isCollectorOnly) && (
+                <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
+              )}
+            </button>
 
-            {/* Right Sort By Dropdown Selector */}
-            <div className="flex items-center gap-2 shrink-0">
-              <span className="text-xs font-sans font-medium text-gray-600 uppercase tracking-wider">
-                Sort by:
+            {/* Sort Dropdown Selector */}
+            <div className="flex items-center gap-1.5 shrink-0">
+              <span className="hidden sm:inline text-xs font-heading font-bold uppercase tracking-wider text-navy/60">
+                Sort:
               </span>
               <div className="relative">
                 <select
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value as SortOption)}
-                  className="appearance-none bg-white border border-gray-300 text-navy font-sans font-medium text-xs px-3 py-2 pr-8 rounded-md focus:outline-none cursor-pointer shadow-sm"
+                  className="appearance-none bg-[#faf7f4] border border-orange/25 text-navy font-heading font-bold text-xs uppercase tracking-wider px-3 py-2 pr-8 rounded-xl focus:outline-none cursor-pointer shadow-2xs"
                 >
                   {sortOptionsList.map((opt) => (
                     <option key={opt.value} value={opt.value}>
@@ -543,8 +530,51 @@ export default function AllProductsPage() {
                     </option>
                   ))}
                 </select>
-                <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 text-gray-500 pointer-events-none" />
+                <ChevronDown className="w-3.5 h-3.5 absolute right-2.5 top-1/2 -translate-y-1/2 text-orange pointer-events-none" />
               </div>
+            </div>
+
+            {/* Reset Filters Button */}
+            {(selectedCategory !== 'All Categories' ||
+              selectedSubCategories.length > 0 ||
+              selectedProductTypes.length > 0 ||
+              selectedOrigins.length > 0 ||
+              searchQuery !== '' ||
+              inStockOnly ||
+              isCollectorOnly) && (
+              <button
+                onClick={handleResetFilters}
+                className="flex items-center gap-1 text-xs font-heading font-bold text-orange hover:underline px-2 py-1"
+              >
+                <RotateCcw className="w-3 h-3" /> Reset
+              </button>
+            )}
+          </div>
+
+        </div>
+      </div>
+
+      {/* Main Layout (Left Edge Sidebar + Right Products Grid Area) */}
+      <div className="flex-1 flex flex-col md:flex-row w-full min-h-[calc(100vh-140px)]">
+        
+        {/* DESKTOP LEFT CORNER STICKY SIDEBAR */}
+        <aside className="hidden md:block w-72 lg:w-80 shrink-0 bg-white border-r border-orange/20 p-5 lg:p-6 sticky top-36 sm:top-40 max-h-[calc(100vh-160px)] overflow-y-auto">
+          <FilterSidebarContent />
+        </aside>
+
+        {/* RIGHT MAIN CONTENT AREA */}
+        <main className="flex-1 p-4 sm:p-6 md:p-8 pb-16 sm:pb-24 space-y-6 max-w-full overflow-x-hidden">
+
+          {/* Title Header & Counter Bar */}
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-orange/20 pb-4">
+            <div>
+              <h1 className="font-display font-bold text-2xl sm:text-3xl text-navy-deep tracking-tight">
+                {selectedCategory === 'All Categories' ? 'All Products' : selectedCategory}
+              </h1>
+              <p className="text-xs sm:text-sm font-body text-navy/70 mt-1">
+                Showing 1 - <span className="font-bold text-navy">{sortedProducts.length}</span> of{' '}
+                <span className="font-bold text-navy">{productsData.length}</span> products
+              </p>
             </div>
           </div>
 

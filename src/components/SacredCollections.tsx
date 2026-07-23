@@ -56,11 +56,11 @@ const newLaunches: NewLaunchItem[] = [
 import { Link } from 'wouter';
 
 const collections = [
-  { name: 'Rudraksha Bracelets', subcategory: 'Rudraksha Bracelet', image: 'https://japam.in/cdn/shop/files/Gold_plated_Modern_Bracelet_and_Brown_Rudraksha_Mala_combo.jpg?v=1726560930&width=1214' },
-  { name: 'Combination & Kawach', subcategory: 'Combination & Kawach', image: 'https://images.unsplash.com/photo-1685419367862-1dd40253bf2b?auto=format&fit=crop&w=600&q=80' },
-  { name: 'Siddha Mala', subcategory: 'Siddha Mala', image: 'https://images.unsplash.com/photo-1650809652935-2e5002ba40bf?auto=format&fit=crop&w=600&q=80' },
-  { name: 'Rudraksha Mala', subcategory: 'Rudraksha Mala', image: 'https://himalayarudraksh.online/cdn/shop/files/1-13-mukhi-shiv-shakti-rudraksha-mala-nepal-origin-499218.png?v=1750001216&width=3840' },
-  { name: 'Rudraksha Beads', subcategory: 'Rudraksha Beads', image: 'https://i.etsystatic.com/20350453/r/il/1c38f4/4937036824/il_570xN.4937036824_gxmx.jpg' },
+  { name: 'Rudraksha Bracelets', slug: 'rudraksha-bracelet', image: 'https://japam.in/cdn/shop/files/Gold_plated_Modern_Bracelet_and_Brown_Rudraksha_Mala_combo.jpg?v=1726560930&width=1214' },
+  { name: 'Combination & Kawach', slug: 'combinations-kawach', image: 'https://images.unsplash.com/photo-1685419367862-1dd40253bf2b?auto=format&fit=crop&w=600&q=80' },
+  { name: 'Siddha Mala', slug: 'siddha-mala', image: 'https://images.unsplash.com/photo-1650809652935-2e5002ba40bf?auto=format&fit=crop&w=600&q=80' },
+  { name: 'Rudraksha Mala', slug: 'rudraksha-mala', image: 'https://himalayarudraksh.online/cdn/shop/files/1-13-mukhi-shiv-shakti-rudraksha-mala-nepal-origin-499218.png?v=1750001216&width=3840' },
+  { name: 'Rudraksha Beads', slug: 'rudraksha-beads', image: 'https://i.etsystatic.com/20350453/r/il/1c38f4/4937036824/il_570xN.4937036824_gxmx.jpg' },
 ];
 
 const slideVariants = {
@@ -271,7 +271,7 @@ export function SacredCollections() {
               {collections.map((item, i) => (
                 <Link
                   key={i}
-                  href={`/all-products?category=Rudraksha %26 Variants&subcategory=${encodeURIComponent(item.subcategory)}`}
+                  href={`/collection/${item.slug}`}
                   className="group flex flex-col justify-between h-full"
                 >
                   <div className="aspect-square rounded-xl overflow-hidden border border-orange/25 relative shadow-md group-hover:border-orange/70 group-hover:shadow-sacred-glow group-hover:-translate-y-1 transition-all duration-300 ring-1 ring-inset ring-white/5 bg-navy-deep">

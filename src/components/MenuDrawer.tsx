@@ -80,6 +80,7 @@ export function MenuDrawer() {
               <nav className="flex flex-col gap-3 md:gap-5">
                 {[
                   { title: 'All Products', href: '/all-products' },
+                  { title: 'Sacred Collections', href: '/collections' },
                   { title: 'Rudraksha & Variants', href: '/all-products?category=Rudraksha %26 Variants' },
                   { title: 'Saligram', href: '/all-products?category=Saligram' },
                   { title: 'Shankha & Ghanti', href: '/all-products?category=Shankha %26 Ghanti' },

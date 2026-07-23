@@ -107,20 +107,27 @@ export function CustomizeOrder() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="relative py-16 sm:py-24 md:py-32 overflow-hidden bg-warm border-t border-navy/10">
+    <section className="relative py-14 sm:py-20 md:py-24 overflow-hidden bg-[#faf7f4] border-t border-orange/15">
+      {/* OM Section Divider */}
+      <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
+        <span className="text-orange text-xl sm:text-2xl font-serif opacity-80">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
+      </div>
+
       <AstroBackground />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 md:mb-20">
-          <span className="inline-block text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-orange border-2 border-orange/40 bg-orange/10 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 shadow-xs">
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-[0.2em] text-orange border border-orange/30 bg-orange/10 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 shadow-xs">
             Bespoke Sacred Craft · By Appointment
           </span>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-navy-deep tracking-tight leading-tight mb-4 sm:mb-6 px-2">
+          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-orange-gradient tracking-tight leading-tight mb-4 sm:mb-6 px-2">
             Your Personal Rudraksha Combination
           </h2>
-          <p className="font-body text-navy-deep text-sm sm:text-base md:text-lg leading-relaxed px-2">
+          <p className="font-body text-navy/90 font-medium text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto px-2">
             No two seekers are identical. Our Vedic experts custom-design each mala or combination based on a careful reading of your birth chart, dominant planets, and the specific transformation you are seeking — precise, considered, and made for you alone.
           </p>
         </div>
@@ -129,17 +136,17 @@ export function CustomizeOrder() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 sm:mb-16 md:mb-20 relative">
           <div className="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-orange/40 to-transparent pointer-events-none" />
           {steps.map((step, i) => (
-            <div key={i} className="flex flex-col items-center text-center relative">
+            <div key={i} className="flex flex-col items-center text-center relative group">
               <div className="relative mb-6 sm:mb-8">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-orange bg-orange/15 flex items-center justify-center text-orange shadow-md">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-orange/30 bg-orange/10 flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-navy-deep transition-colors duration-300 shadow-md">
                   <step.icon className="w-7 h-7 sm:w-9 sm:h-9" />
                 </div>
-                <span className="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange text-navy-deep text-[10px] font-heading font-bold flex items-center justify-center border-2 border-white shadow-xs">
+                <span className="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange text-navy-deep text-xs font-heading font-bold flex items-center justify-center border-2 border-white shadow-xs">
                   {step.n}
                 </span>
               </div>
-              <h3 className="font-display text-xl sm:text-2xl font-bold text-orange mb-3 sm:mb-4">{step.title}</h3>
-              <p className="font-body text-navy-deep font-semibold text-xs sm:text-sm leading-relaxed max-w-xs">{step.desc}</p>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-deep group-hover:text-orange transition-colors mb-3 sm:mb-4">{step.title}</h3>
+              <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base leading-relaxed max-w-xs">{step.desc}</p>
             </div>
           ))}
         </div>
@@ -153,23 +160,23 @@ export function CustomizeOrder() {
             {/* Left Box: Choose Your Intention */}
             <div className="p-6 sm:p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-navy/10">
               <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-deep mb-2">Choose Your Intention</h3>
-              <p className="font-body text-navy-deep font-semibold text-xs sm:text-sm mb-6 sm:mb-8">Select the life area you most want to strengthen:</p>
+              <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base mb-6 sm:mb-8">Select the life area you most want to strengthen:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                 {intentions.map((intention) => (
                   <button
                     key={intention}
                     onClick={() => setSelected(intention)}
-                    className={`flex items-center gap-3 text-left px-3.5 sm:px-4 py-3 sm:py-3.5 rounded-xl border text-xs sm:text-sm font-heading font-bold transition-all duration-200 cursor-pointer ${
+                    className={`flex items-center gap-3 text-left px-4 py-3.5 sm:py-4 rounded-xl border text-xs sm:text-sm font-heading font-bold transition-all duration-200 cursor-pointer shadow-xs ${
                       selected === intention
                         ? 'border-orange bg-orange/15 text-navy-deep shadow-md'
-                        : 'border-orange/40 text-navy-deep hover:border-orange hover:bg-orange/5 bg-warm'
+                        : 'border-orange/30 text-navy-deep hover:border-orange hover:bg-orange/5 bg-[#faf7f4]'
                     }`}
                   >
                     {selected === intention
-                      ? <CheckCircle className="w-4 h-4 text-orange shrink-0" />
-                      : <span className="w-4 h-4 rounded-full border-2 border-orange/40 shrink-0" />}
-                    <span className="font-bold">{intention}</span>
+                      ? <CheckCircle className="w-4.5 h-4.5 text-orange shrink-0" />
+                      : <span className="w-4.5 h-4.5 rounded-full border-2 border-orange/40 shrink-0" />}
+                    <span className="font-bold text-navy-deep">{intention}</span>
                   </button>
                 ))}
               </div>
@@ -178,7 +185,7 @@ export function CustomizeOrder() {
             {/* Right Box: Request Your Custom Mala */}
             <div className="p-6 sm:p-8 md:p-12 flex flex-col">
               <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-deep mb-2">Request Your Custom Mala</h3>
-              <p className="font-body text-navy-deep font-semibold text-xs sm:text-sm mb-6 sm:mb-8">Fill in a few details and our Vedic expert will contact you within 24 hours.</p>
+              <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base mb-6 sm:mb-8">Fill in a few details and our Vedic expert will contact you within 24 hours.</p>
 
               {submitted ? (
                 <div className="flex-1 flex flex-col items-center justify-center text-center gap-4 sm:gap-6 py-6">
@@ -187,7 +194,7 @@ export function CustomizeOrder() {
                   </div>
                   <div>
                     <h4 className="font-display text-xl sm:text-2xl font-bold text-navy-deep mb-2">Request Received!</h4>
-                    <p className="font-body text-navy-deep font-semibold text-xs sm:text-sm leading-relaxed max-w-xs mx-auto">
+                    <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base leading-relaxed max-w-xs mx-auto">
                       Our Vedic consultant will reach out within 24 hours to begin your personal consultation.
                     </p>
                   </div>
@@ -196,23 +203,23 @@ export function CustomizeOrder() {
                 <form className="flex flex-col gap-4 sm:gap-5 flex-1" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Full Name *</label>
-                      <input type="text" required placeholder="Your full name" className="w-full bg-warm border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/60 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors" />
+                      <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Full Name *</label>
+                      <input type="text" required placeholder="Your full name" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/50 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors" />
                     </div>
                     <div>
-                      <label className="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Phone / WhatsApp *</label>
-                      <input type="tel" required placeholder="+91 98765 43210" className="w-full bg-warm border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/60 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors" />
+                      <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Phone / WhatsApp *</label>
+                      <input type="tel" required placeholder="+91 98765 43210" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/50 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Date of Birth</label>
-                    <input type="date" className="w-full bg-warm border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-semibold text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors" />
+                    <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Date of Birth</label>
+                    <input type="date" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors" />
                   </div>
                   <div>
-                    <label className="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">
+                    <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">
                       Selected Intention {selected && <span className="text-orange font-bold normal-case tracking-normal">— {selected}</span>}
                     </label>
-                    <textarea rows={3} placeholder="Describe what you're seeking in more detail (optional)…" className="w-full bg-warm border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/60 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none" />
+                    <textarea rows={3} placeholder="Describe what you're seeking in more detail (optional)…" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/50 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none" />
                   </div>
 
                   <div className="pt-2 flex flex-col gap-3">
@@ -224,7 +231,7 @@ export function CustomizeOrder() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       <Link
                         href="/customize-order"
-                        className="py-2.5 sm:py-3 bg-navy-deep text-orange border border-orange/40 hover:bg-orange hover:text-navy-deep font-heading font-bold uppercase tracking-wider text-[11px] sm:text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center"
+                        className="py-3 bg-navy-deep text-orange border border-orange/40 hover:bg-orange hover:text-navy-deep font-heading font-bold uppercase tracking-wider text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center"
                       >
                         <span>Open Custom Order Page</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -232,7 +239,7 @@ export function CustomizeOrder() {
 
                       <Link
                         href="/consultation"
-                        className="py-2.5 sm:py-3 bg-navy border border-orange/40 text-peach hover:text-orange font-heading font-bold uppercase tracking-wider text-[11px] sm:text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center"
+                        className="py-3 bg-navy border border-orange/40 text-peach hover:text-orange font-heading font-bold uppercase tracking-wider text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center"
                       >
                         <span>Book 1:1 Consultation</span>
                         <ArrowRight className="w-3.5 h-3.5" />

@@ -32,6 +32,9 @@ import CustomOrderPage from '@/pages/CustomOrderPage';
 import ContactPage from '@/pages/ContactPage';
 import FAQPage from '@/pages/FAQPage';
 
+import CollectionsPage from '@/pages/CollectionsPage';
+import CategoryCollectionPage from '@/pages/CategoryCollectionPage';
+
 function Router() {
   return (
     <>
@@ -44,6 +47,11 @@ function Router() {
         <Route path="/contact-us" component={ContactPage} />
         <Route path="/faq" component={FAQPage} />
         <Route path="/faqs" component={FAQPage} />
+        <Route path="/collections" component={CollectionsPage} />
+        <Route path="/collection" component={CollectionsPage} />
+        <Route path="/collection/:slug" component={CategoryCollectionPage} />
+        <Route path="/collections/:slug" component={CategoryCollectionPage} />
+        <Route path="/collection-explore/:slug" component={CategoryCollectionPage} />
         <Route path="/customize-order" component={CustomOrderPage} />
         <Route path="/custom-order" component={CustomOrderPage} />
         <Route path="/customize" component={CustomOrderPage} />

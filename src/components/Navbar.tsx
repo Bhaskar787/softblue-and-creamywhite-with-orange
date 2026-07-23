@@ -255,7 +255,7 @@ export function Navbar() {
                 {/* Bottom View All Link inside Tooltip */}
                 <div className="col-span-2 pt-2 border-t border-orange/20 flex justify-between items-center text-xs">
                   <span className="font-body text-peach/60">100% Pashupatinath Consecrated</span>
-                  <Link href="/all-products" className="font-heading font-bold text-orange hover:text-orange-bright flex items-center gap-1">
+                  <Link href="/collections" className="font-heading font-bold text-orange hover:text-orange-bright flex items-center gap-1">
                     Explore All Collections →
                   </Link>
                 </div>

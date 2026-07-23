@@ -220,7 +220,7 @@ export default function BlogDetailPage() {
                         <Link href={`/product/${product.id}`}>{product.name}</Link>
                       </h4>
                       <p className="text-[10px] font-body text-navy/70 line-clamp-1 mt-0.5">
-                        {product.subtitle || 'Lab Certified Bead'}
+                        {(product as any).subtitle || (product as any).description || 'Lab Certified Bead'}
                       </p>
                     </div>
 

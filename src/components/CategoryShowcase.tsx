@@ -12,10 +12,11 @@ interface CategoryItem {
   featured?: boolean;
 }
 
-const categoriesList: CategoryItem[] = [
+const categoriesList: (CategoryItem & { slug: string })[] = [
   {
     name: 'Rudraksha & Variants',
     categoryParam: 'Rudraksha & Variants',
+    slug: 'rudraksha-beads',
     subtitle: 'Authentic 1 to 14 Mukhi Beads, Malas, Siddha Malas & Bracelets',
     image: 'https://japam.in/cdn/shop/files/Gold_plated_Modern_Bracelet_and_Brown_Rudraksha_Mala_combo.jpg?v=1726560930&width=1214',
     objectPosition: 'center 20%',
@@ -25,6 +26,7 @@ const categoriesList: CategoryItem[] = [
   {
     name: 'Gandaki Saligram',
     categoryParam: 'Saligram',
+    slug: 'saligram',
     subtitle: 'Natural Lakshmi Narayan & Sudarshan Chakra Shilas',
     image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
     objectPosition: 'center',
@@ -33,6 +35,7 @@ const categoriesList: CategoryItem[] = [
   {
     name: 'Shankha & Ghanti',
     categoryParam: 'Shankha & Ghanti',
+    slug: 'shankha-ghanti',
     subtitle: 'Vamavarti Blowing Conch & Panchdhatu Nandi Bells',
     image: 'https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80',
     objectPosition: 'top',
@@ -41,14 +44,16 @@ const categoriesList: CategoryItem[] = [
   {
     name: 'Singing Bowl',
     categoryParam: 'Singing Bowl',
+    slug: 'singing-bowls',
     subtitle: '7 Chakra Hand-Hammered Tibetan Healing Bowls',
-    image: 'https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?auto=format&fit=crop&w=600&q=80',
     objectPosition: 'center',
     badge: '432Hz HARMONY',
   },
   {
     name: 'Vedic Gemstones',
     categoryParam: 'Gemstone',
+    slug: 'gemstones',
     subtitle: 'Certified Natural Yellow Sapphire, Neelam & Navratna',
     image: 'https://images.unsplash.com/photo-1615655406736-b37c4fabf923?auto=format&fit=crop&w=600&q=80',
     objectPosition: 'center',
@@ -57,6 +62,7 @@ const categoriesList: CategoryItem[] = [
   {
     name: 'Statue & Sphatik',
     categoryParam: 'Statue & Sphatik',
+    slug: 'statue-sphatik',
     subtitle: 'Pure Quartz Crystal Shivling & Panchdhatu Idols',
     image: 'https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?auto=format&fit=crop&w=600&q=80',
     objectPosition: 'top',
@@ -65,8 +71,9 @@ const categoriesList: CategoryItem[] = [
   {
     name: 'Pooja Samagri',
     categoryParam: 'Pooja Samagri',
+    slug: 'pooja-samagri',
     subtitle: 'Organic Kasturi Chandan, Gangajal & Abhishekam Kits',
-    image: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80',
+    image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80',
     objectPosition: 'center',
     badge: 'RITUAL ESSENTIALS',
   },
@@ -102,10 +109,10 @@ export function CategoryShowcase() {
               Sourced directly from Arun Valley, Muktinath Gandaki, & Nepal high-altitude shrines.
             </p>
             <Link
-              href="/all-products"
+              href="/collections"
               className="inline-flex items-center gap-2 px-4 py-2 bg-navy text-orange border border-orange/40 hover:bg-orange hover:text-navy-deep transition-all rounded-xl font-heading font-bold text-xs uppercase tracking-wider shrink-0 shadow-md"
             >
-              <span>View All Products</span>
+              <span>View Collections</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -117,7 +124,7 @@ export function CategoryShowcase() {
           {categoriesList.map((cat) => (
             <Link
               key={cat.name}
-              href={`/all-products?category=${encodeURIComponent(cat.categoryParam)}`}
+              href={`/collection/${cat.slug}`}
               className={`group relative overflow-hidden rounded-2xl border border-navy/15 bg-navy-deep shadow-lg hover:border-orange hover:shadow-sacred-glow transition-all duration-500 block ${
                 cat.featured ? 'sm:col-span-2 lg:col-span-2' : ''
               }`}

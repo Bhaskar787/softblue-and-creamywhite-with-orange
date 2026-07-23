@@ -44,13 +44,7 @@ export default function MukhiGuidePage() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] aspect-square bg-mandala opacity-5 pointer-events-none" />
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-2 text-orange/80 hover:text-orange font-heading text-xs font-bold uppercase tracking-widest mb-8 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              <span>Back to Home</span>
-            </Link>
+         
 
             {/* Header Description */}
             <div className="text-center mb-12 sm:mb-16 max-w-3xl mx-auto">

@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback, useRef } from 'react';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
 import { formatPrice } from '@/lib/utils';
-import { ChevronLeft, ChevronRight, Heart, ShoppingBag, ShieldCheck, ArrowRight } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Heart, ShoppingBag, ShieldCheck, ArrowRight, Sparkles } from 'lucide-react';
 import { GiStarSattelites } from 'react-icons/gi';
 import { Link } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -107,13 +107,7 @@ const launchedProducts: LaunchedProduct[] = [
   },
 ];
 
-const AUTOPLAY_MS = 5200;
-
-const slideVariants = {
-  enter: (direction: number) => ({ x: direction > 0 ? 48 : -48, opacity: 0 }),
-  center: { x: 0, opacity: 1 },
-  exit: (direction: number) => ({ x: direction < 0 ? 48 : -48, opacity: 0 }),
-};
+const AUTOPLAY_MS = 6000;
 
 export function NewLaunchesBanner() {
   const { addToCart } = useCart();
@@ -152,43 +146,44 @@ export function NewLaunchesBanner() {
   );
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-navy-deep relative overflow-hidden border-y border-orange/20">
-      <div className="absolute inset-0 bg-stars opacity-15 pointer-events-none" />
-      <div className="absolute -top-32 -left-32 w-96 h-96 bg-orange/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-navy-light/40 rounded-full blur-3xl pointer-events-none" />
+    <section className="py-12 sm:py-18 lg:py-24 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach relative overflow-hidden border-y border-orange/20">
+      {/* Soft Blue Radial Glow Backgrounds */}
+      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-8 relative z-10">
-        {/* Header */}
-        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 sm:mb-12">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        
+        {/* Section Header */}
+        <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-10">
           <div>
-            <span className="inline-flex items-center gap-2 text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-[0.25em] text-orange/80 mb-3 sm:mb-4">
-              <span className="w-6 h-px bg-orange/50" />
-              From the Arun Valley Vault
+            <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-heading font-bold uppercase tracking-[0.2em] text-orange bg-orange/15 border border-orange/30 px-3.5 py-1 rounded-full mb-2 sm:mb-3">
+              <Sparkles className="w-3.5 h-3.5 text-orange" />
+              Exclusive Release
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-peach tracking-tight">
-              Newly Launched Pieces
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display text-peach tracking-tight font-bold">
+              Arun Valley Vault Collection
             </h2>
           </div>
 
-          <div className="flex items-center gap-2 self-start sm:self-auto">
+          <div className="flex items-center gap-2.5 self-start sm:self-auto">
             <button
               onClick={prevSlide}
               aria-label="Previous piece"
-              className="w-10 h-10 rounded-full border border-orange/30 bg-navy/80 flex items-center justify-center text-orange hover:bg-orange hover:text-navy-deep transition-all shadow-md active:scale-95 cursor-pointer"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-navy-deep/80 hover:bg-orange text-orange hover:text-navy-deep transition-all duration-300 backdrop-blur-md flex items-center justify-center cursor-pointer border border-orange/30 shadow-lg active:scale-95"
             >
               <ChevronLeft className="w-5 h-5" />
             </button>
             <button
               onClick={nextSlide}
               aria-label="Next piece"
-              className="w-10 h-10 rounded-full border border-orange/30 bg-navy/80 flex items-center justify-center text-orange hover:bg-orange hover:text-navy-deep transition-all shadow-md active:scale-95 cursor-pointer"
+              className="w-10 h-10 sm:w-11 sm:h-11 rounded-full bg-navy-deep/80 hover:bg-orange text-orange hover:text-navy-deep transition-all duration-300 backdrop-blur-md flex items-center justify-center cursor-pointer border border-orange/30 shadow-lg active:scale-95"
             >
               <ChevronRight className="w-5 h-5" />
             </button>
           </div>
         </div>
 
-        {/* Showcase */}
+        {/* MAIN SLIDER CARD CONTAINER (RESPONSIVE FLEXIBLE HEIGHT) */}
         <div
           onMouseEnter={() => setIsHovering(true)}
           onMouseLeave={() => setIsHovering(false)}
@@ -200,229 +195,191 @@ export function NewLaunchesBanner() {
             else if (delta < -50) nextSlide();
             touchStartX.current = null;
           }}
-          className="relative rounded-2xl sm:rounded-3xl border border-orange/25 bg-gradient-to-br from-navy-mid/90 via-navy-deep/95 to-navy-deep shadow-[0_20px_60px_rgba(0,0,0,0.5)] overflow-hidden"
+          className="relative rounded-2xl sm:rounded-3xl bg-navy-deep/90 border-2 border-orange/30 backdrop-blur-xl overflow-hidden shadow-2xl pb-14 lg:pb-0"
         >
-          <div className="relative min-h-[480px] sm:min-h-[520px]">
-            <AnimatePresence custom={direction} mode="wait">
+          <div className="grid grid-cols-1 lg:grid-cols-12 min-h-[480px]">
+            
+            {/* LEFT COLUMN: FULL COVER IMAGE & WAX SEAL BADGE */}
+            <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-full overflow-hidden group shrink-0 bg-navy">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeProduct.id}
+                  initial={{ opacity: 0, scale: 1.04 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="absolute inset-0 w-full h-full"
+                >
+                  <img
+                    src={activeProduct.image}
+                    alt={activeProduct.name}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-transparent to-transparent lg:bg-gradient-to-r lg:from-transparent lg:to-navy-deep/90" />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Certified Seal Badge */}
               <motion.div
-                key={current}
-                custom={direction}
-                variants={slideVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                className="grid grid-cols-1 lg:grid-cols-12 min-h-[480px] sm:min-h-[520px] w-full"
+                key={`seal-${current}`}
+                initial={{ opacity: 0, scale: 1.5, rotate: -18 }}
+                animate={{ opacity: 1, scale: 1, rotate: -10 }}
+                transition={{ duration: 0.35, delay: 0.15, ease: [0.34, 1.56, 0.64, 1] }}
+                className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-red-950 border-2 border-orange flex flex-col items-center justify-center text-center shadow-2xl"
               >
-                {/* Vitrine / left media */}
-                <div className="lg:col-span-5 relative bg-navy/50 p-8 sm:p-10 flex items-center justify-center border-b lg:border-b-0 lg:border-r border-orange/15">
-                  <div className="relative w-full max-w-[320px]">
-                    {/* Corner brackets, glass-case frame */}
-                    <svg
-                      className="absolute -inset-4 sm:-inset-5 w-[calc(100%+2rem)] h-[calc(100%+2rem)] pointer-events-none"
-                      viewBox="0 0 100 100"
-                      preserveAspectRatio="none"
-                    >
-                      {[
-                        'M2,14 L2,2 L14,2',
-                        'M86,2 L98,2 L98,14',
-                        'M98,86 L98,98 L86,98',
-                        'M14,98 L2,98 L2,86',
-                      ].map((d, i) => (
-                        <path key={i} d={d} stroke="rgba(201,151,58,0.55)" strokeWidth="0.6" fill="none" />
-                      ))}
-                    </svg>
+                <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange mb-0.5" />
+                <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-peach leading-tight">
+                  Certified
+                </span>
+                <span className="text-[7px] sm:text-[8px] font-mono text-orange/90 leading-tight">
+                  {activeProduct.certNo}
+                </span>
+              </motion.div>
 
-                    <motion.div
-                      initial={{ opacity: 0, scale: 0.94 }}
-                      animate={{ opacity: 1, scale: 1 }}
-                      transition={{ duration: 0.4, delay: 0.05 }}
-                      className="relative aspect-square rounded-xl overflow-hidden border border-orange/20 bg-navy-deep"
-                    >
-                      <img
-                        src={activeProduct.image}
-                        alt={activeProduct.name}
-                        className="w-full h-full object-cover"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/70 via-transparent to-white/[0.04] pointer-events-none" />
-                      <div className="absolute inset-0 shadow-[inset_0_0_40px_rgba(0,0,0,0.4)] pointer-events-none" />
-                    </motion.div>
+              {/* Wishlist Button */}
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  toggleWishlist(activeProduct);
+                }}
+                aria-label={isSaved ? 'Remove from wishlist' : 'Add to wishlist'}
+                className="absolute bottom-14 left-4 sm:bottom-16 sm:left-5 z-30 w-10 h-10 bg-navy-deep/90 backdrop-blur-md border-2 border-orange/60 rounded-full flex items-center justify-center text-peach hover:bg-orange hover:text-navy-deep transition-all shadow-2xl cursor-pointer"
+              >
+                <Heart className={`w-4 h-4 ${isSaved ? 'fill-orange text-orange' : ''}`} />
+              </button>
+            </div>
 
-                    {/* pedestal shadow */}
-                    <div className="mx-auto mt-3 h-3 w-3/4 rounded-full bg-black/40 blur-md" />
-
-                    {/* wax-seal authenticity stamp */}
-                    <motion.div
-                      key={`seal-${current}`}
-                      initial={{ opacity: 0, scale: 1.6, rotate: -18 }}
-                      animate={{ opacity: 1, scale: 1, rotate: -10 }}
-                      transition={{ duration: 0.35, delay: 0.3, ease: [0.34, 1.56, 0.64, 1] }}
-                      className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-crimson border-2 border-orange/60 flex flex-col items-center justify-center text-center shadow-lg"
-                    >
-                      <ShieldCheck className="w-4 h-4 text-peach mb-0.5" />
-                      <span className="text-[8px] sm:text-[9px] font-heading font-bold uppercase tracking-widest text-peach leading-tight">
-                        Certified
-                      </span>
-                      <span className="text-[7px] sm:text-[8px] font-mono text-peach/70 leading-tight">
-                        {activeProduct.certNo}
-                      </span>
-                    </motion.div>
-
-                    {/* wishlist */}
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        toggleWishlist(activeProduct);
-                      }}
-                      aria-label={isSaved ? 'Remove from wishlist' : 'Add to wishlist'}
-                      className="absolute -bottom-3 -left-3 w-10 h-10 bg-navy-deep border border-orange/40 rounded-full flex items-center justify-center text-orange hover:bg-orange hover:text-navy-deep transition-all shadow-lg cursor-pointer"
-                    >
-                      <Heart className={`w-4 h-4 ${isSaved ? 'fill-orange text-orange' : ''}`} />
-                    </button>
+            {/* RIGHT COLUMN: RESPONSIVE CONTENT AREA */}
+            <div className="lg:col-span-7 p-5 sm:p-8 lg:p-10 pb-16 sm:pb-20 lg:pb-16 flex flex-col justify-between space-y-6">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={activeProduct.id}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.35 }}
+                  className="space-y-4 sm:space-y-5"
+                >
+                  {/* Badge & Meta */}
+                  <div className="flex items-center gap-2.5 flex-wrap">
+                    <span className="px-3 py-1 rounded-full bg-orange/20 border border-orange/40 text-orange text-xs font-heading font-bold uppercase tracking-wider">
+                      {activeProduct.badge}
+                    </span>
+                    <span className="text-xs text-peach/80 font-heading font-semibold">
+                      {activeProduct.origin} · {activeProduct.mukhi}
+                    </span>
                   </div>
-                </div>
 
-                {/* Right info */}
-                <div className="lg:col-span-7 p-6 sm:p-8 md:p-10 flex flex-col justify-between relative z-10">
-                  <div>
-                    <motion.div
-                      initial={{ y: 12, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.08 }}
-                      className="flex items-center gap-3 text-[10px] sm:text-xs font-heading font-bold uppercase tracking-[0.15em] text-orange mb-4"
-                    >
-                      <span>{activeProduct.badge}</span>
-                      <span className="w-1 h-1 rounded-full bg-orange/50" />
-                      <span className="text-peach/60 font-medium normal-case tracking-normal">
-                        {activeProduct.origin} · {activeProduct.mukhi}
-                      </span>
-                    </motion.div>
-
-                    <motion.h3
-                      initial={{ y: 12, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.13 }}
-                      className="text-2xl sm:text-3xl md:text-4xl font-display text-peach mb-2 leading-tight"
-                    >
+                  {/* Title & Tagline */}
+                  <div className="space-y-1">
+                    <h3 className="text-xl sm:text-3xl lg:text-4xl font-display font-bold text-peach leading-snug">
                       {activeProduct.name}
-                    </motion.h3>
-
-                    <motion.p
-                      initial={{ y: 12, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.17 }}
-                      className="text-sm font-body text-orange-bright italic mb-3"
-                    >
+                    </h3>
+                    <p className="text-xs sm:text-sm font-medium text-orange italic">
                       {activeProduct.tagline}
-                    </motion.p>
+                    </p>
+                  </div>
 
-                    <motion.div
-                      initial={{ y: 12, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.2 }}
-                      className="flex items-center gap-1 mb-5"
-                    >
+                  {/* Rating */}
+                  <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-1 text-orange">
                       {[...Array(5)].map((_, i) => (
                         <GiStarSattelites
                           key={i}
                           className={`w-3.5 h-3.5 ${
-                            i < Math.round(activeProduct.rating) ? 'text-orange' : 'text-orange/20'
+                            i < Math.round(activeProduct.rating) ? 'text-orange fill-orange' : 'text-peach/20'
                           }`}
                         />
                       ))}
-                      <span className="text-xs font-body text-peach/60 ml-1.5">
-                        {activeProduct.rating.toFixed(1)} · {activeProduct.reviews} reviews
-                      </span>
-                    </motion.div>
-
-                    <motion.div
-                      initial={{ y: 12, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 0.3, delay: 0.24 }}
-                      className="space-y-2.5 mb-6 border-l-2 border-orange/30 pl-4"
-                    >
-                      {activeProduct.highlights.map((h, i) => (
-                        <p key={i} className="text-xs sm:text-sm font-body text-peach/85 leading-relaxed">
-                          {h}
-                        </p>
-                      ))}
-                    </motion.div>
+                    </div>
+                    <span className="text-xs text-peach/80 font-medium">
+                      {activeProduct.rating.toFixed(1)} ({activeProduct.reviews} verified reviews)
+                    </span>
                   </div>
 
-                  <motion.div
-                    initial={{ y: 12, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.28 }}
-                    className="pt-5 border-t border-orange/15 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4"
-                  >
+                  {/* Feature Highlights */}
+                  <div className="space-y-2 pt-1 sm:pt-2">
+                    {activeProduct.highlights.map((item, idx) => (
+                      <div key={idx} className="flex items-center gap-2.5">
+                        <div className="w-2 h-2 rounded-full bg-orange shrink-0" />
+                        <span className="text-xs sm:text-sm text-peach/90 font-body leading-relaxed">
+                          {item}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Price & Action Section */}
+                  <div className="pt-4 border-t border-orange/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                     <div>
-                      <div className="flex items-baseline gap-3">
+                      <div className="flex items-baseline gap-2.5">
                         <span className="font-display text-2xl sm:text-3xl font-bold text-orange">
                           {formatPrice(activeProduct.price)}
                         </span>
-                        <span className="text-sm font-body text-peach/40 line-through">
+                        <span className="text-xs sm:text-sm text-peach/50 line-through">
                           {formatPrice(activeProduct.originalPrice)}
                         </span>
-                        <span className="text-[10px] font-heading font-bold text-crimson bg-crimson/10 border border-crimson/30 px-2 py-0.5 rounded">
+                        <span className="px-2 py-0.5 rounded bg-orange/20 text-orange text-xs font-heading font-bold">
                           {discount}% OFF
                         </span>
                       </div>
-                      <span className="text-[11px] font-body text-peach/50 flex items-center gap-1.5 mt-1.5">
-                        <span className="w-1.5 h-1.5 rounded-full bg-crimson animate-pulse" />
-                        Only {activeProduct.stockLeft} remaining at this price
+                      <span className="text-xs text-peach/70 flex items-center gap-1.5 mt-1 font-medium">
+                        <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
+                        Only {activeProduct.stockLeft} item(s) left in stock
                       </span>
                     </div>
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2.5 w-full sm:w-auto">
                       <button
                         onClick={() => addToCart(activeProduct)}
-                        className="flex-1 sm:flex-none px-6 py-3.5 bg-orange hover:bg-orange-bright text-navy-deep font-heading font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all shadow-sacred-glow flex items-center justify-center gap-2 active:scale-95 cursor-pointer"
+                        className="flex-1 sm:flex-none px-6 py-3 bg-gradient-to-r from-orange to-orange-bright text-navy-deep font-heading font-bold text-xs uppercase tracking-widest rounded-xl shadow-md hover:shadow-sacred-glow transition-all flex items-center justify-center gap-2 cursor-pointer"
                       >
-                        <ShoppingBag className="w-4 h-4" /> Add to Cart
+                        <ShoppingBag className="w-4 h-4" />
+                        <span>Add to Cart</span>
                       </button>
+
                       <Link
-                        href="#"
-                        className="px-5 py-3.5 border border-orange/30 text-peach/80 hover:text-orange hover:border-orange font-heading font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-colors hidden sm:inline-flex items-center gap-1.5"
+                        href={`/product/${activeProduct.id}`}
+                        className="flex-1 sm:flex-none px-5 py-3 bg-navy/80 hover:bg-orange hover:text-navy-deep text-peach border border-orange/40 font-heading font-bold text-xs uppercase tracking-widest rounded-xl transition-all flex items-center justify-center gap-1"
                       >
-                        Details <ArrowRight className="w-4 h-4" />
+                        <span>Details</span>
+                        <ArrowRight className="w-3.5 h-3.5" />
                       </Link>
                     </div>
-                  </motion.div>
-                </div>
-              </motion.div>
-            </AnimatePresence>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
           </div>
 
-          {/* Mala-bead progress rail */}
-          <div className="bg-navy-deep px-6 py-4 border-t border-orange/15 flex items-center justify-between relative z-20">
-            <div className="flex items-center gap-2.5">
+          {/* Bottom Progress Bar & Slide Dots */}
+          <div className="absolute bottom-0 inset-x-0 px-4 sm:px-6 py-3 bg-navy-deep border-t border-orange/20 flex items-center justify-between z-20">
+            <div className="flex items-center gap-2">
               {launchedProducts.map((p, idx) => (
                 <button
                   key={p.id}
                   onClick={() => goToSlide(idx)}
-                  aria-label={`Go to piece ${idx + 1}`}
-                  className="relative w-6 h-6 flex items-center justify-center cursor-pointer group"
+                  aria-label={`Go to slide ${idx + 1}`}
+                  className="relative w-6 h-6 flex items-center justify-center cursor-pointer"
                 >
-                  {idx < launchedProducts.length && (
-                    <span className="absolute left-1/2 top-1/2 w-6 h-px bg-orange/15 -translate-y-1/2" />
-                  )}
                   <span
-                    className={`relative rounded-full transition-all duration-300 ${
+                    className={`rounded-full transition-all duration-300 ${
                       idx === current
-                        ? 'w-3 h-3 bg-orange shadow-[0_0_6px_rgba(201,151,58,0.7)]'
-                        : 'w-2 h-2 bg-orange/25 group-hover:bg-orange/50'
+                        ? 'w-3.5 h-3.5 bg-orange shadow-[0_0_10px_rgba(252,146,105,0.8)]'
+                        : 'w-2 h-2 bg-peach/30 hover:bg-peach/60'
                     }`}
                   />
                   {idx === current && !isHovering && (
                     <svg className="absolute -inset-1 w-8 h-8 -rotate-90" viewBox="0 0 32 32">
-                      <circle cx="16" cy="16" r="13" fill="none" stroke="rgba(201,151,58,0.15)" strokeWidth="1.5" />
+                      <circle cx="16" cy="16" r="13" fill="none" stroke="rgba(252,146,105,0.2)" strokeWidth="1.5" />
                       <motion.circle
                         key={progressKey}
                         cx="16"
                         cy="16"
                         r="13"
                         fill="none"
-                        stroke="rgba(201,151,58,0.9)"
+                        stroke="#FC9269"
                         strokeWidth="1.5"
                         strokeDasharray={2 * Math.PI * 13}
                         initial={{ strokeDashoffset: 2 * Math.PI * 13 }}
@@ -435,11 +392,12 @@ export function NewLaunchesBanner() {
               ))}
             </div>
 
-            <span className="text-[10px] sm:text-xs font-mono text-peach/40 tracking-wider">
+            <span className="text-xs font-heading font-bold text-orange tracking-wider">
               {String(current + 1).padStart(2, '0')} / {String(launchedProducts.length).padStart(2, '0')}
             </span>
           </div>
         </div>
+
       </div>
     </section>
   );
