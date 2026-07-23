@@ -60,43 +60,62 @@ export function HeroSlider() {
   return (
     <section 
       {...handlers} 
-      className="relative w-full h-[75vh] sm:h-[80vh] md:h-[85vh] min-h-[480px] sm:min-h-[550px] md:min-h-[600px] overflow-hidden bg-navy-deep touch-pan-y"
+      className="relative w-full h-auto sm:h-[80vh] md:h-[85vh] min-h-0 sm:min-h-[550px] md:min-h-[600px] overflow-hidden bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach touch-pan-y border-b border-orange/20 py-4 sm:py-0"
     >
+      {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
+      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
+
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${isTransitioning ? 'opacity-0' : 'opacity-70'}`}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ${isTransitioning ? 'opacity-0' : 'opacity-45'}`}
         style={{ backgroundImage: `url(${slide.image})` }}
       />
       
-      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-navy-deep via-navy-deep/75 to-navy-deep/20" />
+      <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-[#0E1B26] via-[#0E1B26]/80 to-[#0E1B26]/20 pointer-events-none" />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex items-center max-w-7xl mx-auto px-4 sm:px-6 md:px-12 py-8 sm:py-0">
-        <div className={`max-w-2xl transition-all duration-700 ${isTransitioning ? 'opacity-0 translate-y-6' : 'opacity-100 translate-y-0'}`}>
-          <span className="inline-block text-[9px] sm:text-[10px] md:text-[11px] font-bold uppercase tracking-[0.15em] sm:tracking-[0.3em] text-orange mb-3 sm:mb-6 border-b border-orange pb-1">
+      <div className="relative z-10 h-auto sm:h-full flex items-center max-w-7xl mx-auto px-3.5 sm:px-6 md:px-12 py-2 sm:py-0">
+        <div className={`max-w-2xl transition-all duration-700 w-full ${isTransitioning ? 'opacity-0 translate-y-4' : 'opacity-100 translate-y-0'}`}>
+          <span className="inline-block text-[9px] sm:text-[10px] md:text-[11px] font-semibold uppercase tracking-[0.15em] sm:tracking-[0.3em] text-orange mb-1.5 sm:mb-6 border-b border-orange pb-0.5 sm:pb-1">
             {slide.tag}
           </span>
 
-          <h1 className="font-display text-2xl xs:text-3xl sm:text-5xl md:text-7xl leading-[1.15] sm:leading-[1.1] mb-3 sm:mb-6 whitespace-pre-line text-orange drop-shadow-lg">
+          <h1 className="font-display text-xl xs:text-2xl sm:text-5xl md:text-7xl leading-[1.15] sm:leading-[1.1] mb-2 sm:mb-6 whitespace-pre-line text-orange drop-shadow-lg font-medium">
             {slide.heading}
           </h1>
 
-          <p className="font-body text-slate-100 font-medium text-xs sm:text-lg md:text-xl leading-relaxed mb-5 sm:mb-10 max-w-xl drop-shadow-md">
+          <p className="font-body text-slate-100 font-normal text-xs sm:text-lg md:text-xl leading-relaxed mb-3 sm:mb-8 max-w-xl drop-shadow-md">
             {slide.sub}
           </p>
 
-          <div className="flex flex-col xs:flex-row flex-wrap gap-2.5 sm:gap-4">
+          {/* ALWAYS ON ONE ROW ONLY ACROSS ALL DEVICES */}
+          <div className="flex flex-row items-center gap-1.5 sm:gap-4 w-full">
             <Link
               href={slide.href}
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 bg-orange text-navy-deep font-bold uppercase tracking-widest text-[10px] sm:text-sm hover:bg-white transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] rounded-lg sm:rounded-none text-center"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-3 px-2.5 sm:px-8 py-2.5 sm:py-4 bg-orange text-navy-deep font-bold uppercase tracking-wider sm:tracking-widest text-[9px] xs:text-[10.5px] sm:text-sm hover:bg-white transition-all shadow-[0_0_20px_rgba(212,175,55,0.4)] rounded-lg sm:rounded-none text-center whitespace-nowrap"
             >
               {slide.cta}
             </Link>
             <Link
               href="/consultation"
-              className="inline-flex items-center justify-center gap-2 sm:gap-3 px-5 sm:px-8 py-3 sm:py-4 border border-orange/50 text-orange font-bold uppercase tracking-widest text-[10px] sm:text-sm hover:bg-orange/10 transition-all rounded-lg sm:rounded-none text-center"
+              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1 sm:gap-3 px-2.5 sm:px-8 py-2.5 sm:py-4 border border-orange/50 text-orange font-bold uppercase tracking-wider sm:tracking-widest text-[9px] xs:text-[10.5px] sm:text-sm hover:bg-orange/10 transition-all rounded-lg sm:rounded-none text-center whitespace-nowrap"
             >
               Book Consultation
             </Link>
+          </div>
+
+          {/* Mobile slide dot indicators directly under buttons */}
+          <div className="flex md:hidden items-center justify-center gap-2 mt-4">
+            {slides.map((_, i) => (
+              <button
+                key={i}
+                onClick={() => go(i)}
+                className={`h-1 rounded-full transition-all duration-300 ${
+                  i === current ? 'w-6 bg-orange' : 'w-3 bg-orange/30'
+                }`}
+                aria-label={`Go to slide ${i + 1}`}
+              />
+            ))}
           </div>
         </div>
       </div>
@@ -117,7 +136,7 @@ export function HeroSlider() {
         </button>
       </div>
 
-      {/* Indicators: Hidden on mobile, shown on desktop */}
+      {/* Desktop Indicators */}
       <div className="hidden md:flex absolute bottom-8 left-1/2 -translate-x-1/2 z-20 gap-4">
         {slides.map((_, i) => (
           <button
@@ -125,19 +144,6 @@ export function HeroSlider() {
             onClick={() => go(i)}
             className={`h-1 transition-all duration-300 ${
               i === current ? 'w-12 bg-orange' : 'w-6 bg-orange/30'
-            }`}
-          />
-        ))}
-      </div>
-
-      {/* Mobile dot indicators (added since desktop nav is hidden below md) */}
-      <div className="flex md:hidden absolute bottom-5 left-1/2 -translate-x-1/2 z-20 gap-2">
-        {slides.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => go(i)}
-            className={`h-1 rounded-full transition-all duration-300 ${
-              i === current ? 'w-6 bg-orange' : 'w-3 bg-orange/30'
             }`}
           />
         ))}

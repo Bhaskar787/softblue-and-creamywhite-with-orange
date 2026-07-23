@@ -20,14 +20,14 @@ export default function MukhiGuidePage() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-navy-deep text-navy">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach">
       {/* Top Header & Navigation */}
       <AnnouncementBar />
       <Navbar />
 
-      <main className="flex-1 bg-navy-deep">
+      <main className="flex-1 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26]">
         {/* Breadcrumb Navigation */}
-        <div className="bg-navy-deep text-peach py-4 border-b border-orange/20">
+        <div className="bg-[#0E1B26]/80 backdrop-blur-md text-peach py-4 border-b border-orange/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-heading uppercase tracking-widest text-peach/75 overflow-x-auto whitespace-nowrap hide-scrollbar">
             <Link href="/" className="hover:text-orange transition-colors">
               Home
@@ -38,7 +38,11 @@ export default function MukhiGuidePage() {
         </div>
 
         {/* Main Mukhi Guide Section */}
-        <section className="py-12 sm:py-16 md:py-20 bg-navy-deep relative overflow-hidden">
+        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach relative overflow-hidden">
+          {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
+          <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
+          <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
+
           {/* Star field & Mandala Watermark */}
           <div className="absolute inset-0 bg-stars opacity-20 pointer-events-none" />
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[900px] aspect-square bg-mandala opacity-5 pointer-events-none" />

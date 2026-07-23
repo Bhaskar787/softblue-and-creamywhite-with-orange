@@ -256,13 +256,17 @@ export function ChooseByIntention() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full border-y border-orange/10 bg-navy min-h-screen flex flex-col justify-center py-2 sm:py-6"
+      className="relative w-full border-y border-orange/20 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach min-h-screen flex flex-col justify-center py-4 sm:py-8 overflow-hidden"
     >
-      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-8">
+      {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
+      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
+
+      <div className="w-full max-w-7xl mx-auto px-2 sm:px-4 md:px-8 relative z-10">
         <SectionHeader />
 
         {/* Main Card Container */}
-        <div className="relative rounded-2xl sm:rounded-3xl border border-orange/30 bg-navy-mid/90 backdrop-blur-xl shadow-2xl overflow-hidden mt-1 sm:mt-2">
+        <div className="relative rounded-2xl sm:rounded-3xl border-2 border-orange/30 bg-navy-deep/90 backdrop-blur-xl shadow-2xl overflow-hidden mt-1 sm:mt-2">
           
           {/* Top Progress Ribbon */}
           <div className="absolute top-0 left-0 right-0 h-1.5 bg-white/5 z-30">

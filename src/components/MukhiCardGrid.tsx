@@ -40,8 +40,8 @@ export function MukhiCardGrid({ items }: MukhiCardGridProps) {
               onClick={() => handleCardClick(m.n)}
               className={`relative lg:absolute lg:top-0 w-full rounded-2xl shadow-xl transition-all duration-500 ease-out overflow-hidden select-none cursor-pointer border ${
                 isOpen
-                  ? 'h-auto lg:h-full lg:w-[215%] z-40 border-orange shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-navy-deep'
-                  : 'h-full z-10 border-orange/25 hover:border-orange/60 bg-navy-deep'
+                  ? 'h-auto lg:h-full lg:w-[215%] z-40 border-2 border-orange shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-navy-deep/95 backdrop-blur-xl'
+                  : 'h-full z-10 border-orange/25 hover:border-orange/60 bg-navy-deep/90 backdrop-blur-xl shadow-xl'
               } ${
                 isRightAlignedXL
                   ? 'xl:right-0 xl:left-auto xl:origin-right'

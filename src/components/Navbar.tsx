@@ -42,8 +42,8 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-[100] w-full transition-all duration-300 border-b ${
         scrolled
-          ? 'bg-navy-deep/95 backdrop-blur-md shadow-[0_4px_20px_rgba(201,151,58,0.1)] border-orange/30'
-          : 'bg-navy border-orange/10'
+          ? 'bg-[#0E1B26] shadow-[0_4px_20px_rgba(201,151,58,0.2)] border-orange/30'
+          : 'bg-[#0E1B26] border-orange/20'
       }`}
     >
       <div className="max-w-[1440px] mx-auto px-2 sm:px-4 lg:px-4 xl:px-8 flex items-center justify-between h-16 sm:h-20 gap-1.5 sm:gap-4 lg:gap-3 xl:gap-6">

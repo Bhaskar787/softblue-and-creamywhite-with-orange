@@ -28,7 +28,11 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-navy-light relative overflow-hidden">
+    <section className="py-14 sm:py-20 md:py-24 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach relative overflow-hidden border-y border-orange/20">
+      {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
+      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
+
       {/* OM Section Divider */}
       <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
@@ -36,15 +40,15 @@ export function Newsletter() {
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
       </div>
 
-      {/* Himalayan misty peaks background */}
+      {/* Himalayan misty peaks background with balanced opacity */}
       <div 
-        className="absolute inset-0 opacity-[0.7] bg-cover bg-center"
+        className="absolute inset-0 opacity-[0.18] bg-cover bg-center"
         style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1920&q=80")' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/45 via-navy-deep/10 to-navy-deep/30 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0E1B26]/80 via-transparent to-[#0E1B26]/80 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-navy border border-orange/30 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 relative">
+        <div className="bg-navy-deep/90 border-2 border-orange/30 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 relative backdrop-blur-xl">
           
           {/* Giant decorative OM watermark */}
           <div className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 text-[160px] sm:text-[220px] md:text-[300px] text-orange/5 font-serif select-none pointer-events-none leading-none">

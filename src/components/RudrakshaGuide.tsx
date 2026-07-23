@@ -11,7 +11,11 @@ export function RudrakshaGuide() {
   const previewMukhis = mukhis.slice(0, PREVIEW_COUNT);
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-navy-deep min-h-screen relative overflow-hidden">
+    <section className="py-14 sm:py-20 md:py-24 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach min-h-screen relative overflow-hidden border-y border-orange/20">
+      {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
+      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
+
       {/* OM Section Divider */}
       <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
         <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
