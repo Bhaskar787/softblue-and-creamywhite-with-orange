@@ -5,6 +5,7 @@ import { Menu, Search, Heart, ShoppingBag, User, ChevronDown, Sparkles, BookOpen
 import { Link } from 'wouter';
 import { useState, useEffect } from 'react';
 import { GiLotus, GiFlame, GiBowlSpiral, GiGemNecklace, GiByzantinTemple, GiSun } from 'react-icons/gi';
+import { MdDesignServices } from "react-icons/md";
 
 export function Navbar() {
   const { setIsMenuOpen, setIsSearchOpen } = useUI();
@@ -285,7 +286,7 @@ export function Navbar() {
                   href="/customize-order"
                   className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-orange/15 text-peach hover:text-orange transition-colors text-xs font-heading font-bold group/sub"
                 >
-                  <Sparkles className="w-4 h-4 text-orange shrink-0 group-hover/sub:scale-110 transition-transform" />
+                  <MdDesignServices className="w-4 h-4 text-orange shrink-0 group-hover/sub:scale-110 transition-transform" />
                   <span>Custom Order</span>
                 </Link>
 
