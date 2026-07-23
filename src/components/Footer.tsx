@@ -3,9 +3,13 @@ import { Link } from 'wouter';
 
 export function Footer() {
   return (
-    <footer className="bg-navy-deep text-peach pt-20 md:pt-24 pb-8 relative overflow-hidden border-t border-orange/20">
+    <footer className="bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach pt-16 sm:pt-20 md:pt-24 pb-8 relative overflow-hidden border-t border-orange/20">
+      {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
+      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
+
       {/* Faint mandala watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] aspect-square bg-mandala opacity-[0.02] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] aspect-square bg-mandala opacity-[0.03] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10 mb-16 md:mb-20">

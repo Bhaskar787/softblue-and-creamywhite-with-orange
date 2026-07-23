@@ -58,7 +58,7 @@ export default function BlogListPage() {
       <main className="flex-1 pb-16 sm:pb-24">
         
         {/* Breadcrumb Navigation */}
-        <div className="bg-navy-deep text-peach py-4 border-b border-orange/20">
+        <div className="bg-[#0E1B26] text-peach py-4 border-b border-orange/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-heading uppercase tracking-widest text-peach/75 overflow-x-auto whitespace-nowrap hide-scrollbar">
             <Link href="/" className="hover:text-orange transition-colors">
               Home

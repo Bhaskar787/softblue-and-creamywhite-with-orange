@@ -141,7 +141,7 @@ export function ConsultationPage() {
       <main className="pb-20">
         
         {/* Top Header Bar */}
-        <div className="bg-navy-deep text-peach py-4 border-b border-orange/20">
+        <div className="bg-[#0E1B26] text-peach py-4 border-b border-orange/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-widest text-peach overflow-x-auto whitespace-nowrap hide-scrollbar">
             <Link href="/" className="hover:text-orange transition-colors">
               Home

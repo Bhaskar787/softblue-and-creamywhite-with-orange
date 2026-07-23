@@ -63,7 +63,7 @@ export default function ContactPage() {
       <Navbar />
 
       {/* Breadcrumbs Bar */}
-      <div className="bg-navy border-b border-orange/15 py-3.5 px-4 sm:px-6 lg:px-8">
+      <div className="bg-[#0E1B26] border-b border-orange/15 py-3.5 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-widest text-peach">
           <Link href="/" className="hover:text-orange transition-colors">
             Home
