@@ -250,7 +250,7 @@ export function NewLaunchesBanner() {
             </div>
 
             {/* RIGHT COLUMN: RESPONSIVE CONTENT AREA */}
-            <div className="lg:col-span-7 p-5 sm:p-8 lg:p-10 pb-16 sm:pb-20 lg:pb-16 flex flex-col justify-between space-y-6">
+            <div className="lg:col-span-7 p-4 sm:p-8 lg:p-10 pb-14 sm:pb-20 lg:pb-16 flex flex-col justify-between space-y-4 sm:space-y-6">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeProduct.id}

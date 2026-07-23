@@ -270,7 +270,7 @@ export default function ProductDetailPage() {
 
         {/* 1. TOP PRODUCT SHOWCASE SECTION (2-Column Grid) */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 xl:gap-12 items-start">
             
             {/* LEFT COLUMN: Image Gallery & LENS ZOOM (6 Columns) */}
             <div className="lg:col-span-6 space-y-4">

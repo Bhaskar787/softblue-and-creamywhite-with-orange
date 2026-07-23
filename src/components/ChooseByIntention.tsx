@@ -271,41 +271,41 @@ export function ChooseByIntention() {
             />
           </div>
 
-          <div className="flex flex-col md:flex-row min-h-[580px] sm:min-h-[620px] md:min-h-[580px]">
+          <div className="flex flex-col md:flex-row min-h-[480px] sm:min-h-[580px] md:min-h-[580px]">
             
             {/* Text & Controls Area */}
-            <div className="order-2 md:order-1 relative w-full md:w-1/2 p-4 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between z-20 flex-1 border-t md:border-t-0 md:border-r border-orange/20">
+            <div className="order-2 md:order-1 relative w-full md:w-1/2 p-3.5 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-between z-20 flex-1 border-t md:border-t-0 md:border-r border-orange/20">
               
               {/* Header Bar */}
-              <div className="flex items-center justify-between border-b border-orange/20 pb-3 sm:pb-4">
-                <span className="text-xs sm:text-sm md:text-base uppercase tracking-widest text-orange font-bold">
+              <div className="flex items-center justify-between border-b border-orange/20 pb-2 sm:pb-4">
+                <span className="text-[10px] sm:text-sm md:text-base uppercase tracking-widest text-orange font-bold">
                   Intention Focus
                 </span>
-                <span className="font-mono text-xs sm:text-sm md:text-base text-peach font-bold">
+                <span className="font-mono text-[10px] sm:text-sm md:text-base text-peach font-bold">
                   {String(activeIndex + 1).padStart(2, '0')} / {String(TOTAL).padStart(2, '0')}
                 </span>
               </div>
 
               {/* Dynamic Sliding Text Content */}
-              <div className="relative flex-1 my-4 sm:my-6 min-h-[220px] sm:min-h-[250px] md:min-h-[280px] flex items-center">
+              <div className="relative flex-1 my-3 sm:my-6 min-h-[170px] sm:min-h-[220px] md:min-h-[280px] flex items-center">
                 {tabs.map((tab, idx) => (
                   <div
                     key={tab.id}
                     ref={(el) => { textContentRef.current[idx] = el; }}
                     className="absolute inset-x-0 flex flex-col justify-center"
                   >
-                    <h3 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-peach font-bold mb-3 sm:mb-4 tracking-tight">
+                    <h3 className="font-display text-xl sm:text-3xl md:text-4xl lg:text-5xl text-peach font-bold mb-2 sm:mb-4 tracking-tight">
                       {tab.label}
                     </h3>
-                    <p className="text-peach/90 font-body text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed mb-6 sm:mb-8 font-medium max-w-xl">
+                    <p className="text-peach/90 font-body text-xs sm:text-base md:text-lg lg:text-xl leading-relaxed mb-4 sm:mb-8 font-medium max-w-xl line-clamp-3 sm:line-clamp-none">
                       {tab.detail}
                     </p>
                     <div>
                       <a
                         href="#"
-                        className="inline-flex items-center gap-2.5 px-6 sm:px-7 md:px-8 py-3 sm:py-3.5 md:py-4 bg-orange hover:bg-orange-bright text-navy-deep rounded-full font-heading font-bold text-xs sm:text-sm md:text-base uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-orange/20 hover:scale-105"
+                        className="inline-flex items-center gap-2 px-5 sm:px-7 md:px-8 py-2.5 sm:py-3.5 md:py-4 bg-orange hover:bg-orange-bright text-navy-deep rounded-full font-heading font-bold text-[11px] sm:text-sm md:text-base uppercase tracking-widest transition-all active:scale-95 shadow-lg shadow-orange/20"
                       >
-                        Explore {tab.label} <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                        Explore {tab.label} <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                       </a>
                     </div>
                   </div>
@@ -313,7 +313,7 @@ export function ChooseByIntention() {
               </div>
 
               {/* Auto-Centering Button Navigation Row */}
-              <div className="pt-3 sm:pt-4 border-t border-orange/20 flex items-center justify-between gap-2">
+              <div className="pt-2 sm:pt-4 border-t border-orange/20 flex items-center justify-between gap-2">
                 
                 {/* Horizontal scroll container with auto-center capabilities */}
                 <div className="flex gap-1.5 overflow-x-auto no-scrollbar py-1 flex-1 min-w-0 scroll-smooth">
@@ -344,18 +344,18 @@ export function ChooseByIntention() {
                     onClick={() => jumpToTab(Math.max(0, activeIndex - 1))}
                     disabled={activeIndex === 0}
                     aria-label="Previous"
-                    className="p-2 sm:p-2.5 rounded-xl border border-orange/30 text-peach hover:bg-orange hover:text-navy-deep disabled:opacity-20 transition-all cursor-pointer"
+                    className="p-1.5 sm:p-2.5 rounded-xl border border-orange/30 text-peach hover:bg-orange hover:text-navy-deep disabled:opacity-20 transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <ArrowLeft className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                   </button>
                   <button
                     type="button"
                     onClick={() => jumpToTab(Math.min(TOTAL - 1, activeIndex + 1))}
                     disabled={activeIndex === TOTAL - 1}
                     aria-label="Next"
-                    className="p-2 sm:p-2.5 rounded-xl border border-orange/30 text-peach hover:bg-orange hover:text-navy-deep disabled:opacity-20 transition-all cursor-pointer"
+                    className="p-1.5 sm:p-2.5 rounded-xl border border-orange/30 text-peach hover:bg-orange hover:text-navy-deep disabled:opacity-20 transition-all cursor-pointer"
                   >
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <ArrowRight className="w-3.5 h-3.5 sm:w-5 sm:h-5" />
                   </button>
                 </div>
 
@@ -364,7 +364,7 @@ export function ChooseByIntention() {
             </div>
 
             {/* Image Box */}
-            <div className="order-1 md:order-2 relative w-full h-[300px] sm:h-[380px] md:h-auto md:w-1/2 overflow-hidden bg-navy-deep/70 shrink-0">
+            <div className="order-1 md:order-2 relative w-full h-[180px] sm:h-[300px] md:h-auto md:w-1/2 overflow-hidden bg-navy-deep/70 shrink-0">
               <div className="relative w-full h-full">
                 {tabs.map((tab, idx) => (
                   <div

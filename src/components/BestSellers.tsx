@@ -275,7 +275,7 @@ export function BestSellers() {
         </div>
 
         {/* Product Grid System */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 md:gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-5 md:gap-6 lg:gap-8">
           {filtered.map((product) => {
             const isSaved = isInWishlist(product.id);
             const discount = product.originalPrice

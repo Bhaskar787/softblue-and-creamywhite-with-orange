@@ -102,8 +102,8 @@ export function FloatingActions() {
 
         {/* AI ASSISTANT CHAT PANEL */}
         {isChatOpen && (
-          <div className="w-[85vw] max-w-sm h-[26rem] sm:h-[28rem] rounded-2xl border border-orange/30 bg-navy-deep shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-300">
-            <div className="flex items-center justify-between px-4 sm:px-5 py-3 sm:py-4 border-b border-orange/20 bg-navy">
+          <div className="w-[calc(100vw-2rem)] sm:w-[360px] max-w-sm h-[24rem] sm:h-[28rem] rounded-2xl border border-orange/30 bg-navy-deep shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-4 fade-in duration-300">
+            <div className="flex items-center justify-between px-3.5 sm:px-5 py-3 sm:py-4 border-b border-orange/20 bg-navy">
               <div className="flex items-center gap-2 min-w-0">
                 <Sparkles className="w-4 h-4 text-orange shrink-0" />
                 <span className="font-heading font-bold text-xs sm:text-sm uppercase tracking-widest text-orange truncate">

@@ -301,7 +301,7 @@ export function FeaturedCollectionSpotlight() {
             </div>
 
             {/* RIGHT COLUMN: RESPONSIVE SLIDE CONTENT - 100% VISIBLE CTAS ON ALL DEVICES */}
-            <div className="lg:col-span-7 p-5 sm:p-7 lg:p-9 flex flex-col justify-between bg-white relative">
+            <div className="lg:col-span-7 p-5 sm:p-7 lg:p-6 xl:p-9 flex flex-col justify-between bg-white relative">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={activeSlide.id}

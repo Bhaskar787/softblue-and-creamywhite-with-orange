@@ -24,7 +24,7 @@ export function Navbar() {
   const NavLink = ({ href, children }: { href: string; children: React.ReactNode }) => (
     <Link
       href={href}
-      className="relative py-2 text-[11px] xl:text-xs font-heading font-medium text-peach hover:text-orange-bright transition-colors group whitespace-nowrap shrink-0"
+      className="relative py-2 text-[10px] lg:text-[11px] xl:text-xs font-heading font-medium text-peach hover:text-orange-bright transition-colors group whitespace-nowrap shrink-0"
     >
       {children}
       <span
@@ -45,10 +45,10 @@ export function Navbar() {
           : 'bg-navy border-orange/10'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 flex items-center justify-between h-16 sm:h-20 gap-3 sm:gap-6">
+      <div className="max-w-[1440px] mx-auto px-2 sm:px-4 lg:px-4 xl:px-8 flex items-center justify-between h-16 sm:h-20 gap-1.5 sm:gap-4 lg:gap-3 xl:gap-6">
 
         {/* LEFT: Menu Button + Brand Logo */}
-        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
           <button
             onClick={() => setIsMenuOpen(true)}
             className="p-1.5 sm:p-2 -ml-1 sm:-ml-2 text-orange hover:text-orange-bright transition-colors focus:outline-none shrink-0"
@@ -57,8 +57,8 @@ export function Navbar() {
             <Menu className="w-5 h-5 sm:w-7 sm:h-7" />
           </button>
 
-          <Link href="/" className="flex items-center gap-2 sm:gap-3 group shrink-0">
-            <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-full border border-orange overflow-hidden flex items-center justify-center p-1 relative shrink-0">
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-3 group shrink-0">
+            <div className="w-8 h-8 sm:w-10 sm:h-10 xl:w-11 xl:h-11 rounded-full border border-orange overflow-hidden flex items-center justify-center p-1 relative shrink-0">
               <div className="absolute inset-0 bg-orange/10 rounded-full animate-sacred-glow"></div>
               <img
                 src="https://res.cloudinary.com/deiusxdk9/image/upload/v1771952737/rudrantra/cms/rswcale9xcfa697s2kvw.png"
@@ -66,18 +66,18 @@ export function Navbar() {
                 className="w-full h-full object-cover rounded-full mix-blend-screen"
               />
             </div>
-            <span className="font-display text-base sm:text-xl lg:text-2xl font-bold tracking-widest text-orange text-orange-gradient whitespace-nowrap">
+            <span className="font-display text-base sm:text-lg lg:text-lg xl:text-2xl font-bold tracking-widest text-orange text-orange-gradient whitespace-nowrap">
               Rudrantra
             </span>
           </Link>
         </div>
 
-        {/* CENTER: Desktop Navigation Links (Expanded Width for Perfect Alignment) */}
-        <nav className="hidden lg:flex items-center justify-center gap-3 xl:gap-5 shrink">
+        {/* CENTER: Desktop Navigation Links */}
+        <nav className="hidden lg:flex items-center justify-center gap-1 lg:gap-1.5 xl:gap-5 shrink">
 
           {/* RUDRAKSHA BEADS — MUKHI GRID MEGA DROPDOWN */}
           <div className="relative group cursor-pointer py-2 shrink-0">
-            <button className="text-[11px] xl:text-xs font-heading font-medium text-peach group-hover:text-orange-bright transition-colors flex items-center gap-1 whitespace-nowrap">
+            <button className="text-[10px] lg:text-[10.5px] xl:text-xs font-heading font-medium text-peach group-hover:text-orange-bright transition-colors flex items-center gap-0.5 xl:gap-1 whitespace-nowrap">
               <span>Rudraksha Beads</span>
               <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-orange" />
             </button>
@@ -134,7 +134,7 @@ export function Navbar() {
 
           {/* SACRED CATEGORIES TOOLTIP MEGA DROPDOWN */}
           <div className="relative group cursor-pointer py-2 shrink-0">
-            <button className="text-[11px] xl:text-xs font-heading font-medium text-peach group-hover:text-orange-bright transition-colors flex items-center gap-1 whitespace-nowrap">
+            <button className="text-[10px] lg:text-[11px] xl:text-xs font-heading font-medium text-peach group-hover:text-orange-bright transition-colors flex items-center gap-0.5 xl:gap-1 whitespace-nowrap">
               <span>Sacred Categories</span>
               <ChevronDown className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180 text-orange" />
             </button>
@@ -305,10 +305,10 @@ export function Navbar() {
         </nav>
 
         {/* RIGHT: Actions (Search, Account, Wishlist, Cart) */}
-        <div className="flex items-center justify-end gap-1 sm:gap-2 md:gap-3 shrink-0">
-          <div className="hidden sm:flex items-center gap-1 text-[11px] xl:text-xs font-heading font-medium text-orange shrink-0">
+        <div className="flex items-center justify-end gap-0.5 sm:gap-1.5 lg:gap-1.5 xl:gap-3 shrink-0">
+          <div className="hidden sm:flex items-center gap-0.5 text-[10px] xl:text-xs font-heading font-medium text-orange shrink-0">
             <span>₹</span>
-            <select className="bg-transparent border-none focus:outline-none cursor-pointer appearance-none text-orange hover:text-orange-bright pr-2 bg-navy-deep">
+            <select className="bg-transparent border-none focus:outline-none cursor-pointer appearance-none text-orange hover:text-orange-bright pr-1 bg-navy-deep">
               <option>INR</option>
               <option>USD</option>
             </select>
@@ -316,14 +316,14 @@ export function Navbar() {
 
           <button
             onClick={() => setIsSearchOpen(true)}
-            className="p-1.5 sm:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light shrink-0"
+            className="p-1 sm:p-1.5 xl:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light shrink-0"
             aria-label="Search"
           >
             <Search className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
           <button
-            className="hidden sm:block p-1.5 sm:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light shrink-0"
+            className="hidden sm:block p-1 sm:p-1.5 xl:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light shrink-0"
             aria-label="Account"
           >
             <User className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -331,7 +331,7 @@ export function Navbar() {
 
           <button
             onClick={() => setIsWishlistOpen(true)}
-            className="p-1.5 sm:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light relative shrink-0"
+            className="p-1 sm:p-1.5 xl:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light relative shrink-0"
             aria-label="Wishlist"
           >
             <Heart className="w-4 h-4 sm:w-5 sm:h-5" />
@@ -344,7 +344,7 @@ export function Navbar() {
 
           <button
             onClick={() => setIsCartOpen(true)}
-            className="p-1.5 sm:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light relative shrink-0"
+            className="p-1 sm:p-1.5 xl:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light relative shrink-0"
             aria-label="Cart"
           >
             <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5" />

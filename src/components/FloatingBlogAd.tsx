@@ -22,7 +22,7 @@ export function FloatingBlogAd() {
   if (!isVisible) return null;
 
   return (
-    <aside className="fixed top-32 sm:top-36 right-4 sm:right-6 z-30 w-[300px] sm:w-[330px] group">
+    <aside className="hidden lg:block fixed top-36 right-6 z-30 w-[320px] group">
       
       {/* EXPANDING RADAR WAVE GLOW RINGS (Like WhatsApp Wave Effect) */}
       <div className="absolute -inset-2 rounded-3xl bg-orange/35 animate-ping opacity-40 pointer-events-none" />

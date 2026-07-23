@@ -350,7 +350,7 @@ export default function CategoryCollectionPage() {
 
         {/* ── 4. PRODUCTS GRID FOR THIS COLLECTION ── */}
         {sortedProducts.length > 0 ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-5 xl:gap-6">
             {sortedProducts.map((product) => {
               const isSaved = isInWishlist(product.id);
               const discount = product.originalPrice

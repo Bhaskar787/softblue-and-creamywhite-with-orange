@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import {
   Star,
   ThumbsUp,
+  ThumbsDown,
   PenSquare,
   Search,
   Check,
@@ -211,12 +212,12 @@ export function LeftReviewsDrawer() {
               )}
             </AnimatePresence>
 
-            {/* Single Drawer Panel with Physically Attached Vertical Tab Button (50% width on Desktop) */}
+            {/* Single Drawer Panel with Physically Attached Vertical Tab Button */}
             <motion.div
               initial={{ x: '-100%' }}
               animate={{ x: isOpen ? '0%' : '-100%' }}
               transition={{ type: 'spring', damping: 26, stiffness: 220 }}
-              className="absolute top-0 left-0 bottom-0 w-[88vw] sm:w-[480px] lg:w-[50vw] bg-white shadow-2xl border-r border-orange/20 flex flex-col justify-between overflow-visible pointer-events-auto"
+              className="absolute top-0 left-0 bottom-0 w-[85vw] sm:w-[480px] md:w-[540px] lg:w-[600px] xl:w-[640px] max-w-[calc(100vw-48px)] bg-white shadow-2xl border-r border-orange/20 flex flex-col justify-between overflow-visible pointer-events-auto"
             >
               {/* PHYSICALLY ATTACHED VERTICAL REVIEWS TAB BUTTON ON RIGHT OUTER EDGE */}
               <button
@@ -395,17 +396,17 @@ export function LeftReviewsDrawer() {
                       {/* Author Header */}
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2.5">
-                          <div className="w-7 h-7 rounded-full bg-gray-300/80 text-gray-700 font-bold text-xs flex items-center justify-center">
-                            <User className="w-4 h-4 text-gray-500" />
+                          <div className="w-8 h-8 rounded-full bg-navy/10 text-navy font-bold text-xs flex items-center justify-center border border-orange/20">
+                            <User className="w-4 h-4 text-orange" />
                           </div>
                           <div>
-                            <div className="flex items-center gap-1.5">
-                              <span className="font-body font-semibold text-xs text-navy/90">
+                            <div className="flex items-center gap-2">
+                              <span className="font-heading font-bold text-sm sm:text-base text-navy">
                                 {rev.author}
                               </span>
                               {rev.isVerified && (
-                                <span className="inline-flex items-center gap-1 text-[10px] font-medium text-navy/70">
-                                  <span className="w-3.5 h-3.5 rounded-full bg-[#5c2419] text-white flex items-center justify-center text-[8px] font-bold">✓</span>
+                                <span className="inline-flex items-center gap-1 text-xs font-bold text-navy-deep bg-orange/15 px-2.5 py-0.5 rounded-full border border-orange/40">
+                                  <span className="w-3.5 h-3.5 rounded-full bg-navy-deep text-orange flex items-center justify-center text-[9px] font-bold">✓</span>
                                   Verified Buyer
                                 </span>
                               )}
@@ -413,45 +414,47 @@ export function LeftReviewsDrawer() {
                           </div>
                         </div>
 
-                        <span className="text-xs text-navy/40 font-normal">
+                        <span className="text-xs sm:text-sm text-navy/50 font-medium">
                           {rev.date}
                         </span>
                       </div>
 
                       {/* Orange 5-Star rating */}
-                      <div className="flex items-center gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star
-                            key={i}
-                            className={`w-4 h-4 ${
-                              i < rev.rating ? 'fill-orange text-orange' : 'fill-gray-200 text-gray-200'
-                            }`}
-                          />
-                        ))}
-                        <span className="text-xs font-medium text-navy/80 ml-1.5">
+                      <div className="flex items-center gap-1.5 flex-wrap">
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star
+                              key={i}
+                              className={`w-4 h-4 ${
+                                i < rev.rating ? 'fill-orange text-orange' : 'fill-gray-200 text-gray-200'
+                              }`}
+                            />
+                          ))}
+                        </div>
+                        <span className="text-sm sm:text-base font-bold text-navy font-display ml-1">
                           {rev.title}
                         </span>
                       </div>
 
                       {/* Review Content */}
-                      <p className="text-xs font-body text-navy/75 leading-relaxed">
+                      <p className="text-xs sm:text-sm md:text-base font-body text-navy/85 leading-relaxed font-normal">
                         {rev.content}
                       </p>
 
-                      {/* Helpful Vote Footer */}
-                      <div className="flex items-center justify-end gap-3 text-xs text-navy/50 font-normal pt-1">
+                      {/* Helpful Vote Footer with Lucide Icons */}
+                      <div className="flex items-center justify-end gap-3 text-xs sm:text-sm text-navy/60 font-medium pt-1">
                         <span>Was this review helpful?</span>
                         <button
                           onClick={() => handleHelpfulClick(rev.id)}
-                          className="flex items-center gap-1 hover:text-navy transition-colors cursor-pointer"
+                          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-orange/10 hover:bg-orange hover:text-navy-deep text-orange font-bold transition-all cursor-pointer border border-orange/20"
                         >
-                          <span>👍</span>
+                          <ThumbsUp className="w-3.5 h-3.5" />
                           <span>{helpfulVotes[rev.id] ?? rev.helpfulCount}</span>
                         </button>
                         <button
-                          className="flex items-center gap-1 hover:text-navy transition-colors cursor-pointer"
+                          className="flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-gray-100 hover:bg-gray-200 text-gray-600 font-semibold transition-all cursor-pointer border border-gray-200"
                         >
-                          <span>👎</span>
+                          <ThumbsDown className="w-3.5 h-3.5 text-gray-500" />
                           <span>0</span>
                         </button>
                       </div>
@@ -462,8 +465,8 @@ export function LeftReviewsDrawer() {
               </div>
 
               {/* Drawer Footer */}
-              <div className="p-3 bg-[#faf7f4] border-t border-gray-100 text-center shrink-0">
-                <span className="text-[10px] text-navy/60 font-medium">
+              <div className="p-3.5 bg-[#faf7f4] border-t border-gray-100 text-center shrink-0">
+                <span className="text-xs text-navy/70 font-semibold">
                   Verified Site Reviews • Rudrantra Official
                 </span>
               </div>

@@ -580,7 +580,7 @@ export default function AllProductsPage() {
 
           {/* Products Grid (Matching Image 2 layout with clean white cards) */}
           {sortedProducts.length > 0 ? (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 sm:gap-6">
               {sortedProducts.map((product) => {
                 const isSaved = isInWishlist(product.id);
                 const discount = product.originalPrice
