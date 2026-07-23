@@ -26,27 +26,32 @@ const reasons = [
 
 export function WhyChoose() {
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-[#faf7f4] relative overflow-hidden">
-      {/* Pashupatinath Background Overlay */}
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[hsl(17.14deg_96.08%_70%)]/20">
+      {/* Background Meditation Image Intact (0.65 Opacity) */}
       <div 
         className="absolute inset-0 opacity-[0.65] bg-cover bg-center"
         style={{ backgroundImage: 'url("https://static.vecteezy.com/system/resources/previews/069/690/059/large_2x/serene-monk-meditating-in-mountain-cave-illuminated-by-golden-rays-of-setting-sun-surrounded-by-lush-greenery-and-majestic-mountains-evokes-sense-of-peace-and-tranquility-free-photo.jpeg")' }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#faf7f4]/70 via-[#faf7f4]/30 to-[#faf7f4]/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#FAF7F2]/80 via-[#FAF7F2]/40 to-[#FAF7F2]/80" />
+
+      {/* OM Section Divider */}
+      <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+        <span className="text-[hsl(17.14deg_96.08%_70%)] text-xl sm:text-2xl font-serif font-bold">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
         
-        {/* Title Section */}
+        {/* Title Section — Unboxed Subtitle Text */}
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 md:mb-20">
-          <div className="flex items-center justify-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-            <div className="h-px w-8 sm:w-12 bg-gradient-to-r from-transparent to-orange"></div>
-            <span className="text-xl sm:text-2xl md:text-3xl text-orange">ॐ</span>
-            <div className="h-px w-8 sm:w-12 bg-gradient-to-l from-transparent to-orange"></div>
-          </div>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-orange-gradient mb-4 sm:mb-6">
+          <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] md:text-xs font-heading font-bold uppercase tracking-widest text-[#0F172A] bg-[hsl(17.14deg_96.08%_70%)] border border-[hsl(17.14deg_96.08%_70%)]/50 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 shadow-xs">
+            Sacred Transformation
+          </span>
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#1E293B] font-bold tracking-tight mb-4 sm:mb-6">
             Spiritual Tools for Your Journey
           </h2>
-          <p className="text-navy/90 font-body font-medium text-sm sm:text-lg md:text-xl">
+          <p className="text-[#0F172A] font-body font-semibold text-base sm:text-lg md:text-xl leading-relaxed">
             Beyond beautiful adornments, these are spiritual tools. Discover how authentic Rudraksha can transform your daily experience and inner life.
           </p>
         </div>
@@ -56,23 +61,26 @@ export function WhyChoose() {
           {reasons.map((item, i) => (
             <div 
               key={i} 
-              className="bg-white p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-navy/15 hover:border-orange hover:-translate-y-2 transition-all duration-500 shadow-sm hover:shadow-sacred-glow group flex flex-col relative overflow-hidden"
+              className="bg-white/95 backdrop-blur-sm p-5 sm:p-6 md:p-8 rounded-2xl border border-[#E2D9CC] hover:border-[hsl(17.14deg_96.08%_70%)] hover:-translate-y-2 transition-all duration-500 shadow-md hover:shadow-xl group flex flex-col relative overflow-hidden"
             >
-              {/* Subtle top glow */}
-              <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-orange-bright to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              {/* Subtle top glow line */}
+              <div className="absolute top-0 left-1/4 right-1/4 h-px bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               
-              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border border-orange/25 bg-orange/10 flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-navy-deep transition-colors duration-500 mb-5 sm:mb-6 md:mb-8 mx-auto lg:mx-0">
+              <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full border border-[hsl(17.14deg_96.08%_70%)]/40 bg-[hsl(17.14deg_96.08%_70%)]/15 flex items-center justify-center text-[#0F172A] group-hover:bg-[hsl(17.14deg_96.08%_70%)] transition-colors duration-500 mb-5 sm:mb-6 md:mb-8 mx-auto lg:mx-0 shadow-xs">
                 <item.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8" />
               </div>
               
-              <h3 className="font-display text-lg sm:text-xl md:text-2xl text-navy-deep font-bold mb-3 sm:mb-4 text-center lg:text-left group-hover:text-orange transition-colors">{item.title}</h3>
-              <p className="text-navy/85 font-body leading-relaxed flex-1 mb-5 sm:mb-6 md:mb-8 text-center lg:text-left text-xs sm:text-sm md:text-base">
+              <h3 className="font-display text-lg sm:text-xl md:text-2xl text-[#0F172A] font-bold mb-3 sm:mb-4 text-center lg:text-left group-hover:text-[#9A3412] transition-colors">
+                {item.title}
+              </h3>
+              
+              <p className="text-[#334155] font-body leading-relaxed flex-1 mb-5 sm:mb-6 md:mb-8 text-center lg:text-left text-xs sm:text-sm md:text-base font-medium">
                 {item.desc}
               </p>
               
-              <a href="#" className="inline-flex items-center justify-center lg:justify-start gap-2 text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-navy-deep hover:text-orange group/link mt-auto">
-                Learn more
-                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform" />
+              <a href="#" className="inline-flex items-center justify-center lg:justify-start gap-2 text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-[#0F172A] group-hover:text-[#9A3412] group/link mt-auto transition-colors">
+                <span>Learn more</span>
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 group-hover/link:translate-x-1 transition-transform text-[hsl(17.14deg_96.08%_70%)]" />
               </a>
             </div>
           ))}
@@ -81,12 +89,6 @@ export function WhyChoose() {
     </section>
   );
 }
-
-
-
-
-
-
 // import { GiFlame, GiMeditation, GiYinYang, GiLotusFlower } from 'react-icons/gi';
 // import { ArrowRight } from 'lucide-react';
 

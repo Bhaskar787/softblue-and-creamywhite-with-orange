@@ -465,7 +465,7 @@ export default function AllProductsPage() {
   );
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#faf7f4] text-navy">
+    <div className="flex flex-col min-h-screen bg-[#FAF7F2] text-navy">
       <AnnouncementBar />
       <Navbar />
 
@@ -481,7 +481,7 @@ export default function AllProductsPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search all products by name, Mukhi, category, origin..."
-              className="w-full pl-10 pr-9 py-2 sm:py-2.5 bg-[#faf7f4] border border-orange/25 rounded-xl text-xs sm:text-sm font-body text-navy focus:outline-none focus:border-orange transition-all shadow-2xs"
+              className="w-full pl-10 pr-9 py-2 sm:py-2.5 bg-[#FAF7F2] border border-orange/25 rounded-xl text-xs sm:text-sm font-body text-navy focus:outline-none focus:border-orange transition-all shadow-2xs"
             />
             {searchQuery && (
               <button
@@ -522,7 +522,7 @@ export default function AllProductsPage() {
                 <select
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value as SortOption)}
-                  className="appearance-none bg-[#faf7f4] border border-orange/25 text-navy font-heading font-bold text-xs uppercase tracking-wider px-3 py-2 pr-8 rounded-xl focus:outline-none cursor-pointer shadow-2xs"
+                  className="appearance-none bg-[#FAF7F2] border border-orange/25 text-navy font-heading font-bold text-xs uppercase tracking-wider px-3 py-2 pr-8 rounded-xl focus:outline-none cursor-pointer shadow-2xs"
                 >
                   {sortOptionsList.map((opt) => (
                     <option key={opt.value} value={opt.value}>
@@ -593,7 +593,7 @@ export default function AllProductsPage() {
                     className="group relative flex flex-col bg-white border border-gray-200/90 shadow-sm rounded-xl p-3 sm:p-4 hover:shadow-md transition-all duration-300"
                   >
                     {/* Image Box */}
-                    <div className="relative aspect-square rounded-lg overflow-hidden border border-gray-100 mb-3 bg-[#faf7f4]">
+                    <div className="relative aspect-square rounded-lg overflow-hidden border border-gray-100 mb-3 bg-[#FAF7F2]">
                       <Link href={`/product/${product.id}`}>
                         <img
                           src={product.image}
@@ -692,7 +692,7 @@ export default function AllProductsPage() {
                       </div>
 
                       {/* Lab certified bar */}
-                      <div className="mt-2.5 bg-[#faf7f4] border border-gray-200 py-1 px-2 rounded flex items-center justify-center gap-1.5">
+                      <div className="mt-2.5 bg-[#FAF7F2] border border-gray-200 py-1 px-2 rounded flex items-center justify-center gap-1.5">
                         <Sparkles className="w-3 h-3 text-orange" />
                         <span className="text-[9px] font-sans font-bold text-navy-deep uppercase tracking-wider">
                           100% Lab Certified

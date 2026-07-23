@@ -34,8 +34,8 @@
   --color-cream-soft:   var(--color-peach-soft);
 
   /* ── Warm off-white for content section backgrounds ──────────── */
-  --color-warm:       hsl(36deg 28% 97%);   /* #faf7f4 — main page bg */
-  --color-warm-deep:  hsl(36deg 25% 95%);   /* slightly deeper warm */
+  --color-warm:       #FAF7F2;   /* #FAF7F2 — main warm off-white page bg */
+  --color-warm-deep:  #F5EFE6;   /* slightly deeper warm */
 
   --color-background: var(--color-warm);
   --color-foreground: var(--color-navy);

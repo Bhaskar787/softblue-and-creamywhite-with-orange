@@ -213,41 +213,41 @@ export function BestSellers() {
   }, [activeTab]);
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-[#faf7f4] relative">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#FAF7F2] relative border-b border-[hsl(17.14deg_96.08%_70%)]/20">
       {/* OM Section Divider */}
       <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
-        <span className="text-orange text-xl sm:text-2xl font-serif opacity-80">ॐ</span>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+        <span className="text-[hsl(17.14deg_96.08%_70%)] text-xl sm:text-2xl font-serif font-bold">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
       </div>
 
       {/* Background mandala watermark */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] aspect-square bg-mandala opacity-5 pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-[800px] aspect-square bg-mandala opacity-[0.03] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header Title Section */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-12">
           <div>
-            <span className="text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-[0.2em] text-orange bg-orange/5 border border-orange/20 px-3.5 sm:px-4 py-1.5 rounded-full inline-block mb-3 sm:mb-4">
+            <span className="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-[0.2em] text-[#0F172A] bg-[hsl(17.14deg_96.08%_70%)] border border-[hsl(17.14deg_96.08%_70%)]/50 px-3.5 sm:px-4 py-1.5 rounded-full inline-block mb-3 sm:mb-4 shadow-xs">
               Sacred Offerings
             </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-orange-gradient tracking-tight mt-2">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-[#1E293B] font-bold tracking-tight mt-2">
               Trending Now
             </h2>
           </div>
 
           <Link
             href="/all-products"
-            className="hidden md:inline-flex items-center gap-2 text-orange font-heading font-bold uppercase tracking-wider text-sm hover:text-orange-bright transition-colors group"
+            className="hidden md:inline-flex items-center gap-2 text-[#0F172A] hover:text-[#9A3412] font-heading font-bold uppercase tracking-wider text-sm transition-colors group"
           >
             View All Products
-            <span className="w-8 h-px bg-orange group-hover:w-12 transition-all"></span>
+            <span className="w-8 h-0.5 bg-[hsl(17.14deg_96.08%_70%)] group-hover:w-12 transition-all"></span>
           </Link>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex overflow-x-auto hide-scrollbar border-b border-orange/20 mb-8 sm:mb-10 -mx-4 px-4 md:mx-0 md:px-0 md:justify-center">
+        <div className="flex overflow-x-auto hide-scrollbar border-b border-[#E2D9CC] mb-8 sm:mb-10 -mx-4 px-4 md:mx-0 md:px-0 md:justify-center">
           <div className="flex gap-2.5 sm:gap-4 pb-3 sm:pb-4 whitespace-nowrap">
             {filterTabs.map((tab) => {
               const isNewTab = tab === 'New Launches';
@@ -256,17 +256,15 @@ export function BestSellers() {
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs md:text-sm font-heading font-bold tracking-widest transition-all border flex items-center gap-1.5 ${
+                  className={`px-4 sm:px-6 py-2 sm:py-2.5 rounded-full text-[11px] sm:text-xs md:text-sm font-heading font-bold tracking-widest transition-all border flex items-center gap-1.5 cursor-pointer shadow-xs ${
                     isActive
-                      ? isNewTab
-                        ? 'bg-gradient-to-r from-orange via-orange-bright to-orange text-navy-deep border-orange shadow-[0_0_20px_rgba(201,151,58,0.55)] scale-105'
-                        : 'bg-orange text-navy-deep border-orange shadow-sacred-glow'
+                      ? 'bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] border-[hsl(17.14deg_96.08%_70%)] shadow-md scale-105'
                       : isNewTab
-                      ? 'bg-orange/15 text-navy-deep border-orange/50 hover:bg-orange hover:text-navy-deep'
-                      : 'bg-white text-navy/85 border-navy/20 hover:border-orange hover:text-orange'
+                      ? 'bg-[hsl(17.14deg_96.08%_70%)]/20 text-[#0F172A] border-[hsl(17.14deg_96.08%_70%)]/50 hover:bg-[hsl(17.14deg_96.08%_70%)]'
+                      : 'bg-white text-[#334155] border-[#E2D9CC] hover:border-[hsl(17.14deg_96.08%_70%)] hover:text-[#0F172A]'
                   }`}
                 >
-                  {isNewTab && <Sparkles className="w-3.5 h-3.5 text-navy-deep" />}
+                  {isNewTab && <Sparkles className="w-3.5 h-3.5 text-[#0F172A]" />}
                   <span>{tab}</span>
                 </button>
               );
@@ -284,30 +282,27 @@ export function BestSellers() {
             return (
               <div
                 key={product.id}
-                className="group relative flex flex-col bg-white border border-navy/15 shadow-sm rounded-lg sm:rounded-xl p-2.5 sm:p-4 hover:border-orange hover:shadow-sacred-glow transition-all duration-500"
+                className="group relative flex flex-col bg-white border border-[#E2D9CC] shadow-xs rounded-xl p-2.5 sm:p-4 hover:border-[hsl(17.14deg_96.08%_70%)] hover:shadow-xl transition-all duration-300"
               >
                 {/* Image Container */}
-                <div className="relative aspect-square rounded-md sm:rounded-lg overflow-hidden border border-navy/10 mb-3 sm:mb-5">
+                <div className="relative aspect-square rounded-lg overflow-hidden border border-[#F1F5F9] mb-3 sm:mb-5">
                   <Link href={`/product/${product.id}`}>
                     <img
                       src={product.image}
                       alt={product.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-1000 brightness-95 group-hover:brightness-100 cursor-pointer"
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-95 group-hover:brightness-100 cursor-pointer"
                     />
                   </Link>
-                  
-                  {/* Subtle inner shadow */}
-                  <div className="absolute inset-0 shadow-[inset_0_0_20px_rgba(0,0,0,0.4)] pointer-events-none" />
 
                   {/* Badges */}
                   <div className="absolute top-1.5 left-1.5 sm:top-3 sm:left-3 flex flex-col gap-1 sm:gap-2 items-start pointer-events-none z-10">
                     {product.badge && (
-                      <span className="bg-crimson text-white text-[8px] sm:text-[10px] font-heading font-bold uppercase tracking-widest px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-md border border-crimson/50">
+                      <span className="bg-[#DC2626] text-white text-[8px] sm:text-[10px] font-heading font-bold uppercase tracking-widest px-2 py-0.5 sm:py-1 rounded shadow-xs">
                         {product.badge}
                       </span>
                     )}
                     {discount > 0 && (
-                      <span className="bg-orange text-navy-deep text-[8px] sm:text-[10px] font-heading font-bold uppercase tracking-widest px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded shadow-md">
+                      <span className="bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] text-[8px] sm:text-[10px] font-heading font-bold uppercase tracking-widest px-2 py-0.5 sm:py-1 rounded shadow-xs">
                         {discount}% Off
                       </span>
                     )}
@@ -319,11 +314,11 @@ export function BestSellers() {
                       e.preventDefault();
                       toggleWishlist(product);
                     }}
-                    className="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 w-7 h-7 sm:w-9 sm:h-9 bg-white/90 backdrop-blur border border-navy/20 rounded-full flex items-center justify-center text-orange hover:bg-orange hover:text-white transition-all shadow-lg z-10"
+                    className="absolute top-1.5 right-1.5 sm:top-3 sm:right-3 w-7 h-7 sm:w-9 sm:h-9 bg-white/90 backdrop-blur border border-[#E2D9CC] rounded-full flex items-center justify-center text-[#0F172A] hover:bg-[hsl(17.14deg_96.08%_70%)] transition-all shadow-md z-10 cursor-pointer"
                   >
                     <Heart
                       className={`w-3.5 h-3.5 sm:w-4 sm:h-4 transition-transform ${
-                        isSaved ? 'fill-orange text-orange scale-110' : ''
+                        isSaved ? 'fill-[hsl(17.14deg_96.08%_70%)] text-[hsl(17.14deg_96.08%_70%)] scale-110' : ''
                       }`}
                     />
                   </button>
@@ -332,7 +327,7 @@ export function BestSellers() {
                   <div className="absolute bottom-0 left-0 w-full p-3 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 hidden lg:block z-10">
                     <button
                       onClick={() => addToCart(product)}
-                      className="w-full py-3 bg-navy-deep text-orange border border-orange font-heading font-bold uppercase tracking-widest rounded hover:bg-orange hover:text-navy-deep transition-colors shadow-sacred-glow flex items-center justify-center gap-2 text-xs"
+                      className="w-full py-3 bg-[#0F172A] text-white border border-[#0F172A] font-heading font-bold uppercase tracking-widest rounded-xl hover:bg-[hsl(17.14deg_96.08%_70%)] hover:text-[#0F172A] transition-colors shadow-md flex items-center justify-center gap-2 text-xs cursor-pointer"
                     >
                       <ShoppingBag className="w-4 h-4" /> Quick Add
                     </button>
@@ -347,41 +342,41 @@ export function BestSellers() {
                         <GiStarSattelites
                           key={i}
                           className={`w-3 h-3 sm:w-3.5 sm:h-3.5 ${
-                            i < Math.round(product.rating) ? 'text-orange' : 'text-navy/20'
+                            i < Math.round(product.rating) ? 'text-[hsl(17.14deg_96.08%_70%)]' : 'text-[#CBD5E1]'
                           }`}
                         />
                       ))}
-                      <span className="text-[9px] sm:text-[10px] font-body text-navy/80 font-medium ml-1">({product.reviews})</span>
+                      <span className="text-[9px] sm:text-[10px] font-body text-[#64748B] font-semibold ml-1">({product.reviews})</span>
                     </div>
-                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-navy/80 uppercase tracking-widest border border-navy/20 px-1.5 sm:px-2 py-0.5 rounded">
+                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-[#334155] uppercase tracking-widest border border-[#E2D9CC] bg-[#FAF7F2] px-1.5 sm:px-2 py-0.5 rounded">
                       {product.origin}
                     </span>
                   </div>
 
                   <Link href={`/product/${product.id}`}>
-                    <h3 className="font-display text-sm sm:text-base md:text-lg text-navy-deep font-bold mb-1.5 sm:mb-2 line-clamp-2 leading-tight group-hover:text-orange transition-colors cursor-pointer">
+                    <h3 className="font-display text-sm sm:text-base md:text-lg text-[#0F172A] font-bold mb-1.5 sm:mb-2 line-clamp-2 leading-tight group-hover:text-[#9A3412] transition-colors cursor-pointer">
                       {product.name}
                     </h3>
                   </Link>
-                  <p className="text-xs sm:text-sm font-body text-navy/85 line-clamp-2 mb-3 sm:mb-4 flex-1">
+                  <p className="text-xs sm:text-sm font-body text-[#475569] font-medium line-clamp-2 mb-3 sm:mb-4 flex-1">
                     {product.desc}
                   </p>
 
-                  <div className="flex items-baseline gap-2 sm:gap-3 mt-auto pt-3 sm:pt-4 border-t border-navy/10">
-                    <span className="font-display text-base sm:text-lg md:text-xl font-bold text-navy-deep">
+                  <div className="flex items-baseline gap-2 sm:gap-3 mt-auto pt-3 sm:pt-4 border-t border-[#F1F5F9]">
+                    <span className="font-display text-base sm:text-lg md:text-xl font-bold text-[#0F172A]">
                       {formatPrice(product.price)}
                     </span>
                     {product.originalPrice && (
-                      <span className="text-xs sm:text-sm font-body text-navy/45 line-through">
+                      <span className="text-xs sm:text-sm font-body text-[#94A3B8] line-through">
                         {formatPrice(product.originalPrice)}
                       </span>
                     )}
                   </div>
 
                   {/* Lab Certified Strip */}
-                  <div className="mt-3 sm:mt-4 bg-orange/10 border border-orange/25 py-1 sm:py-1.5 px-2 sm:px-3 rounded flex items-center justify-center gap-1.5 sm:gap-2">
-                    <img src="https://img.icons8.com/color/48/warranty.png" alt="cert" className="w-3.5 h-3.5 sm:w-4 sm:h-4 filter brightness-110 opacity-90" />
-                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-navy-deep uppercase tracking-widest">
+                  <div className="mt-3 sm:mt-4 bg-[hsl(17.14deg_96.08%_70%)]/15 border border-[hsl(17.14deg_96.08%_70%)]/30 py-1 sm:py-1.5 px-2 sm:px-3 rounded-lg flex items-center justify-center gap-1.5 sm:gap-2">
+                    <img src="https://img.icons8.com/color/48/warranty.png" alt="cert" className="w-3.5 h-3.5 sm:w-4 sm:h-4 opacity-90" />
+                    <span className="text-[8px] sm:text-[10px] font-heading font-bold text-[#0F172A] uppercase tracking-widest">
                       Lab Certified
                     </span>
                   </div>
@@ -389,7 +384,7 @@ export function BestSellers() {
                   {/* Mobile Add Button */}
                   <button
                     onClick={() => addToCart(product)}
-                    className="mt-2.5 sm:mt-3 w-full py-2.5 sm:py-3 border border-orange bg-orange/5 text-navy-deep text-[11px] sm:text-xs font-heading font-bold uppercase tracking-widest rounded hover:bg-orange hover:text-navy-deep transition-colors lg:hidden"
+                    className="mt-2.5 sm:mt-3 w-full py-2.5 sm:py-3 border border-[hsl(17.14deg_96.08%_70%)] bg-[hsl(17.14deg_96.08%_70%)]/20 text-[#0F172A] text-[11px] sm:text-xs font-heading font-bold uppercase tracking-widest rounded-xl hover:bg-[hsl(17.14deg_96.08%_70%)] transition-colors lg:hidden cursor-pointer"
                   >
                     Add to Cart
                   </button>
@@ -403,7 +398,7 @@ export function BestSellers() {
         <div className="flex justify-center mt-8 sm:mt-12 md:hidden">
           <Link
             href="/all-products"
-            className="text-orange font-heading font-bold uppercase tracking-widest text-xs border-b border-orange/30 pb-1"
+            className="text-[#0F172A] font-heading font-bold uppercase tracking-widest text-xs border-b-2 border-[hsl(17.14deg_96.08%_70%)] pb-1"
           >
             View All Products
           </Link>

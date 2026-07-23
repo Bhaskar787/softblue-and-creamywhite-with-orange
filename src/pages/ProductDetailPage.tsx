@@ -247,7 +247,7 @@ export default function ProductDetailPage() {
   }, [product.id]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#faf7f4] text-navy">
+    <div className="flex flex-col min-h-screen bg-[#FAF7F2] text-navy">
       <AnnouncementBar />
       <Navbar />
 
@@ -768,7 +768,7 @@ export default function ProductDetailPage() {
                           value={newReviewName}
                           onChange={(e) => setNewReviewName(e.target.value)}
                           placeholder="e.g. Neha Mehta"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange"
                         />
                       </div>
                       <div>
@@ -776,7 +776,7 @@ export default function ProductDetailPage() {
                         <select
                           value={newReviewRating}
                           onChange={(e) => setNewReviewRating(Number(e.target.value))}
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange cursor-pointer"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange cursor-pointer"
                         >
                           <option value={5}>5 Stars (5/5) - Excellent</option>
                           <option value={4}>4 Stars (4/5) - Very Good</option>
@@ -792,7 +792,7 @@ export default function ProductDetailPage() {
                         value={newReviewTitle}
                         onChange={(e) => setNewReviewTitle(e.target.value)}
                         placeholder="e.g. Perfect for Meditation and Calmness"
-                        className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange"
+                        className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange"
                       />
                     </div>
 
@@ -804,7 +804,7 @@ export default function ProductDetailPage() {
                         value={newReviewComment}
                         onChange={(e) => setNewReviewComment(e.target.value)}
                         placeholder="Describe how this sacred Rudraksha bead impacted your daily sadhana or meditation…"
-                        className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange resize-none"
+                        className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-2.5 text-xs font-body text-navy focus:outline-none focus:border-orange resize-none"
                       />
                     </div>
 
@@ -915,7 +915,7 @@ export default function ProductDetailPage() {
                 href={`/product/${rel.id}`}
                 className="group relative flex flex-col bg-white border border-navy/15 shadow-sm rounded-xl p-3 hover:border-orange hover:shadow-sacred-glow transition-all duration-300"
               >
-                <div className="aspect-square rounded-lg overflow-hidden border border-navy/10 mb-3 bg-[#faf7f4]">
+                <div className="aspect-square rounded-lg overflow-hidden border border-navy/10 mb-3 bg-[#FAF7F2]">
                   <img
                     src={rel.image}
                     alt={rel.name}
@@ -987,7 +987,7 @@ export default function ProductDetailPage() {
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
               
               {/* Left Column: Crafting Process */}
-              <div className="lg:col-span-6 bg-[#faf7f4] border border-navy/10 rounded-2xl p-6 flex flex-col justify-between space-y-6">
+              <div className="lg:col-span-6 bg-[#FAF7F2] border border-navy/10 rounded-2xl p-6 flex flex-col justify-between space-y-6">
                 <h3 className="font-heading font-bold text-sm text-navy-deep uppercase tracking-wider flex items-center gap-2">
                   <span className="w-4 h-px bg-orange" /> How It Works
                 </h3>
@@ -1038,7 +1038,7 @@ export default function ProductDetailPage() {
                         className={`p-2.5 rounded-lg text-left text-[11px] font-heading font-bold transition-all border ${
                           selectedIntention === intent
                             ? 'bg-navy-deep text-orange border-orange shadow'
-                            : 'bg-[#faf7f4] text-navy/80 border-navy/15 hover:border-orange'
+                            : 'bg-[#FAF7F2] text-navy/80 border-navy/15 hover:border-orange'
                         }`}
                       >
                         {intent}
@@ -1052,7 +1052,7 @@ export default function ProductDetailPage() {
                   <textarea
                     rows={3}
                     placeholder="Provide birth details (Date, Time, Location) or specific goals for personalized recommendation…"
-                    className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl p-3 text-xs font-body text-navy focus:outline-none focus:border-orange resize-none"
+                    className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl p-3 text-xs font-body text-navy focus:outline-none focus:border-orange resize-none"
                   />
                 </div>
 
@@ -1079,7 +1079,7 @@ export default function ProductDetailPage() {
 
         {/* 6. RELATED BLOG ARTICLES SECTION */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16 pb-16 sm:pb-24">
-          <div className="bg-[#faf7f4] border-t border-navy/15 pt-8 space-y-6">
+          <div className="bg-[#FAF7F2] border-t border-navy/15 pt-8 space-y-6">
             
             {/* Header */}
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-navy/15 pb-4">

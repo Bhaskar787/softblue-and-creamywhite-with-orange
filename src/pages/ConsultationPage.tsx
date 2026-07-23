@@ -8,6 +8,7 @@ import { WishlistDrawer } from '@/components/WishlistDrawer';
 import { SearchOverlay } from '@/components/SearchOverlay';
 import { FloatingActions } from '@/components/FloatingActions';
 import { Link } from 'wouter';
+import { LuMessageCircle } from "react-icons/lu";
 import {
   ChevronRight,
   Sparkles,
@@ -160,8 +161,8 @@ export function ConsultationPage() {
               
               {/* Left Hero Copy */}
               <div className="lg:col-span-7 space-y-6">
-                <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-heading font-bold uppercase tracking-widest text-orange bg-orange/10 border border-orange/30 px-4 py-1.5 rounded-full shadow-sm">
-                  <Sparkles className="w-4 h-4 text-orange" />
+                <span className="inline-flex items-center gap-2 text-xs sm:text-sm font-heading font-bold uppercase tracking-widest text-orange-600 bg-orange/10 border border-orange/30 px-4 py-1.5 rounded-full shadow-sm">
+                  <LuMessageCircle className="w-4 h-4 text-orange-600" />
                   PERSONALIZED 1:1 CONSULTATION
                 </span>
 
@@ -245,7 +246,7 @@ export function ConsultationPage() {
               </div>
 
               {isSubmitted ? (
-                <div className="bg-[#faf7f4] border border-orange/30 rounded-2xl p-8 text-center space-y-4 animate-in fade-in">
+                <div className="bg-[#FAF7F2] border border-orange/30 rounded-2xl p-8 text-center space-y-4 animate-in fade-in">
                   <div className="w-16 h-16 rounded-full bg-orange/20 text-orange flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
@@ -283,7 +284,7 @@ export function ConsultationPage() {
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
                           placeholder="e.g. Ramesh Sharma"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -295,7 +296,7 @@ export function ConsultationPage() {
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="name@example.com"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -309,7 +310,7 @@ export function ConsultationPage() {
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           placeholder="+977 / +91 Mobile Number"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -320,7 +321,7 @@ export function ConsultationPage() {
                           value={formData.consultationFor}
                           onChange={(e) => setFormData({ ...formData, consultationFor: e.target.value })}
                           placeholder="e.g. Wealth, Health, Protection"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -333,7 +334,7 @@ export function ConsultationPage() {
                           value={formData.city}
                           onChange={(e) => setFormData({ ...formData, city: e.target.value })}
                           placeholder="e.g. Kathmandu / Mumbai"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -344,7 +345,7 @@ export function ConsultationPage() {
                           value={formData.country}
                           onChange={(e) => setFormData({ ...formData, country: e.target.value })}
                           placeholder="e.g. Nepal / India"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -366,7 +367,7 @@ export function ConsultationPage() {
                           type="date"
                           value={formData.birthDate}
                           onChange={(e) => setFormData({ ...formData, birthDate: e.target.value })}
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -376,7 +377,7 @@ export function ConsultationPage() {
                           type="time"
                           value={formData.birthTime}
                           onChange={(e) => setFormData({ ...formData, birthTime: e.target.value })}
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -387,7 +388,7 @@ export function ConsultationPage() {
                           value={formData.birthPlace}
                           onChange={(e) => setFormData({ ...formData, birthPlace: e.target.value })}
                           placeholder="City, State"
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -409,7 +410,7 @@ export function ConsultationPage() {
                           type="date"
                           value={formData.preferredDate}
                           onChange={(e) => setFormData({ ...formData, preferredDate: e.target.value })}
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -418,7 +419,7 @@ export function ConsultationPage() {
                         <select
                           value={formData.preferredTime}
                           onChange={(e) => setFormData({ ...formData, preferredTime: e.target.value })}
-                          className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors cursor-pointer"
+                          className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl px-4 py-3 text-xs sm:text-sm font-medium text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors cursor-pointer"
                         >
                           <option value="10:00 AM - 12:00 PM IST">10:00 AM - 12:00 PM IST</option>
                           <option value="02:00 PM - 04:00 PM IST">02:00 PM - 04:00 PM IST</option>
@@ -437,7 +438,7 @@ export function ConsultationPage() {
                       value={formData.goalsMessage}
                       onChange={(e) => setFormData({ ...formData, goalsMessage: e.target.value })}
                       placeholder="Share your intention, current challenges, and what you hope to gain from this session…"
-                      className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl p-4 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none"
+                      className="w-full bg-[#FAF7F2] border border-navy/20 rounded-xl p-4 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/60 focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none"
                     />
                   </div>
 
@@ -488,7 +489,7 @@ export function ConsultationPage() {
                       link: '/all-products?category=Rudraksha %26 Variants',
                     },
                   ].map((p, idx) => (
-                    <div key={idx} className="p-3.5 rounded-xl bg-[#faf7f4] border border-navy/10 space-y-1">
+                    <div key={idx} className="p-3.5 rounded-xl bg-[#FAF7F2] border border-navy/10 space-y-1">
                       <h5 className="font-heading font-bold text-xs sm:text-sm text-navy-deep">{p.name}</h5>
                       <p className="font-body text-xs font-medium text-navy-deep/80 leading-snug line-clamp-2">{p.desc}</p>
                       <Link
@@ -544,7 +545,7 @@ export function ConsultationPage() {
 
                 <div className="space-y-3">
                   {BLOG_POSTS.slice(0, 2).map((post) => (
-                    <div key={post.id} className="p-3.5 rounded-xl bg-[#faf7f4] border border-navy/10 space-y-1">
+                    <div key={post.id} className="p-3.5 rounded-xl bg-[#FAF7F2] border border-navy/10 space-y-1">
                       <div className="flex items-center justify-between text-xs font-heading font-bold text-navy/70">
                         <span>{post.category}</span>
                         <span>{post.readTime}</span>

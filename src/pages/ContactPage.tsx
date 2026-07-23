@@ -58,7 +58,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="min-h-screen bg-warm text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-clip">
+    <div className="min-h-screen bg-[#FAF7F2] text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-clip">
       <AnnouncementBar />
       <Navbar />
 
@@ -110,7 +110,7 @@ export default function ContactPage() {
                 </div>
 
                 {isSubmitted ? (
-                  <div className="p-8 bg-warm border-2 border-orange/40 rounded-2xl text-center space-y-4">
+                  <div className="p-8 bg-[#FAF7F2] border-2 border-orange/40 rounded-2xl text-center space-y-4">
                     <CheckCircle2 className="w-12 h-12 text-orange mx-auto" />
                     <h3 className="font-display text-xl font-bold text-navy-deep">Message Sent!</h3>
                     <p className="font-body text-xs sm:text-sm text-navy-deep/90">

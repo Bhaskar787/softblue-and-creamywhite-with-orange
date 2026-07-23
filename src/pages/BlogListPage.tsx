@@ -51,7 +51,7 @@ export default function BlogListPage() {
   });
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#faf7f4] text-navy relative">
+    <div className="flex flex-col min-h-screen bg-[#FAF7F2] text-navy relative">
       <AnnouncementBar />
       <Navbar />
 
@@ -152,7 +152,7 @@ export default function BlogListPage() {
                 <select
                   value={sortOption}
                   onChange={(e) => setSortOption(e.target.value as any)}
-                  className="bg-[#faf7f4] border border-navy/20 rounded-xl px-3 py-1.5 text-xs font-heading font-semibold text-navy focus:outline-none focus:border-orange cursor-pointer"
+                  className="bg-[#FAF7F2] border border-navy/20 rounded-xl px-3 py-1.5 text-xs font-heading font-semibold text-navy focus:outline-none focus:border-orange cursor-pointer"
                 >
                   <option value="newest">Newest first</option>
                   <option value="oldest">Oldest first</option>
@@ -165,7 +165,7 @@ export default function BlogListPage() {
                   className={`px-3 py-1.5 rounded-xl border text-xs font-heading font-bold uppercase tracking-wider transition-all cursor-pointer flex items-center gap-1.5 ${
                     showFeaturedOnly
                       ? 'bg-orange text-navy-deep border-orange shadow-xs'
-                      : 'bg-[#faf7f4] text-navy/70 border-navy/20 hover:border-orange'
+                      : 'bg-[#FAF7F2] text-navy/70 border-navy/20 hover:border-orange'
                   }`}
                 >
                   <Sparkles className="w-3.5 h-3.5" />
@@ -183,7 +183,7 @@ export default function BlogListPage() {
                   className={`px-4 py-1.5 rounded-full text-xs font-heading font-bold transition-all cursor-pointer ${
                     selectedTopic === topic
                       ? 'bg-navy-deep text-orange border border-orange shadow-xs'
-                      : 'bg-[#faf7f4] text-navy/75 hover:bg-orange/10 hover:text-navy border border-navy/15'
+                      : 'bg-[#FAF7F2] text-navy/75 hover:bg-orange/10 hover:text-navy border border-navy/15'
                   }`}
                 >
                   {topic}
@@ -248,7 +248,7 @@ export default function BlogListPage() {
                 <div className="p-6 pt-0 border-t border-navy/10 mt-4 flex items-center justify-between">
                   <Link
                     href={`/article/${post.id}`}
-                    className="text-xs font-heading font-bold text-orange group-hover:text-orange-bright flex items-center gap-1.5 transition-all"
+                    className="text-xs font-heading font-bold text-orange group-hover:text-orange-700 flex items-center gap-1.5 transition-all"
                   >
                     <span>Read article</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

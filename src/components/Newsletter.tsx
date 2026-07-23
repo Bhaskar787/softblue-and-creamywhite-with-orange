@@ -28,59 +28,50 @@ export function Newsletter() {
   };
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach relative overflow-hidden border-y border-orange/20">
-      {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
-      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
-      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[hsl(17.14deg_96.08%_70%)]/20">
+      {/* Background Radial Glow Effects */}
+      <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-[hsl(17.14deg_96.08%_70%)]/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-[#0F172A]/5 rounded-full blur-[120px] pointer-events-none" />
 
       {/* OM Section Divider */}
       <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
-        <span className="text-orange text-xl sm:text-2xl font-serif opacity-80">ॐ</span>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+        <span className="text-[hsl(17.14deg_96.08%_70%)] text-xl sm:text-2xl font-serif font-bold">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
       </div>
 
-      {/* Himalayan misty peaks background with balanced opacity */}
-      <div 
-        className="absolute inset-0 opacity-[0.18] bg-cover bg-center"
-        style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1920&q=80")' }}
-      />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0E1B26]/80 via-transparent to-[#0E1B26]/80 pointer-events-none" />
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-navy-deep/90 border-2 border-orange/30 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl grid grid-cols-1 lg:grid-cols-12 relative backdrop-blur-xl">
+        <div className="bg-white border border-[#E2D9CC] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl grid grid-cols-1 lg:grid-cols-12 relative">
           
           {/* Giant decorative OM watermark */}
-          <div className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 text-[160px] sm:text-[220px] md:text-[300px] text-orange/5 font-serif select-none pointer-events-none leading-none">
+          <div className="absolute -top-6 -right-6 sm:-top-10 sm:-right-10 text-[160px] sm:text-[220px] md:text-[300px] text-[hsl(17.14deg_96.08%_70%)]/10 font-serif select-none pointer-events-none leading-none">
             ॐ
           </div>
 
           {/* Left/Top Content & Form Area */}
-          <div className="p-6 sm:p-8 md:p-12 lg:p-16 lg:col-span-7 flex flex-col justify-between relative z-10 bg-navy-deep/80 backdrop-blur border-r border-orange/10">
+          <div className="p-6 sm:p-8 md:p-12 lg:p-16 lg:col-span-7 flex flex-col justify-between relative z-10 bg-white border-r border-[#E2D9CC]">
             <div>
-              <span className="flex items-center gap-2 text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-widest text-orange mb-4 sm:mb-6">
-                <span className="w-6 sm:w-8 h-px bg-orange"></span>
+              <span className="inline-flex items-center gap-2 text-[10px] sm:text-[11px] md:text-xs font-heading font-bold uppercase tracking-widest text-[#0F172A] bg-[hsl(17.14deg_96.08%_70%)] border border-[hsl(17.14deg_96.08%_70%)]/50 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 shadow-sm">
                 Parivar · Our Sacred Circle
               </span>
-              <h2
-                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display tracking-tight leading-tight mb-4 sm:mb-6"
-                style={{ color: 'hsl(17.84deg 72.55% 90%)' }}
-              >
+              
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-bold tracking-tight leading-tight mb-4 sm:mb-6 text-[#0F172A]">
                 Join Our Spiritual Circle
               </h2>
-              <p className="text-peach/80 font-body text-sm sm:text-base md:text-lg leading-relaxed max-w-xl mb-8 sm:mb-12">
+              
+              <p className="text-[#334155] font-body text-base sm:text-lg font-medium leading-relaxed max-w-xl mb-8 sm:mb-12">
                 Receive updates on rare bead arrivals, auspicious days for energization, and exclusive insights from
                 our Vedic scholars — a quiet correspondence rooted in tradition, sent only when it truly matters.
               </p>
 
               {/* Dynamic Subscription State Area */}
               {submitted ? (
-                <div className="bg-orange/10 p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-orange/30 max-w-md animate-in zoom-in duration-500 shadow-sacred-glow">
-                  <GiFlame className="w-8 h-8 sm:w-10 sm:h-10 text-orange mb-3 sm:mb-4" />
-                  <span className="block text-lg sm:text-xl md:text-2xl font-display text-orange mb-2">
+                <div className="bg-[#FAF7F2] p-5 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl border border-[hsl(17.14deg_96.08%_70%)] max-w-md shadow-md">
+                  <GiFlame className="w-8 h-8 sm:w-10 sm:h-10 text-[hsl(17.14deg_96.08%_70%)] mb-3 sm:mb-4" />
+                  <span className="block text-lg sm:text-xl md:text-2xl font-display font-bold text-[#0F172A] mb-2">
                     Namaste! You've joined our sacred circle 
                   </span>
-                  <span className="block text-xs sm:text-sm font-body text-peach-soft/90 leading-relaxed">
+                  <span className="block text-xs sm:text-sm font-body text-[#334155] font-medium leading-relaxed">
                     Watch your inbox for our next Panchang update and rare bead arrival notification.
                   </span>
                 </div>
@@ -90,11 +81,11 @@ export function Newsletter() {
                     type="email"
                     required
                     placeholder="Enter your email address"
-                    className="flex-1 px-5 sm:px-6 py-3 sm:py-4 text-xs sm:text-sm font-body rounded-full border border-orange/40 bg-navy/50 placeholder:text-peach/40 focus:outline-none focus:border-orange focus:ring-1 focus:ring-orange text-peach shadow-inner"
+                    className="flex-1 px-5 sm:px-6 py-3.5 sm:py-4 text-xs sm:text-sm font-body font-semibold rounded-full border border-[#E2D9CC] bg-white text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] shadow-sm"
                   />
                   <button
                     type="submit"
-                    className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-orange to-orange-soft text-navy-deep font-heading font-bold text-[10px] sm:text-xs uppercase tracking-widest rounded-full transition-all hover:shadow-sacred-glow whitespace-nowrap"
+                    className="px-6 sm:px-8 py-3.5 sm:py-4 bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] font-heading font-bold text-xs uppercase tracking-widest rounded-full transition-all hover:brightness-105 shadow-md whitespace-nowrap cursor-pointer"
                   >
                     Subscribe
                   </button>
@@ -102,32 +93,32 @@ export function Newsletter() {
               )}
             </div>
 
-            <div className="mt-10 sm:mt-16 pt-6 sm:pt-8 border-t border-orange/10 flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center text-[10px] sm:text-xs font-heading tracking-widest text-orange/60 uppercase">
+            <div className="mt-10 sm:mt-16 pt-6 sm:pt-8 border-t border-[#F1F5F9] flex flex-col sm:flex-row gap-4 sm:gap-6 sm:items-center text-xs font-heading font-bold tracking-widest text-[#64748B] uppercase">
               <span>Trusted by 12,000+ seekers</span>
-              <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-orange/30"></span>
+              <span className="hidden sm:block w-1.5 h-1.5 rounded-full bg-[hsl(17.14deg_96.08%_70%)]"></span>
               <span>Cancel anytime</span>
             </div>
           </div>
 
           {/* Right Panel - Offerings */}
-          <div className="lg:col-span-5 p-6 sm:p-8 md:p-12 relative z-10 flex flex-col justify-center bg-navy/60">
+          <div className="lg:col-span-5 p-6 sm:p-8 md:p-12 relative z-10 flex flex-col justify-center bg-[#FAF7F2]/60">
             <div className="space-y-4 sm:space-y-6">
               {offerings.map((o) => {
                 const IconComponent = o.icon;
                 return (
                   <div
                     key={o.title}
-                    className="bg-navy-deep border border-orange/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-md group hover:border-orange/50 transition-all duration-300"
+                    className="bg-white border border-[#E2D9CC] rounded-xl sm:rounded-2xl p-4 sm:p-6 shadow-sm group hover:border-[hsl(17.14deg_96.08%_70%)] hover:shadow-md transition-all duration-300"
                   >
                     <div className="flex items-start gap-3 sm:gap-5">
-                      <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-orange/30 bg-navy flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-navy transition-colors shrink-0 shadow-inner">
+                      <span className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[hsl(17.14deg_96.08%_70%)]/40 bg-[hsl(17.14deg_96.08%_70%)]/15 flex items-center justify-center text-[#0F172A] group-hover:bg-[hsl(17.14deg_96.08%_70%)] transition-colors shrink-0 shadow-xs">
                         <IconComponent className="w-5 h-5 sm:w-6 sm:h-6" />
                       </span>
                       <div>
-                        <h3 className="font-display text-base sm:text-lg md:text-xl text-orange mb-1.5 sm:mb-2">
+                        <h3 className="font-display font-bold text-base sm:text-lg md:text-xl text-[#0F172A] mb-1.5 sm:mb-2">
                           {o.title}
                         </h3>
-                        <p className="text-xs sm:text-sm font-body text-peach/70 leading-relaxed">
+                        <p className="text-xs sm:text-sm font-body text-[#475569] font-medium leading-relaxed">
                           {o.desc}
                         </p>
                       </div>

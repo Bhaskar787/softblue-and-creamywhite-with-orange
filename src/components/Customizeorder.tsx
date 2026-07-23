@@ -37,21 +37,21 @@ function AstroBackground() {
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse at 20% 20%, rgba(252,146,105,0.12), transparent 55%), radial-gradient(ellipse at 85% 75%, rgba(252,146,105,0.15), transparent 55%)',
+            'radial-gradient(ellipse at 20% 20%, rgba(252,140,104,0.15), transparent 55%), radial-gradient(ellipse at 85% 75%, rgba(252,140,104,0.18), transparent 55%)',
         }}
       ></div>
 
       <svg viewBox="0 0 800 700" className="absolute inset-0 w-full h-full opacity-90">
         {stars.map((s, i) => (
-          <circle key={i} cx={s.x} cy={s.y} r={s.r} fill="#FC9269" opacity={s.o} className="animate-star-twinkle" style={{ animationDelay: `${(i % 6) * 0.6}s` }} />
+          <circle key={i} cx={s.x} cy={s.y} r={s.r} fill="hsl(17.14deg 96.08% 70%)" opacity={s.o} className="animate-star-twinkle" style={{ animationDelay: `${(i % 6) * 0.6}s` }} />
         ))}
-        <polyline points="42,68 118,140 210,54" fill="none" stroke="#FC9269" strokeWidth="0.5" opacity="0.3" />
-        <polyline points="620,200 700,340 660,460" fill="none" stroke="#FC9269" strokeWidth="0.5" opacity="0.3" />
+        <polyline points="42,68 118,140 210,54" fill="none" stroke="hsl(17.14deg 96.08% 70%)" strokeWidth="0.5" opacity="0.3" />
+        <polyline points="620,200 700,340 660,460" fill="none" stroke="hsl(17.14deg 96.08% 70%)" strokeWidth="0.5" opacity="0.3" />
       </svg>
 
       <svg viewBox="0 0 800 800" className="absolute -right-16 -top-10 w-[620px] h-[620px] md:w-[720px] md:h-[720px] opacity-[0.25]">
         {orbitRadii.map((r) => (
-          <circle key={r} cx={cx} cy={cy} r={r} fill="none" stroke="#FC9269" strokeWidth="1" />
+          <circle key={r} cx={cx} cy={cy} r={r} fill="none" stroke="hsl(17.14deg 96.08% 70%)" strokeWidth="1" />
         ))}
 
         {navagraha.map((p) => {
@@ -60,8 +60,8 @@ function AstroBackground() {
           const py = cy + 230 * Math.sin(rad);
           return (
             <g key={p.name}>
-              <circle cx={px} cy={py} r="14" fill="#0E1B26" stroke="#FC9269" strokeWidth="1.5" />
-              <text x={px} y={py + 4} textAnchor="middle" fill="#FC9269" fontSize="10" fontWeight="bold" fontFamily="serif">
+              <circle cx={px} cy={py} r="14" fill="#0F172A" stroke="hsl(17.14deg 96.08% 70%)" strokeWidth="1.5" />
+              <text x={px} y={py + 4} textAnchor="middle" fill="hsl(17.14deg 96.08% 70%)" fontSize="10" fontWeight="bold" fontFamily="serif">
                 {p.label}
               </text>
             </g>
@@ -107,12 +107,12 @@ export function CustomizeOrder() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section className="relative py-14 sm:py-20 md:py-24 overflow-hidden bg-[#faf7f4] border-t border-orange/15">
+    <section className="relative py-14 sm:py-20 lg:py-24 overflow-hidden bg-[#FAF7F2] border-b border-[hsl(17.14deg_96.08%_70%)]/20">
       {/* OM Section Divider */}
       <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
-        <span className="text-orange text-xl sm:text-2xl font-serif opacity-80">ॐ</span>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+        <span className="text-[hsl(17.14deg_96.08%_70%)] text-xl sm:text-2xl font-serif font-bold">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
       </div>
 
       <AstroBackground />
@@ -121,46 +121,46 @@ export function CustomizeOrder() {
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14 md:mb-20">
-          <span className="inline-flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-[0.2em] text-orange border border-orange/30 bg-orange/10 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 shadow-xs">
+          <span className="inline-flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] md:text-xs font-heading font-bold uppercase tracking-[0.2em] text-[#0F172A] bg-[hsl(17.14deg_96.08%_70%)] border border-[hsl(17.14deg_96.08%_70%)]/50 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-6 shadow-sm">
             Bespoke Sacred Craft · By Appointment
           </span>
-          <h2 className="font-display text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-orange-gradient tracking-tight leading-tight mb-4 sm:mb-6 px-2">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#1E293B] font-bold tracking-tight leading-tight mb-4 sm:mb-6 px-2">
             Your Personal Rudraksha Combination
           </h2>
-          <p className="font-body text-navy/90 font-medium text-sm sm:text-base md:text-lg leading-relaxed max-w-3xl mx-auto px-2">
+          <p className="font-body text-[#334155] font-medium text-base sm:text-lg leading-relaxed max-w-3xl mx-auto px-2">
             No two seekers are identical. Our Vedic experts custom-design each mala or combination based on a careful reading of your birth chart, dominant planets, and the specific transformation you are seeking — precise, considered, and made for you alone.
           </p>
         </div>
 
         {/* 3-Step Process Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10 sm:mb-16 md:mb-20 relative">
-          <div className="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-orange/40 to-transparent pointer-events-none" />
+          <div className="hidden md:block absolute top-10 left-[16.66%] right-[16.66%] h-px bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)]/50 to-transparent pointer-events-none" />
           {steps.map((step, i) => (
             <div key={i} className="flex flex-col items-center text-center relative group">
               <div className="relative mb-6 sm:mb-8">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-orange/30 bg-orange/10 flex items-center justify-center text-orange group-hover:bg-orange group-hover:text-navy-deep transition-colors duration-300 shadow-md">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[hsl(17.14deg_96.08%_70%)]/50 bg-[hsl(17.14deg_96.08%_70%)]/15 flex items-center justify-center text-[#1E293B] group-hover:bg-[hsl(17.14deg_96.08%_70%)] transition-colors duration-300 shadow-md">
                   <step.icon className="w-7 h-7 sm:w-9 sm:h-9" />
                 </div>
-                <span className="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-orange text-navy-deep text-xs font-heading font-bold flex items-center justify-center border-2 border-white shadow-xs">
+                <span className="absolute -top-2 -right-2 w-6 h-6 sm:w-7 sm:h-7 rounded-full bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] text-xs font-heading font-bold flex items-center justify-center border-2 border-white shadow-xs">
                   {step.n}
                 </span>
               </div>
-              <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-deep group-hover:text-orange transition-colors mb-3 sm:mb-4">{step.title}</h3>
-              <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base leading-relaxed max-w-xs">{step.desc}</p>
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-[#0F172A] group-hover:text-[hsl(17.14deg_96.08%_70%)] transition-colors mb-3 sm:mb-4">{step.title}</h3>
+              <p className="font-body text-[#475569] font-medium text-xs sm:text-sm md:text-base leading-relaxed max-w-xs">{step.desc}</p>
             </div>
           ))}
         </div>
 
         {/* Form Container */}
-        <div className="bg-white border border-navy/15 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl relative">
-          <div className="absolute inset-0 bg-mandala opacity-[0.04] pointer-events-none" />
+        <div className="bg-white border border-[#E2D9CC] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl relative">
+          <div className="absolute inset-0 bg-mandala opacity-[0.03] pointer-events-none" />
           
           <div className="grid grid-cols-1 lg:grid-cols-2 relative z-10">
             
             {/* Left Box: Choose Your Intention */}
-            <div className="p-6 sm:p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-navy/10">
-              <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-deep mb-2">Choose Your Intention</h3>
-              <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base mb-6 sm:mb-8">Select the life area you most want to strengthen:</p>
+            <div className="p-6 sm:p-8 md:p-12 border-b lg:border-b-0 lg:border-r border-[#E2D9CC]">
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-[#0F172A] mb-2">Choose Your Intention</h3>
+              <p className="font-body text-[#334155] font-medium text-xs sm:text-sm md:text-base mb-6 sm:mb-8">Select the life area you most want to strengthen:</p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                 {intentions.map((intention) => (
@@ -169,32 +169,32 @@ export function CustomizeOrder() {
                     onClick={() => setSelected(intention)}
                     className={`flex items-center gap-3 text-left px-4 py-3.5 sm:py-4 rounded-xl border text-xs sm:text-sm font-heading font-bold transition-all duration-200 cursor-pointer shadow-xs ${
                       selected === intention
-                        ? 'border-orange bg-orange/15 text-navy-deep shadow-md'
-                        : 'border-orange/30 text-navy-deep hover:border-orange hover:bg-orange/5 bg-[#faf7f4]'
+                        ? 'border-[hsl(17.14deg_96.08%_70%)] bg-[hsl(17.14deg_96.08%_70%)]/20 text-[#0F172A] shadow-md'
+                        : 'border-[#E2D9CC] text-[#334155] hover:border-[hsl(17.14deg_96.08%_70%)] hover:bg-[hsl(17.14deg_96.08%_70%)]/10 bg-[#FAF7F2]'
                     }`}
                   >
                     {selected === intention
-                      ? <CheckCircle className="w-4.5 h-4.5 text-orange shrink-0" />
-                      : <span className="w-4.5 h-4.5 rounded-full border-2 border-orange/40 shrink-0" />}
-                    <span className="font-bold text-navy-deep">{intention}</span>
+                      ? <CheckCircle className="w-4.5 h-4.5 text-[#0F172A] shrink-0" />
+                      : <span className="w-4.5 h-4.5 rounded-full border-2 border-[#CBD5E1] shrink-0" />}
+                    <span className="font-bold text-[#0F172A]">{intention}</span>
                   </button>
                 ))}
               </div>
             </div>
 
             {/* Right Box: Request Your Custom Mala */}
-            <div className="p-6 sm:p-8 md:p-12 flex flex-col">
-              <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-deep mb-2">Request Your Custom Mala</h3>
-              <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base mb-6 sm:mb-8">Fill in a few details and our Vedic expert will contact you within 24 hours.</p>
+            <div className="p-6 sm:p-8 md:p-12 flex flex-col bg-[#FAF7F2]/50">
+              <h3 className="font-display text-xl sm:text-2xl font-bold text-[#0F172A] mb-2">Request Your Custom Mala</h3>
+              <p className="font-body text-[#334155] font-medium text-xs sm:text-sm md:text-base mb-6 sm:mb-8">Fill in a few details and our Vedic expert will contact you within 24 hours.</p>
 
               {submitted ? (
                 <div className="flex-1 flex flex-col items-center justify-center text-center gap-4 sm:gap-6 py-6">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-orange bg-orange/20 flex items-center justify-center">
-                    <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-orange" />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-[hsl(17.14deg_96.08%_70%)] bg-[hsl(17.14deg_96.08%_70%)]/20 flex items-center justify-center">
+                    <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-[#0F172A]" />
                   </div>
                   <div>
-                    <h4 className="font-display text-xl sm:text-2xl font-bold text-navy-deep mb-2">Request Received!</h4>
-                    <p className="font-body text-navy/90 font-semibold text-xs sm:text-sm md:text-base leading-relaxed max-w-xs mx-auto">
+                    <h4 className="font-display text-xl sm:text-2xl font-bold text-[#0F172A] mb-2">Request Received!</h4>
+                    <p className="font-body text-[#334155] font-medium text-xs sm:text-sm md:text-base leading-relaxed max-w-xs mx-auto">
                       Our Vedic consultant will reach out within 24 hours to begin your personal consultation.
                     </p>
                   </div>
@@ -203,27 +203,27 @@ export function CustomizeOrder() {
                 <form className="flex flex-col gap-4 sm:gap-5 flex-1" onSubmit={(e) => { e.preventDefault(); setSubmitted(true); }}>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div>
-                      <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Full Name *</label>
-                      <input type="text" required placeholder="Your full name" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/50 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors" />
+                      <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-[#0F172A] block mb-2">Full Name *</label>
+                      <input type="text" required placeholder="Your full name" className="w-full bg-white border border-[#E2D9CC] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] transition-colors shadow-xs" />
                     </div>
                     <div>
-                      <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Phone / WhatsApp *</label>
-                      <input type="tel" required placeholder="+91 98765 43210" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/50 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors" />
+                      <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-[#0F172A] block mb-2">Phone / WhatsApp *</label>
+                      <input type="tel" required placeholder="+91 98765 43210" className="w-full bg-white border border-[#E2D9CC] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] transition-colors shadow-xs" />
                     </div>
                   </div>
                   <div>
-                    <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">Date of Birth</label>
-                    <input type="date" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep focus:outline-none focus:border-orange focus:bg-white transition-colors" />
+                    <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-[#0F172A] block mb-2">Date of Birth</label>
+                    <input type="date" className="w-full bg-white border border-[#E2D9CC] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#0F172A] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] transition-colors shadow-xs" />
                   </div>
                   <div>
-                    <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-navy-deep block mb-2">
-                      Selected Intention {selected && <span className="text-orange font-bold normal-case tracking-normal">— {selected}</span>}
+                    <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-[#0F172A] block mb-2">
+                      Selected Intention {selected && <span className="text-[#9A3412] font-bold normal-case tracking-normal">— {selected}</span>}
                     </label>
-                    <textarea rows={3} placeholder="Describe what you're seeking in more detail (optional)…" className="w-full bg-[#faf7f4] border border-navy/20 rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-navy-deep placeholder:text-navy/50 placeholder:font-medium focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none" />
+                    <textarea rows={3} placeholder="Describe what you're seeking in more detail (optional)…" className="w-full bg-white border border-[#E2D9CC] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] transition-colors resize-none shadow-xs" />
                   </div>
 
                   <div className="pt-2 flex flex-col gap-3">
-                    <button type="submit" className="w-full py-3.5 sm:py-4 bg-gradient-to-r from-orange via-orange-bright to-orange text-navy-deep font-heading font-bold uppercase tracking-widest text-xs sm:text-sm rounded-xl shadow-md hover:shadow-sacred-glow transition-all flex items-center justify-center gap-2 cursor-pointer">
+                    <button type="submit" className="w-full py-3.5 sm:py-4 bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] font-heading font-bold uppercase tracking-widest text-xs sm:text-sm rounded-xl shadow-md hover:brightness-105 transition-all flex items-center justify-center gap-2 cursor-pointer">
                       <span>Request Custom Mala</span>
                       <ArrowRight className="w-4 h-4" />
                     </button>
@@ -231,7 +231,7 @@ export function CustomizeOrder() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                       <Link
                         href="/customize-order"
-                        className="py-3 bg-navy-deep text-orange border border-orange/40 hover:bg-orange hover:text-navy-deep font-heading font-bold uppercase tracking-wider text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center"
+                        className="py-3 bg-[#0F172A] text-white border border-[#0F172A] hover:bg-[hsl(17.14deg_96.08%_70%)] hover:text-[#0F172A] font-heading font-bold uppercase tracking-wider text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center shadow-xs"
                       >
                         <span>Open Custom Order Page</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -239,7 +239,7 @@ export function CustomizeOrder() {
 
                       <Link
                         href="/consultation"
-                        className="py-3 bg-navy border border-orange/40 text-peach hover:text-orange font-heading font-bold uppercase tracking-wider text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center"
+                        className="py-3 bg-white border border-[#E2D9CC] text-[#0F172A] hover:border-[hsl(17.14deg_96.08%_70%)] font-heading font-bold uppercase tracking-wider text-xs rounded-xl transition-all flex items-center justify-center gap-1.5 text-center shadow-xs"
                       >
                         <span>Book 1:1 Consultation</span>
                         <ArrowRight className="w-3.5 h-3.5" />

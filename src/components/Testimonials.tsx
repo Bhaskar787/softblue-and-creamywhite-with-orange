@@ -137,7 +137,7 @@ const filters = ['All Reviews', '5 Star', 'With Photos', 'Verified Purchase'] as
 type Filter = (typeof filters)[number];
 
 function initialsColor(initials: string) {
-  const palette = ['bg-navy-mid', 'bg-navy-light', 'bg-[#1A3D2B]'];
+  const palette = ['bg-[#0F172A]', 'bg-[#1E293B]', 'bg-[#334155]'];
   const idx = initials.charCodeAt(0) % palette.length;
   return palette[idx];
 }
@@ -203,44 +203,45 @@ export function Testimonials() {
   }, [api, isHovering, isPaused]);
 
   return (
-    <section className="py-14 sm:py-20 md:py-24 bg-[#faf7f4] relative overflow-hidden">
+    <section className="py-14 sm:py-20 md:py-24 bg-[#FAF7F2] relative overflow-hidden border-t border-[hsl(17.14deg_96.08%_70%)]/20">
       {/* Lotus/Prayer overlay */}
       <div
-        className="absolute inset-0 opacity-[0.28] mix-blend-screen bg-cover bg-center"
+        className="absolute inset-0 opacity-[0.15] mix-blend-multiply bg-cover bg-center"
         style={{ backgroundImage: 'url("https://images.unsplash.com/photo-1527489377706-5bf97e608852?auto=format&fit=crop&w=1920&q=80")' }}
       />
 
       {/* OM Section Divider */}
       <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
-        <span className="text-orange text-xl sm:text-2xl font-serif opacity-80">ॐ</span>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+        <span className="text-[hsl(17.14deg_96.08%_70%)] text-xl sm:text-2xl font-serif font-bold">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 relative z-10">
 
+        {/* Section Header */}
         <div className="text-center mb-10 sm:mb-14 md:mb-16 max-w-3xl mx-auto">
-          <span className="text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-widest text-orange bg-orange/5 border border-orange/30 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-block mb-4 sm:mb-6 shadow-sm">
+          <span className="text-[10px] sm:text-[11px] md:text-xs font-heading font-bold uppercase tracking-widest text-[#0F172A] bg-[hsl(17.14deg_96.08%_70%)] border border-[hsl(17.14deg_96.08%_70%)]/50 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-block mb-4 sm:mb-6 shadow-sm">
             Loved Worldwide
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-orange-gradient tracking-tight leading-tight px-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-[#1E293B] font-bold tracking-tight leading-tight px-2">
             Voices of Our Community
           </h2>
-          <p className="text-navy/90 font-body font-medium text-sm sm:text-base md:text-lg leading-relaxed mt-4 sm:mt-6 px-2">
+          <p className="text-[#334155] font-body font-medium text-base sm:text-lg leading-relaxed mt-4 sm:mt-6 px-2">
             Real experiences from seekers who trusted us with their spiritual journey — every review below is from a verified authentic purchase.
           </p>
         </div>
 
         {/* Stats Bar */}
-        <div className="grid sm:grid-cols-[auto_1fr] gap-6 sm:gap-8 md:gap-14 bg-white border border-navy/15 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 mb-10 sm:mb-14 md:mb-16 shadow-md">
-          <div className="flex flex-col items-center justify-center text-center sm:border-r sm:border-orange/20 sm:pr-8 md:pr-14">
-            <span className="font-display text-4xl sm:text-5xl md:text-6xl text-orange font-bold mb-2">{avgRating}</span>
+        <div className="grid sm:grid-cols-[auto_1fr] gap-6 sm:gap-8 md:gap-14 bg-white border border-[#E2D9CC] rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 mb-10 sm:mb-14 md:mb-16 shadow-xl">
+          <div className="flex flex-col items-center justify-center text-center sm:border-r sm:border-[#E2D9CC] sm:pr-8 md:pr-14">
+            <span className="font-display text-4xl sm:text-5xl md:text-6xl text-[#0F172A] font-bold mb-2">{avgRating}</span>
             <div className="flex items-center gap-1 sm:gap-1.5 mb-2 sm:mb-3">
               {[...Array(5)].map((_, i) => (
-                <GiStarMedal key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-orange drop-shadow-[0_0_5px_rgba(201,151,58,0.8)]" />
+                <GiStarMedal key={i} className="w-5 h-5 sm:w-6 sm:h-6 text-[hsl(17.14deg_96.08%_70%)] drop-shadow-xs" />
               ))}
             </div>
-            <span className="text-navy/80 font-heading font-bold text-[10px] sm:text-xs uppercase tracking-widest">{testimonials.length * 187}+ verified reviews</span>
+            <span className="text-[#334155] font-heading font-bold text-[10px] sm:text-xs uppercase tracking-widest">{testimonials.length * 187}+ verified reviews</span>
           </div>
           <div className="flex flex-col justify-center gap-2.5 sm:gap-3">
             {[5, 4, 3, 2, 1].map((star, i) => {
@@ -248,13 +249,13 @@ export function Testimonials() {
               const pct = Math.round((count / testimonials.length) * 100);
               return (
                 <div key={star} className="flex items-center gap-2.5 sm:gap-4 text-xs sm:text-sm font-heading font-bold">
-                  <span className="w-12 sm:w-16 text-navy-deep shrink-0 text-right tracking-widest uppercase text-[10px] sm:text-xs">{star} Star</span>
-                  <div className="flex-1 h-1.5 rounded-full bg-orange/10 overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-orange to-orange-bright rounded-full relative" style={{ width: `${pct || 2}%` }}>
+                  <span className="w-12 sm:w-16 text-[#0F172A] shrink-0 text-right tracking-widest uppercase text-[10px] sm:text-xs">{star} Star</span>
+                  <div className="flex-1 h-2 rounded-full bg-[#FAF7F2] border border-[#E2D9CC] overflow-hidden">
+                    <div className="h-full bg-[hsl(17.14deg_96.08%_70%)] rounded-full relative" style={{ width: `${pct || 2}%` }}>
                       <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
                     </div>
                   </div>
-                  <span className="w-8 sm:w-10 text-right text-navy/70 shrink-0 text-[10px] sm:text-sm">{pct}%</span>
+                  <span className="w-8 sm:w-10 text-right text-[#334155] shrink-0 text-[10px] sm:text-sm">{pct}%</span>
                 </div>
               );
             })}
@@ -267,10 +268,10 @@ export function Testimonials() {
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest transition-all border ${
+              className={`px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest transition-all border shadow-xs cursor-pointer ${
                 activeFilter === f
-                  ? 'bg-orange text-navy-deep border-orange shadow-sacred-glow'
-                  : 'bg-white text-navy/85 border-navy/20 hover:border-orange hover:text-orange'
+                  ? 'bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] border-[hsl(17.14deg_96.08%_70%)] shadow-md'
+                  : 'bg-white text-[#334155] border-[#E2D9CC] hover:border-[hsl(17.14deg_96.08%_70%)] hover:text-[#0F172A]'
               }`}
             >
               {f}
@@ -290,8 +291,8 @@ export function Testimonials() {
             <CarouselContent className="-ml-4 sm:-ml-6">
               {filtered.map((t, i) => (
                 <CarouselItem key={i} className="pl-4 sm:pl-6 sm:basis-1/2 lg:basis-1/3">
-                  <div className="flex flex-col h-full bg-white border border-navy/15 rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 hover:border-orange hover:shadow-sacred-glow transition-all duration-300 shadow-sm relative group">
-                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-orange/5 to-transparent rounded-bl-full pointer-events-none" />
+                  <div className="flex flex-col h-full bg-white border border-[#E2D9CC] rounded-2xl sm:rounded-3xl p-5 sm:p-6 md:p-8 hover:border-[hsl(17.14deg_96.08%_70%)] hover:shadow-xl transition-all duration-300 shadow-sm relative group">
+                    <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-[hsl(17.14deg_96.08%_70%)]/15 to-transparent rounded-bl-full pointer-events-none" />
 
                     <div className="flex items-start justify-between mb-4 sm:mb-6 relative z-10">
                       <div className="flex items-center gap-3 sm:gap-4">
@@ -300,7 +301,7 @@ export function Testimonials() {
                             src={t.avatar}
                             alt={t.name}
                             loading="lazy"
-                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shrink-0 border-2 border-orange p-0.5"
+                            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full object-cover shrink-0 border-2 border-[hsl(17.14deg_96.08%_70%)] p-0.5"
                             onError={(e) => {
                               const target = e.currentTarget;
                               target.style.display = 'none';
@@ -308,45 +309,45 @@ export function Testimonials() {
                             }}
                           />
                           <div
-                            className={`hidden w-12 h-12 sm:w-14 sm:h-14 rounded-full ${initialsColor(t.initials)} items-center justify-center font-display text-base sm:text-lg text-orange border-2 border-orange shrink-0`}
+                            className={`hidden w-12 h-12 sm:w-14 sm:h-14 rounded-full ${initialsColor(t.initials)} items-center justify-center font-display text-base sm:text-lg text-white border-2 border-[hsl(17.14deg_96.08%_70%)] shrink-0`}
                           >
                             {t.initials}
                           </div>
                           {t.verified && (
-                            <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5">
-                              <BadgeCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange fill-navy-deep" />
+                            <div className="absolute -bottom-1 -right-1 bg-white rounded-full p-0.5 shadow-xs">
+                              <BadgeCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[hsl(17.14deg_96.08%_70%)] fill-[#0F172A]" />
                             </div>
                           )}
                         </div>
                         <div>
-                          <span className="font-heading font-bold text-sm sm:text-base text-navy-deep block mb-0.5">{t.name}</span>
-                          <span className="text-navy/70 font-body text-[11px] sm:text-xs block font-medium">{t.location}</span>
+                          <span className="font-heading font-bold text-sm sm:text-base text-[#0F172A] block mb-0.5">{t.name}</span>
+                          <span className="text-[#475569] font-body text-[11px] sm:text-xs block font-medium">{t.location}</span>
                         </div>
                       </div>
                       {t.hasPhoto && (
-                        <span className="flex items-center gap-1 text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-navy/70 shrink-0 font-bold">
-                          <ImageIcon className="w-3 h-3 text-orange" /> Photo
+                        <span className="flex items-center gap-1 text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-[#334155] shrink-0 font-bold bg-[#FAF7F2] border border-[#E2D9CC] px-2 py-1 rounded-full">
+                          <ImageIcon className="w-3 h-3 text-[hsl(17.14deg_96.08%_70%)]" /> Photo
                         </span>
                       )}
                     </div>
 
                     <div className="flex items-center gap-1 mb-3 sm:mb-4">
                       {[...Array(5)].map((_, j) => (
-                        <GiStarMedal key={j} className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${j < t.rating ? 'text-orange' : 'text-navy/20'}`} />
+                        <GiStarMedal key={j} className={`w-3.5 h-3.5 sm:w-4 sm:h-4 ${j < t.rating ? 'text-[hsl(17.14deg_96.08%_70%)]' : 'text-[#CBD5E1]'}`} />
                       ))}
                     </div>
 
-                    <h4 className="font-display text-lg sm:text-xl text-navy-deep font-bold mb-2 sm:mb-3 leading-snug">{t.title}</h4>
-                    <p className="text-navy/85 font-body text-sm sm:text-base leading-relaxed line-clamp-5 flex-1 mb-4 sm:mb-6">{t.text}</p>
+                    <h4 className="font-display text-lg sm:text-xl text-[#0F172A] font-bold mb-2 sm:mb-3 leading-snug">{t.title}</h4>
+                    <p className="text-[#334155] font-body text-sm sm:text-base leading-relaxed line-clamp-5 flex-1 mb-4 sm:mb-6 font-medium">{t.text}</p>
 
-                    <div className="flex flex-col gap-2.5 sm:gap-3 pt-4 sm:pt-5 border-t border-navy/10">
-                      <span className="text-navy-deep font-heading text-[10px] sm:text-xs font-bold uppercase tracking-widest">
+                    <div className="flex flex-col gap-2.5 sm:gap-3 pt-4 sm:pt-5 border-t border-[#F1F5F9]">
+                      <span className="text-[#0F172A] font-heading text-[10px] sm:text-xs font-bold uppercase tracking-widest">
                         Item: {t.product}
                       </span>
                       <div className="flex items-center justify-between">
-                        <span className="text-navy/60 font-body text-[11px] sm:text-xs font-medium">{t.date}</span>
-                        <button className="flex items-center gap-1.5 text-navy-deep hover:text-orange transition-colors text-[10px] sm:text-xs font-heading uppercase font-bold">
-                          <ThumbsUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange" /> Helpful ({t.helpful})
+                        <span className="text-[#64748B] font-body text-[11px] sm:text-xs font-medium">{t.date}</span>
+                        <button className="flex items-center gap-1.5 text-[#0F172A] hover:text-[#9A3412] transition-colors text-[10px] sm:text-xs font-heading uppercase font-bold cursor-pointer">
+                          <ThumbsUp className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[hsl(17.14deg_96.08%_70%)]" /> Helpful ({t.helpful})
                         </button>
                       </div>
                     </div>
@@ -362,7 +363,7 @@ export function Testimonials() {
               <button
                 type="button"
                 onClick={() => api?.scrollPrev()}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-orange/40 bg-white flex items-center justify-center text-orange hover:bg-orange hover:text-white transition-all shadow-md"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#E2D9CC] bg-white flex items-center justify-center text-[#0F172A] hover:bg-[hsl(17.14deg_96.08%_70%)] hover:border-[hsl(17.14deg_96.08%_70%)] transition-all shadow-md cursor-pointer"
               >
                 <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -372,8 +373,8 @@ export function Testimonials() {
                   <button
                     key={i}
                     onClick={() => api?.scrollTo(i)}
-                    className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 ${
-                      i === selectedIndex ? 'w-6 sm:w-8 bg-orange shadow-[0_0_8px_rgba(201,151,58,0.8)]' : 'w-1.5 sm:w-2 bg-orange/20 hover:bg-orange/50'
+                    className={`h-1.5 sm:h-2 rounded-full transition-all duration-300 cursor-pointer ${
+                      i === selectedIndex ? 'w-6 sm:w-8 bg-[hsl(17.14deg_96.08%_70%)] shadow-xs' : 'w-1.5 sm:w-2 bg-[#CBD5E1] hover:bg-[hsl(17.14deg_96.08%_70%)]/50'
                     }`}
                   />
                 ))}
@@ -382,7 +383,7 @@ export function Testimonials() {
               <button
                 type="button"
                 onClick={() => api?.scrollNext()}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-orange/40 bg-white flex items-center justify-center text-orange hover:bg-orange hover:text-white transition-all shadow-md"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#E2D9CC] bg-white flex items-center justify-center text-[#0F172A] hover:bg-[hsl(17.14deg_96.08%_70%)] hover:border-[hsl(17.14deg_96.08%_70%)] transition-all shadow-md cursor-pointer"
               >
                 <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
@@ -390,7 +391,7 @@ export function Testimonials() {
               <button
                 type="button"
                 onClick={() => setIsPaused((p) => !p)}
-                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-orange/20 bg-white flex items-center justify-center text-navy/50 hover:text-orange hover:border-orange/50 transition-colors ml-2 sm:ml-4"
+                className="w-10 h-10 sm:w-12 sm:h-12 rounded-full border border-[#E2D9CC] bg-white flex items-center justify-center text-[#64748B] hover:text-[#0F172A] hover:border-[hsl(17.14deg_96.08%_70%)] transition-colors ml-2 sm:ml-4 cursor-pointer"
               >
                 {isPaused ? <Play className="w-4 h-4 sm:w-5 sm:h-5 fill-current" /> : <Pause className="w-4 h-4 sm:w-5 sm:h-5 fill-current" />}
               </button>

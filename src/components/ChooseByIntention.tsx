@@ -86,18 +86,23 @@ export function ChooseByIntention() {
   const textContentRef = useRef<(HTMLDivElement | null)[]>([]);
   const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const progressLineRef = useRef<HTMLDivElement>(null);
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
 
   const [activeIndex, setActiveIndex] = useState(0);
   const triggerInstanceRef = useRef<ScrollTrigger | null>(null);
 
-  // Auto-scroll active tab button into center when active index changes
+  // Auto-scroll active tab button into center within its container when active index changes
   useEffect(() => {
     const activeBtn = buttonRefs.current[activeIndex];
-    if (activeBtn) {
-      activeBtn.scrollIntoView({
+    const container = tabsContainerRef.current;
+    if (activeBtn && container) {
+      const btnOffsetLeft = activeBtn.offsetLeft;
+      const btnWidth = activeBtn.offsetWidth;
+      const containerWidth = container.offsetWidth;
+      const targetScrollLeft = btnOffsetLeft - containerWidth / 2 + btnWidth / 2;
+      container.scrollTo({
+        left: Math.max(0, targetScrollLeft),
         behavior: 'smooth',
-        inline: 'center',
-        block: 'nearest',
       });
     }
   }, [activeIndex]);
@@ -110,13 +115,14 @@ export function ChooseByIntention() {
           start: 'top top',
           end: `+=${TOTAL * 100}%`,
           pin: true,
-          scrub: 0.5,
+          pinSpacing: true, // Holds page layout steadily without vertical jitter
+          scrub: 1, // Smooths out mouse wheel/trackpad momentum
           anticipatePin: 1,
           fastScrollEnd: true,
           snap: {
             snapTo: 1 / (TOTAL - 1),
-            duration: { min: 0.15, max: 0.4 },
-            delay: 0.05,
+            duration: { min: 0.1, max: 0.3 },
+            delay: 0.02,
             ease: 'power1.inOut',
           },
           onUpdate: (self) => {
@@ -124,12 +130,9 @@ export function ChooseByIntention() {
             const clampedIndex = Math.min(TOTAL - 1, Math.max(0, Math.round(rawIndex)));
             setActiveIndex(clampedIndex);
 
+            // Direct style mutation prevents GSAP animation stack conflict
             if (progressLineRef.current) {
-              gsap.to(progressLineRef.current, {
-                width: `${self.progress * 100}%`,
-                duration: 0.1,
-                ease: 'none',
-              });
+              progressLineRef.current.style.width = `${self.progress * 100}%`;
             }
           },
         },
@@ -137,51 +140,36 @@ export function ChooseByIntention() {
 
       triggerInstanceRef.current = tl.scrollTrigger || null;
 
-      // Set initial states (fading overlay without jumpy translates)
+      // Set initial states
       imageCardsRef.current.forEach((card, idx) => {
         if (!card) return;
-        if (idx === 0) {
-          gsap.set(card, {
-            scale: 1,
-            opacity: 1,
-            zIndex: 10,
-          });
-        } else {
-          gsap.set(card, {
-            scale: 1.05,
-            opacity: 0,
-            zIndex: 1,
-          });
-        }
+        gsap.set(card, {
+          scale: idx === 0 ? 1 : 1.05,
+          opacity: idx === 0 ? 1 : 0,
+          zIndex: idx === 0 ? 10 : 1,
+        });
       });
 
       textContentRef.current.forEach((txt, idx) => {
         if (!txt) return;
-        if (idx === 0) {
-          gsap.set(txt, { opacity: 1, y: 0, pointerEvents: 'auto' });
-        } else {
-          gsap.set(txt, { opacity: 0, y: 20, pointerEvents: 'none' });
-        }
+        gsap.set(txt, {
+          opacity: idx === 0 ? 1 : 0,
+          y: idx === 0 ? 0 : 20,
+          pointerEvents: idx === 0 ? 'auto' : 'none',
+        });
       });
 
-      // Build smooth fade transitions
+      // Build smooth transitions
       for (let i = 0; i < TOTAL - 1; i++) {
         const currentCard = imageCardsRef.current[i];
         const nextCard = imageCardsRef.current[i + 1];
-
         const currentText = textContentRef.current[i];
         const nextText = textContentRef.current[i + 1];
 
-        // Smooth image fade
         if (currentCard) {
           tl.to(
             currentCard,
-            {
-              opacity: 0,
-              scale: 0.95,
-              duration: 1,
-              ease: 'power2.inOut',
-            },
+            { opacity: 0, scale: 0.95, duration: 1, ease: 'power2.inOut' },
             i
           );
         }
@@ -189,28 +177,15 @@ export function ChooseByIntention() {
         if (nextCard) {
           tl.to(
             nextCard,
-            {
-              opacity: 1,
-              scale: 1,
-              zIndex: 10 + i,
-              duration: 1,
-              ease: 'power2.inOut',
-            },
+            { opacity: 1, scale: 1, zIndex: 10 + i, duration: 1, ease: 'power2.inOut' },
             i
           );
         }
 
-        // Smooth text transition
         if (currentText) {
           tl.to(
             currentText,
-            {
-              opacity: 0,
-              y: -20,
-              pointerEvents: 'none',
-              duration: 0.4,
-              ease: 'power2.in',
-            },
+            { opacity: 0, y: -20, pointerEvents: 'none', duration: 0.4, ease: 'power2.in' },
             i
           );
         }
@@ -218,26 +193,15 @@ export function ChooseByIntention() {
         if (nextText) {
           tl.to(
             nextText,
-            {
-              opacity: 1,
-              y: 0,
-              pointerEvents: 'auto',
-              duration: 0.4,
-              ease: 'power2.out',
-            },
+            { opacity: 1, y: 0, pointerEvents: 'auto', duration: 0.4, ease: 'power2.out' },
             i + 0.5
           );
         }
       }
     }, sectionRef);
 
-    const handleResize = () => {
-      ScrollTrigger.refresh();
-    };
-    window.addEventListener('resize', handleResize);
     return () => {
-      window.removeEventListener('resize', handleResize);
-      ctx.revert();
+      ctx.revert(); // Safely cleans up all triggers and listeners on unmount
     };
   }, []);
 
@@ -258,7 +222,7 @@ export function ChooseByIntention() {
       ref={sectionRef}
       className="relative w-full border-y border-orange/20 bg-gradient-to-b from-[#0E1B26] via-[#162A3B] to-[#0E1B26] text-peach min-h-screen flex flex-col justify-center py-4 sm:py-8 overflow-hidden"
     >
-      {/* Soft Blue & Orange Radial Glow Backgrounds (Matching NewLaunchesBanner pattern) */}
+      {/* Background Glows */}
       <div className="absolute top-1/4 -left-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-orange/15 rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-1/4 -right-40 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-500/15 rounded-full blur-[120px] pointer-events-none" />
 
@@ -317,11 +281,9 @@ export function ChooseByIntention() {
                 ))}
               </div>
 
-              {/* Auto-Centering Button Navigation Row */}
+              {/* Button Navigation Row */}
               <div className="pt-2 sm:pt-4 border-t border-orange/20 flex items-center justify-between gap-2">
-                
-                {/* Horizontal scroll container with auto-center capabilities */}
-                <div className="flex gap-1.5 overflow-x-auto no-scrollbar py-1 flex-1 min-w-0 scroll-smooth">
+                <div ref={tabsContainerRef} className="flex gap-1.5 overflow-x-auto no-scrollbar py-1 flex-1 min-w-0 scroll-smooth">
                   {tabs.map((tab, idx) => {
                     const isActive = idx === activeIndex;
                     return (

@@ -174,7 +174,7 @@ export function FeaturedCollectionSpotlight() {
   const activeTabRef = useRef<HTMLButtonElement | null>(null);
   const tabsContainerRef = useRef<HTMLDivElement | null>(null);
 
-  // Smooth horizontal-only tab centering (NEVER scrolls page vertically)
+  // Smooth horizontal-only tab centering
   useEffect(() => {
     if (tabsContainerRef.current && activeTabRef.current) {
       const container = tabsContainerRef.current;
@@ -205,28 +205,35 @@ export function FeaturedCollectionSpotlight() {
   const activeSlide = SPOTLIGHT_SLIDES[activeIndex];
 
   return (
-    <section className="py-12 sm:py-20 lg:py-24 bg-[#faf7f4] border-b border-orange/20 relative overflow-hidden">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#FAF7F2] border-b border-[hsl(17.14deg_96.08%_70%)]/20 relative overflow-hidden">
       {/* Decorative Glows */}
-      <div className="absolute -top-32 -left-32 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-orange/10 blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-32 -right-32 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-navy/5 blur-3xl pointer-events-none" />
+      <div className="absolute -top-32 -left-32 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[hsl(17.14deg_96.08%_70%)]/10 blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-32 -right-32 w-72 sm:w-96 h-72 sm:h-96 rounded-full bg-[#0F172A]/5 blur-3xl pointer-events-none" />
+
+      {/* OM Section Divider */}
+      <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+        <span className="text-[hsl(17.14deg_96.08%_70%)] text-xl sm:text-2xl font-serif font-bold">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
-          <span className="inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-orange/10 border border-orange/30 text-orange text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest mb-2.5">
-            <GiOpenTreasureChest className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Divine Treasury
+          <span className="inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-[hsl(17.14deg_96.08%_70%)] border border-[hsl(17.14deg_96.08%_70%)]/50 text-[#0F172A] text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest mb-2.5 shadow-xs">
+            <GiOpenTreasureChest className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0F172A]" /> Divine Treasury
           </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display text-navy">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display text-[#1E293B] font-bold">
             Sacred Artifacts Spotlight
           </h2>
         </div>
 
-        {/* TOUCH-FRIENDLY CATEGORY TABS BAR WITH HORIZONTAL-ONLY AUTO-SCROLL & ARROW CONTROLS */}
+        {/* CATEGORY TABS BAR */}
         <div className="relative flex items-center mb-6 sm:mb-8">
           <button
             onClick={() => scrollCategoryTabs('left')}
-            className="hidden sm:flex shrink-0 p-1.5 rounded-full bg-white text-navy hover:text-orange border border-orange/20 shadow-xs mr-1 transition-all z-10 cursor-pointer"
+            className="hidden sm:flex shrink-0 p-1.5 rounded-full bg-white text-[#0F172A] hover:border-[hsl(17.14deg_96.08%_70%)] border border-[#E2D9CC] shadow-xs mr-1 transition-all z-10 cursor-pointer"
             aria-label="Scroll left"
           >
             <ChevronLeft className="w-4 h-4" />
@@ -243,10 +250,10 @@ export function FeaturedCollectionSpotlight() {
                   key={slide.id}
                   ref={isActive ? activeTabRef : null}
                   onClick={() => setActiveIndex(idx)}
-                  className={`relative px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 shrink-0 cursor-pointer ${
+                  className={`relative px-3.5 sm:px-5 py-2 sm:py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all duration-300 shrink-0 cursor-pointer ${
                     isActive
-                      ? 'bg-navy text-white shadow-md shadow-navy/20 font-semibold border border-navy'
-                      : 'bg-white/90 text-navy/75 hover:text-navy hover:bg-white border border-orange/20'
+                      ? 'bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] shadow-md border border-[hsl(17.14deg_96.08%_70%)]'
+                      : 'bg-white text-[#334155] hover:border-[hsl(17.14deg_96.08%_70%)] border border-[#E2D9CC]'
                   }`}
                 >
                   {slide.categoryName}
@@ -257,18 +264,18 @@ export function FeaturedCollectionSpotlight() {
 
           <button
             onClick={() => scrollCategoryTabs('right')}
-            className="hidden sm:flex shrink-0 p-1.5 rounded-full bg-white text-navy hover:text-orange border border-orange/20 shadow-xs ml-1 transition-all z-10 cursor-pointer"
+            className="hidden sm:flex shrink-0 p-1.5 rounded-full bg-white text-[#0F172A] hover:border-[hsl(17.14deg_96.08%_70%)] border border-[#E2D9CC] shadow-xs ml-1 transition-all z-10 cursor-pointer"
             aria-label="Scroll right"
           >
             <ChevronRight className="w-4 h-4" />
           </button>
         </div>
 
-        {/* STABLE FLUID RESPONSIVE CARD CONTAINER - GUARANTEES ZERO OVERFLOW, NO WHITE OVERLAYS, & FULL BUTTON VISIBILITY */}
+        {/* SPOTLIGHT CARD CONTAINER */}
         <div
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          className="bg-white/95 backdrop-blur-md rounded-2xl sm:rounded-3xl border border-orange/25 shadow-xl shadow-navy/5 overflow-hidden"
+          className="bg-white rounded-2xl sm:rounded-3xl border border-[#E2D9CC] shadow-xl overflow-hidden"
         >
           <div className="grid grid-cols-1 lg:grid-cols-12 min-h-0">
             
@@ -294,14 +301,14 @@ export function FeaturedCollectionSpotlight() {
 
               {/* Floating Badges */}
               <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-20 flex items-center gap-1.5 px-2.5 py-1 bg-black/60 backdrop-blur-md rounded-full border border-white/20 text-[9px] sm:text-[10px] font-semibold text-white shadow-xs">
-                <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-orange" /> 100% Certified Original
+                <ShieldCheck className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[hsl(17.14deg_96.08%_70%)]" /> 100% Certified Original
               </div>
-              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 flex items-center gap-1.5 px-2.5 py-1 bg-orange text-navy-deep font-heading font-bold backdrop-blur-md rounded-full text-[9px] sm:text-[10px] shadow-md">
-                <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-navy-deep" /> Lab Tested
+              <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-20 flex items-center gap-1.5 px-2.5 py-1 bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] font-heading font-bold rounded-full text-[9px] sm:text-[10px] shadow-md">
+                <Award className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-[#0F172A]" /> Lab Tested
               </div>
             </div>
 
-            {/* RIGHT COLUMN: RESPONSIVE SLIDE CONTENT - 100% VISIBLE CTAS ON ALL DEVICES */}
+            {/* RIGHT COLUMN: SLIDE CONTENT */}
             <div className="lg:col-span-7 p-5 sm:p-7 lg:p-6 xl:p-9 flex flex-col justify-between bg-white relative">
               <AnimatePresence mode="wait">
                 <motion.div
@@ -314,16 +321,16 @@ export function FeaturedCollectionSpotlight() {
                 >
                   {/* Category Tag, Title & Description */}
                   <div className="space-y-1.5 sm:space-y-2">
-                    <span className="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-orange block">
+                    <span className="text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest text-[#9A3412] block">
                       {activeSlide.categoryName}
                     </span>
-                    <h3 className="font-display text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-navy font-bold leading-tight">
+                    <h3 className="font-display text-xl sm:text-2xl lg:text-3xl xl:text-4xl text-[#0F172A] font-bold leading-tight">
                       {activeSlide.headlineMain}{' '}
-                      <span className="text-orange italic font-serif">
+                      <span className="text-[#9A3412] italic font-serif">
                         {activeSlide.headlineItalic}
                       </span>
                     </h3>
-                    <p className="text-xs sm:text-sm text-navy/85 font-body leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#334155] font-body font-medium leading-relaxed">
                       {activeSlide.description}
                     </p>
                   </div>
@@ -335,12 +342,12 @@ export function FeaturedCollectionSpotlight() {
                       return (
                         <div
                           key={idx}
-                          className="flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-xl bg-[#faf7f4] border border-orange/15 shadow-2xs"
+                          className="flex items-center gap-2.5 sm:gap-3 p-2 sm:p-2.5 rounded-xl bg-[#FAF7F2] border border-[#E2D9CC] shadow-2xs"
                         >
-                          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-orange/15 text-orange flex items-center justify-center shrink-0">
+                          <div className="w-6 h-6 sm:w-7 sm:h-7 rounded-lg bg-[hsl(17.14deg_96.08%_70%)]/20 text-[#0F172A] flex items-center justify-center shrink-0">
                             <BulletIcon className="w-3.5 h-3.5" />
                           </div>
-                          <span className="text-xs font-medium text-navy leading-snug">
+                          <span className="text-xs font-bold text-[#0F172A] leading-snug">
                             {bullet.text}
                           </span>
                         </div>
@@ -348,13 +355,13 @@ export function FeaturedCollectionSpotlight() {
                     })}
                   </div>
 
-                  {/* Bottom Action Section - ALWAYS FULLY VISIBLE & ACCESSIBLE ON ALL DEVICES */}
-                  <div className="pt-3.5 border-t border-navy/10 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mt-auto">
+                  {/* Bottom Action Section */}
+                  <div className="pt-3.5 border-t border-[#F1F5F9] flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mt-auto">
                     <div>
-                      <span className="text-[10px] text-navy/60 uppercase tracking-wider block font-medium">
+                      <span className="text-[10px] text-[#64748B] uppercase tracking-wider block font-bold">
                         Starting Investment
                       </span>
-                      <span className="font-serif text-lg sm:text-2xl font-bold text-orange">
+                      <span className="font-serif text-lg sm:text-2xl font-bold text-[#0F172A]">
                         {activeSlide.startingPrice}
                       </span>
                     </div>
@@ -362,18 +369,18 @@ export function FeaturedCollectionSpotlight() {
                     <div className="grid grid-cols-2 gap-2 sm:flex sm:items-center">
                       <Link
                         href="/consultation"
-                        className="px-4 py-2.5 sm:py-3 bg-navy hover:bg-navy-mid text-white text-xs font-heading font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group cursor-pointer text-center whitespace-nowrap"
+                        className="px-4 py-2.5 sm:py-3 bg-[#0F172A] hover:bg-[#1E293B] text-white text-xs font-heading font-bold uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group cursor-pointer text-center whitespace-nowrap"
                       >
                         <span>Appointment</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-orange group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRight className="w-3.5 h-3.5 text-[hsl(17.14deg_96.08%_70%)] group-hover:translate-x-0.5 transition-transform" />
                       </Link>
 
                       <Link
                         href={activeSlide.targetLink}
-                        className="px-4 py-2.5 sm:py-3 bg-orange hover:bg-orange-bright text-navy-deep font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group cursor-pointer text-center whitespace-nowrap"
+                        className="px-4 py-2.5 sm:py-3 bg-[hsl(17.14deg_96.08%_70%)] hover:brightness-105 text-[#0F172A] font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md flex items-center justify-center gap-1.5 group cursor-pointer text-center whitespace-nowrap"
                       >
                         <span>Explore</span>
-                        <ArrowRight className="w-3.5 h-3.5 text-navy-deep group-hover:translate-x-0.5 transition-transform" />
+                        <ArrowRight className="w-3.5 h-3.5 text-[#0F172A] group-hover:translate-x-0.5 transition-transform" />
                       </Link>
                     </div>
                   </div>

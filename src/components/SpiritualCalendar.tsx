@@ -11,65 +11,67 @@ const events = [
 
 export function SpiritualCalendar() {
   return (
-    <section className="py-14 sm:py-20 md:py-24 lg:py-28 bg-[#faf7f4] border-t border-orange/20 overflow-hidden relative">
+    <section className="py-14 sm:py-20 lg:py-24 bg-[#FAF7F2] border-b border-[hsl(17.14deg_96.08%_70%)]/20 overflow-hidden relative">
       {/* OM Section Divider */}
       <div className="flex items-center justify-center gap-3 sm:gap-4 px-4 pt-0 pb-6 sm:pb-8 relative z-10">
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
-        <span className="text-orange text-xl sm:text-2xl font-serif opacity-80">ॐ</span>
-        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-orange to-transparent max-w-xs opacity-60" />
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
+        <span className="text-[hsl(17.14deg_96.08%_70%)] text-xl sm:text-2xl font-serif font-bold">ॐ</span>
+        <div className="h-px flex-1 bg-gradient-to-r from-transparent via-[hsl(17.14deg_96.08%_70%)] to-transparent max-w-xs" />
       </div>
 
       <div className="absolute top-0 right-0 w-1/2 h-full bg-mandala opacity-[0.03] pointer-events-none" />
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
+        {/* Top Header Section */}
         <div className="text-center mb-10 sm:mb-14 md:mb-16 max-w-3xl mx-auto">
-          <span className="text-[9px] sm:text-[10px] md:text-xs font-heading font-bold uppercase tracking-widest text-orange border border-orange/30 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-block mb-4 sm:mb-6 shadow-sm">
+          <span className="text-[10px] sm:text-[11px] md:text-xs font-heading font-bold uppercase tracking-widest text-[#1E293B] bg-[hsl(17.14deg_96.08%_70%)] border border-[hsl(17.14deg_96.08%_70%)]/50 px-4 sm:px-5 py-1.5 sm:py-2 rounded-full inline-block mb-4 sm:mb-6 shadow-sm">
             Vedic Panchang Tradition
           </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-orange-gradient tracking-tight leading-tight mb-4 sm:mb-6 px-2">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display text-[#1E293B] font-bold tracking-tight leading-tight mb-4 sm:mb-6 px-2">
             Auspicious Timings
           </h2>
-          <p className="text-navy/65 font-body text-sm sm:text-base md:text-lg leading-relaxed px-2">
+          <p className="text-[#334155] font-body text-base sm:text-lg leading-relaxed px-2 font-medium">
             Wearing, cleansing, or energizing your sacred beads on these high-vibration lunar configurations multiplies their spiritual alignment according to the Shastras.
           </p>
         </div>
 
+        {/* Grid Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-8">
           {events.map((ev, i) => {
             const IconComponent = ev.icon;
             return (
               <div 
                 key={i} 
-                className="bg-white border border-orange/20 rounded-2xl p-6 sm:p-7 md:p-8 transition-all duration-500 hover:border-orange/60 hover:shadow-sacred-glow group flex flex-col justify-between relative overflow-hidden"
+                className="bg-white border border-[#E2D9CC] rounded-2xl p-6 sm:p-7 md:p-8 transition-all duration-300 hover:border-[hsl(17.14deg_96.08%_70%)] hover:shadow-xl group flex flex-col justify-between relative overflow-hidden"
               >
-                {/* Traditional corner accent decoration */}
-                <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-bl from-orange/10 to-transparent pointer-events-none rounded-bl-full" />
+                {/* Corner accent decoration */}
+                <div className="absolute top-0 right-0 w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-bl from-[hsl(17.14deg_96.08%_70%)]/20 to-transparent pointer-events-none rounded-bl-full" />
                 
                 <div>
-                  {/* Category Chip Line */}
+                  {/* Category Badge & Icon */}
                   <div className="flex items-center justify-between mb-5 sm:mb-6">
-                    <span className="text-[9px] sm:text-[10px] font-heading font-bold tracking-widest text-navy-deep uppercase bg-orange px-2.5 sm:px-3 py-1 rounded shadow-sm">
+                    <span className="text-[10px] sm:text-[11px] font-heading font-bold tracking-widest text-[#0F172A] uppercase bg-[hsl(17.14deg_96.08%_70%)] px-3 py-1 rounded shadow-sm">
                       {ev.label}
                     </span>
-                    <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-orange/30 bg-orange/10 flex items-center justify-center text-orange group-hover:scale-110 group-hover:bg-orange group-hover:text-white transition-all duration-300">
-                      <IconComponent className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-full border border-[hsl(17.14deg_96.08%_70%)]/50 bg-[hsl(17.14deg_96.08%_70%)]/15 flex items-center justify-center text-[#1E293B] group-hover:scale-110 group-hover:bg-[hsl(17.14deg_96.08%_70%)] transition-all duration-300 shadow-sm">
+                      <IconComponent className="w-5 h-5" />
                     </div>
                   </div>
 
                   {/* Text Details */}
-                  <h3 className="font-display text-xl sm:text-2xl text-navy mb-2.5 sm:mb-3 font-semibold">
+                  <h3 className="font-display text-xl sm:text-2xl text-[#0F172A] mb-2.5 sm:mb-3 font-bold">
                     {ev.name}
                   </h3>
-                  <p className="text-xs sm:text-sm font-body text-navy/60 leading-relaxed">
+                  <p className="text-sm font-body text-[#475569] font-medium leading-relaxed">
                     {ev.desc}
                   </p>
                 </div>
 
-                {/* Bottom decorative anchor frame element */}
-                <div className="mt-6 sm:mt-8 pt-3 sm:pt-4 border-t border-orange/10 flex items-center justify-between text-[10px] sm:text-xs font-heading font-bold tracking-widest uppercase text-orange/50 group-hover:text-orange transition-colors">
+                {/* Bottom Interactive Anchor */}
+                <div className="mt-6 sm:mt-8 pt-4 border-t border-[#F1F5F9] flex items-center justify-between text-xs font-heading font-bold tracking-widest uppercase text-[hsl(17.14deg_96.08%_70%)] group-hover:text-[#9A3412] transition-colors">
                   <span>View Sadhana Guide</span>
-                  <span className="opacity-0 group-hover:opacity-100 transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300">→</span>
+                  <span className="transform -translate-x-1 group-hover:translate-x-1 transition-transform duration-300">→</span>
                 </div>
               </div>
             );

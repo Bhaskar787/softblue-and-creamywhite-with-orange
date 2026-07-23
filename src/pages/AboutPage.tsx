@@ -33,7 +33,7 @@ import { BLOG_POSTS } from '@/data/blogData';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-warm text-navy font-body selection:bg-orange/20 selection:text-navy-deep">
+    <div className="min-h-screen bg-[#FAF7F2] text-navy font-body selection:bg-orange/20 selection:text-navy-deep">
       {/* Navigation */}
       <AnnouncementBar />
       <Navbar />
@@ -57,8 +57,8 @@ export default function AboutPage() {
             
             {/* Left Column Content */}
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/40 text-orange font-heading text-xs font-bold uppercase tracking-widest">
-                <Sparkles className="w-4 h-4 text-orange" />
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/40 text-orange-600 font-heading text-xs font-bold uppercase tracking-widest">
+                <Sparkles className="w-4 h-4 text-orange-600" />
                 <span>WHERE FAITH MEETS AUTHENTICITY</span>
               </div>
 
@@ -146,14 +146,14 @@ export default function AboutPage() {
                 <p>
                   Today, Rudrantra continues this tradition by maintaining direct connections with trusted growers and collectors. We are proud that some of our Rudraksha Beads come from our own cultivation farm in Nepal, where authentic Nepali Rudraksha grows naturally. This allows us to ensure purity, traceability, and authenticity from tree to devotee.
                 </p>
-                <p className="font-bold text-navy-deep italic border-l-4 border-orange pl-4 py-1 bg-warm/50 rounded-r-xl">
+                <p className="font-bold text-navy-deep italic border-l-4 border-orange pl-4 py-1 bg-[#FAF7F2]/50 rounded-r-xl">
                   "At Rudrantra, we believe Rudraksha is not just a bead; it is a sacred symbol of Lord Shiva's blessings. Every bead is handled with respect, verified with care, and shared with devotion so that seekers can confidently receive Trusted Rudraksha aligned with spiritual integrity."
                 </p>
               </div>
             </div>
 
             {/* 5 Key Principles Checklist */}
-            <div className="bg-warm border border-navy/10 p-6 sm:p-8 rounded-2xl space-y-4">
+            <div className="bg-[#FAF7F2] border border-navy/10 p-6 sm:p-8 rounded-2xl space-y-4">
               <h3 className="font-heading text-sm font-bold text-navy-deep uppercase tracking-wider">
                 Core Foundations of Our Mission:
               </h3>
@@ -188,7 +188,7 @@ export default function AboutPage() {
             {/* 5 Core Pillars Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
               
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
                   <Tree className="w-5 h-5" />
                 </div>
@@ -198,7 +198,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
@@ -208,7 +208,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
                   <BookOpen className="w-5 h-5" />
                 </div>
@@ -218,7 +218,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
                   <Heart className="w-5 h-5" />
                 </div>
@@ -228,7 +228,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group sm:col-span-2 lg:col-span-2">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group sm:col-span-2 lg:col-span-2">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
                   <Compass className="w-5 h-5" />
                 </div>
@@ -261,19 +261,19 @@ export default function AboutPage() {
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-warm p-3 rounded-xl border border-navy/10">
+                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
                     <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Traditional 1 to 21 Mukhi Wisdom</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-warm p-3 rounded-xl border border-navy/10">
+                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
                     <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Ethical Harvesting Awareness</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-warm p-3 rounded-xl border border-navy/10">
+                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
                     <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Respect for Wearing Practices</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-warm p-3 rounded-xl border border-navy/10">
+                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
                     <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Natural Bead Formation Verification</span>
                   </div>
@@ -282,7 +282,7 @@ export default function AboutPage() {
 
               <div className="pt-4 border-t border-navy/10 flex items-center justify-between">
                 <span className="text-xs font-heading uppercase text-navy/60">Pashupatinath Verified</span>
-                <Link href="/consultation" className="text-xs font-heading font-bold text-orange hover:text-orange-soft flex items-center gap-1">
+                <Link href="/consultation" className="text-xs font-heading font-bold text-orange hover:text-orange-700 flex items-center gap-1">
                   <span>Explore Mukhi Selection Guidance →</span>
                 </Link>
               </div>
@@ -357,7 +357,7 @@ export default function AboutPage() {
 
             {/* Lineage & Ritual Details Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-warm border border-navy/10 p-6 rounded-2xl space-y-3">
+              <div className="bg-[#FAF7F2] border border-navy/10 p-6 rounded-2xl space-y-3">
                 <span className="text-xs font-heading font-bold text-orange uppercase tracking-wider">
                   Temple / Location Lineage
                 </span>
@@ -366,7 +366,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="bg-warm border border-navy/10 p-6 rounded-2xl space-y-3">
+              <div className="bg-[#FAF7F2] border border-navy/10 p-6 rounded-2xl space-y-3">
                 <span className="text-xs font-heading font-bold text-orange uppercase tracking-wider">
                   Shaiva Consecration Heritage
                 </span>
@@ -504,7 +504,7 @@ export default function AboutPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
                   <Layers className="w-5 h-5" />
                 </div>
@@ -514,7 +514,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
                   <SlidersHorizontal className="w-5 h-5" />
                 </div>
@@ -524,7 +524,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
                   <Scroll className="w-5 h-5" />
                 </div>
@@ -534,7 +534,7 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-warm rounded-2xl border border-navy/10 space-y-3">
+              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
                 <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
                   <Flame className="w-5 h-5" />
                 </div>

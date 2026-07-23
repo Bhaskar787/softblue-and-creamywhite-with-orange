@@ -51,7 +51,7 @@ export default function BlogDetailPage() {
   const [isAdVisible, setIsAdVisible] = useState(true);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#faf7f4] text-navy relative">
+    <div className="flex flex-col min-h-screen bg-[#FAF7F2] text-navy relative">
       <AnnouncementBar />
       <Navbar />
 
@@ -135,7 +135,7 @@ export default function BlogDetailPage() {
           <div className="bg-white border border-navy/15 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8 text-navy/85 font-body leading-relaxed text-sm sm:text-base">
             
             {/* Intro paragraph */}
-            <p className="text-base sm:text-lg font-medium text-navy-deep leading-relaxed border-l-4 border-orange pl-4 bg-[#faf7f4] py-3 pr-3 rounded-r-xl">
+            <p className="text-base sm:text-lg font-medium text-navy-deep leading-relaxed border-l-4 border-orange pl-4 bg-[#FAF7F2] py-3 pr-3 rounded-r-xl">
               {post.content.intro}
             </p>
 
@@ -199,7 +199,7 @@ export default function BlogDetailPage() {
                 return (
                   <div
                     key={product.id}
-                    className="bg-[#faf7f4] border border-navy/15 rounded-xl overflow-hidden p-3 flex flex-col justify-between group hover:border-orange transition-colors"
+                    className="bg-[#FAF7F2] border border-navy/15 rounded-xl overflow-hidden p-3 flex flex-col justify-between group hover:border-orange transition-colors"
                   >
                     <div>
                       <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-navy-deep mb-3">

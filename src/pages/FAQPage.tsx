@@ -198,21 +198,21 @@ export default function FAQPage() {
 
   return (
     // CRITICAL: No overflow-hidden on outer wrapper to allow position:sticky to work!
-    <div className="min-h-screen bg-warm text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative">
+    <div className="min-h-screen bg-[#FAF7F2] text-[#0F172A] font-body selection:bg-[hsl(17.14deg_96.08%_70%)]/30 selection:text-[#0F172A] relative">
       <style>{`
         @keyframes faq-rise {
           from { opacity: 0; transform: translateY(18px) scale(0.98); }
           to { opacity: 1; transform: translateY(0) scale(1); }
         }
         @keyframes bead-pulse {
-          0% { box-shadow: 0 0 0 0 rgba(201,151,58,0.45); }
-          100% { box-shadow: 0 0 0 8px rgba(201,151,58,0); }
+          0% { box-shadow: 0 0 0 0 rgba(252,140,104,0.45); }
+          100% { box-shadow: 0 0 0 8px rgba(252,140,104,0); }
         }
         .faq-card-enter {
           animation: faq-rise 0.55s cubic-bezier(0.16,1,0.3,1) both;
         }
         .faq-thread {
-          background: linear-gradient(to bottom, rgba(201,151,58,0) 0%, rgba(201,151,58,0.35) 6%, rgba(201,151,58,0.35) 94%, rgba(201,151,58,0) 100%);
+          background: linear-gradient(to bottom, rgba(252,140,104,0) 0%, rgba(252,140,104,0.4) 6%, rgba(252,140,104,0.4) 94%, rgba(252,140,104,0) 100%);
         }
         .faq-bead-active {
           animation: bead-pulse 1.1s cubic-bezier(0.16,1,0.3,1) 1;
@@ -223,13 +223,13 @@ export default function FAQPage() {
       <Navbar />
 
       {/* Breadcrumbs Bar */}
-      <div className="bg-[#0E1B26] border-b border-orange/15 py-3.5 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-widest text-peach">
-          <Link href="/" className="hover:text-orange transition-colors">
+      <div className="bg-[#0F172A] border-b border-[hsl(17.14deg_96.08%_70%)]/20 py-3.5 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs font-heading font-bold uppercase tracking-widest text-[#E2E8F0]">
+          <Link href="/" className="hover:text-[hsl(17.14deg_96.08%_70%)] transition-colors">
             Home
           </Link>
-          <ChevronRight className="w-3.5 h-3.5 text-orange" />
-          <span className="text-orange font-bold">Frequently Asked Questions & Help Center</span>
+          <ChevronRight className="w-3.5 h-3.5 text-[hsl(17.14deg_96.08%_70%)]" />
+          <span className="text-[hsl(17.14deg_96.08%_70%)] font-bold">Frequently Asked Questions & Help Center</span>
         </div>
       </div>
 
@@ -239,28 +239,28 @@ export default function FAQPage() {
         <section className="pt-10 sm:pt-16 pb-4 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto space-y-4">
             
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange/15 border border-orange/40 text-orange font-heading text-xs sm:text-sm font-bold uppercase tracking-widest shadow-xs">
-              <GiLotusFlower className="w-4 h-4 text-orange" />
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[hsl(17.14deg_96.08%_70%)]/20 border border-[hsl(17.14deg_96.08%_70%)]/50 text-[#0F172A] font-heading text-xs sm:text-sm font-bold uppercase tracking-widest shadow-xs">
+              <GiLotusFlower className="w-4 h-4 text-[#0F172A]" />
               <span>FREQUENTLY ASKED QUESTIONS</span>
             </div>
 
-            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-navy-deep leading-tight tracking-tight">
-              Got Questions? We Have <span className="text-orange underline decoration-orange/30">Sacred Answers</span>
+            <h1 className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-[#1E293B] leading-tight tracking-tight">
+              Got Questions? We Have <span className="text-orange underline decoration-[hsl(17.14deg_96.08%_70%)]">Sacred Answers</span>
             </h1>
 
-            <p className="font-body text-base sm:text-lg font-medium text-navy-deep/90 leading-relaxed">
+            <p className="font-body text-base sm:text-lg font-medium text-[#334155] leading-relaxed">
               Everything a sincere seeker needs to know before making their sacred choice — original Rudraksha beads, mukhi selection, Vedic consecration, shipping, and lifetime care.
             </p>
 
             {/* LIVE SEARCH INPUT */}
             <div className="relative max-w-xl mx-auto pt-2">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-navy/60" />
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[#64748B]" />
               <input
                 type="text"
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search a question, e.g. 5 mukhi, lab certificate, shipping, oiling..."
-                className="w-full pl-11 pr-4 py-3 rounded-full border border-orange/30 bg-white text-xs sm:text-sm font-body text-navy-deep font-medium placeholder:text-navy/55 focus:outline-none focus:border-orange transition-colors shadow-sm"
+                className="w-full pl-11 pr-4 py-3 rounded-full border border-[#E2D9CC] bg-white text-xs sm:text-sm font-body text-[#0F172A] font-semibold placeholder:text-[#94A3B8] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] transition-colors shadow-sm"
               />
             </div>
 
@@ -272,8 +272,8 @@ export default function FAQPage() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-3.5 sm:px-5 py-2 rounded-full text-xs font-heading font-bold uppercase tracking-widest border transition-all duration-300 cursor-pointer ${
                     activeCategory === cat
-                      ? 'bg-orange text-navy-deep border-orange shadow-[0_0_15px_rgba(201,151,58,0.3)]'
-                      : 'text-navy-deep/85 border-orange/30 bg-white hover:border-orange hover:text-orange'
+                      ? 'bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] border-[hsl(17.14deg_96.08%_70%)] shadow-md'
+                      : 'text-[#334155] border-[#E2D9CC] bg-white hover:border-[hsl(17.14deg_96.08%_70%)] hover:text-[#0F172A]'
                   }`}
                 >
                   {cat}
@@ -289,12 +289,10 @@ export default function FAQPage() {
           <div className="grid md:grid-cols-[1fr_320px] gap-6 sm:gap-8 md:gap-10 items-start">
             
             {/* LEFT COLUMN: STICKY STACKING LIST */}
-            {/* IMPORTANT: No overflow-hidden on any ancestor of the sticky items,
-                otherwise position:sticky silently breaks. */}
             <div ref={listRef} className="flex flex-col gap-2.5 sm:gap-3 relative">
               
               {filtered.length === 0 && (
-                <div className="text-center py-12 sm:py-16 text-navy-deep/80 font-medium border border-dashed border-orange/30 rounded-2xl text-sm sm:text-base px-4 bg-white">
+                <div className="text-center py-12 sm:py-16 text-[#334155] font-medium border border-dashed border-[#E2D9CC] rounded-2xl text-sm sm:text-base px-4 bg-white">
                   No questions match "{query}". Try a different search term or ask us directly.
                 </div>
               )}
@@ -334,8 +332,8 @@ export default function FAQPage() {
                       ref={(el) => { cardRefs.current[i] = el; }}
                       className={`relative rounded-xl border transition-[transform,box-shadow,border-color] duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isOpen
-                          ? 'border-orange bg-white shadow-[0_8px_30px_rgba(21,48,64,0.12)]'
-                          : 'border-navy/15 bg-white shadow-[0_3px_12px_rgba(21,48,64,0.08)] hover:border-orange/40'
+                          ? 'border-[hsl(17.14deg_96.08%_70%)] bg-white shadow-xl'
+                          : 'border-[#E2D9CC] bg-white shadow-sm hover:border-[hsl(17.14deg_96.08%_70%)]/60'
                       }`}
                       style={{
                         transform: `translateY(${liftY}px) scale(${scale})`,
@@ -361,23 +359,23 @@ export default function FAQPage() {
                         <div className="flex items-center gap-3 sm:gap-4">
                           <span
                             className={`hidden sm:flex w-9 h-9 rounded-full items-center justify-center shrink-0 transition-all duration-300 relative ${
-                              isOpen ? 'bg-orange text-navy-deep scale-110 faq-bead-active' : 'bg-orange/10 text-orange'
+                              isOpen ? 'bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] scale-110 faq-bead-active' : 'bg-[hsl(17.14deg_96.08%_70%)]/15 text-[#0F172A]'
                             }`}
                           >
                             <Icon className="w-4 h-4" />
                           </span>
                           <div className="space-y-0.5">
-                            <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-orange">
+                            <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-[#9A3412]">
                               {faq.tag}
                             </span>
-                            <h3 className={`font-heading text-sm sm:text-base font-bold leading-snug transition-colors duration-300 text-navy-deep`}>
+                            <h3 className="font-heading text-sm sm:text-base font-bold leading-snug transition-colors duration-300 text-[#0F172A]">
                               {faq.q}
                             </h3>
                           </div>
                         </div>
 
                         <ChevronDown
-                          className={`w-4 h-4 sm:w-5 sm:h-5 text-orange transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180' : ''}`}
+                          className={`w-4 h-4 sm:w-5 sm:h-5 text-[#0F172A] transition-transform duration-300 shrink-0 ${isOpen ? 'rotate-180 text-[#9A3412]' : ''}`}
                         />
                       </button>
 
@@ -394,21 +392,21 @@ export default function FAQPage() {
                             className="px-4 sm:px-6 pb-4 sm:pb-6 sm:pl-[70px] transition-transform duration-300 ease-out space-y-3"
                             style={{ transform: isOpen ? 'translateY(0)' : 'translateY(-6px)' }}
                           >
-                            <div className="h-px bg-orange/15 mb-3" />
-                            <p className="font-body text-navy-deep font-medium text-xs sm:text-sm leading-relaxed">{faq.a}</p>
+                            <div className="h-px bg-[#F1F5F9] mb-3" />
+                            <p className="font-body text-[#334155] font-medium text-xs sm:text-sm leading-relaxed">{faq.a}</p>
 
-                            <div className="flex items-center justify-between pt-2 text-xs font-heading font-bold text-navy/70 border-t border-navy/10">
+                            <div className="flex items-center justify-between pt-2 text-xs font-heading font-bold text-[#64748B] border-t border-[#F1F5F9]">
                               <span>Was this answer helpful?</span>
                               <button
                                 onClick={() => handleHelpful(faq.originalIndex)}
                                 disabled={isLiked}
                                 className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border transition-all cursor-pointer ${
                                   isLiked
-                                    ? 'bg-orange/20 border-orange text-orange font-bold'
-                                    : 'bg-white border-navy/15 text-navy-deep hover:border-orange hover:text-orange'
+                                    ? 'bg-[hsl(17.14deg_96.08%_70%)]/20 border-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] font-bold'
+                                    : 'bg-white border-[#E2D9CC] text-[#0F172A] hover:border-[hsl(17.14deg_96.08%_70%)]'
                                 }`}
                               >
-                                <ThumbsUp className="w-3.5 h-3.5" />
+                                <ThumbsUp className="w-3.5 h-3.5 text-[hsl(17.14deg_96.08%_70%)]" />
                                 <span>{isLiked ? 'Helpful' : 'Yes, helpful'}</span>
                               </button>
                             </div>
@@ -424,24 +422,24 @@ export default function FAQPage() {
               <div aria-hidden style={{ height: `${Math.max(filtered.length * STACK_OFFSET + 24, 60)}px` }} />
             </div>
 
-            {/* RIGHT COLUMN: STICKY SIDEBAR (Locks at top-28 while scrolling!) */}
+            {/* RIGHT COLUMN: STICKY SIDEBAR */}
             <aside className="md:sticky md:top-24 md:self-start space-y-6">
-              <div className="bg-white border border-orange/20 rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col gap-5 shadow-md">
+              <div className="bg-white border border-[#E2D9CC] rounded-2xl sm:rounded-3xl p-5 sm:p-6 flex flex-col gap-5 shadow-lg">
                 <div className="flex flex-col gap-2">
-                  <div className="w-10 h-10 rounded-full bg-orange/15 flex items-center justify-center mb-1">
-                    <MessageCircle className="w-5 h-5 text-orange" />
+                  <div className="w-10 h-10 rounded-full bg-[hsl(17.14deg_96.08%_70%)]/20 flex items-center justify-center mb-1">
+                    <MessageCircle className="w-5 h-5 text-[#0F172A]" />
                   </div>
-                  <h3 className="font-display text-lg sm:text-xl font-bold text-orange">Need personal guidance?</h3>
-                  <p className="font-body text-navy-deep font-medium text-xs sm:text-sm leading-relaxed">
+                  <h3 className="font-display text-lg sm:text-xl font-bold text-[#0F172A]">Need personal guidance?</h3>
+                  <p className="font-body text-[#334155] font-medium text-xs sm:text-sm leading-relaxed">
                     Our resident Vedic scholars and Acharyas are available to clarify your spiritual queries. We typically respond within 3–4 business hours.
                   </p>
                 </div>
 
-                <div className="flex flex-col gap-2.5 pt-3 border-t border-orange/15">
-                  <a href="tel:+9779715551396" className="flex items-center gap-2.5 text-xs sm:text-sm font-heading font-bold text-navy-deep hover:text-orange transition-colors">
-                    <Phone className="w-4 h-4 text-orange shrink-0" /> +977-9715551396
+                <div className="flex flex-col gap-2.5 pt-3 border-t border-[#F1F5F9]">
+                  <a href="tel:+9779715551396" className="flex items-center gap-2.5 text-xs sm:text-sm font-heading font-bold text-[#0F172A] hover:text-[#9A3412] transition-colors">
+                    <Phone className="w-4 h-4 text-[hsl(17.14deg_96.08%_70%)] shrink-0" /> +977-9715551396
                   </a>
-                  <p className="text-[10px] font-heading font-bold text-navy/60 uppercase tracking-wider pl-6">
+                  <p className="text-[10px] font-heading font-bold text-[#64748B] uppercase tracking-wider pl-6">
                     Available Mon-Sat, 10am - 6pm NPT
                   </p>
                 </div>
@@ -449,21 +447,21 @@ export default function FAQPage() {
                 <div className="flex flex-col gap-3 pt-2">
                   <Link
                     href="/consultation"
-                    className="w-full py-3 bg-gradient-to-r from-orange to-orange-bright text-navy-deep font-heading font-bold uppercase tracking-wider text-xs rounded-xl text-center shadow-md hover:shadow-sacred-glow transition-all"
+                    className="w-full py-3 bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] font-heading font-bold uppercase tracking-wider text-xs rounded-xl text-center shadow-md hover:brightness-105 transition-all"
                   >
                     Book 1:1 Consultation
                   </Link>
 
                   <Link
                     href="/customize-order"
-                    className="w-full py-3 bg-navy-deep text-orange border border-orange/40 font-heading font-bold uppercase tracking-wider text-xs rounded-xl text-center hover:bg-orange hover:text-navy-deep transition-all"
+                    className="w-full py-3 bg-[#0F172A] text-white border border-[#0F172A] font-heading font-bold uppercase tracking-wider text-xs rounded-xl text-center hover:bg-[hsl(17.14deg_96.08%_70%)] hover:text-[#0F172A] transition-all"
                   >
                     Custom Order Page
                   </Link>
 
                   <Link
                     href="/contact"
-                    className="w-full py-2.5 border border-navy/20 text-navy-deep hover:border-orange text-xs font-heading font-bold uppercase tracking-wider rounded-xl text-center transition-colors"
+                    className="w-full py-2.5 border border-[#E2D9CC] text-[#0F172A] hover:border-[hsl(17.14deg_96.08%_70%)] text-xs font-heading font-bold uppercase tracking-wider rounded-xl text-center transition-colors"
                   >
                     Contact Support Team
                   </Link>
@@ -476,22 +474,22 @@ export default function FAQPage() {
 
         {/* ── 3. BOTTOM CALLOUT BANNER ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-navy-deep text-peach rounded-3xl p-8 sm:p-12 border-2 border-orange/40 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div className="bg-[#0F172A] text-white rounded-3xl p-8 sm:p-12 border-2 border-[hsl(17.14deg_96.08%_70%)]/40 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6">
             <div className="space-y-2 text-center sm:text-left">
-              <span className="text-xs font-heading font-bold uppercase tracking-widest text-orange">
+              <span className="text-xs font-heading font-bold uppercase tracking-widest text-[hsl(17.14deg_96.08%_70%)]">
                 [ EXPERT GUIDANCE ]
               </span>
-              <h3 className="font-display text-2xl sm:text-3xl font-bold text-peach">
+              <h3 className="font-display text-2xl sm:text-3xl font-bold text-white">
                 Not sure which Rudraksha is right for you?
               </h3>
-              <p className="font-body text-sm sm:text-base text-peach/90 font-medium">
+              <p className="font-body text-sm sm:text-base text-[#CBD5E1] font-medium">
                 Book a consultation with our spiritual advisors or reach out — we help you choose authentic beads with confidence.
               </p>
             </div>
 
             <Link
               href="/consultation"
-              className="px-8 py-4 bg-gradient-to-r from-orange to-orange-bright text-navy-deep font-heading font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl shadow-md hover:shadow-sacred-glow transition-all shrink-0 text-center"
+              className="px-8 py-4 bg-[hsl(17.14deg_96.08%_70%)] text-[#0F172A] font-heading font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl shadow-md hover:brightness-110 transition-all shrink-0 text-center"
             >
               Book Consultation →
             </Link>

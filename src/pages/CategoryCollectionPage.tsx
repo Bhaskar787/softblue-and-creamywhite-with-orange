@@ -157,7 +157,7 @@ export default function CategoryCollectionPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#faf7f4] text-navy font-body selection:bg-orange/20 relative">
+    <div className="min-h-screen bg-[#FAF7F2] text-navy font-body selection:bg-orange/20 relative">
       <AnnouncementBar />
       <Navbar />
 
@@ -177,7 +177,7 @@ export default function CategoryCollectionPage() {
           <div className="relative flex items-center min-w-0 max-w-full group/tabs">
             <button
               onClick={() => scrollTabs('left')}
-              className="hidden md:flex shrink-0 p-1.5 rounded-full bg-[#faf7f4] text-navy hover:text-orange hover:bg-white border border-orange/20 shadow-xs mr-1 transition-all"
+              className="hidden md:flex shrink-0 p-1.5 rounded-full bg-[#FAF7F2] text-navy hover:text-orange hover:bg-white border border-orange/20 shadow-xs mr-1 transition-all"
               aria-label="Scroll left"
             >
               <ChevronLeft className="w-3.5 h-3.5" />
@@ -204,7 +204,7 @@ export default function CategoryCollectionPage() {
                     className={`shrink-0 px-3.5 py-1.5 rounded-xl text-[11px] font-heading font-bold uppercase tracking-wider transition-all cursor-pointer border ${
                       isActive
                         ? 'bg-navy-deep text-white border-navy-deep shadow-xs'
-                        : 'bg-[#faf7f4] text-navy hover:border-orange hover:text-orange border-orange/20'
+                        : 'bg-[#FAF7F2] text-navy hover:border-orange hover:text-orange border-orange/20'
                     }`}
                   >
                     {cat.shortTitle}
@@ -215,7 +215,7 @@ export default function CategoryCollectionPage() {
 
             <button
               onClick={() => scrollTabs('right')}
-              className="hidden md:flex shrink-0 p-1.5 rounded-full bg-[#faf7f4] text-navy hover:text-orange hover:bg-white border border-orange/20 shadow-xs ml-1 transition-all"
+              className="hidden md:flex shrink-0 p-1.5 rounded-full bg-[#FAF7F2] text-navy hover:text-orange hover:bg-white border border-orange/20 shadow-xs ml-1 transition-all"
               aria-label="Scroll right"
             >
               <ChevronRight className="w-3.5 h-3.5" />
@@ -306,7 +306,7 @@ export default function CategoryCollectionPage() {
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder={`Search in ${activeCategoryMeta.shortTitle}...`}
-              className="w-full pl-10 pr-8 py-2 bg-[#faf7f4] border border-orange/20 rounded-xl text-xs text-navy focus:outline-none focus:border-orange transition-colors font-medium"
+              className="w-full pl-10 pr-8 py-2 bg-[#FAF7F2] border border-orange/20 rounded-xl text-xs text-navy focus:outline-none focus:border-orange transition-colors font-medium"
             />
             {searchQuery && (
               <button
@@ -320,7 +320,7 @@ export default function CategoryCollectionPage() {
 
           {/* Right Toggles & Sort Dropdown */}
           <div className="flex flex-wrap items-center gap-3 shrink-0">
-            <label className="flex items-center gap-2 text-xs font-semibold text-navy cursor-pointer bg-[#faf7f4] border border-orange/20 px-3 py-2 rounded-xl hover:border-orange transition-colors">
+            <label className="flex items-center gap-2 text-xs font-semibold text-navy cursor-pointer bg-[#FAF7F2] border border-orange/20 px-3 py-2 rounded-xl hover:border-orange transition-colors">
               <input
                 type="checkbox"
                 checked={inStockOnly}
@@ -334,7 +334,7 @@ export default function CategoryCollectionPage() {
               <select
                 value={sortOption}
                 onChange={(e) => setSortOption(e.target.value as SortOption)}
-                className="appearance-none bg-[#faf7f4] border border-orange/20 text-navy font-semibold text-xs px-3 py-2 pr-8 rounded-xl focus:outline-none cursor-pointer hover:border-orange transition-colors"
+                className="appearance-none bg-[#FAF7F2] border border-orange/20 text-navy font-semibold text-xs px-3 py-2 pr-8 rounded-xl focus:outline-none cursor-pointer hover:border-orange transition-colors"
               >
                 <option value="featured">Featured Items</option>
                 <option value="price-asc">Price: Low to High</option>
@@ -363,7 +363,7 @@ export default function CategoryCollectionPage() {
                   className="group relative flex flex-col bg-white border border-orange/20 rounded-2xl p-4 shadow-sm hover:shadow-xl hover:border-orange/60 transition-all duration-300"
                 >
                   {/* Image Container */}
-                  <div className="relative aspect-square rounded-xl overflow-hidden bg-[#faf7f4] mb-3 border border-orange/15">
+                  <div className="relative aspect-square rounded-xl overflow-hidden bg-[#FAF7F2] mb-3 border border-orange/15">
                     <Link href={`/product/${product.id}`}>
                       <img
                         src={product.image}
@@ -431,7 +431,7 @@ export default function CategoryCollectionPage() {
                           ({product.reviews})
                         </span>
                       </div>
-                      <span className="text-[9px] font-bold text-navy uppercase tracking-wider bg-[#faf7f4] border border-orange/20 px-2 py-0.5 rounded-full">
+                      <span className="text-[9px] font-bold text-navy uppercase tracking-wider bg-[#FAF7F2] border border-orange/20 px-2 py-0.5 rounded-full">
                         {product.origin} Origin
                       </span>
                     </div>
@@ -472,7 +472,7 @@ export default function CategoryCollectionPage() {
                     {/* Direct Item Details Page Navigation Link */}
                     <Link
                       href={`/product/${product.id}`}
-                      className="mt-2.5 w-full py-1.5 bg-[#faf7f4] hover:bg-white border border-orange/25 text-navy font-semibold text-[11px] uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-1.5 text-center"
+                      className="mt-2.5 w-full py-1.5 bg-[#FAF7F2] hover:bg-white border border-orange/25 text-navy font-semibold text-[11px] uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-1.5 text-center"
                     >
                       <Sparkles className="w-3.5 h-3.5 text-orange" />
                       <span>Item Details</span>
@@ -603,7 +603,7 @@ export default function CategoryCollectionPage() {
             </button>
 
             {/* Modal Image Left */}
-            <div className="w-full md:w-1/2 bg-[#faf7f4] p-6 flex flex-col items-center justify-center relative border-b md:border-b-0 md:border-r border-orange/20">
+            <div className="w-full md:w-1/2 bg-[#FAF7F2] p-6 flex flex-col items-center justify-center relative border-b md:border-b-0 md:border-r border-orange/20">
               <img
                 src={selectedQuickViewProduct.image}
                 alt={selectedQuickViewProduct.name}
@@ -656,7 +656,7 @@ export default function CategoryCollectionPage() {
 
                 {/* Specifications table snippet */}
                 {selectedQuickViewProduct.specifications && (
-                  <div className="bg-[#faf7f4] rounded-xl p-3 border border-orange/20 space-y-1.5">
+                  <div className="bg-[#FAF7F2] rounded-xl p-3 border border-orange/20 space-y-1.5">
                     <span className="text-[10px] font-heading font-bold uppercase tracking-wider text-orange block mb-1">
                       Product Specifications
                     </span>
@@ -711,7 +711,7 @@ export default function CategoryCollectionPage() {
                 <Link
                   href={`/product/${selectedQuickViewProduct.id}`}
                   onClick={() => setSelectedQuickViewProduct(null)}
-                  className="w-full py-2.5 bg-[#faf7f4] hover:bg-white border border-orange/30 text-navy font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-2 text-center"
+                  className="w-full py-2.5 bg-[#FAF7F2] hover:bg-white border border-orange/30 text-navy font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-colors flex items-center justify-center gap-2 text-center"
                 >
                   <span>Open Full Product Details Page</span>
                   <ArrowRight className="w-3.5 h-3.5 text-orange" />

@@ -8,6 +8,7 @@ import { WishlistDrawer } from '@/components/WishlistDrawer';
 import { SearchOverlay } from '@/components/SearchOverlay';
 import { FloatingActions } from '@/components/FloatingActions';
 import { Link } from 'wouter';
+import { TbTools } from "react-icons/tb";
 import {
   ChevronRight,
   Sparkles,
@@ -83,7 +84,7 @@ export default function CustomOrderPage() {
   };
 
   return (
-    <div className="min-h-screen bg-warm text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAF7F2] text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-hidden">
       
       {/* ASTROLOGICAL CELESTIAL BACKGROUND ANIMATIONS */}
       <style>{`
@@ -132,7 +133,7 @@ export default function CustomOrderPage() {
             {/* Left Hero Content */}
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-orange/15 border border-orange/40 text-orange font-heading text-xs sm:text-sm font-bold uppercase tracking-widest">
-                <Sparkles className="w-4 h-4 text-orange" />
+                <TbTools className="w-4 h-4 text-orange" />
                 <span>BESPOKE RUDRAKSHA CRAFTING</span>
               </div>
 
@@ -244,7 +245,7 @@ export default function CustomOrderPage() {
               </div>
 
               {isSubmitted ? (
-                <div className="p-8 bg-warm border-2 border-orange/40 rounded-2xl text-center space-y-4">
+                <div className="p-8 bg-[#FAF7F2] border-2 border-orange/40 rounded-2xl text-center space-y-4">
                   <div className="w-16 h-16 rounded-full bg-orange/20 text-orange flex items-center justify-center mx-auto">
                     <CheckCircle2 className="w-8 h-8" />
                   </div>
@@ -295,7 +296,7 @@ export default function CustomOrderPage() {
                           value={formData.fullName}
                           onChange={handleInputChange}
                           placeholder="Enter your full name"
-                          className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -308,7 +309,7 @@ export default function CustomOrderPage() {
                           value={formData.email}
                           onChange={handleInputChange}
                           placeholder="Enter your email"
-                          className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -322,7 +323,7 @@ export default function CustomOrderPage() {
                         value={formData.phone}
                         onChange={handleInputChange}
                         placeholder="Enter your phone number"
-                        className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                       />
                     </div>
                   </div>
@@ -343,7 +344,7 @@ export default function CustomOrderPage() {
                           value={formData.intention}
                           onChange={handleInputChange}
                           placeholder="e.g. protection, focus, prosperity"
-                          className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -355,7 +356,7 @@ export default function CustomOrderPage() {
                           value={formData.budget}
                           onChange={handleInputChange}
                           placeholder="e.g. INR 5,000 - 15,000"
-                          className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -367,7 +368,7 @@ export default function CustomOrderPage() {
                           value={formData.mukhiPreference}
                           onChange={handleInputChange}
                           placeholder="e.g. 5 Mukhi, 7 Mukhi, custom combination"
-                          className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
 
@@ -379,7 +380,7 @@ export default function CustomOrderPage() {
                           value={formData.timeline}
                           onChange={handleInputChange}
                           placeholder="e.g. within 2 weeks"
-                          className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
+                          className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors"
                         />
                       </div>
                     </div>
@@ -400,7 +401,7 @@ export default function CustomOrderPage() {
                         value={formData.birthDetails}
                         onChange={handleInputChange}
                         placeholder="Date, time, and place of birth"
-                        className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -421,7 +422,7 @@ export default function CustomOrderPage() {
                         value={formData.customizationDetails}
                         onChange={handleInputChange}
                         placeholder="Describe size, color, design preferences, materials, and any special requests."
-                        className="w-full px-4 py-3.5 rounded-xl bg-warm border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none"
+                        className="w-full px-4 py-3.5 rounded-xl bg-[#FAF7F2] border border-navy/20 text-xs sm:text-sm font-medium text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange focus:bg-white transition-colors resize-none"
                       />
                     </div>
                   </div>
@@ -435,7 +436,7 @@ export default function CustomOrderPage() {
 
                     <div className="space-y-2">
                       <label className="text-xs sm:text-sm font-heading font-bold text-navy-deep">Upload inspiration (optional)</label>
-                      <label className="border-2 border-dashed border-orange/40 bg-warm rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center cursor-pointer hover:border-orange hover:bg-orange/5 transition-all text-center">
+                      <label className="border-2 border-dashed border-orange/40 bg-[#FAF7F2] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center cursor-pointer hover:border-orange hover:bg-orange/5 transition-all text-center">
                         <Upload className="w-8 h-8 text-orange mb-2 animate-bounce" />
                         <span className="text-xs sm:text-sm font-heading font-bold text-navy-deep">
                           {fileName ? `File Selected: ${fileName}` : 'Click to upload a reference image'}
@@ -482,7 +483,7 @@ export default function CustomOrderPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <div className="p-4 bg-warm rounded-2xl border border-navy/10 flex gap-3.5 items-center group">
+                  <div className="p-4 bg-[#FAF7F2] rounded-2xl border border-navy/10 flex gap-3.5 items-center group">
                     <img
                       src="https://japam.in/cdn/shop/files/Gold_plated_Modern_Bracelet_and_Brown_Rudraksha_Mala_combo.jpg?v=1726560930&width=1214"
                       alt="Energized 5 Mukhi Jap Mala"
@@ -502,7 +503,7 @@ export default function CustomOrderPage() {
                     </div>
                   </div>
 
-                  <div className="p-4 bg-warm rounded-2xl border border-navy/10 flex gap-3.5 items-center group">
+                  <div className="p-4 bg-[#FAF7F2] rounded-2xl border border-navy/10 flex gap-3.5 items-center group">
                     <img
                       src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
                       alt="Prosperity Combination Bracelet"
@@ -522,7 +523,7 @@ export default function CustomOrderPage() {
                     </div>
                   </div>
 
-                  <div className="p-4 bg-warm rounded-2xl border border-navy/10 flex gap-3.5 items-center group">
+                  <div className="p-4 bg-[#FAF7F2] rounded-2xl border border-navy/10 flex gap-3.5 items-center group">
                     <img
                       src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=600&q=80"
                       alt="Meditation Rudraksha Set"
@@ -586,7 +587,7 @@ export default function CustomOrderPage() {
 
                 <div className="space-y-3.5">
                   {BLOG_POSTS.slice(0, 3).map((post) => (
-                    <div key={post.id} className="p-4 bg-warm rounded-2xl border border-navy/10 space-y-1.5">
+                    <div key={post.id} className="p-4 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-1.5">
                       <h4 className="font-display text-xs sm:text-sm font-bold text-navy-deep line-clamp-1">
                         {post.title}
                       </h4>

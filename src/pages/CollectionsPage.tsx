@@ -213,7 +213,7 @@ const GUIDES_COMBINATIONS = [
 
 export default function CollectionsPage() {
   return (
-    <div className="min-h-screen bg-[#faf8f5] text-[#1a2634] font-body selection:bg-[#c49a56]/20 relative">
+    <div className="min-h-screen bg-[#FAF7F2] text-[#1a2634] font-body selection:bg-[#c49a56]/20 relative">
       <AnnouncementBar />
       <Navbar />
 
