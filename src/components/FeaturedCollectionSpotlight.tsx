@@ -230,7 +230,7 @@ export function FeaturedCollectionSpotlight() {
         </div>
 
         {/* CATEGORY TABS BAR */}
-        <div className="relative flex items-center mb-6 sm:mb-8">
+        <div className="relative flex items-center justify-center mb-6 sm:mb-8">
           <button
             onClick={() => scrollCategoryTabs('left')}
             className="hidden sm:flex shrink-0 p-1.5 rounded-full bg-white text-[#0F172A] hover:border-[hsl(17.14deg_96.08%_70%)] border border-[#E2D9CC] shadow-xs mr-1 transition-all z-10 cursor-pointer"
@@ -241,7 +241,7 @@ export function FeaturedCollectionSpotlight() {
 
           <div
             ref={tabsContainerRef}
-            className="flex items-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1.5 px-1 scroll-smooth w-full"
+            className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 overflow-x-auto no-scrollbar py-1.5 px-1 scroll-smooth w-full"
           >
             {SPOTLIGHT_SLIDES.map((slide, idx) => {
               const isActive = idx === activeIndex;
