@@ -84,6 +84,18 @@ export default function AllProductsPage() {
   const [isProductTypeSectionOpen, setIsProductTypeSectionOpen] = useState(true);
   const [isSpecialFilterOpen, setIsSpecialFilterOpen] = useState(true);
 
+  // Prevent body scroll when mobile filter drawer is open
+  useEffect(() => {
+    if (isMobileFilterOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [isMobileFilterOpen]);
+
   // Sync state when URL params change
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -694,7 +706,7 @@ export default function AllProductsPage() {
 
       {/* MOBILE RESPONSIVE SLIDE-IN FILTER DRAWER (Matching Image 3) */}
       {isMobileFilterOpen && (
-        <div className="fixed inset-0 z-50 flex md:hidden" role="dialog" aria-modal="true">
+        <div className="fixed inset-0 z-[150] flex md:hidden" role="dialog" aria-modal="true">
           {/* Backdrop */}
           <div
             className="absolute inset-0 bg-black/50 backdrop-blur-xs transition-opacity"
