@@ -14,6 +14,7 @@ import {
   GiLotusFlower,
   GiSun,
   GiShield,
+  GiOpenTreasureChest,
 } from 'react-icons/gi';
 import { ArrowRight, Sparkles, ShieldCheck, Award, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -214,7 +215,7 @@ export function FeaturedCollectionSpotlight() {
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-6 sm:mb-8">
           <span className="inline-flex items-center gap-1.5 px-3 py-0.5 sm:px-3.5 sm:py-1 rounded-full bg-orange/10 border border-orange/30 text-orange text-[10px] sm:text-xs font-heading font-bold uppercase tracking-widest mb-2.5">
-            <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Divine Treasury
+            <GiOpenTreasureChest className="w-3 h-3 sm:w-3.5 sm:h-3.5" /> Divine Treasury
           </span>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-display text-navy">
             Sacred Artifacts Spotlight

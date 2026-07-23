@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import { ArrowLeft, ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowLeft, ArrowRight } from 'lucide-react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { VscThinking } from "react-icons/vsc";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -66,7 +67,7 @@ function SectionHeader() {
   return (
     <div className="text-center px-4 pt-1 pb-3 sm:pb-6">
       <div className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1 sm:py-1.5 rounded-full bg-orange/10 border border-orange/30 mb-2 sm:mb-3 text-orange text-xs sm:text-sm font-bold tracking-wider uppercase">
-        <Sparkles className="w-3.5 h-3.5 text-orange" />
+        <VscThinking className="w-3.5 h-3.5 text-orange" />
         Sacred Intentions
       </div>
       <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display text-peach tracking-tight mb-2 font-bold">

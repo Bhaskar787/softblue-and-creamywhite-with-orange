@@ -6,6 +6,7 @@ import { ChevronLeft, ChevronRight, Heart, ShoppingBag, ShieldCheck, ArrowRight,
 import { GiStarSattelites } from 'react-icons/gi';
 import { Link } from 'wouter';
 import { motion, AnimatePresence } from 'framer-motion';
+import { MdLocalOffer } from 'react-icons/md';
 
 interface LaunchedProduct {
   id: string;
@@ -157,7 +158,7 @@ export function NewLaunchesBanner() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-6 sm:mb-10">
           <div>
             <span className="inline-flex items-center gap-2 text-[10px] sm:text-xs font-heading font-bold uppercase tracking-[0.2em] text-orange bg-orange/15 border border-orange/30 px-3.5 py-1 rounded-full mb-2 sm:mb-3">
-              <Sparkles className="w-3.5 h-3.5 text-orange" />
+              <MdLocalOffer  className="w-3.5 h-3.5 text-orange" />
               Exclusive Release
             </span>
             <h2 className="text-2xl sm:text-4xl lg:text-5xl font-display text-peach tracking-tight font-bold">
