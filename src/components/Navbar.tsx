@@ -67,7 +67,7 @@ export function Navbar() {
                 className="w-full h-full object-cover rounded-full mix-blend-screen"
               />
             </div>
-            <span className="font-display text-base sm:text-lg lg:text-lg xl:text-2xl font-bold tracking-widest text-orange text-orange-gradient whitespace-nowrap">
+            <span className="font-display text-base sm:text-lg lg:text-lg xl:text-2xl font-bold tracking-widest bg-gradient-to-r from-orange via-[#FDEEE9] to-orange bg-clip-text text-transparent whitespace-nowrap">
               Rudrantra
             </span>
           </Link>
