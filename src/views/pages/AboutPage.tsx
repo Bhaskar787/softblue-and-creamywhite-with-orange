@@ -911,99 +911,101 @@ export default function AboutPage() {
       <main ref={mainRef} className="pb-20 space-y-16 sm:space-y-24">
 
         {/* ── 1. HERO: FULL-BLEED ARUN VALLEY BACKGROUND ── */}
-        <section
-          ref={heroRef}
-          className="relative min-h-[92vh] flex items-end overflow-hidden bg-navy-deep"
-        >
-          {/* Background media */}
-          <div className="hero-bg-media absolute inset-0 will-change-transform">
-            <video
-              ref={videoRef}
-              className="w-full h-full object-cover"
-              poster={HERO_POSTER_SRC}
-              autoPlay
-              muted
-              loop
-              playsInline
-              preload="auto"
-            >
-              <source src={HERO_VIDEO_SRC} type="video/mp4" />
-            </video>
-          </div>
+   <section
+  ref={heroRef}
 
-          {/* Legibility gradients */}
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-navy-deep/20" />
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-navy-deep/20 to-transparent" />
+  className="relative min-h-[92vh] flex items-end overflow-hidden bg-navy-deep py-20 sm:py-32 lg:py-40"
+>
+  {/* Background media */}
+  <div className="hero-bg-media absolute inset-0 will-change-transform">
+    <video
+      ref={videoRef}
+      className="w-full h-full object-cover"
+      poster={HERO_POSTER_SRC}
+      autoPlay
+      muted
+      loop
+      playsInline
+      preload="auto"
+    >
+      <source src={HERO_VIDEO_SRC} type="video/mp4" />
+    </video>
+  </div>
 
-          {/* Content */}
-          <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 pb-16 sm:pb-20 pt-40">
-            <div className="max-w-3xl space-y-6">
-              <div
-                ref={heroBadgeRef}
-                className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/40 text-orange font-heading text-xs font-bold uppercase tracking-widest backdrop-blur-md"
-              >
-                <Sparkles className="w-4 h-4 text-orange" />
-                <span>Where Faith Meets Authenticity</span>
-              </div>
+  {/* Legibility gradients */}
+  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep via-navy-deep/60 to-navy-deep/20" />
+  <div className="absolute inset-0 bg-gradient-to-r from-navy-deep/70 via-navy-deep/20 to-transparent" />
 
-              <h1
-                ref={heroHeadingRef}
-                className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-peach leading-tight"
-              >
-                {headingWords.map((word, i) => (
-                  <span key={i} className="hero-word inline-block mr-3">
-                    {word === 'Spiritual' || word === 'Awakening.' || word === 'Awakening' ? (
-                      <span className="text-orange">{word}</span>
-                    ) : (
-                      word
-                    )}
-                  </span>
-                ))}
-              </h1>
+  {/* Content */}
+  {/* CHANGED: Removed rigid pt-40 and pb-16/20 here, relying on section py instead */}
+  <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8">
+    <div className="max-w-3xl space-y-6">
+      <div
+        ref={heroBadgeRef}
+        className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange/15 border border-orange/40 text-orange font-heading text-xs font-bold uppercase tracking-widest backdrop-blur-md"
+      >
+        <Sparkles className="w-4 h-4 text-orange" />
+        <span>Where Faith Meets Authenticity</span>
+      </div>
 
-              <p ref={heroParaRef} className="font-body text-base sm:text-lg text-peach/85 leading-relaxed max-w-2xl">
-                Discover the sacred power of authentic Rudraksha Beads at <strong className="text-peach">Rudrantra</strong>, your trusted destination for Original Rudraksha sourced directly from Nepal's Arun Valley. Many of our beads come from carefully cultivated trees in our own Rudrantra farm, a region known worldwide for producing the most powerful and naturally formed Rudraksha.
-              </p>
+      <h1
+        ref={heroHeadingRef}
+        className="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-peach leading-tight"
+      >
+        {headingWords.map((word, i) => (
+          <span key={i} className="hero-word inline-block mr-3">
+            {word === 'Spiritual' || word === 'Awakening.' || word === 'Awakening' ? (
+              <span className="text-orange">{word}</span>
+            ) : (
+              word
+            )}
+          </span>
+        ))}
+      </h1>
 
-              {/* Stats */}
-              <div ref={heroStatsRef} className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
-                <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
-                  <p className="font-display text-2xl sm:text-3xl font-bold text-orange">25K+</p>
-                  <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
-                    Beads Blessed &amp; Calibrated
-                  </p>
-                </div>
+      <p ref={heroParaRef} className="font-body text-base sm:text-lg text-peach/85 leading-relaxed max-w-2xl">
+        Discover the sacred power of authentic Rudraksha Beads at <strong className="text-peach">Rudrantra</strong>, your trusted destination for Original Rudraksha sourced directly from Nepal's Arun Valley. Many of our beads come from carefully cultivated trees in our own Rudrantra farm, a region known worldwide for producing the most powerful and naturally formed Rudraksha.
+      </p>
 
-                <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
-                  <p className="font-display text-2xl sm:text-3xl font-bold text-peach">12K</p>
-                  <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
-                    Practitioners Served
-                  </p>
-                </div>
+      {/* Stats */}
+      <div ref={heroStatsRef} className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 pt-4">
+        <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
+          <p className="font-display text-2xl sm:text-3xl font-bold text-orange">25K+</p>
+          <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
+            Beads Blessed &amp; Calibrated
+          </p>
+        </div>
 
-                <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
-                  <p className="font-display text-2xl sm:text-3xl font-bold text-orange">480+</p>
-                  <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
-                    Curated Malas &amp; Tools
-                  </p>
-                </div>
+        <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
+          <p className="font-display text-2xl sm:text-3xl font-bold text-peach">12K</p>
+          <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
+            Practitioners Served
+          </p>
+        </div>
 
-                <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
-                  <p className="font-display text-2xl sm:text-3xl font-bold text-peach">Nepal</p>
-                  <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
-                    Rudrantra Artisans &amp; Farm
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
+          <p className="font-display text-2xl sm:text-3xl font-bold text-orange">480+</p>
+          <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
+            Curated Malas &amp; Tools
+          </p>
+        </div>
 
-          {/* Scroll cue */}
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-peach/70">
-            <span className="font-heading text-[9px] uppercase tracking-[0.2em]">Scroll</span>
-            <div className="w-px h-8 bg-gradient-to-b from-orange to-transparent" />
-          </div>
-        </section>
+        <div className="bg-white/10 border border-peach/20 p-4 rounded-2xl text-center backdrop-blur-md hover:border-orange transition-colors">
+          <p className="font-display text-2xl sm:text-3xl font-bold text-peach">Nepal</p>
+          <p className="font-heading text-[10px] font-bold uppercase tracking-wider text-peach/80 mt-1">
+            Rudrantra Artisans &amp; Farm
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {/* Scroll cue */}
+  <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 text-peach/70">
+    <span className="font-heading text-[9px] uppercase tracking-[0.2em]">Scroll</span>
+    <div className="w-px h-8 bg-gradient-to-b from-orange to-transparent" />
+  </div>
+</section>
 
         {/* ── 1.5 SCROLL REVEAL: IMAGE GROWS AS YOU SCROLL, TEXT OVERLAYS IT ── */}
         {/* Tall scroll track (350vh) gives the animation room to breathe.
