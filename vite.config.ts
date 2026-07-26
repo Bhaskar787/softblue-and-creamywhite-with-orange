@@ -8,6 +8,16 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, 'src'),
+      '@/models': path.resolve(__dirname, 'src/models'),
+      '@/controllers': path.resolve(__dirname, 'src/controllers'),
+      '@/views': path.resolve(__dirname, 'src/views'),
+      '@/utils': path.resolve(__dirname, 'src/utils'),
+      '@/components': path.resolve(__dirname, 'src/views/components'),
+      '@/data': path.resolve(__dirname, 'src/models/data'),
+      '@/context': path.resolve(__dirname, 'src/models/context'),
+      '@/hooks': path.resolve(__dirname, 'src/controllers/hooks'),
+      '@/lib': path.resolve(__dirname, 'src/utils'),
+      '@/pages': path.resolve(__dirname, 'src/views/pages'),
     },
     dedupe: ['react', 'react-dom'],
   },
