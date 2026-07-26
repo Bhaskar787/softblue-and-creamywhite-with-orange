@@ -14,6 +14,7 @@ import MukhiGuidePage from '@/views/pages/MukhiGuidePage';
 import ConsultationPage from '@/views/pages/ConsultationPage';
 import BlogListPage from '@/views/pages/BlogListPage';
 import BlogDetailPage from '@/views/pages/BlogDetailPage';
+import CheckoutPage from '@/views/pages/CheckoutPage';
 import NotFound from '@/views/pages/not-found';
 
 function ScrollToTop() {
@@ -30,6 +31,7 @@ export function AppRouter() {
       <ScrollToTop />
       <Switch>
         <Route path="/" component={HomePage} />
+        <Route path="/checkout" component={CheckoutPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/about-us" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />

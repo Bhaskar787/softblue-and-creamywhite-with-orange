@@ -547,7 +547,7 @@ export default function ProductDetailPage() {
                 <button
                   onClick={() => {
                     handleAddToCart();
-                    window.location.href = '/all-products';
+                    window.location.href = '/checkout';
                   }}
                   className="w-full py-3.5 px-6 rounded-xl bg-gradient-to-r bg-orange text-navy-deep font-heading font-bold text-xs sm:text-sm uppercase tracking-widest flex items-center justify-center gap-2 shadow-lg hover:shadow-orange/30 transition-all cursor-pointer"
                 >

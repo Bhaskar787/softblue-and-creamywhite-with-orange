@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { Link } from 'wouter';
 import { useCart } from '@/models/context/CartContext';
 import { X, ShoppingBag, ShoppingCart, Sparkles } from 'lucide-react';
 import { formatPrice } from '@/utils/utils';
@@ -175,9 +176,13 @@ export function CartDrawer() {
               <span className="font-heading text-peach text-sm sm:text-base font-semibold">Subtotal</span>
               <span className="font-heading text-orange text-lg sm:text-xl font-bold">{formatPrice(subtotal)}</span>
             </div>
-            <button className="w-full py-3 sm:py-4 bg-gradient-to-r from-orange to-orange-soft text-navy-deep font-heading font-bold rounded-xl hover:shadow-sacred-glow transition-all flex items-center justify-center gap-2 text-sm sm:text-base">
+            <Link
+              href="/checkout"
+              onClick={() => setIsCartOpen(false)}
+              className="w-full py-3 sm:py-4 bg-gradient-to-r from-orange to-orange-soft text-navy-deep font-heading font-bold rounded-xl hover:shadow-sacred-glow transition-all flex items-center justify-center gap-2 text-sm sm:text-base cursor-pointer text-center"
+            >
               <ShoppingBag className="w-4 h-4" /> Proceed to Checkout
-            </button>
+            </Link>
             <p className="text-center text-[10px] sm:text-[11px] text-peach/80 font-body italic mt-3 sm:mt-4">
               Namaste — every order is a small step on the path.
             </p>
