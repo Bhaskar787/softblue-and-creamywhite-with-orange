@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function formatPrice(n: number): string {
-  return '₹' + n.toLocaleString('en-IN');
+  return 'NPR ' + n.toLocaleString('NPR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }

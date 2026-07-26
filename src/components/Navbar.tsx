@@ -308,9 +308,8 @@ export function Navbar() {
         {/* RIGHT: Actions (Search, Account, Wishlist, Cart) */}
         <div className="flex items-center justify-end gap-0.5 sm:gap-1.5 lg:gap-1.5 xl:gap-3 shrink-0">
           <div className="hidden sm:flex items-center gap-0.5 text-[10px] xl:text-xs font-heading font-medium text-orange shrink-0">
-            <span>₹</span>
             <select className="bg-transparent border-none focus:outline-none cursor-pointer appearance-none text-orange hover:text-orange-bright pr-1 bg-navy-deep">
-              <option>INR</option>
+              <option>NPR</option>
               <option>USD</option>
             </select>
           </div>
