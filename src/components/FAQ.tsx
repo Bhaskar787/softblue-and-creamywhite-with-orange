@@ -315,7 +315,7 @@ export function FAQ() {
                   Message on WhatsApp
                 </a>
                 <a
-                  href="#"
+                  href="/consultation"
                   className="w-full py-2.5 sm:py-3 border border-[#E2D9CC] text-[#0F172A] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider rounded-xl text-center hover:border-[hsl(17.14deg_96.08%_70%)] hover:bg-[hsl(17.14deg_96.08%_70%)]/10 transition-colors"
                 >
                   Book Free Consultation

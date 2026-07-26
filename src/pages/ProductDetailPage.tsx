@@ -7,7 +7,6 @@ import { CartDrawer } from '@/components/CartDrawer';
 import { WishlistDrawer } from '@/components/WishlistDrawer';
 import { SearchOverlay } from '@/components/SearchOverlay';
 import { FloatingActions } from '@/components/FloatingActions';
-import { TrustPaymentBar } from '@/components/TrustPaymentBar';
 import { productsData, Product } from '@/data/productsData';
 import { useCart } from '@/context/CartContext';
 import { useWishlist } from '@/context/WishlistContext';
@@ -372,7 +371,7 @@ export default function ProductDetailPage() {
             <div className="lg:col-span-6 space-y-6">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-orange bg-orange/10 border border-orange/30 px-3 py-1 rounded-full">
+                  <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-orange-500 bg-orange/10 border border-orange/30 px-3 py-1 rounded-full">
                     {product.category}
                   </span>
                   <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-navy-deep bg-orange/15 border border-orange/30 px-2.5 py-1 rounded-full">
@@ -395,11 +394,11 @@ export default function ProductDetailPage() {
                         }`}
                       />
                     ))}
-                    <span className="text-xs font-bold text-navy-deep ml-1">{product.rating}</span>
+                    <span className="text-sm font-bold text-navy-deep ml-1">{product.rating}</span>
                   </div>
-                  <span className="text-xs text-navy/60 font-body">({product.reviews} Verified Reviews)</span>
-                  <span className="text-xs text-navy/40">|</span>
-                  <span className="text-xs text-orange font-heading font-bold uppercase tracking-wider">
+                  <span className="text-sm text-navy/60 font-body">({product.reviews} Verified Reviews)</span>
+                  <span className="text-sm text-navy/40">|</span>
+                  <span className="text-sm text-orange font-heading font-bold uppercase tracking-wider">
                     Origin: {selectedOrigin}
                   </span>
                 </div>
@@ -434,7 +433,7 @@ export default function ProductDetailPage() {
                     <Ruler className="w-3.5 h-3.5 text-orange" />
                     Select Bead Size:
                   </label>
-                  <span className="text-[11px] font-body text-navy/50">{product.stockCount} left</span>
+                  <span className="text-[15px] font-bold font-body text-navy/50">{product.stockCount} left</span>
                 </div>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
                   {SIZE_OPTIONS.map((size) => (
@@ -443,18 +442,18 @@ export default function ProductDetailPage() {
                       onClick={() => setSelectedSize(size)}
                       className={`py-2.5 px-3 rounded-lg text-center transition-all border ${
                         selectedSize.id === size.id
-                          ? 'bg-navy-deep text-orange border-orange shadow-md scale-[1.02]'
+                          ? ' text-orange border-orange shadow-md scale-[1.02]'
                           : 'bg-white text-navy/80 border-navy/20 hover:border-orange'
                       }`}
                     >
                       <span className="block text-xs font-heading font-bold tracking-wider">{size.label}</span>
-                      <span
-                        className={`block text-[10px] mt-0.5 ${
-                          selectedSize.id === size.id ? 'text-orange/80' : 'text-navy/50'
-                        }`}
-                      >
-                        {size.range}
-                      </span>
+                <span
+  className={`block text-sm font-bold mt-0.5 ${
+    selectedSize.id === size.id ? 'text-orange/100' : 'text-navy/50'
+  }`}
+>
+  {size.range}
+</span>
                     </button>
                   ))}
                 </div>
@@ -472,7 +471,7 @@ export default function ProductDetailPage() {
                       onClick={() => setSelectedCapping(cap)}
                       className={`py-2.5 px-3 rounded-lg text-xs font-heading font-bold tracking-wider transition-all border text-center ${
                         selectedCapping === cap
-                          ? 'bg-navy-deep text-orange border-orange shadow-md scale-[1.02]'
+                          ? ' text-orange border-orange shadow-md scale-[1.02]'
                           : 'bg-white text-navy/80 border-navy/20 hover:border-orange'
                       }`}
                     >
@@ -712,7 +711,6 @@ export default function ProductDetailPage() {
                   {/* Community Score & Action Button */}
                   <div className="w-full md:w-auto flex flex-col items-start md:items-end space-y-2 border-t md:border-t-0 md:border-l border-navy/15 pt-4 md:pt-0 md:pl-8">
                     <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-orange uppercase bg-orange/10 border border-orange/30 px-3 py-1 rounded-full flex items-center gap-1.5">
-                      <Sparkles className="w-3 h-3 text-orange" />
                       Devotee Community Score
                     </span>
 
