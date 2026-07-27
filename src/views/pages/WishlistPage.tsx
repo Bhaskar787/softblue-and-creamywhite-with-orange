@@ -36,7 +36,6 @@ export function WishlistPage() {
       <CartDrawer />
       <SearchOverlay />
       <MenuDrawer />
-      <LeftReviewsDrawer />
 
       {/* Main Content Area */}
       <main className="flex-1">
