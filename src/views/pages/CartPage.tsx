@@ -300,7 +300,7 @@ export function CartPage() {
                         Sadhana Loyalty Rewards
                       </span>
                       <p className="text-sm font-bold text-stone-900">
-                        Earn <span className="text-amber-800 font-extrabold">42 Nepa Coins</span> on this purchase
+                        Earn <span className="text-amber-800 font-extrabold">42 Coins</span> on this purchase
                       </p>
                       <p className="text-xs text-stone-500">Coins can be redeemed for instant discounts on future orders.</p>
                     </div>
