@@ -74,7 +74,18 @@ export function Footer() {
               <p>+91 98765 43210</p>
               <p>Thamel, Kathmandu, Nepal</p>
             </div>
-            <div className="flex items-center gap-4 mt-4">
+      
+          </div>
+
+          {/* Col 5 -  Visit our Site  */}
+          <div className="flex flex-col gap-6">
+            <h4 className="font-heading font-bold text-lg uppercase tracking-widest text-orange flex items-center gap-2">
+              <span className="w-4 h-px bg-orange/50"></span> Visit Our Site
+            </h4>
+            <p className="text-peach/85 font-body text-sm leading-relaxed max-w-xs">
+              Shop Rudraksha, track orders, and book consultations on the go.
+            </p>
+              <div className="flex items-center gap-4 mt-4">
               <a href="#" className="w-10 h-10 rounded-full border border-orange/30 bg-navy/50 flex items-center justify-center text-orange hover:bg-orange hover:text-navy-deep transition-all">
                 <Instagram className="w-4 h-4" />
               </a>
@@ -83,32 +94,6 @@ export function Footer() {
               </a>
               <a href="#" className="w-10 h-10 rounded-full border border-orange/30 bg-navy/50 flex items-center justify-center text-orange hover:bg-orange hover:border-orange hover:text-navy-deep transition-all">
                 <MessageCircle className="w-4 h-4" />
-              </a>
-            </div>
-          </div>
-
-          {/* Col 5 - Download App */}
-          <div className="flex flex-col gap-6">
-            <h4 className="font-heading font-bold text-lg uppercase tracking-widest text-orange flex items-center gap-2">
-              <span className="w-4 h-px bg-orange/50"></span> Download Our App
-            </h4>
-            <p className="text-peach/85 font-body text-sm leading-relaxed max-w-xs">
-              Shop Rudraksha, track orders, and book consultations on the go.
-            </p>
-            <div className="flex flex-col gap-3">
-              <a href="#" className="inline-block w-fit">
-                <img
-                  src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-                  alt="Download on the App Store"
-                  className="h-10 sm:h-11 w-auto rounded-lg"
-                />
-              </a>
-              <a href="#" className="inline-block w-fit">
-                <img
-                  src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
-                  alt="Get it on Google Play"
-                  className="h-10 sm:h-11 w-auto"
-                />
               </a>
             </div>
           </div>

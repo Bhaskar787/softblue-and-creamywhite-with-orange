@@ -1077,7 +1077,7 @@ export default function AboutPage() {
           <div data-reveal className="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10">
             
             <div className="max-w-3xl space-y-4">
-              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+              <span className="text-navy-deep font-heading text-xs font-extrabold uppercase tracking-widest bg-orange px-3 py-1 rounded-md inline-block shadow-2xs">
                 OUR SACRED JOURNEY
               </span>
               <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
@@ -1093,7 +1093,7 @@ export default function AboutPage() {
                 <p>
                   Today, Rudrantra continues this tradition by maintaining direct connections with trusted growers and collectors. We are proud that our Rudraksha Beads come from our own cultivation farm in Nepal, where authentic Nepali Rudraksha grows naturally. This allows us to ensure purity, traceability, and authenticity from tree to devotee.
                 </p>
-                <p className="font-bold text-stone-900 italic border-l-4 border-amber-600 pl-4 py-2 bg-stone-50 rounded-r-xl">
+                <p className="font-bold text-stone-900 italic border-l-4 border-orange pl-4 py-2 bg-stone-50 rounded-r-xl">
                   "At Rudrantra, we believe Rudraksha is not just a bead; it is a sacred symbol of Lord Shiva's blessings. Every bead is handled with respect, verified with care, and shared with devotion so that seekers can confidently receive Trusted Rudraksha aligned with spiritual integrity."
                 </p>
               </div>
@@ -1106,27 +1106,27 @@ export default function AboutPage() {
               </h3>
               <div data-reveal-group className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                 <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                   <span>Direct Sourcing from Nepal, Including Our Own Farm</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                   <span>Accurate Mukhi Verification Process</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                   <span>100% Natural &amp; Untreated Rudraksha Beads</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
-                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                   <span>Spiritual Preparation Guided by Shiva Traditions</span>
                 </div>
 
                 <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs md:col-span-2 lg:col-span-2">
-                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                   <span>Education and Guidance for Selecting Trusted Rudraksha</span>
                 </div>
               </div>
@@ -1135,9 +1135,9 @@ export default function AboutPage() {
             {/* 5 Core Pillars Grid */}
             <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
               
-              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                  <Tree className="w-5 h-5" />
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-orange transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep font-extrabold flex items-center justify-center group-hover:bg-orange-bright transition-colors shadow-2xs">
+                  <Tree className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h3 className="font-heading text-lg font-extrabold text-stone-900">Integrity in Origin</h3>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1145,9 +1145,9 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                  <ShieldCheck className="w-5 h-5" />
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-orange transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep font-extrabold flex items-center justify-center group-hover:bg-orange-bright transition-colors shadow-2xs">
+                  <ShieldCheck className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h3 className="font-heading text-lg font-extrabold text-stone-900">Respect for Nature</h3>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1155,9 +1155,9 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                  <BookOpen className="w-5 h-5" />
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-orange transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep font-extrabold flex items-center justify-center group-hover:bg-orange-bright transition-colors shadow-2xs">
+                  <BookOpen className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h3 className="font-heading text-lg font-extrabold text-stone-900">Wisdom-Led Guidance</h3>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1165,9 +1165,9 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                  <Heart className="w-5 h-5" />
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-orange transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep font-extrabold flex items-center justify-center group-hover:bg-orange-bright transition-colors shadow-2xs">
+                  <Heart className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h3 className="font-heading text-lg font-extrabold text-stone-900">Devotional Responsibility</h3>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1175,9 +1175,9 @@ export default function AboutPage() {
                 </p>
               </div>
 
-              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group sm:col-span-2 lg:col-span-2">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                  <Compass className="w-5 h-5" />
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-orange transition-colors group sm:col-span-2 lg:col-span-2">
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep font-extrabold flex items-center justify-center group-hover:bg-orange-bright transition-colors shadow-2xs">
+                  <Compass className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h3 className="font-heading text-lg font-extrabold text-stone-900">Guided Personal Support</h3>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1197,7 +1197,7 @@ export default function AboutPage() {
             {/* Left Column: Aligned with Tradition */}
             <div data-reveal className="lg:col-span-7 bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-10 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+                <span className="text-navy-deep font-heading text-xs font-extrabold uppercase tracking-widest bg-orange px-3 py-1 rounded-md inline-block shadow-2xs">
                   AUTHENTICITY &amp; HERITAGE
                 </span>
                 <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-stone-900">
@@ -1209,19 +1209,19 @@ export default function AboutPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
                   <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Traditional 1 to 21 Mukhi Wisdom</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Ethical Harvesting Awareness</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Respect for Wearing Practices</span>
                   </div>
                   <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
-                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
+                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
                     <span>Natural Bead Formation Verification</span>
                   </div>
                 </div>
@@ -1229,7 +1229,7 @@ export default function AboutPage() {
 
               <div className="pt-4 border-t border-stone-200 flex items-center justify-between">
                 <span className="text-xs font-heading font-extrabold uppercase text-stone-700">Pashupatinath Verified</span>
-                <Link href="/consultation" className="text-xs font-heading font-bold text-amber-800 hover:underline flex items-center gap-1">
+                <Link href="/consultation" className="text-xs font-heading font-bold text-orange hover:underline flex items-center gap-1">
                   <span>Explore Mukhi Selection Guidance →</span>
                 </Link>
               </div>
@@ -1238,48 +1238,15 @@ export default function AboutPage() {
             {/* Right Column: Why Customers Trust Rudrantra */}
             <div data-reveal className="lg:col-span-5 bg-navy-deep text-peach rounded-3xl p-6 sm:p-8 border-2 border-orange/40 shadow-md flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <span className="text-orange font-heading text-xs font-bold uppercase tracking-widest">
-                  [ WHY CUSTOMERS TRUST RUDRANTRA ]
+                <span className="text-orange font-heading text-xs font-extrabold uppercase tracking-widest bg-navy/90 border border-orange/30 px-3 py-1 rounded-md inline-block">
+                  TRUST &amp; TRANSPARENCY
                 </span>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-peach">
-                  Built on Truth &amp; Honest Pricing
+                <h3 className="font-heading text-2xl font-extrabold text-peach">
+                  Why Seekers Rely on Rudrantra
                 </h3>
-
-                <div data-reveal-group className="space-y-2.5">
-                  <div className="p-3 bg-navy/80 rounded-xl border border-orange/20 flex items-center gap-2.5">
-                    <Award className="w-4 h-4 text-orange shrink-0" />
-                    <span className="font-heading text-xs font-bold text-peach">Transparent Mukhi Classification</span>
-                  </div>
-
-                  <div className="p-3 bg-navy/80 rounded-xl border border-orange/20 flex items-center gap-2.5">
-                    <FileCheck className="w-4 h-4 text-orange shrink-0" />
-                    <span className="font-heading text-xs font-bold text-peach">Clear and Honest Product Descriptions</span>
-                  </div>
-
-                  <div className="p-3 bg-navy/80 rounded-xl border border-orange/20 flex items-center gap-2.5">
-                    <ShieldCheck className="w-4 h-4 text-orange shrink-0" />
-                    <span className="font-heading text-xs font-bold text-peach">Authenticity &amp; Transparent Pricing</span>
-                  </div>
-
-                  <div className="p-3 bg-navy/80 rounded-xl border border-orange/20 flex items-center gap-2.5">
-                    <Users className="w-4 h-4 text-orange shrink-0" />
-                    <span className="font-heading text-xs font-bold text-peach">Growing Global Community of Seekers</span>
-                  </div>
-
-                  <div className="p-3 bg-navy/80 rounded-xl border border-orange/20 flex items-center gap-2.5">
-                    <Tree className="w-4 h-4 text-orange shrink-0" />
-                    <span className="font-heading text-xs font-bold text-peach">Authentic Rudraksha from Our Own Farm</span>
-                  </div>
-
-                  <div className="p-3 bg-navy/80 rounded-xl border border-orange/20 flex items-center gap-2.5">
-                    <Sparkles className="w-4 h-4 text-orange shrink-0" />
-                    <span className="font-heading text-xs font-bold text-peach">Expertise in Identifying Mukhi Formations</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="text-[10px] font-heading uppercase text-center text-orange/90 border-t border-orange/20 pt-3">
-                Trusted by Meditation Practitioners &amp; Yoga Communities Worldwide
+                <p className="font-body text-xs sm:text-sm text-peach/90 font-medium leading-relaxed">
+                  Genuine beads, verified origin, traditional consecration, and dedicated spiritual guidance for every devotee.
+                </p>
               </div>
             </div>
 
@@ -1291,7 +1258,7 @@ export default function AboutPage() {
           <div data-reveal className="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10">
             
             <div className="max-w-3xl space-y-4">
-              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+              <span className="text-navy-deep font-heading text-xs font-extrabold uppercase tracking-widest bg-orange px-3 py-1 rounded-md inline-block shadow-2xs">
                 SACRED PREPARATION
               </span>
               <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
@@ -1305,7 +1272,7 @@ export default function AboutPage() {
             {/* Lineage & Ritual Details Grid */}
             <div data-reveal-group className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-stone-50 border border-stone-300 p-6 rounded-2xl space-y-3">
-                <span className="text-xs font-heading font-extrabold text-amber-800 uppercase tracking-wider block">
+                <span className="text-xs font-heading font-extrabold text-orange uppercase tracking-wider block">
                   Temple / Location Lineage
                 </span>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1314,7 +1281,7 @@ export default function AboutPage() {
               </div>
 
               <div className="bg-stone-50 border border-stone-300 p-6 rounded-2xl space-y-3">
-                <span className="text-xs font-heading font-extrabold text-amber-800 uppercase tracking-wider block">
+                <span className="text-xs font-heading font-extrabold text-orange uppercase tracking-wider block">
                   Shaiva Consecration Heritage
                 </span>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1358,7 +1325,7 @@ export default function AboutPage() {
         {/* ── 5. A TRANSPARENT PATH FROM TREE TO TEMPLE ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-reveal className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-            <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+            <span className="text-navy-deep font-heading text-xs font-extrabold uppercase tracking-widest bg-orange px-3 py-1 rounded-md inline-block shadow-2xs">
               OUR JOURNEY OF PURITY
             </span>
             <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
@@ -1371,8 +1338,8 @@ export default function AboutPage() {
 
           <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
-              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-navy-deep bg-orange px-3 py-1 rounded-full border border-orange-bright">
                 STEP 01
               </span>
               <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Curated at Source</h3>
@@ -1381,8 +1348,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
-              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-navy-deep bg-orange px-3 py-1 rounded-full border border-orange-bright">
                 STEP 02
               </span>
               <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Structural Examination</h3>
@@ -1391,8 +1358,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
-              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-navy-deep bg-orange px-3 py-1 rounded-full border border-orange-bright">
                 STEP 03
               </span>
               <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Spiritual Preparation</h3>
@@ -1401,8 +1368,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
-              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-navy-deep bg-orange px-3 py-1 rounded-full border border-orange-bright">
                 STEP 04
               </span>
               <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Mala Crafting</h3>
@@ -1411,8 +1378,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
-              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-navy-deep bg-orange px-3 py-1 rounded-full border border-orange-bright">
                 STEP 05
               </span>
               <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Energetic Cleansing</h3>
@@ -1421,8 +1388,8 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
-              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-navy-deep bg-orange px-3 py-1 rounded-full border border-orange-bright">
                 STEP 06
               </span>
               <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Guided Dispatch</h3>
@@ -1438,7 +1405,7 @@ export default function AboutPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-reveal className="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-12 shadow-sm space-y-8">
             <div className="max-w-3xl space-y-3">
-              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+              <span className="text-navy-deep font-heading text-xs font-extrabold uppercase tracking-widest bg-orange px-3 py-1 rounded-md inline-block shadow-2xs">
                 ARTISTRY &amp; DURABILITY
               </span>
               <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
@@ -1452,8 +1419,8 @@ export default function AboutPage() {
             <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
               <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-                  <Layers className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep flex items-center justify-center font-bold shadow-2xs">
+                  <Layers className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Thread Engineering</h4>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1462,8 +1429,8 @@ export default function AboutPage() {
               </div>
 
               <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-                  <SlidersHorizontal className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep flex items-center justify-center font-bold shadow-2xs">
+                  <SlidersHorizontal className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Balanced Spacing</h4>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1472,8 +1439,8 @@ export default function AboutPage() {
               </div>
 
               <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-                  <Scroll className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep flex items-center justify-center font-bold shadow-2xs">
+                  <Scroll className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Sacred Final Touch</h4>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1482,8 +1449,8 @@ export default function AboutPage() {
               </div>
 
               <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-                  <Flame className="w-5 h-5" />
+                <div className="w-10 h-10 rounded-xl bg-orange text-navy-deep flex items-center justify-center font-bold shadow-2xs">
+                  <Flame className="w-5 h-5 text-navy-deep" />
                 </div>
                 <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Blessings &amp; Mantras</h4>
                 <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
@@ -1528,14 +1495,14 @@ export default function AboutPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div data-reveal className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-stone-300 pb-4">
             <div>
-              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+              <span className="text-navy-deep font-heading text-xs font-extrabold uppercase tracking-widest bg-orange px-3 py-1 rounded-md inline-block shadow-2xs">
                 SPIRITUAL GUIDES &amp; BLOG
               </span>
               <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 mt-2">
                 Sacred Reads &amp; Authentic Knowledge
               </h2>
             </div>
-            <Link href="/blog" className="text-xs font-heading font-extrabold text-amber-800 hover:underline flex items-center gap-1">
+            <Link href="/blog" className="text-xs font-heading font-extrabold text-orange hover:underline flex items-center gap-1">
               <span>View All Articles</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -1545,7 +1512,7 @@ export default function AboutPage() {
             {BLOG_POSTS.slice(0, 2).map((post) => (
               <div
                 key={post.id}
-                className="bg-white border border-stone-300 rounded-3xl overflow-hidden shadow-sm hover:border-amber-600 hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white border border-stone-300 rounded-3xl overflow-hidden shadow-sm hover:border-orange hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-navy-deep">
@@ -1554,7 +1521,7 @@ export default function AboutPage() {
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <span className="absolute top-4 left-4 bg-navy-deep/90 text-orange text-[10px] font-heading font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border border-orange/40 backdrop-blur-md">
+                    <span className="absolute top-4 left-4 bg-orange text-navy-deep text-[10px] font-heading font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border border-orange-bright backdrop-blur-md shadow-2xs">
                       {post.category}
                     </span>
                   </div>
@@ -1568,7 +1535,7 @@ export default function AboutPage() {
                       <span>{post.views} views</span>
                     </div>
 
-                    <h3 className="font-heading text-xl font-extrabold text-stone-900 group-hover:text-amber-800 transition-colors">
+                    <h3 className="font-heading text-xl font-extrabold text-stone-900 group-hover:text-orange transition-colors">
                       <Link href={`/article/${post.id}`}>{post.title}</Link>
                     </h3>
 
@@ -1581,7 +1548,7 @@ export default function AboutPage() {
                 <div className="p-6 pt-0 border-t border-stone-200 mt-4 flex items-center justify-between">
                   <Link
                     href={`/article/${post.id}`}
-                    className="text-xs font-heading font-extrabold text-amber-800 hover:underline flex items-center gap-1.5 transition-all"
+                    className="text-xs font-heading font-extrabold text-orange hover:underline flex items-center gap-1.5 transition-all"
                   >
                     <span>Read Article</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />

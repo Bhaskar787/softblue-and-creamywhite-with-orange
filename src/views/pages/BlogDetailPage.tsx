@@ -9,8 +9,7 @@ import { WishlistDrawer } from '@/views/components/WishlistDrawer';
 import { SearchOverlay } from '@/views/components/SearchOverlay';
 import { FloatingActions } from '@/views/components/FloatingActions';
 import { BlogGiftOffers } from '@/views/components/BlogGiftOffers';
-import { FloatingBlogAd } from '@/views/components/FloatingBlogAd';
-import { BLOG_POSTS, BlogPost } from '@/models/data/blogData';
+import { BLOG_POSTS } from '@/models/data/blogData';
 import { productsData } from '@/models/data/productsData';
 import { useCart } from '@/models/context/CartContext';
 import { useWishlist } from '@/models/context/WishlistContext';
@@ -22,13 +21,9 @@ import {
   Eye,
   ArrowRight,
   CheckCircle2,
-  Share2,
-  Bookmark,
   ShoppingBag,
   Heart,
-  Flame,
-  X,
-  Sparkles,
+  ShieldCheck,
 } from 'lucide-react';
 
 export default function BlogDetailPage() {
@@ -48,27 +43,25 @@ export default function BlogDetailPage() {
   const { addToCart } = useCart();
   const { toggleWishlist, isInWishlist } = useWishlist();
 
-  const [isAdVisible, setIsAdVisible] = useState(true);
-
   return (
-    <div className="flex flex-col min-h-screen bg-[#FAF7F2] text-navy relative">
+    <div className="flex flex-col min-h-screen bg-[#FAF8F5] text-stone-900 font-body antialiased selection:bg-amber-100 selection:text-amber-900 relative">
       <AnnouncementBar />
       <Navbar />
 
       <main className="flex-1 pb-16 sm:pb-24">
         
-        {/* Breadcrumb Navigation (Matching Image 2) */}
-        <div className="bg-[#0E1B26] text-peach py-4 border-b border-orange/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-heading uppercase tracking-widest text-peach/75 overflow-x-auto whitespace-nowrap hide-scrollbar">
+        {/* Breadcrumb Navigation */}
+        <div className="bg-[#0E1B26] text-peach py-3.5 border-b border-orange/20">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center gap-2 text-xs font-heading font-extrabold uppercase tracking-widest text-peach overflow-x-auto whitespace-nowrap hide-scrollbar">
             <Link href="/" className="hover:text-orange transition-colors">
               Home
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-orange/60" />
+            <ChevronRight className="w-3.5 h-3.5 text-orange" />
             <Link href="/blog" className="hover:text-orange transition-colors">
               Blog
             </Link>
-            <ChevronRight className="w-3.5 h-3.5 text-orange/60" />
-            <span className="text-orange font-bold truncate max-w-xs">{post.title}</span>
+            <ChevronRight className="w-3.5 h-3.5 text-orange" />
+            <span className="text-orange font-extrabold truncate max-w-xs">{post.title}</span>
           </div>
         </div>
 
@@ -76,46 +69,46 @@ export default function BlogDetailPage() {
         <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 space-y-6">
           
           <div className="space-y-4">
-            <span className="inline-flex items-center gap-1.5 bg-orange/10 border border-orange/30 text-orange font-heading font-bold text-[10px] sm:text-xs uppercase tracking-widest px-3.5 py-1.5 rounded-full">
-              <Sparkles className="w-3 h-3 text-orange" />
+            <span className="inline-flex items-center gap-2 text-xs font-heading font-extrabold uppercase tracking-widest text-navy-deep bg-orange px-4 py-1.5 rounded-full border border-orange-bright/50 shadow-2xs">
+              <ShieldCheck className="w-4 h-4 text-navy-deep" />
               {post.category}
             </span>
 
-            <h1 className="font-display text-2xl sm:text-4xl lg:text-5xl font-bold text-navy-deep leading-tight tracking-tight">
+            <h1 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-stone-900 leading-tight tracking-tight">
               {post.title}
             </h1>
 
-            <p className="font-body text-sm sm:text-base md:text-lg text-navy/80 leading-relaxed">
+            <p className="font-body text-base sm:text-lg md:text-xl font-medium text-stone-800 leading-relaxed">
               {post.excerpt}
             </p>
 
             {/* Author & Meta Row */}
-            <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-y border-navy/15 text-xs font-heading text-navy/70">
+            <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-y border-stone-200 text-xs sm:text-sm font-heading font-bold text-stone-700">
               <div className="flex items-center gap-3">
                 <img
                   src={post.author.avatar}
                   alt={post.author.name}
-                  className="w-10 h-10 rounded-full object-cover border border-orange/40"
+                  className="w-11 h-11 rounded-full object-cover border-2 border-orange shadow-2xs"
                 />
                 <div>
-                  <h4 className="font-bold text-navy-deep text-xs">{post.author.name}</h4>
-                  <span className="text-[10px] text-navy/60 font-body block">{post.author.role}</span>
+                  <h4 className="font-extrabold text-stone-900 text-sm">{post.author.name}</h4>
+                  <span className="text-xs text-stone-600 font-body font-medium block">{post.author.role}</span>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 text-[11px]">
-                <span className="flex items-center gap-1">
-                  <Calendar className="w-3.5 h-3.5 text-orange" />
+              <div className="flex items-center gap-4 text-xs font-bold text-stone-600">
+                <span className="flex items-center gap-1.5 text-stone-800">
+                  <Calendar className="w-4 h-4 text-orange" />
                   {post.date}
                 </span>
                 <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5 text-orange" />
+                <span className="flex items-center gap-1.5 text-stone-800">
+                  <Clock className="w-4 h-4 text-orange" />
                   {post.readTime}
                 </span>
                 <span>•</span>
-                <span className="flex items-center gap-1">
-                  <Eye className="w-3.5 h-3.5 text-orange" />
+                <span className="flex items-center gap-1.5 text-stone-800">
+                  <Eye className="w-4 h-4 text-orange" />
                   {post.views} views
                 </span>
               </div>
@@ -123,7 +116,7 @@ export default function BlogDetailPage() {
           </div>
 
           {/* Featured Hero Image */}
-          <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-lg border border-navy/15">
+          <div className="relative aspect-[16/9] w-full rounded-2xl overflow-hidden shadow-lg border border-stone-200">
             <img
               src={post.image}
               alt={post.title}
@@ -131,28 +124,28 @@ export default function BlogDetailPage() {
             />
           </div>
 
-          {/* ARTICLE BODY CONTENT (Matching Image 2 Layout) */}
-          <div className="bg-white border border-navy/15 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8 text-navy/85 font-body leading-relaxed text-sm sm:text-base">
+          {/* ARTICLE BODY CONTENT */}
+          <div className="bg-white border border-stone-200/90 rounded-2xl p-6 sm:p-10 shadow-sm space-y-8 text-stone-900 font-body leading-relaxed text-base sm:text-lg">
             
             {/* Intro paragraph */}
-            <p className="text-base sm:text-lg font-medium text-navy-deep leading-relaxed border-l-4 border-orange pl-4 bg-[#FAF7F2] py-3 pr-3 rounded-r-xl">
+            <p className="text-base sm:text-xl font-bold text-stone-900 leading-relaxed border-l-4 border-orange pl-4 bg-stone-50 py-3.5 pr-4 rounded-r-xl">
               {post.content.intro}
             </p>
 
             {/* Sections Loop */}
             {post.content.sections.map((section, idx) => (
-              <div key={idx} className="space-y-4 pt-4 border-t border-navy/10 first:border-t-0 first:pt-0">
-                <h2 className="font-display text-xl sm:text-2xl text-navy-deep font-bold tracking-tight">
+              <div key={idx} className="space-y-4 pt-6 border-t border-stone-200 first:border-t-0 first:pt-0">
+                <h2 className="font-heading text-xl sm:text-3xl text-stone-900 font-extrabold tracking-tight">
                   {section.heading}
                 </h2>
 
-                <p className="leading-relaxed">{section.text}</p>
+                <p className="leading-relaxed font-medium text-stone-800">{section.text}</p>
 
                 {section.bullets && section.bullets.length > 0 && (
-                  <ul className="space-y-2.5 pt-2">
+                  <ul className="space-y-3 pt-2">
                     {section.bullets.map((bullet, i) => (
-                      <li key={i} className="flex items-start gap-2.5 text-sm sm:text-base">
-                        <CheckCircle2 className="w-4 h-4 text-orange shrink-0 mt-1" />
+                      <li key={i} className="flex items-start gap-3 text-base sm:text-lg font-semibold text-stone-900">
+                        <CheckCircle2 className="w-5 h-5 text-orange shrink-0 mt-0.5" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -162,12 +155,12 @@ export default function BlogDetailPage() {
             ))}
 
             {/* Conclusion Callout Box */}
-            <div className="bg-navy-deep text-peach border border-orange/30 rounded-2xl p-6 sm:p-8 space-y-3 shadow-md">
-              <h3 className="font-heading font-bold text-xs uppercase tracking-widest text-orange flex items-center gap-2">
-                <Sparkles className="w-4 h-4 text-orange" />
+            <div className="bg-navy-deep text-peach border-2 border-orange/40 rounded-2xl p-6 sm:p-8 space-y-3 shadow-md">
+              <h3 className="font-heading font-extrabold text-xs uppercase tracking-widest text-orange flex items-center gap-2">
+                <ShieldCheck className="w-4 h-4 text-orange" />
                 Key Spiritual Takeaway
               </h3>
-              <p className="font-body text-sm sm:text-base text-peach/90 leading-relaxed">
+              <p className="font-body text-base sm:text-lg text-peach font-medium leading-relaxed">
                 {post.content.conclusion}
               </p>
             </div>
@@ -176,19 +169,19 @@ export default function BlogDetailPage() {
 
         </article>
 
-        {/* 2. "YOU MAY ALSO LIKE" PRODUCT RECOMMENDATIONS GRID (Matching Image 2 Screenshot) */}
+        {/* 2. "YOU MAY ALSO LIKE" PRODUCT RECOMMENDATIONS GRID */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
-          <div className="bg-white border border-navy/15 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
-            <div className="flex justify-between items-center border-b border-navy/15 pb-4">
+          <div className="bg-white border border-stone-200/90 rounded-2xl p-6 sm:p-8 shadow-sm space-y-6">
+            <div className="flex justify-between items-center border-b border-stone-200 pb-4">
               <div>
-                <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-orange">
+                <span className="text-xs font-heading font-extrabold uppercase tracking-widest text-orange">
                   Sacred Consecrated Jewelry
                 </span>
-                <h3 className="font-display text-xl sm:text-2xl font-bold text-navy-deep">
+                <h3 className="font-heading text-xl sm:text-2xl font-extrabold text-stone-900 mt-1">
                   You May Also Like
                 </h3>
               </div>
-              <Link href="/all-products" className="text-xs font-heading font-bold text-orange hover:underline">
+              <Link href="/all-products" className="text-xs font-heading font-extrabold text-orange hover:underline">
                 View Catalog →
               </Link>
             </div>
@@ -199,10 +192,10 @@ export default function BlogDetailPage() {
                 return (
                   <div
                     key={product.id}
-                    className="bg-[#FAF7F2] border border-navy/15 rounded-xl overflow-hidden p-3 flex flex-col justify-between group hover:border-orange transition-colors"
+                    className="bg-stone-50 border border-stone-300 rounded-xl overflow-hidden p-3.5 flex flex-col justify-between group hover:border-orange transition-colors shadow-2xs"
                   >
                     <div>
-                      <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-navy-deep mb-3">
+                      <div className="relative aspect-square w-full rounded-lg overflow-hidden bg-white mb-3 border border-stone-200">
                         <img
                           src={product.image}
                           alt={product.name}
@@ -210,27 +203,27 @@ export default function BlogDetailPage() {
                         />
                         <button
                           onClick={() => toggleWishlist(product)}
-                          className="absolute top-2 right-2 p-1.5 bg-navy-deep/80 text-orange rounded-full hover:bg-orange hover:text-navy-deep transition-colors"
+                          className="absolute top-2 right-2 p-1.5 bg-white/90 border border-stone-200 text-orange rounded-full hover:bg-orange hover:text-navy-deep transition-colors cursor-pointer shadow-2xs"
                         >
                           <Heart className={`w-3.5 h-3.5 ${inWishlist ? 'fill-orange' : ''}`} />
                         </button>
                       </div>
 
-                      <h4 className="font-heading font-bold text-xs text-navy-deep line-clamp-1 group-hover:text-orange transition-colors">
+                      <h4 className="font-heading font-extrabold text-xs sm:text-sm text-stone-900 line-clamp-1 group-hover:text-orange transition-colors">
                         <Link href={`/product/${product.id}`}>{product.name}</Link>
                       </h4>
-                      <p className="text-[10px] font-body text-navy/70 line-clamp-1 mt-0.5">
-                        {(product as any).subtitle || (product as any).description || 'Lab Certified Bead'}
+                      <p className="text-xs font-body text-stone-600 font-medium line-clamp-1 mt-0.5">
+                        {(product as any).subtitle || (product as any).description || '100% Nepal Origin Bead'}
                       </p>
                     </div>
 
-                    <div className="pt-3 flex justify-between items-center border-t border-navy/10 mt-3">
-                      <span className="text-xs font-heading font-bold text-orange">
+                    <div className="pt-3 flex justify-between items-center border-t border-stone-200 mt-3">
+                      <span className="text-sm font-heading font-extrabold text-orange">
                         {formatPrice(product.price)}
                       </span>
                       <button
                         onClick={() => addToCart(product)}
-                        className="p-1.5 bg-navy-deep text-orange hover:bg-orange hover:text-navy-deep rounded-lg transition-colors"
+                        className="p-2 bg-navy hover:bg-navy-deep text-white rounded-lg transition-colors cursor-pointer"
                         aria-label="Add to cart"
                       >
                         <ShoppingBag className="w-3.5 h-3.5" />
@@ -243,20 +236,20 @@ export default function BlogDetailPage() {
           </div>
         </section>
 
-        {/* 3. RELATED ARTICLES SECTION (Matching Image 2 Screenshot Bottom) */}
+        {/* 3. RELATED ARTICLES SECTION */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 sm:pt-16">
           <div className="space-y-6">
-            <div className="flex justify-between items-end border-b border-navy/15 pb-4">
+            <div className="flex justify-between items-end border-b border-stone-200 pb-4">
               <div>
-                <span className="text-[10px] font-heading font-bold uppercase tracking-widest text-orange">
+                <span className="text-xs font-heading font-extrabold uppercase tracking-widest text-orange">
                   Vedic Knowledge Journal
                 </span>
-                <h3 className="font-display text-2xl sm:text-3xl font-bold text-navy-deep">
+                <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-stone-900 mt-1">
                   Related Articles
                 </h3>
               </div>
 
-              <Link href="/blog" className="text-xs font-heading font-bold text-orange hover:underline">
+              <Link href="/blog" className="text-xs font-heading font-extrabold text-orange hover:underline">
                 View All Articles →
               </Link>
             </div>
@@ -265,7 +258,7 @@ export default function BlogDetailPage() {
               {relatedArticles.map((rel) => (
                 <article
                   key={rel.id}
-                  className="bg-white border border-navy/15 rounded-2xl overflow-hidden shadow-sm hover:border-orange hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                  className="bg-white border border-stone-200/90 rounded-2xl overflow-hidden shadow-sm hover:border-orange hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
                 >
                   <div>
                     <div className="relative aspect-[16/10] w-full overflow-hidden bg-navy-deep">
@@ -274,32 +267,32 @@ export default function BlogDetailPage() {
                         alt={rel.title}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                       />
-                      <span className="absolute top-2.5 left-2.5 bg-navy-deep/90 text-orange text-[8px] font-heading font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border border-orange/40">
+                      <span className="absolute top-2.5 left-2.5 bg-orange text-navy-deep text-[9px] font-heading font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md border border-orange-bright">
                         {rel.category}
                       </span>
                     </div>
 
                     <div className="p-5 space-y-2">
-                      <div className="flex items-center gap-2 text-[10px] font-heading text-navy/60">
+                      <div className="flex items-center gap-2 text-xs font-heading font-bold text-stone-600">
                         <span>{rel.date}</span>
                         <span>•</span>
                         <span>{rel.readTime}</span>
                       </div>
-                      <h4 className="font-display text-base font-bold text-navy-deep group-hover:text-orange transition-colors line-clamp-2 leading-snug">
+                      <h4 className="font-heading text-base font-extrabold text-stone-900 group-hover:text-orange transition-colors line-clamp-2 leading-snug">
                         <Link href={`/article/${rel.id}`}>{rel.title}</Link>
                       </h4>
-                      <p className="font-body text-xs text-navy/75 line-clamp-2 leading-relaxed">
+                      <p className="font-body text-xs sm:text-sm font-medium text-stone-700 line-clamp-2 leading-relaxed">
                         {rel.excerpt}
                       </p>
                     </div>
                   </div>
 
-                  <div className="px-5 pb-5 pt-2 border-t border-navy/10 mt-2">
+                  <div className="px-5 pb-5 pt-2 border-t border-stone-200 mt-2">
                     <Link
                       href={`/article/${rel.id}`}
-                      className="text-xs font-heading font-bold text-orange group-hover:text-orange-bright flex items-center gap-1 transition-all"
+                      className="text-xs font-heading font-extrabold text-orange hover:underline flex items-center gap-1 transition-all"
                     >
-                      <span>Read article</span>
+                      <span>Read Full Article</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                     </Link>
                   </div>
@@ -310,7 +303,6 @@ export default function BlogDetailPage() {
         </section>
 
       </main>
-
 
       <Footer />
 

@@ -179,13 +179,13 @@ export function Blog() {
                   <h3 className="font-display text-xl sm:text-2xl md:text-3xl text-peach font-bold leading-tight group-hover:text-orange transition-colors">{featured.title}</h3>
                 </div>
               </div>
-              <p className="font-body text-peach/85 font-medium text-sm sm:text-base leading-relaxed mb-4 sm:mb-5 max-w-xl">{featured.excerpt}</p>
-              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-[10px] sm:text-xs font-heading uppercase tracking-widest text-peach/70 font-bold">
+              <p className="font-body text-peach font-medium text-base sm:text-lg leading-relaxed mb-4 sm:mb-5 max-w-xl drop-shadow-xs">{featured.excerpt}</p>
+              <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs font-heading uppercase tracking-widest text-peach font-bold">
                 <span>{featured.date}</span>
-                <span className="w-1 h-1 rounded-full bg-orange/40" />
-                <span className="flex items-center gap-1"><Clock className="w-3.5 h-3.5 text-orange" />{featured.readTime}</span>
-                <span className="ml-auto text-orange font-bold hover:text-orange-bright transition-colors flex items-center gap-1 group/link">
-                  Read More <ArrowRight className="w-3.5 h-3.5 group-hover/link:translate-x-1 transition-transform" />
+                <span className="w-1.5 h-1.5 rounded-full bg-orange" />
+                <span className="flex items-center gap-1 text-peach"><Clock className="w-4 h-4 text-orange" />{featured.readTime}</span>
+                <span className="ml-auto text-orange font-extrabold hover:text-orange-bright transition-colors flex items-center gap-1 group/link">
+                  Read More <ArrowRight className="w-4 h-4 group-hover/link:translate-x-1 transition-transform" />
                 </span>
               </div>
             </Link>
@@ -194,21 +194,21 @@ export function Blog() {
           {/* Sidebar Posts */}
           <div className="lg:col-span-5 flex flex-col gap-4 sm:gap-6">
             {rest.map((post) => (
-              <Link key={post.id} href={`/article/${post.id}`} className="group flex gap-3.5 sm:gap-5 cursor-pointer p-3.5 sm:p-4 rounded-xl border border-orange/20 hover:border-orange/60 hover:shadow-sacred-glow bg-navy-deep/80 backdrop-blur-xl shadow-md transition-all duration-300">
-                <div className="w-20 h-20 sm:w-28 sm:h-24 shrink-0 rounded-lg sm:rounded-xl overflow-hidden border border-orange/20">
+              <Link key={post.id} href={`/article/${post.id}`} className="group flex gap-3.5 sm:gap-5 cursor-pointer p-3.5 sm:p-4 rounded-xl border border-orange/30 hover:border-orange hover:shadow-sacred-glow bg-navy-deep/90 backdrop-blur-xl shadow-md transition-all duration-300">
+                <div className="w-20 h-20 sm:w-28 sm:h-24 shrink-0 rounded-lg sm:rounded-xl overflow-hidden border border-orange/30">
                   <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 brightness-95 group-hover:brightness-100" />
                 </div>
                 <div className="flex flex-col justify-between flex-1 min-w-0">
                   <div>
                     <div className="flex items-center gap-2 mb-1.5 sm:mb-2">
-                      <span className="text-[9px] font-heading font-bold uppercase tracking-widest text-orange">{post.category}</span>
+                      <span className="text-[10px] font-heading font-extrabold uppercase tracking-widest text-orange">{post.category}</span>
                       {post.badge && (
-                        <span className="text-[8px] font-heading font-bold uppercase bg-orange/20 text-orange border border-orange/40 px-2 py-0.5 rounded shadow-xs">{post.badge}</span>
+                        <span className="text-[9px] font-heading font-bold uppercase bg-orange/20 text-orange border border-orange/40 px-2 py-0.5 rounded shadow-xs">{post.badge}</span>
                       )}
                     </div>
                     <h4 className="font-heading text-xs sm:text-sm text-peach font-bold leading-snug line-clamp-2 group-hover:text-orange transition-colors">{post.title}</h4>
                   </div>
-                  <div className="flex items-center gap-2 sm:gap-3 text-[9px] sm:text-[10px] font-heading uppercase tracking-widest text-peach/60 font-bold mt-2">
+                  <div className="flex items-center gap-2 sm:gap-3 text-xs font-heading uppercase tracking-widest text-peach font-bold mt-2">
                     <span>{post.date}</span>
                     <span>·</span>
                     <span>{post.readTime}</span>
@@ -216,8 +216,8 @@ export function Blog() {
                 </div>
               </Link>
             ))}
-            <Link href="/blog" className="mt-2 w-full py-3 sm:py-3.5 border border-orange/30 bg-navy-deep/90 rounded-xl text-orange font-heading font-bold uppercase tracking-widest text-[10px] sm:text-xs text-center hover:border-orange hover:bg-orange hover:text-navy-deep transition-all flex items-center justify-center gap-2 shadow-md">
-              View All Articles <ArrowRight className="w-3.5 h-3.5" />
+            <Link href="/blog" className="mt-2 w-full py-3.5 border border-orange/40 bg-navy-deep rounded-xl text-orange font-heading font-extrabold uppercase tracking-widest text-xs text-center hover:border-orange hover:bg-orange hover:text-navy-deep transition-all flex items-center justify-center gap-2 shadow-md">
+              View All Articles <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>

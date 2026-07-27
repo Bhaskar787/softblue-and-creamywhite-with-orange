@@ -563,7 +563,7 @@ export default function AllProductsPage() {
                           </span>
                         )}
                         {discount > 0 && (
-                          <span className="bg-amber-600 text-white text-[10px] font-heading font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-xs">
+                          <span className="bg-orange text-navy-deep text-[10px] font-heading font-extrabold uppercase tracking-wider px-2.5 py-1 rounded-md shadow-xs">
                             {discount}% OFF
                           </span>
                         )}
@@ -575,12 +575,12 @@ export default function AllProductsPage() {
                           e.preventDefault();
                           toggleWishlist(product);
                         }}
-                        className="absolute top-2.5 right-2.5 w-8 h-8 sm:w-9 sm:h-9 bg-white/90 backdrop-blur border border-stone-200 rounded-full flex items-center justify-center text-amber-700 hover:bg-amber-700 hover:text-white transition-all shadow-xs z-10 cursor-pointer"
+                        className="absolute top-2.5 right-2.5 w-8 h-8 sm:w-9 sm:h-9 bg-white/90 backdrop-blur border border-stone-200 rounded-full flex items-center justify-center text-orange hover:bg-orange hover:text-navy-deep transition-all shadow-xs z-10 cursor-pointer"
                         aria-label="Add to wishlist"
                       >
                         <Heart
                           className={`w-4 h-4 ${
-                            isSaved ? 'fill-amber-700 text-amber-700 scale-110' : ''
+                            isSaved ? 'fill-orange text-orange scale-110' : ''
                           }`}
                         />
                       </button>
@@ -612,13 +612,13 @@ export default function AllProductsPage() {
                             ({product.reviews})
                           </span>
                         </div>
-                        <span className="text-xs font-extrabold text-amber-900 bg-amber-100 border border-amber-300/80 px-2 py-0.5 rounded-md uppercase tracking-wider">
+                        <span className="text-xs font-extrabold text-navy-deep bg-orange border border-orange-bright px-2 py-0.5 rounded-md uppercase tracking-wider shadow-2xs">
                           Nepal Origin
                         </span>
                       </div>
 
                       <Link href={`/product/${product.id}`}>
-                        <h3 className="font-heading text-base sm:text-lg font-bold text-stone-900 mb-1.5 line-clamp-2 leading-snug group-hover:text-amber-800 transition-colors cursor-pointer">
+                        <h3 className="font-heading text-base sm:text-lg font-bold text-stone-900 mb-1.5 line-clamp-2 leading-snug group-hover:text-orange transition-colors cursor-pointer">
                           {product.name}
                         </h3>
                       </Link>
@@ -628,7 +628,7 @@ export default function AllProductsPage() {
 
                       <div className="flex items-baseline justify-between mt-auto pt-3 border-t border-stone-100">
                         <div>
-                          <span className="font-heading text-lg sm:text-xl font-extrabold text-amber-800">
+                          <span className="font-heading text-lg sm:text-xl font-extrabold text-orange">
                             {formatPrice(product.price)}
                           </span>
                           {product.originalPrice && (
