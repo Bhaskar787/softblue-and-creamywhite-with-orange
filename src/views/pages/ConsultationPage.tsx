@@ -135,7 +135,7 @@ export function ConsultationPage() {
   };
 
   return (
-    <div className="min-h-screen bg-warm text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-hidden">
+    <div className="min-h-screen bg-warm text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-clip">
       <AnnouncementBar />
       <Navbar />
 

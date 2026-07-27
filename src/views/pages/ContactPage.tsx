@@ -344,7 +344,7 @@ export default function ContactPage() {
                   <div className="w-9 h-9 rounded-xl bg-orange/15 border border-orange/30 text-orange flex items-center justify-center shrink-0">
                     <Compass className="w-4.5 h-4.5" />
                   </div>
-                  <h3 className="font-display text-lg font-bold text-navy-deep">
+                  <h3 className="font-[#EA580C] text-lg font-bold text-navy-deep">
                     Looking for personalized guidance?
                   </h3>
                 </div>

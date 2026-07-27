@@ -170,7 +170,7 @@
     @apply font-body antialiased;
     background-color: hsl(36deg 28% 97%);   /* warm off-white */
     color: hsl(204deg 49.45% 17.84%);        /* dark navy */
-    overflow-x: hidden;
+    overflow-x: clip;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;

@@ -84,7 +84,7 @@ export default function CustomOrderPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF7F2] text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-hidden">
+    <div className="min-h-screen bg-[#FAF7F2] text-navy font-body selection:bg-orange/20 selection:text-navy-deep relative overflow-x-clip">
       
       {/* ASTROLOGICAL CELESTIAL BACKGROUND ANIMATIONS */}
       <style>{`

@@ -1330,31 +1330,32 @@ export default function CheckoutPage() {
 
                     </div>
 
-                    <div className="space-y-3 pt-2">
-                      <div className="flex gap-3">
+                    <div className="space-y-3 pt-3">
+                      <div className="flex flex-col sm:flex-row gap-3">
                         <button
                           type="button"
                           onClick={() => setCurrentStep('consecration')}
-                          className="w-1/3 py-4 bg-stone-100 hover:bg-stone-200 text-stone-800 font-semibold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer text-center flex items-center justify-center gap-1"
+                          className="w-full sm:w-1/3 py-3.5 sm:py-4 px-4 bg-stone-100 hover:bg-stone-200 text-stone-800 font-bold text-xs uppercase tracking-wider rounded-xl transition-all cursor-pointer text-center flex items-center justify-center gap-1.5 shadow-xs"
                         >
-                          <ChevronLeft className="w-4 h-4" /> Back
+                          <ChevronLeft className="w-4 h-4 shrink-0" />
+                          <span>Back</span>
                         </button>
 
                         <button
                           type="button"
                           onClick={() => executePayment(false)}
                           disabled={paymentStatus === 'processing'}
-                          className="w-2/3 py-4 bg-amber-600 hover:bg-amber-700 text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50"
+                          className="w-full sm:w-2/3 py-3.5 sm:py-4 px-4 bg-amber-600 hover:bg-amber-700 text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider sm:tracking-widest rounded-xl transition-all shadow-md flex items-center justify-center gap-2 cursor-pointer disabled:opacity-50 text-center leading-tight min-w-0"
                         >
                           {paymentStatus === 'processing' ? (
                             <>
-                              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                              <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin shrink-0" />
                               <span>Processing...</span>
                             </>
                           ) : (
                             <>
-                              <Lock className="w-4 h-4" />
-                              <span>Complete Order ({formatPrice(totalAmount)})</span>
+                              <Lock className="w-4 h-4 shrink-0" />
+                              <span className="truncate sm:whitespace-normal">Complete Order ({formatPrice(totalAmount)})</span>
                             </>
                           )}
                         </button>
@@ -1364,7 +1365,7 @@ export default function CheckoutPage() {
                         <button
                           type="button"
                           onClick={() => executePayment(true)}
-                          className="text-[10px] text-red-500 hover:underline cursor-pointer opacity-70 hover:opacity-100"
+                          className="w-full sm:w-auto inline-flex items-center justify-center px-4 py-2 bg-red-50 hover:bg-red-100 text-red-600 hover:text-red-700 text-[11px] sm:text-xs font-mono font-medium rounded-xl border border-red-200 transition-all cursor-pointer shadow-xs break-words leading-normal"
                         >
                           [Dev Test: Simulate Payment Failure]
                         </button>
