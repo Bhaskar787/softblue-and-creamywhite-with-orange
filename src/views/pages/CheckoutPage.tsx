@@ -1,10 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'wouter';
-import { Navbar } from '@/views/components/Navbar';
-import { Footer } from '@/views/components/Footer';
-import { CartDrawer } from '@/views/components/CartDrawer';
-import { SearchOverlay } from '@/views/components/SearchOverlay';
-import { MenuDrawer } from '@/views/components/MenuDrawer';
 import { useCart } from '@/models/context/CartContext';
 import {
   ShieldCheck,
@@ -25,6 +20,9 @@ import {
   MessageSquare,
   Clock,
   ChevronLeft,
+  PhoneCall,
+  Mail,
+  HelpCircle,
 } from 'lucide-react';
 
 type Step = 'contact' | 'consecration' | 'payment';
@@ -62,52 +60,92 @@ const SHIPPING_METHODS: ShippingMethod[] = [
   },
 ];
 
-/* ── EXACT BRAND LOGO SVG COMPONENTS ── */
-function EsewaLogo({ className = "h-6 sm:h-7" }: { className?: string }) {
+/* ── DISTRACTION-FREE CHECKOUT HEADER (RUDRANTRA LOGO + SSL SECURITY BADGES ONLY) ── */
+function CheckoutHeader() {
   return (
-    <svg viewBox="0 0 140 44" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="140" height="44" rx="8" fill="#60BB46" />
-      <path d="M24 13C17.925 13 13 17.925 13 24C13 30.075 17.925 35 24 35C29.2 35 33.54 31.4 34.68 26.5H29.26C28.38 28.56 26.36 30 24 30C20.69 30 18 27.31 18 24C18 20.69 20.69 18 24 18C26.36 18 28.38 19.44 29.26 21.5H34.68C33.54 16.6 29.2 13 24 13Z" fill="white"/>
-      <path d="M21 21.5H35V24.5H21V21.5Z" fill="white"/>
-      <text x="42" y="29" fill="white" fontSize="20" fontWeight="900" fontFamily="system-ui, -apple-system, sans-serif" letterSpacing="-0.5px">eSewa</text>
-    </svg>
-  );
-}
+    <header className="sticky top-0 z-[100] w-full bg-navy-deep border-b border-orange/30 shadow-lg py-3.5 px-4 sm:px-8">
+      <div className="max-w-7xl mx-auto flex items-center justify-between">
+        {/* Rudrantra Brand Logo */}
+        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-orange overflow-hidden flex items-center justify-center p-1 relative shrink-0">
+            <div className="absolute inset-0 bg-orange/10 rounded-full animate-sacred-glow"></div>
+            <img
+              src="https://res.cloudinary.com/deiusxdk9/image/upload/v1771952737/rudrantra/cms/rswcale9xcfa697s2kvw.png"
+              alt="Rudrantra Logo"
+              className="w-full h-full object-cover rounded-full mix-blend-screen"
+            />
+          </div>
+          <span className="font-display text-lg sm:text-2xl font-bold tracking-widest bg-gradient-to-r from-orange via-[#FDEEE9] to-orange bg-clip-text text-transparent whitespace-nowrap">
+            RUDRANTRA
+          </span>
+        </Link>
 
-function KhaltiLogo({ className = "h-6 sm:h-7" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 140 44" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="140" height="44" rx="8" fill="#5C2D91" />
-      <circle cx="25" cy="22" r="9" stroke="#F89D2A" strokeWidth="3.5" fill="none" />
-      <path d="M25 17V22L28.5 25" stroke="#F89D2A" strokeWidth="3" strokeLinecap="round" />
-      <text x="42" y="29" fill="white" fontSize="20" fontWeight="900" fontFamily="system-ui, -apple-system, sans-serif" letterSpacing="-0.5px">khalti</text>
-    </svg>
-  );
-}
+        {/* Security & Trust Badges */}
+        <div className="flex items-center gap-3 sm:gap-6 text-xs text-peach">
+          <div className="hidden sm:flex items-center gap-1.5 bg-navy/80 border border-orange/25 px-3 py-1.5 rounded-full text-[11px] font-semibold text-emerald-400">
+            <ShieldCheck className="w-4 h-4 text-emerald-400" />
+            <span>256-Bit SSL Encrypted</span>
+          </div>
 
-function FonepayLogo({ className = "h-6 sm:h-7" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 140 44" className={className} fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect width="140" height="44" rx="8" fill="#D32F2F" />
-      <rect x="13" y="12" width="20" height="20" rx="4" fill="white" />
-      <path d="M17 16H22V21H17V16Z" fill="#D32F2F" />
-      <path d="M24 16H28V20H24V16Z" fill="#D32F2F" />
-      <path d="M24 23H28V27H24V23Z" fill="#D32F2F" />
-      <path d="M17 23H21V27H17V23Z" fill="#D32F2F" />
-      <text x="40" y="29" fill="white" fontSize="18" fontWeight="900" fontFamily="system-ui, -apple-system, sans-serif" letterSpacing="-0.5px">fonepay</text>
-    </svg>
-  );
-}
-
-function VisaMastercardLogo({ className = "h-6" }: { className?: string }) {
-  return (
-    <div className={`inline-flex items-center gap-1.5 bg-navy-deep px-2.5 py-1 rounded-lg border border-navy-mid ${className}`}>
-      <span className="font-sans font-black text-xs text-[#1A1F71] bg-white px-1.5 py-0.5 rounded tracking-tighter">VISA</span>
-      <div className="flex items-center -space-x-1.5">
-        <div className="w-3.5 h-3.5 rounded-full bg-[#EB001B]" />
-        <div className="w-3.5 h-3.5 rounded-full bg-[#F79E1B] opacity-90" />
+          <div className="flex items-center gap-1.5 text-xs font-semibold text-orange">
+            <Lock className="w-4 h-4 text-orange" />
+            <span className="hidden sm:inline">Bank Secure Checkout</span>
+            <span className="sm:hidden">100% Secure</span>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
+  );
+}
+
+/* ── BRAND LOGO IMAGE COMPONENTS ── */
+function EsewaLogo({ className = "h-7 sm:h-8" }: { className?: string }) {
+  return (
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/f/ff/Esewa_logo.webp"
+      alt="eSewa Logo"
+      className={`object-contain ${className}`}
+    />
+  );
+}
+
+function KhaltiLogo({ className = "h-7 sm:h-8" }: { className?: string }) {
+  return (
+    <img
+      src="https://imelondon.co.uk/assets/dist/images/imeKhalti.png"
+      alt="Khalti Logo"
+      className={`object-contain ${className}`}
+    />
+  );
+}
+
+function FonepayLogo({ className = "h-7 sm:h-8" }: { className?: string }) {
+  return (
+    <img
+      src="https://images.seeklogo.com/logo-png/38/1/fonepay-logo-png_seeklogo-385625.png"
+      alt="Fonepay Logo"
+      className={`object-contain ${className}`}
+    />
+  );
+}
+
+function VisaMastercardLogo({ className = "h-7 sm:h-8" }: { className?: string }) {
+  return (
+    <img
+      src="https://play-lh.googleusercontent.com/2t1Dlt4TlVotZsWGxQWSTiGQDzfkiZqmU1sUqQwTI4v-xqjZwvfvBzEI4LBt-vUrUZv5dHMYf2t-yROmoUR5hA"
+      alt="Visa & Mastercard Logo"
+      className={`object-contain rounded-md ${className}`}
+    />
+  );
+}
+
+function WhatsAppIcon({ className = "w-5 h-5" }: { className?: string }) {
+  return (
+    <img
+      src="https://img.magnific.com/premium-vector/vector-whatsapp-social-media-logo_1093524-447.jpg?semt=ais_hybrid&w=740&q=80"
+      alt="WhatsApp"
+      className={`rounded-full object-cover shrink-0 ${className}`}
+    />
   );
 }
 
@@ -178,6 +216,14 @@ export default function CheckoutPage() {
   const totalAmount = Math.max(0, subtotal - appliedDiscount + shippingFee);
 
   const formatPrice = (val: number) => `NPR ${val.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+
+  // Construct WhatsApp Redirect Message with cart product details
+  const whatsappPhoneNumber = '9851073936'; // Replace with official Rudrantra WhatsApp number
+  const cartItemDetailsMessage = items.map((i) => `• ${i.name} (Qty: ${i.qty}) - ${formatPrice(i.price * i.qty)}`).join('\n');
+  const whatsappMessage = encodeURIComponent(
+    `Namaste Rudrantra Team! 🙏\n\nI would like to complete my order directly via WhatsApp:\n\n*Cart Items:*\n${cartItemDetailsMessage}\n\n*Total Investment:* ${formatPrice(totalAmount)}\n\nPlease assist me with consecration and delivery details.`
+  );
+  const whatsappRedirectUrl = `https://wa.me/${whatsappPhoneNumber}?text=${whatsappMessage}`;
 
   // Timer countdown for Fonepay QR Modal
   useEffect(() => {
@@ -271,10 +317,7 @@ export default function CheckoutPage() {
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] text-stone-900 font-body antialiased selection:bg-amber-100 selection:text-amber-900 flex flex-col">
-      <Navbar />
-      <CartDrawer />
-      <SearchOverlay />
-      <MenuDrawer />
+      <CheckoutHeader />
 
       {/* Main Checkout Grid */}
       <main className="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
@@ -411,13 +454,13 @@ export default function CheckoutPage() {
               </button>
 
               <a
-                href="https://wa.me/9779800000000"
+                href={whatsappRedirectUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full sm:w-auto px-7 py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 text-center"
               >
-                <MessageSquare className="w-4 h-4" />
-                <span>WhatsApp Help</span>
+                <WhatsAppIcon className="w-5 h-5" />
+                <span>Order via WhatsApp</span>
               </a>
             </div>
           </div>
@@ -471,6 +514,17 @@ export default function CheckoutPage() {
                       <span className="font-bold text-stone-900">{formatPrice(item.price * item.qty)}</span>
                     </div>
                   ))}
+
+                  {/* Mobile Quick WhatsApp Order Button */}
+                  <a
+                    href={whatsappRedirectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-xs"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    <span>Buy &amp; Order Via WhatsApp</span>
+                  </a>
                 </div>
               )}
             </div>
@@ -1324,6 +1378,8 @@ export default function CheckoutPage() {
 
               {/* RIGHT COLUMN: HANGING STICKY ORDER SUMMARY */}
               <div className="hidden lg:block lg:col-span-5 sticky top-24 space-y-6">
+                
+                {/* Main Order Summary Card */}
                 <div className="bg-white rounded-3xl border border-stone-200/80 p-6 sm:p-7 shadow-md space-y-6">
                   
                   <div className="flex items-center justify-between border-b border-stone-100 pb-4">
@@ -1334,7 +1390,7 @@ export default function CheckoutPage() {
                   </div>
 
                   {/* Items List */}
-                  <div className="space-y-3.5 max-h-[300px] overflow-y-auto pr-1">
+                  <div className="space-y-3.5 max-h-[280px] overflow-y-auto pr-1">
                     {items.map((item) => (
                       <div key={item.id} className="flex gap-3.5 items-center justify-between p-2.5 rounded-2xl bg-stone-50 border border-stone-200/60">
                         <div className="relative w-14 h-14 rounded-xl overflow-hidden bg-stone-100 shrink-0 border border-stone-200">
@@ -1386,8 +1442,19 @@ export default function CheckoutPage() {
                     ))}
                   </div>
 
+                  {/* GREEN WHATSAPP DIRECT ORDER BUTTON */}
+                  <a
+                    href={whatsappRedirectUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    <span>Buy &amp; Order Via WhatsApp</span>
+                  </a>
+
                   {/* Promo Form */}
-                  <form onSubmit={handleApplyCoupon} className="pt-2">
+                  <form onSubmit={handleApplyCoupon} className="pt-1">
                     <label className="block text-xs font-bold text-stone-700 mb-1">
                       Have a Promo or Blessing Code?
                     </label>
@@ -1471,6 +1538,47 @@ export default function CheckoutPage() {
                   </div>
 
                 </div>
+
+                {/* NEED HELP / DIRECT CONTACT ASSISTANCE CARD */}
+                <div className="bg-navy-deep text-peach rounded-3xl p-5 border border-orange/30 space-y-3.5 shadow-md">
+                  <div className="flex items-center gap-2.5 text-orange">
+                    <HelpCircle className="w-5 h-5 shrink-0 text-orange" />
+                    <h3 className="font-heading font-bold text-sm text-orange">Need Assistance With Order?</h3>
+                  </div>
+
+                  <p className="text-xs text-peach/80 leading-relaxed">
+                    Have questions about bead sizing, gotra registration, or payment methods? Speak directly with our Pandit or support team:
+                  </p>
+
+                  <div className="space-y-2 text-xs pt-2 border-t border-orange/20">
+                    <a
+                      href="tel:+9779800000000"
+                      className="flex items-center gap-2.5 text-peach hover:text-orange-bright transition-colors font-medium"
+                    >
+                      <PhoneCall className="w-3.5 h-3.5 text-orange shrink-0" />
+                      <span>+977 9800000000 (Call Support)</span>
+                    </a>
+
+                    <a
+                      href={whatsappRedirectUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2.5 text-peach hover:text-orange-bright transition-colors font-medium"
+                    >
+                      <WhatsAppIcon className="w-4 h-4" />
+                      <span>WhatsApp Direct Chat</span>
+                    </a>
+
+                    <a
+                      href="mailto:support@rudrantra.com"
+                      className="flex items-center gap-2.5 text-peach hover:text-orange-bright transition-colors font-medium"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-orange shrink-0" />
+                      <span>support@rudrantra.com</span>
+                    </a>
+                  </div>
+                </div>
+
               </div>
 
             </div>
@@ -1568,7 +1676,6 @@ export default function CheckoutPage() {
         </div>
       )}
 
-      <Footer />
     </div>
   );
 }
