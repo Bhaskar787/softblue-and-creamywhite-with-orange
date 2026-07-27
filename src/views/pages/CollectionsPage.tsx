@@ -72,7 +72,7 @@ const CATEGORY_BOXES: CategoryBox[] = [
     title: 'Gandaki Saligram',
     category: 'Saligram',
     description: 'Authentic non-carved Saligram Shilas from Gandaki riverbed.',
-    image: 'https://cdn.dotpe.in/longtail/store-items/6210244/b1HKHWj3.png',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgyMs_J3LgpmB_vQvvzrKFl7yQZe_C-762f4Jd8pHajNs_6YqMs2m1XJE&s=10',
     link: '/collection/saligram',
   },
   {
@@ -164,7 +164,7 @@ const GUIDES_COMBINATIONS = [
     title: 'Gandaki Saligram Shilas',
     bgStyle: 'bg-[#ded5cb]',
     textColor: 'text-[#1a2634]',
-    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSG7r-xBROYk0kcVnBqjSal_5jbGHZUO8ATM2uAG_HNzgGCsnNjh4wNMoEl&s=10',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgyMs_J3LgpmB_vQvvzrKFl7yQZe_C-762f4Jd8pHajNs_6YqMs2m1XJE&s=10',
     link: '/collection/saligram',
   },
   {

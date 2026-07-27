@@ -23,7 +23,6 @@ import { TrustPaymentBar } from '@/views/components/TrustPaymentBar';
 import { FloatingActions } from '@/views/components/FloatingActions';
 import { SearchOverlay } from '@/views/components/SearchOverlay';
 import { CartDrawer } from '@/views/components/CartDrawer';
-import { WishlistDrawer } from '@/views/components/WishlistDrawer';
 import { FeaturedCollectionSpotlight } from '@/views/components/FeaturedCollectionSpotlight';
 import { LeftReviewsDrawer } from '@/views/components/LeftReviewsDrawer';
 
@@ -63,7 +62,6 @@ export default function HomePage() {
       <MenuDrawer />
       <SearchOverlay />
       <CartDrawer />
-      <WishlistDrawer />
       <LeftReviewsDrawer />
 
       {/* Floating action buttons: WhatsApp, Ask AI, Scroll-to-top */}

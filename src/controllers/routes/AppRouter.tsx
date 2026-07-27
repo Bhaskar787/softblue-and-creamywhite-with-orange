@@ -15,6 +15,8 @@ import ConsultationPage from '@/views/pages/ConsultationPage';
 import BlogListPage from '@/views/pages/BlogListPage';
 import BlogDetailPage from '@/views/pages/BlogDetailPage';
 import CheckoutPage from '@/views/pages/CheckoutPage';
+import CartPage from '@/views/pages/CartPage';
+import WishlistPage from '@/views/pages/WishlistPage';
 import NotFound from '@/views/pages/not-found';
 
 function ScrollToTop() {
@@ -32,6 +34,11 @@ export function AppRouter() {
       <Switch>
         <Route path="/" component={HomePage} />
         <Route path="/checkout" component={CheckoutPage} />
+        <Route path="/cart" component={CartPage} />
+        <Route path="/pages/cart" component={CartPage} />
+        <Route path="/shopping-cart" component={CartPage} />
+        <Route path="/wishlist" component={WishlistPage} />
+        <Route path="/pages/wishlist" component={WishlistPage} />
         <Route path="/about" component={AboutPage} />
         <Route path="/about-us" component={AboutPage} />
         <Route path="/contact" component={ContactPage} />

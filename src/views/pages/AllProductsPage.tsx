@@ -4,7 +4,6 @@ import { Navbar } from '@/views/components/Navbar';
 import { Footer } from '@/views/components/Footer';
 import { MenuDrawer } from '@/views/components/MenuDrawer';
 import { CartDrawer } from '@/views/components/CartDrawer';
-import { WishlistDrawer } from '@/views/components/WishlistDrawer';
 import { SearchOverlay } from '@/views/components/SearchOverlay';
 import { FloatingActions } from '@/views/components/FloatingActions';
 import { productsData, ALL_CATEGORIES, RUDRAKSHA_SUB_CATEGORIES } from '@/models/data/productsData';
@@ -731,7 +730,6 @@ export default function AllProductsPage() {
       <MenuDrawer />
       <SearchOverlay />
       <CartDrawer />
-      <WishlistDrawer />
       <FloatingActions />
     </div>
   );

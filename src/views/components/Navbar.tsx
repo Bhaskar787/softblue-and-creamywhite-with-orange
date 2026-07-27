@@ -329,8 +329,8 @@ export function Navbar() {
             <User className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
 
-          <button
-            onClick={() => setIsWishlistOpen(true)}
+          <Link
+            href="/wishlist"
             className="p-1 sm:p-1.5 xl:p-2 text-orange hover:text-orange-bright transition-colors rounded-full hover:bg-navy-light relative shrink-0"
             aria-label="Wishlist"
           >
@@ -340,7 +340,7 @@ export function Navbar() {
                 {wishlistCount}
               </span>
             )}
-          </button>
+          </Link>
 
           <button
             onClick={() => setIsCartOpen(true)}
