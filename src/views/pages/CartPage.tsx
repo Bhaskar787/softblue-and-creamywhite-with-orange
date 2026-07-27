@@ -184,7 +184,7 @@ export function CartPage() {
                       Shravan Special Offer Included!
                     </p>
                     <p className="text-stone-600">
-                      Complete this order today and automatically receive a <span className="font-bold text-amber-800">Rs. 300</span> Nepa Gift Voucher via Email/WhatsApp upon dispatch.
+                      Complete this order today and automatically receive a <span className="font-bold text-amber-800">Rs. 300</span> Gift Voucher via Email/WhatsApp upon dispatch.
                     </p>
                   </div>
                 </div>

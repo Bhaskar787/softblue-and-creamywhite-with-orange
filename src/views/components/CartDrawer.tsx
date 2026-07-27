@@ -238,7 +238,7 @@ export function CartDrawer() {
                 <div className="flex items-start gap-2.5">
                   <Gift className="w-4 h-4 text-[#f08254] shrink-0 mt-0.5 animate-pulse" />
                   <p className="text-[11px] text-hsl(17.84deg 72.55% 90%) font-body leading-snug">
-                    <strong className="text-[#f08254] font-heading">Shravan Special —</strong> Complete your order and earn a <span className="text-orange-bright font-bold">NPR 2,472.00</span> Nepa Gift Card. Straight to your Email and Whatsapp.
+                    <strong className="text-[#f08254] font-heading">Shravan Special —</strong> Complete your order and earn a <span className="text-orange-bright font-bold">NPR 2,472.00</span> Gift Card. Straight to your Email and Whatsapp.
                   </p>
                 </div>
 
