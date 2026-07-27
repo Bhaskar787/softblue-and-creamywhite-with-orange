@@ -25,7 +25,8 @@ import {
   ChevronRight,
   ChevronLeft,
   ArrowRight,
-  Info
+  Info,
+  MessageCircle,
 } from 'lucide-react';
 import { GiStarSattelites } from 'react-icons/gi';
 
@@ -402,15 +403,26 @@ export default function CategoryCollectionPage() {
                       />
                     </button>
 
-                    {/* Overlay Item Details Button -> Navigates to Product Detail Page */}
-                    <div className="absolute bottom-3 left-3 right-3 flex items-center gap-2 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10">
+                    {/* Overlay Actions (Desktop Hover Only): Item Details + WhatsApp */}
+                    <div className="absolute bottom-2 inset-x-2 hidden lg:flex items-center gap-1.5 translate-y-full opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300 z-10 p-1.5 bg-white/95 backdrop-blur-xs rounded-xl border border-orange/20 shadow-md">
                       <Link
                         href={`/product/${product.id}`}
-                        className="flex-1 py-2 bg-navy-deep text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg shadow-md hover:bg-navy transition-colors flex items-center justify-center gap-1.5 border border-orange/30 text-center"
+                        className="flex-1 py-2 bg-navy-deep hover:bg-navy text-white font-heading font-bold text-[11px] uppercase tracking-wider rounded-lg shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer text-center"
                       >
                         <Eye className="w-3.5 h-3.5 text-orange" />
-                        <span>Item Details</span>
+                        <span>Details</span>
                       </Link>
+                      <a
+                        href={`https://wa.me/9779851073936?text=${encodeURIComponent(
+                          `Namaste! I am interested in inquiring about ${product.name} (${formatPrice(product.price)}). Please provide more details.`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-heading font-bold text-[11px] uppercase tracking-wider rounded-lg shadow-xs transition-colors flex items-center justify-center gap-1.5 cursor-pointer text-center"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5 text-white" />
+                        <span>Chat</span>
+                      </a>
                     </div>
                   </div>
 
@@ -443,11 +455,11 @@ export default function CategoryCollectionPage() {
                       </h3>
                     </Link>
 
-                    <p className="text-xs text-navy/80 line-clamp-2 mb-4 flex-1 leading-relaxed font-medium">
+                    <p className="text-xs text-navy/80 line-clamp-2 mb-3 flex-1 leading-relaxed font-medium">
                       {product.desc}
                     </p>
 
-                    {/* Price & Action Footer */}
+                    {/* Price & Desktop Action Footer */}
                     <div className="pt-3 border-t border-navy/10 flex items-center justify-between mt-auto">
                       <div>
                         <span className="font-serif text-lg font-bold text-navy-deep">
@@ -462,21 +474,34 @@ export default function CategoryCollectionPage() {
 
                       <button
                         onClick={() => addToCart(product)}
-                        className="px-3.5 py-2 bg-navy-deep hover:bg-navy text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors flex items-center gap-1.5 shadow-xs"
+                        className="hidden lg:flex px-3.5 py-2 bg-navy-deep hover:bg-navy text-white font-heading font-bold text-xs uppercase tracking-wider rounded-lg transition-colors items-center gap-1.5 shadow-xs cursor-pointer"
                       >
-                        <ShoppingBag className="w-3.5 h-3.5" />
+                        <ShoppingBag className="w-3.5 h-3.5 text-orange" />
                         <span>Add</span>
                       </button>
                     </div>
 
-                    {/* Direct Item Details Page Navigation Link */}
-                    <Link
-                      href={`/product/${product.id}`}
-                      className="mt-2.5 w-full py-1.5 bg-[#FAF7F2] hover:bg-white border border-orange/25 text-navy font-semibold text-[11px] uppercase tracking-wider rounded-lg transition-colors flex items-center justify-center gap-1.5 text-center"
-                    >
-                      <Sparkles className="w-3.5 h-3.5 text-orange" />
-                      <span>Item Details</span>
-                    </Link>
+                    {/* Mobile Static Action Row (Statically Attached for Mobile Devices) */}
+                    <div className="mt-3 flex gap-2 lg:hidden">
+                      <button
+                        onClick={() => addToCart(product)}
+                        className="flex-1 py-2 bg-navy-deep hover:bg-navy text-white text-xs font-heading font-bold uppercase tracking-wider rounded-lg cursor-pointer flex items-center justify-center gap-1"
+                      >
+                        <ShoppingBag className="w-3.5 h-3.5 text-orange" />
+                        <span>Add</span>
+                      </button>
+                      <a
+                        href={`https://wa.me/9779851073936?text=${encodeURIComponent(
+                          `Namaste! I am interested in inquiring about ${product.name} (${formatPrice(product.price)}). Please provide more details.`
+                        )}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex-1 py-2 bg-[#25D366] hover:bg-[#1EBE5D] text-white text-xs font-heading font-bold uppercase tracking-wider rounded-lg cursor-pointer flex items-center justify-center gap-1 text-center"
+                      >
+                        <MessageCircle className="w-3.5 h-3.5 text-white" />
+                        <span>Chat</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               );

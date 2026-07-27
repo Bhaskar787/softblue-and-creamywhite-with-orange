@@ -171,7 +171,6 @@ export default function CheckoutPage() {
   const [city, setCity] = useState('');
   const [district, setDistrict] = useState('Kathmandu');
   const [country, setCountry] = useState('Nepal');
-  const [wantsWhatsappUpdates, setWantsWhatsappUpdates] = useState(true);
 
   // Consecration & Personalization State
   const [devoteeName, setDevoteeName] = useState('');
@@ -216,14 +215,6 @@ export default function CheckoutPage() {
   const totalAmount = Math.max(0, subtotal - appliedDiscount + shippingFee);
 
   const formatPrice = (val: number) => `NPR ${val.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-
-  // Construct WhatsApp Redirect Message with cart product details
-  const whatsappPhoneNumber = '9851073936'; // Replace with official Rudrantra WhatsApp number
-  const cartItemDetailsMessage = items.map((i) => `• ${i.name} (Qty: ${i.qty}) - ${formatPrice(i.price * i.qty)}`).join('\n');
-  const whatsappMessage = encodeURIComponent(
-    `Namaste Rudrantra Team! 🙏\n\nI would like to complete my order directly via WhatsApp:\n\n*Cart Items:*\n${cartItemDetailsMessage}\n\n*Total Investment:* ${formatPrice(totalAmount)}\n\nPlease assist me with consecration and delivery details.`
-  );
-  const whatsappRedirectUrl = `https://wa.me/${whatsappPhoneNumber}?text=${whatsappMessage}`;
 
   // Timer countdown for Fonepay QR Modal
   useEffect(() => {
@@ -452,16 +443,6 @@ export default function CheckoutPage() {
               >
                 Switch to Cash on Delivery
               </button>
-
-              <a
-                href={whatsappRedirectUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-7 py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-semibold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 text-center"
-              >
-                <WhatsAppIcon className="w-5 h-5" />
-                <span>Order via WhatsApp</span>
-              </a>
             </div>
           </div>
         ) : items.length === 0 ? (
@@ -514,17 +495,6 @@ export default function CheckoutPage() {
                       <span className="font-bold text-stone-900">{formatPrice(item.price * item.qty)}</span>
                     </div>
                   ))}
-
-                  {/* Mobile Quick WhatsApp Order Button */}
-                  <a
-                    href={whatsappRedirectUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-3 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-all flex items-center justify-center gap-2 shadow-xs"
-                  >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    <span>Buy &amp; Order Via WhatsApp</span>
-                  </a>
                 </div>
               )}
             </div>
@@ -706,12 +676,11 @@ export default function CheckoutPage() {
                       <label className="flex items-center gap-2 cursor-pointer pt-1">
                         <input
                           type="checkbox"
-                          checked={wantsWhatsappUpdates}
-                          onChange={(e) => setWantsWhatsappUpdates(e.target.checked)}
+                          defaultChecked
                           className="rounded text-amber-700 focus:ring-amber-500 h-4 w-4"
                         />
                         <span className="text-xs text-stone-600">
-                          Receive tracking and Pashupatinath consecration photos via WhatsApp
+                          Receive tracking and Pashupatinath consecration photos via SMS &amp; Email
                         </span>
                       </label>
                     </div>
@@ -1443,17 +1412,6 @@ export default function CheckoutPage() {
                     ))}
                   </div>
 
-                  {/* GREEN WHATSAPP DIRECT ORDER BUTTON */}
-                  <a
-                    href={whatsappRedirectUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-3.5 bg-[#25D366] hover:bg-[#1EBE5D] text-white font-heading font-bold text-xs uppercase tracking-wider rounded-xl transition-all shadow-md hover:shadow-lg flex items-center justify-center gap-2 cursor-pointer"
-                  >
-                    <WhatsAppIcon className="w-5 h-5" />
-                    <span>Buy &amp; Order Via WhatsApp</span>
-                  </a>
-
                   {/* Promo Form */}
                   <form onSubmit={handleApplyCoupon} className="pt-1">
                     <label className="block text-xs font-bold text-stone-700 mb-1">
@@ -1553,21 +1511,11 @@ export default function CheckoutPage() {
 
                   <div className="space-y-2 text-xs pt-2 border-t border-orange/20">
                     <a
-                      href="tel:+9779800000000"
+                      href="tel:+9779851073936"
                       className="flex items-center gap-2.5 text-peach hover:text-orange-bright transition-colors font-medium"
                     >
                       <PhoneCall className="w-3.5 h-3.5 text-orange shrink-0" />
-                      <span>+977 9800000000 (Call Support)</span>
-                    </a>
-
-                    <a
-                      href={whatsappRedirectUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2.5 text-peach hover:text-orange-bright transition-colors font-medium"
-                    >
-                      <WhatsAppIcon className="w-4 h-4" />
-                      <span>WhatsApp Direct Chat</span>
+                      <span>+977 9851073936 (Call Support)</span>
                     </a>
 
                     <a

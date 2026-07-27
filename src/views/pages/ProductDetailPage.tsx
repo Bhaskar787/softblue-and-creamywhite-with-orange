@@ -34,6 +34,7 @@ import {
   BookOpen,
   ThumbsUp,
   Ruler,
+  MessageCircle,
 } from 'lucide-react';
 import { GiStarSattelites, GiMeditation, GiLotusFlower, GiByzantinTemple } from 'react-icons/gi';
 
@@ -542,6 +543,18 @@ export default function ProductDetailPage() {
                 >
                   <span>Buy Now - Instant Checkout</span>
                 </button>
+
+                <a
+                  href={`https://wa.me/9779851073936?text=${encodeURIComponent(
+                    `Namaste! I want to inquire about ${product.name} (Price: ${formatPrice(effectivePrice * quantity)}, Size: ${selectedSize.label}, Capping: ${selectedCapping}). Please assist.`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-3.5 px-6 rounded-xl bg-[#25D366] hover:bg-[#1EBE5D] text-white font-heading font-bold text-xs sm:text-sm uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-md hover:shadow-lg transition-all cursor-pointer text-center"
+                >
+                  <MessageCircle className="w-5 h-5 text-white shrink-0" />
+                  <span>Inquire / Order via WhatsApp</span>
+                </a>
               </div>
 
               {/* Guarantees */}
