@@ -1074,59 +1074,59 @@ export default function AboutPage() {
 
         {/* ── 2. OUR SACRED JOURNEY: BUILT ON EXPERIENCE, GUIDED BY AUTHENTICITY ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div data-reveal className="bg-white border border-navy/15 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10">
+          <div data-reveal className="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10">
             
             <div className="max-w-3xl space-y-4">
-              <span className="text-orange font-heading text-xs font-bold uppercase tracking-widest">
-                [ OUR SACRED JOURNEY ]
+              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+                OUR SACRED JOURNEY
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-bold text-navy-deep">
+              <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
                 Built on Experience, Guided by Authenticity
               </h2>
-              <div className="space-y-4 font-body text-sm sm:text-base text-navy/80 leading-relaxed">
+              <div className="space-y-4 font-body text-sm sm:text-base text-stone-800 font-medium leading-relaxed">
                 <p>
                   Rudrantra was founded on a deep spiritual respect for the divine significance of Rudraksha Beads. What began as a personal search for genuine Original Rudraksha soon became a larger mission: to create a platform where spiritual seekers can find authentic, naturally formed Rudraksha with complete trust.
                 </p>
                 <p>
-                  During our journey, we worked closely with traditional collectors, farmers, and spiritual practitioners in Nepal and Indonesia to understand the true nature of Rudraksha. Through years of direct sourcing, study of ancient scriptures, and practical bead evaluation, we gained deep insight into how to identify authentic mukhi formations and distinguish natural Original Rudraksha from modified or artificial beads.
+                  During our journey, we worked closely with traditional collectors, farmers, and spiritual practitioners in Nepal's sacred valleys to understand the true nature of Rudraksha. Through years of direct sourcing, study of ancient scriptures, and practical bead evaluation, we gained deep insight into how to identify authentic mukhi formations and distinguish natural Original Rudraksha from modified or artificial beads.
                 </p>
                 <p>
-                  Today, Rudrantra continues this tradition by maintaining direct connections with trusted growers and collectors. We are proud that some of our Rudraksha Beads come from our own cultivation farm in Nepal, where authentic Nepali Rudraksha grows naturally. This allows us to ensure purity, traceability, and authenticity from tree to devotee.
+                  Today, Rudrantra continues this tradition by maintaining direct connections with trusted growers and collectors. We are proud that our Rudraksha Beads come from our own cultivation farm in Nepal, where authentic Nepali Rudraksha grows naturally. This allows us to ensure purity, traceability, and authenticity from tree to devotee.
                 </p>
-                <p className="font-bold text-navy-deep italic border-l-4 border-orange pl-4 py-1 bg-[#FAF7F2]/50 rounded-r-xl">
+                <p className="font-bold text-stone-900 italic border-l-4 border-amber-600 pl-4 py-2 bg-stone-50 rounded-r-xl">
                   "At Rudrantra, we believe Rudraksha is not just a bead; it is a sacred symbol of Lord Shiva's blessings. Every bead is handled with respect, verified with care, and shared with devotion so that seekers can confidently receive Trusted Rudraksha aligned with spiritual integrity."
                 </p>
               </div>
             </div>
 
             {/* 5 Key Principles Checklist */}
-            <div className="bg-[#FAF7F2] border border-navy/10 p-6 sm:p-8 rounded-2xl space-y-4">
-              <h3 className="font-heading text-sm font-bold text-navy-deep uppercase tracking-wider">
+            <div className="bg-stone-50 border border-stone-300 p-6 sm:p-8 rounded-2xl space-y-4">
+              <h3 className="font-heading text-base font-extrabold text-stone-900 uppercase tracking-wider">
                 Core Foundations of Our Mission:
               </h3>
               <div data-reveal-group className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-bold text-navy-deep bg-white p-3.5 rounded-xl border border-navy/10">
-                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                   <span>Direct Sourcing from Nepal, Including Our Own Farm</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-bold text-navy-deep bg-white p-3.5 rounded-xl border border-navy/10">
-                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                   <span>Accurate Mukhi Verification Process</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-bold text-navy-deep bg-white p-3.5 rounded-xl border border-navy/10">
-                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                   <span>100% Natural &amp; Untreated Rudraksha Beads</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-bold text-navy-deep bg-white p-3.5 rounded-xl border border-navy/10">
-                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs">
+                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                   <span>Spiritual Preparation Guided by Shiva Traditions</span>
                 </div>
 
-                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-bold text-navy-deep bg-white p-3.5 rounded-xl border border-navy/10 md:col-span-2 lg:col-span-2">
-                  <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                <div className="flex items-center gap-3 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-white p-3.5 rounded-xl border border-stone-300 shadow-2xs md:col-span-2 lg:col-span-2">
+                  <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                   <span>Education and Guidance for Selecting Trusted Rudraksha</span>
                 </div>
               </div>
@@ -1135,52 +1135,52 @@ export default function AboutPage() {
             {/* 5 Core Pillars Grid */}
             <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-2">
               
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                   <Tree className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-base font-bold text-navy-deep">Integrity in Origin</h3>
-                <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+                <h3 className="font-heading text-lg font-extrabold text-stone-900">Integrity in Origin</h3>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Rudrantra sources Rudraksha Beads directly from Nepal, including beads grown in our own farm, where authentic Nepali Rudraksha naturally develops. This ensures traceability, authenticity, and genuine Original Rudraksha.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-base font-bold text-navy-deep">Respect for Nature</h3>
-                <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+                <h3 className="font-heading text-lg font-extrabold text-stone-900">Respect for Nature</h3>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   No artificial enhancement, drilling alteration, or chemical polishing — we preserve what nature creates naturally.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                   <BookOpen className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-base font-bold text-navy-deep">Wisdom-Led Guidance</h3>
-                <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+                <h3 className="font-heading text-lg font-extrabold text-stone-900">Wisdom-Led Guidance</h3>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Selection advice rooted in ancient scriptures, planetary alignment principles, and personal intention clarity.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                   <Heart className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-base font-bold text-navy-deep">Devotional Responsibility</h3>
-                <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+                <h3 className="font-heading text-lg font-extrabold text-stone-900">Devotional Responsibility</h3>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   We treat every Rudraksha as sacred — stored, handled, and packaged with extreme reverence and devotion.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3 hover:border-orange transition-colors group sm:col-span-2 lg:col-span-2">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center group-hover:bg-orange group-hover:text-navy-deep transition-colors">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3 hover:border-amber-600 transition-colors group sm:col-span-2 lg:col-span-2">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center group-hover:bg-amber-600 group-hover:text-white transition-colors">
                   <Compass className="w-5 h-5" />
                 </div>
-                <h3 className="font-display text-base font-bold text-navy-deep">Guided Personal Support</h3>
-                <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+                <h3 className="font-heading text-lg font-extrabold text-stone-900">Guided Personal Support</h3>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Selecting the right Rudraksha Bead depends on spiritual intention, mukhi type, and traditional knowledge. We provide guidance to help seekers choose Trusted Rudraksha aligned with their personal journey.
                 </p>
               </div>
@@ -1195,41 +1195,41 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             
             {/* Left Column: Aligned with Tradition */}
-            <div data-reveal className="lg:col-span-7 bg-white border border-navy/15 rounded-3xl p-6 sm:p-10 flex flex-col justify-between space-y-6">
+            <div data-reveal className="lg:col-span-7 bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-10 flex flex-col justify-between space-y-6">
               <div className="space-y-4">
-                <span className="text-orange font-heading text-xs font-bold uppercase tracking-widest">
-                  [ AUTHENTICITY &amp; HERITAGE ]
+                <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+                  AUTHENTICITY &amp; HERITAGE
                 </span>
-                <h2 className="font-display text-2xl sm:text-3xl font-bold text-navy-deep">
+                <h2 className="font-heading text-2xl sm:text-3xl font-extrabold text-stone-900">
                   Aligned with Tradition, Guided by Responsibility
                 </h2>
-                <p className="font-body text-sm sm:text-base text-navy/80 leading-relaxed">
+                <p className="font-body text-sm sm:text-base text-stone-800 font-medium leading-relaxed">
                   The tradition of wearing Rudraksha Beads comes from ancient Vedic scriptures like the Shiva Purana and Padma Purana, where they are described as sacred seeds blessed by Lord Shiva that support meditation, protection, and spiritual growth. At Rudrantra, we combine this traditional wisdom with real experience in identifying natural mukhi formations and sourcing Original Rudraksha directly from growers. Many of our beads come from authentic Nepali Rudraksha sourced from farms, including our own Rudrantra farm, ensuring every bead remains a truly Trusted Rudraksha.
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
-                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                     <span>Traditional 1 to 21 Mukhi Wisdom</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
-                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                     <span>Ethical Harvesting Awareness</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
-                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                     <span>Respect for Wearing Practices</span>
                   </div>
-                  <div className="flex items-center gap-2 text-xs font-heading font-bold text-navy-deep bg-[#FAF7F2] p-3 rounded-xl border border-navy/10">
-                    <CheckCircle2 className="w-4 h-4 text-orange shrink-0" />
+                  <div className="flex items-center gap-2 text-xs sm:text-sm font-heading font-extrabold text-stone-900 bg-stone-50 p-3 rounded-xl border border-stone-300">
+                    <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" />
                     <span>Natural Bead Formation Verification</span>
                   </div>
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-navy/10 flex items-center justify-between">
-                <span className="text-xs font-heading uppercase text-navy/60">Pashupatinath Verified</span>
-                <Link href="/consultation" className="text-xs font-heading font-bold text-orange hover:text-orange-700 flex items-center gap-1">
+              <div className="pt-4 border-t border-stone-200 flex items-center justify-between">
+                <span className="text-xs font-heading font-extrabold uppercase text-stone-700">Pashupatinath Verified</span>
+                <Link href="/consultation" className="text-xs font-heading font-bold text-amber-800 hover:underline flex items-center gap-1">
                   <span>Explore Mukhi Selection Guidance →</span>
                 </Link>
               </div>
@@ -1288,36 +1288,36 @@ export default function AboutPage() {
 
         {/* ── 4. RITUAL PREPARATION: RITUALLY PREPARED IN LIVING SHAIVA TRADITION ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div data-reveal className="bg-white border border-navy/15 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10">
+          <div data-reveal className="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-12 shadow-sm space-y-10">
             
             <div className="max-w-3xl space-y-4">
-              <span className="text-orange font-heading text-xs font-bold uppercase tracking-widest">
-                [ SACRED PREPARATION ]
+              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+                SACRED PREPARATION
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-bold text-navy-deep">
+              <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
                 Ritually Prepared in Living Shaiva Tradition
               </h2>
-              <p className="font-body text-sm sm:text-base text-navy/80 leading-relaxed">
+              <p className="font-body text-sm sm:text-base text-stone-800 font-medium leading-relaxed">
                 At Rudrantra, every Rudraksha Bead is treated as a sacred spiritual element rather than just a product. Our Original Rudraksha Beads are sourced directly from Nepal, including carefully cultivated trees from our own farm, where authentic Nepali Rudraksha naturally grows. Because Nepal is known as one of the most sacred regions for Rudraksha, we ensure that every bead reflects the purity and natural formation expected from genuine Nepali Rudraksha. Before reaching devotees, selected Original Rudraksha undergo traditional purification and mantra-based preparation rooted in Shaiva and Vedic practices. These rituals help preserve the spiritual vibration of the beads and prepare them for meditation, protection, mantra chanting, and devotional practice. Through careful handling and traditional preparation, we ensure that every piece represents the authenticity expected from Trusted Rudraksha.
               </p>
             </div>
 
             {/* Lineage & Ritual Details Grid */}
             <div data-reveal-group className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div className="bg-[#FAF7F2] border border-navy/10 p-6 rounded-2xl space-y-3">
-                <span className="text-xs font-heading font-bold text-orange uppercase tracking-wider">
+              <div className="bg-stone-50 border border-stone-300 p-6 rounded-2xl space-y-3">
+                <span className="text-xs font-heading font-extrabold text-amber-800 uppercase tracking-wider block">
                   Temple / Location Lineage
                 </span>
-                <p className="font-body text-xs sm:text-sm text-navy/80 leading-relaxed">
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Our ritual preparation practices are inspired by sacred traditions connected to the Pashupatinath spiritual lineage of Nepal, a revered center of Shaiva devotion where Rudraksha has long been associated with Lord Shiva.
                 </p>
               </div>
 
-              <div className="bg-[#FAF7F2] border border-navy/10 p-6 rounded-2xl space-y-3">
-                <span className="text-xs font-heading font-bold text-orange uppercase tracking-wider">
+              <div className="bg-stone-50 border border-stone-300 p-6 rounded-2xl space-y-3">
+                <span className="text-xs font-heading font-extrabold text-amber-800 uppercase tracking-wider block">
                   Shaiva Consecration Heritage
                 </span>
-                <p className="font-body text-xs sm:text-sm text-navy/80 leading-relaxed">
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Guided by experienced practitioners familiar with Shaiva rituals, Rudra mantra chanting, and Vedic consecration practices, ensuring that every Rudraksha bead is handled with spiritual respect.
                 </p>
               </div>
@@ -1325,29 +1325,29 @@ export default function AboutPage() {
 
             {/* Ritual Quality Control Checklist */}
             <div className="bg-navy-deep text-peach rounded-2xl p-6 sm:p-8 border border-orange/30 space-y-4">
-              <h3 className="font-heading text-sm font-bold text-orange uppercase tracking-wider">
+              <h3 className="font-heading text-sm font-extrabold text-orange uppercase tracking-wider">
                 Ritual Process &amp; Quality Controls:
               </h3>
               
-              <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-body text-peach/90">
-                <div className="p-3.5 bg-navy/80 rounded-xl border border-orange/20 space-y-1">
-                  <strong className="text-orange block font-heading">Saltwater Purification</strong>
-                  <p>Natural saltwater bath to cleanse the beads physically &amp; energetically.</p>
+              <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs font-body text-peach">
+                <div className="p-3.5 bg-navy/90 rounded-xl border border-orange/30 space-y-1">
+                  <strong className="text-orange block font-heading font-bold text-sm">Saltwater Purification</strong>
+                  <p className="text-peach/95 font-medium">Natural saltwater bath to cleanse the beads physically &amp; energetically.</p>
                 </div>
 
-                <div className="p-3.5 bg-navy/80 rounded-xl border border-orange/20 space-y-1">
-                  <strong className="text-orange block font-heading">Rudra Mantra Japa</strong>
-                  <p>Continuous Vedic chanting and Beej mantra repetition.</p>
+                <div className="p-3.5 bg-navy/90 rounded-xl border border-orange/30 space-y-1">
+                  <strong className="text-orange block font-heading font-bold text-sm">Rudra Mantra Japa</strong>
+                  <p className="text-peach/95 font-medium">Continuous Vedic chanting and Beej mantra repetition.</p>
                 </div>
 
-                <div className="p-3.5 bg-navy/80 rounded-xl border border-orange/20 space-y-1">
-                  <strong className="text-orange block font-heading">Sankalpa Energization</strong>
-                  <p>Fire &amp; sacred smoke purification for spiritual alignment.</p>
+                <div className="p-3.5 bg-navy/90 rounded-xl border border-orange/30 space-y-1">
+                  <strong className="text-orange block font-heading font-bold text-sm">Sankalpa Energization</strong>
+                  <p className="text-peach/95 font-medium">Fire &amp; sacred smoke purification for spiritual alignment.</p>
                 </div>
 
-                <div className="p-3.5 bg-navy/80 rounded-xl border border-orange/20 space-y-1">
-                  <strong className="text-orange block font-heading">Batch Consecration Logs</strong>
-                  <p>Small-batch ritual records maintained for every dispatch.</p>
+                <div className="p-3.5 bg-navy/90 rounded-xl border border-orange/30 space-y-1">
+                  <strong className="text-orange block font-heading font-bold text-sm">Batch Consecration Logs</strong>
+                  <p className="text-peach/95 font-medium">Small-batch ritual records maintained for every dispatch.</p>
                 </div>
               </div>
             </div>
@@ -1358,75 +1358,75 @@ export default function AboutPage() {
         {/* ── 5. A TRANSPARENT PATH FROM TREE TO TEMPLE ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-reveal className="text-center max-w-3xl mx-auto space-y-3 mb-12">
-            <span className="text-orange font-heading text-xs font-bold uppercase tracking-widest">
-              [ OUR JOURNEY OF PURITY ]
+            <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+              OUR JOURNEY OF PURITY
             </span>
-            <h2 className="font-display text-2xl sm:text-4xl font-bold text-navy-deep">
+            <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
               A Transparent Path from Tree to Temple
             </h2>
-            <p className="font-body text-sm sm:text-base text-navy/80">
+            <p className="font-body text-sm sm:text-base text-stone-800 font-medium leading-relaxed">
               Every Rudraksha Bead at Rudrantra follows a transparent path from tree to temple to devotee. Many of our beads originate from our own farm in Nepal, where authentic Nepali Rudraksha grows naturally. This direct connection allows us to ensure purity, authenticity, and proper mukhi formation before the beads reach spiritual practitioners worldwide.
             </p>
           </div>
 
           <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
             
-            <div className="bg-white border border-navy/15 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors">
-              <span className="font-heading font-bold text-xs text-orange bg-orange/15 px-3 py-1 rounded-full border border-orange/30">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                 STEP 01
               </span>
-              <h3 className="font-display text-base font-bold text-navy-deep pt-2">Curated at Source</h3>
-              <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+              <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Curated at Source</h3>
+              <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                 Rudraksha Beads are carefully harvested from mature trees in Nepal, including our own cultivation farms, and from trusted Nepal growers.
               </p>
             </div>
 
-            <div className="bg-white border border-navy/15 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors">
-              <span className="font-heading font-bold text-xs text-orange bg-orange/15 px-3 py-1 rounded-full border border-orange/30">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                 STEP 02
               </span>
-              <h3 className="font-display text-base font-bold text-navy-deep pt-2">Structural Examination</h3>
-              <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+              <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Structural Examination</h3>
+              <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                 Inspection of mukhi lines, natural clefts, density, and botanical characteristics to confirm 100% natural authenticity.
               </p>
             </div>
 
-            <div className="bg-white border border-navy/15 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors">
-              <span className="font-heading font-bold text-xs text-orange bg-orange/15 px-3 py-1 rounded-full border border-orange/30">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                 STEP 03
               </span>
-              <h3 className="font-display text-base font-bold text-navy-deep pt-2">Spiritual Preparation</h3>
-              <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+              <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Spiritual Preparation</h3>
+              <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                 Chant-based energization, fire purification, and sacred smoke cleansing are performed in a designated ritual space.
               </p>
             </div>
 
-            <div className="bg-white border border-navy/15 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors">
-              <span className="font-heading font-bold text-xs text-orange bg-orange/15 px-3 py-1 rounded-full border border-orange/30">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                 STEP 04
               </span>
-              <h3 className="font-display text-base font-bold text-navy-deep pt-2">Mala Crafting</h3>
-              <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+              <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Mala Crafting</h3>
+              <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                 Hand-assembled original rudraksha mala with durable thread knotting and precise bead alignment.
               </p>
             </div>
 
-            <div className="bg-white border border-navy/15 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors">
-              <span className="font-heading font-bold text-xs text-orange bg-orange/15 px-3 py-1 rounded-full border border-orange/30">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                 STEP 05
               </span>
-              <h3 className="font-display text-base font-bold text-navy-deep pt-2">Energetic Cleansing</h3>
-              <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+              <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Energetic Cleansing</h3>
+              <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                 Beads undergo purification through traditional salt cleansing and sacred smoke to stabilize spiritual vibration.
               </p>
             </div>
 
-            <div className="bg-white border border-navy/15 p-6 rounded-2xl space-y-3 hover:border-orange transition-colors">
-              <span className="font-heading font-bold text-xs text-orange bg-orange/15 px-3 py-1 rounded-full border border-orange/30">
+            <div className="bg-white border border-stone-300 p-6 rounded-2xl space-y-3 hover:border-amber-600 transition-colors shadow-2xs">
+              <span className="font-heading font-extrabold text-xs text-amber-900 bg-amber-100 px-3 py-1 rounded-full border border-amber-300">
                 STEP 06
               </span>
-              <h3 className="font-display text-base font-bold text-navy-deep pt-2">Guided Dispatch</h3>
-              <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed">
+              <h3 className="font-heading text-lg font-extrabold text-stone-900 pt-2">Guided Dispatch</h3>
+              <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                 Delivered with care instructions, activation guidance, and lifetime authenticity certification.
               </p>
             </div>
@@ -1436,57 +1436,57 @@ export default function AboutPage() {
 
         {/* ── 6. ARTISTRY & DURABILITY: DESIGNED FOR DAILY PRACTICE ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div data-reveal className="bg-white border border-navy/15 rounded-3xl p-6 sm:p-12 shadow-sm space-y-8">
+          <div data-reveal className="bg-white border border-stone-200/90 rounded-3xl p-6 sm:p-12 shadow-sm space-y-8">
             <div className="max-w-3xl space-y-3">
-              <span className="text-orange font-heading text-xs font-bold uppercase tracking-widest">
-                [ ARTISTRY &amp; DURABILITY ]
+              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+                ARTISTRY &amp; DURABILITY
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-bold text-navy-deep">
+              <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 tracking-tight">
                 Designed for Daily Practice and Lifelong Devotion
               </h2>
-              <p className="font-body text-sm sm:text-base text-navy/80 leading-relaxed">
+              <p className="font-body text-sm sm:text-base text-stone-800 font-medium leading-relaxed">
                 A properly crafted Rudraksha mala should feel natural, balanced, and comfortable during meditation. At Rudrantra, our malas are designed to support years of mantra chanting and spiritual discipline while maintaining the sacred integrity of Original Rudraksha Beads.
               </p>
             </div>
 
             <div data-reveal-group className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                   <Layers className="w-5 h-5" />
                 </div>
-                <h4 className="font-display text-base font-bold text-navy-deep">Thread Engineering</h4>
-                <p className="font-body text-xs text-navy/75 leading-relaxed">
+                <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Thread Engineering</h4>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Multi-layered threading ensures structural resilience while maintaining flexibility during meditation.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                   <SlidersHorizontal className="w-5 h-5" />
                 </div>
-                <h4 className="font-display text-base font-bold text-navy-deep">Balanced Spacing</h4>
-                <p className="font-body text-xs text-navy/75 leading-relaxed">
+                <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Balanced Spacing</h4>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Each bead is aligned to maintain smooth finger movement and accurate mantra rhythm.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                   <Scroll className="w-5 h-5" />
                 </div>
-                <h4 className="font-display text-base font-bold text-navy-deep">Sacred Final Touch</h4>
-                <p className="font-body text-xs text-navy/75 leading-relaxed">
+                <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Sacred Final Touch</h4>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   A closing mantra recitation seals the mala before secure packaging and dispatch.
                 </p>
               </div>
 
-              <div className="p-6 bg-[#FAF7F2] rounded-2xl border border-navy/10 space-y-3">
-                <div className="w-10 h-10 rounded-xl bg-orange/20 text-orange flex items-center justify-center font-bold">
+              <div className="p-6 bg-stone-50 rounded-2xl border border-stone-300 space-y-3">
+                <div className="w-10 h-10 rounded-xl bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
                   <Flame className="w-5 h-5" />
                 </div>
-                <h4 className="font-display text-base font-bold text-navy-deep">Blessings &amp; Mantras</h4>
-                <p className="font-body text-xs text-navy/75 leading-relaxed">
+                <h4 className="font-heading text-base sm:text-lg font-extrabold text-stone-900">Blessings &amp; Mantras</h4>
+                <p className="font-body text-xs sm:text-sm font-semibold text-stone-800 leading-relaxed">
                   Every batch of malas is respectfully prepared with traditional mantra chanting to honor Lord Shiva.
                 </p>
               </div>
@@ -1499,10 +1499,10 @@ export default function AboutPage() {
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div data-reveal className="bg-navy-deep text-peach rounded-3xl p-8 sm:p-12 border-2 border-orange/40 shadow-xl flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="space-y-3 text-center lg:text-left max-w-2xl">
-              <h2 className="font-display text-2xl sm:text-4xl font-bold text-peach">
+              <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-peach">
                 Begin Your Journey with Authentic Rudraksha
               </h2>
-              <p className="font-body text-sm sm:text-base text-peach/80">
+              <p className="font-body text-sm sm:text-base text-peach/90 font-medium">
                 Explore our lab-certified Nepali beads or speak with our Acharyas for personalized Mukhi selection.
               </p>
             </div>
@@ -1510,13 +1510,13 @@ export default function AboutPage() {
             <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
               <Link
                 href="/consultation"
-                className="px-6 py-3.5 bg-gradient-to-r from-orange to-orange-bright text-navy-deep font-heading font-bold text-xs uppercase tracking-widest rounded-xl shadow-md hover:shadow-sacred-glow transition-all text-center"
+                className="px-6 py-3.5 bg-gradient-to-r from-orange to-orange-bright text-navy-deep font-heading font-extrabold text-xs uppercase tracking-widest rounded-xl shadow-md hover:shadow-sacred-glow transition-all text-center"
               >
                 Book Vedic Consultation →
               </Link>
               <Link
                 href="/all-products"
-                className="px-6 py-3.5 bg-navy border border-orange/40 text-peach hover:text-orange font-heading font-bold text-xs uppercase tracking-widest rounded-xl transition-colors text-center"
+                className="px-6 py-3.5 bg-navy border border-orange/40 text-peach hover:text-orange font-heading font-extrabold text-xs uppercase tracking-widest rounded-xl transition-colors text-center"
               >
                 Explore All Beads →
               </Link>
@@ -1526,16 +1526,16 @@ export default function AboutPage() {
 
         {/* ── 8. RICH BLOG SECTION & SPIRITUAL GUIDES ── */}
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
-          <div data-reveal className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-navy/10 pb-4">
+          <div data-reveal className="flex flex-col sm:flex-row items-start sm:items-end justify-between gap-4 border-b border-stone-300 pb-4">
             <div>
-              <span className="text-orange font-heading text-xs font-bold uppercase tracking-widest">
-                [ SPIRITUAL GUIDES &amp; BLOG ]
+              <span className="text-amber-900 font-heading text-xs font-extrabold uppercase tracking-widest bg-amber-100 border border-amber-300 px-3 py-1 rounded-md inline-block">
+                SPIRITUAL GUIDES &amp; BLOG
               </span>
-              <h2 className="font-display text-2xl sm:text-4xl font-bold text-navy-deep mt-1">
+              <h2 className="font-heading text-2xl sm:text-4xl font-extrabold text-stone-900 mt-2">
                 Sacred Reads &amp; Authentic Knowledge
               </h2>
             </div>
-            <Link href="/blog" className="text-xs font-heading font-bold text-orange hover:text-orange-soft flex items-center gap-1">
+            <Link href="/blog" className="text-xs font-heading font-extrabold text-amber-800 hover:underline flex items-center gap-1">
               <span>View All Articles</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
@@ -1545,7 +1545,7 @@ export default function AboutPage() {
             {BLOG_POSTS.slice(0, 2).map((post) => (
               <div
                 key={post.id}
-                className="bg-white border border-navy/15 rounded-3xl overflow-hidden shadow-sm hover:border-orange hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white border border-stone-300 rounded-3xl overflow-hidden shadow-sm hover:border-amber-600 hover:shadow-md transition-all duration-300 flex flex-col justify-between group"
               >
                 <div>
                   <div className="relative aspect-[16/9] w-full overflow-hidden bg-navy-deep">
@@ -1554,13 +1554,13 @@ export default function AboutPage() {
                       alt={post.title}
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                     />
-                    <span className="absolute top-4 left-4 bg-navy-deep/90 text-orange text-[9px] font-heading font-bold uppercase tracking-widest px-3 py-1 rounded-full border border-orange/40 backdrop-blur-md">
+                    <span className="absolute top-4 left-4 bg-navy-deep/90 text-orange text-[10px] font-heading font-extrabold uppercase tracking-widest px-3 py-1 rounded-full border border-orange/40 backdrop-blur-md">
                       {post.category}
                     </span>
                   </div>
 
                   <div className="p-6 space-y-3">
-                    <div className="flex items-center gap-3 text-[11px] font-heading text-navy/60">
+                    <div className="flex items-center gap-3 text-xs font-heading font-bold text-stone-600">
                       <span>{post.date}</span>
                       <span>•</span>
                       <span>{post.readTime}</span>
@@ -1568,26 +1568,26 @@ export default function AboutPage() {
                       <span>{post.views} views</span>
                     </div>
 
-                    <h3 className="font-display text-xl font-bold text-navy-deep group-hover:text-orange transition-colors">
+                    <h3 className="font-heading text-xl font-extrabold text-stone-900 group-hover:text-amber-800 transition-colors">
                       <Link href={`/article/${post.id}`}>{post.title}</Link>
                     </h3>
 
-                    <p className="font-body text-xs sm:text-sm text-navy/75 leading-relaxed line-clamp-3">
+                    <p className="font-body text-xs sm:text-sm font-medium text-stone-700 leading-relaxed line-clamp-3">
                       {post.excerpt}
                     </p>
                   </div>
                 </div>
 
-                <div className="p-6 pt-0 border-t border-navy/10 mt-4 flex items-center justify-between">
+                <div className="p-6 pt-0 border-t border-stone-200 mt-4 flex items-center justify-between">
                   <Link
                     href={`/article/${post.id}`}
-                    className="text-xs font-heading font-bold text-orange group-hover:text-orange-soft flex items-center gap-1.5 transition-all"
+                    className="text-xs font-heading font-extrabold text-amber-800 hover:underline flex items-center gap-1.5 transition-all"
                   >
                     <span>Read Article</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </Link>
 
-                  <span className="text-[10px] font-heading uppercase text-navy/50">Pashupatinath Verified</span>
+                  <span className="text-[10px] font-heading font-bold uppercase text-stone-600">Pashupatinath Verified</span>
                 </div>
               </div>
             ))}

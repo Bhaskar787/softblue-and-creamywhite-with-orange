@@ -174,8 +174,8 @@ const products: Product[] = [
     id: 'p8',
     name: '6 Mukhi Rudraksha Bracelet',
     mukhi: '6 Mukhi',
-    origin: 'Java',
-    desc: 'A gentle, affordable entry point ruled by Lord Kartikeya, favoured for confidence and clear communication.',
+    origin: 'Nepal',
+    desc: 'A gentle entry point ruled by Lord Kartikeya, favoured for confidence and clear communication.',
     price: 2450,
     originalPrice: 2900,
     rating: 4.5,
@@ -186,7 +186,7 @@ const products: Product[] = [
   },
 ];
 
-const filterTabs = ['New Launches', 'All', 'Nepal Origin', 'Java Origin', 'Under ₹10,000'] as const;
+const filterTabs = ['New Launches', 'All', 'Nepal Origin', 'Under ₹10,000'] as const;
 type FilterTab = (typeof filterTabs)[number];
 
 export function BestSellers() {
@@ -206,7 +206,6 @@ export function BestSellers() {
     return products.filter((p) => {
       if (activeTab === 'New Launches') return p.isNewLaunch || p.badge?.toLowerCase().includes('new');
       if (activeTab === 'Nepal Origin') return p.origin === 'Nepal';
-      if (activeTab === 'Java Origin') return p.origin === 'Java';
       if (activeTab === 'Under ₹10,000') return p.price < 10000;
       return true;
     });

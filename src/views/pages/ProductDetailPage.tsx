@@ -483,23 +483,12 @@ export default function ProductDetailPage() {
 
               {/* Harvest Origin Selection */}
               <div className="space-y-2">
-                <label className="text-xs font-heading font-bold uppercase tracking-wider text-navy/80 block">
-                  Select Harvest Origin:
+                <label className="text-xs font-heading font-bold uppercase tracking-wider text-stone-700 block">
+                  Harvest Origin:
                 </label>
-                <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
-                  {['Nepal', 'Java'].map((orig) => (
-                    <button
-                      key={orig}
-                      onClick={() => setSelectedOrigin(orig)}
-                      className={`flex-1 py-2.5 px-4 rounded-lg text-xs font-heading font-bold tracking-wider transition-all border text-center ${
-                        selectedOrigin === orig
-                          ? 'bg-orange text-navy-deep border-orange shadow-md font-bold'
-                          : 'bg-white text-navy/80 border-navy/20 hover:border-orange'
-                      }`}
-                    >
-                      {orig} Origin {orig === 'Nepal' ? '(Recommended)' : ''}
-                    </button>
-                  ))}
+                <div className="flex items-center gap-2 p-3 bg-amber-50 border border-amber-300 rounded-xl text-xs font-heading font-extrabold text-amber-900 shadow-xs">
+                  <ShieldCheck className="w-4 h-4 text-amber-800 shrink-0" />
+                  <span>100% Guaranteed Sacred Nepal Origin (Arun Valley Harvest)</span>
                 </div>
               </div>
 

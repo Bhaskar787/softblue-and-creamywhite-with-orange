@@ -38,16 +38,16 @@ const categoryMeta: Record<Exclude<Category, 'All'>, { icon: typeof ShieldCheck 
 
 const faqs: { q: string; a: string; category: Exclude<Category, 'All'>; tag: string }[] = [
   {
-    q: 'How do I know my Rudraksha bead is 100% original and genuine?',
-    a: "Every Rudraksha from Rudrantra originates directly from mature trees in Nepal (including our own farm in Nepal) and Java. Each bead undergoes strict botanical inspection, density test, and non-destructive X-Ray laboratory verification to confirm natural cleft lines and internal seed chambers. You receive an official ISO-certified Lab Certificate with your order.",
+    q: 'How do you guarantee authentic Nepal origin for every bead?',
+    a: "Every Rudraksha from Rudrantra originates directly from mature trees in Nepal's sacred Arun and Dolakha valleys. Each bead undergoes strict botanical inspection, density testing, and non-destructive X-Ray laboratory verification to confirm natural cleft lines and internal seed chambers. You receive an official ISO-certified Lab Certificate with your order.",
     category: 'Authenticity',
-    tag: 'Authenticity & Origin',
+    tag: 'Nepal Origin',
   },
   {
-    q: 'What is the difference between Nepali and Java Rudraksha?',
-    a: 'Nepali beads, sourced from the Arun and Dolakha valleys, are larger and denser with deeper mukhi lines, and produce faster energetic vibrations. Java (Indonesian) beads are smaller, smoother, and lighter, making them an excellent entry point for delicate bracelets or discreet daily wear. Both are authentic and scripturally revered.',
+    q: 'Why are Nepali Rudraksha beads considered superior?',
+    a: 'Nepali beads, sourced from the high altitudes of the Arun and Dolakha valleys, are larger, denser, and feature deep mukhi cleft lines that produce stronger electromagnetic bio-energy vibrations documented in Vedic texts. We exclusively curate authentic Nepal origin seeds.',
     category: 'Authenticity',
-    tag: 'Nepal vs Java',
+    tag: 'Nepal Advantage',
   },
   {
     q: 'What is Prana Pratishtha consecration and how is it performed?',

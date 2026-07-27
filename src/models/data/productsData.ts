@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   category: string;
   subCategory?: string;
-  origin: 'Nepal' | 'Java' | 'Tibet' | 'India';
+  origin: 'Nepal';
   desc: string;
   price: number;
   originalPrice?: number;
@@ -229,8 +229,8 @@ export const productsData: Product[] = [
     name: 'Chikna 5 Mukhi Smooth Meditation Mala (108+1)',
     category: 'Rudraksha & Variants',
     subCategory: 'Rudraksha Mala',
-    origin: 'Java',
-    desc: 'Lightweight and smooth Java origin 5 Mukhi beads carefully knotted with red thread and tassel.',
+    origin: 'Nepal',
+    desc: 'Lightweight and smooth Nepal origin 5 Mukhi beads carefully knotted with red thread and tassel.',
     price: 2450,
     originalPrice: 3200,
     rating: 4.8,
@@ -240,7 +240,7 @@ export const productsData: Product[] = [
     stockCount: 30,
     inStock: true,
     benefits: ['Comfortable for long meditation hours', 'Promotes calmness', 'Durable stringing'],
-    specifications: { 'Bead Count': '108 + 1', 'Bead Size': '6mm', 'Origin': 'Java', 'Certification': 'Authentic Seed Test' }
+    specifications: { 'Bead Count': '108 + 1', 'Bead Size': '6mm', 'Origin': 'Nepal', 'Certification': 'Authentic Seed Test' }
   },
   {
     id: 'rud-m-4',
@@ -283,11 +283,11 @@ export const productsData: Product[] = [
   },
   {
     id: 'sid-m-2',
-    name: 'Mini Siddha Mala (1 to 14 Mukhi Java Origin)',
+    name: 'Mini Siddha Mala (1 to 14 Mukhi Nepal Origin)',
     category: 'Rudraksha & Variants',
     subCategory: 'Siddha Mala',
-    origin: 'Java',
-    desc: 'Compact, smooth Java beads combination covering 1 to 14 Mukhis for complete planetary balancing.',
+    origin: 'Nepal',
+    desc: 'Compact, natural Nepal beads combination covering 1 to 14 Mukhis for complete planetary balancing.',
     price: 34990,
     originalPrice: 42000,
     rating: 4.8,
@@ -297,7 +297,7 @@ export const productsData: Product[] = [
     stockCount: 6,
     inStock: true,
     benefits: ['Smooth comfortable daily wear', 'All chakra activation', 'Budget friendly power mala'],
-    specifications: { 'Mukhi Range': '1 to 14 Mukhi Java', 'Origin': 'Java', 'Certification': 'Lab Certified' }
+    specifications: { 'Mukhi Range': '1 to 14 Mukhi Nepal', 'Origin': 'Nepal', 'Certification': 'Lab Certified' }
   },
   {
     id: 'sid-m-3',

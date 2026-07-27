@@ -92,7 +92,7 @@ const steps = [
     n: '2',
     icon: GiLotusFlower,
     title: 'Mukhi Selection & Assembly',
-    desc: 'We select specific mukhi beads (Nepal or Java origin) and combine them with silver, gold, or silk cord for maximum synergy.',
+    desc: 'We select specific mukhi beads (100% Nepal origin) and combine them with silver, gold, or silk cord for maximum synergy.',
   },
   {
     n: '3',
