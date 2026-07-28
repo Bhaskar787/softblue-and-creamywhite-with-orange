@@ -332,7 +332,7 @@ export function BestSellers() {
                       <span>Add</span>
                     </button>
                     <a
-                      href={`https://wa.me/9779851073936?text=${encodeURIComponent(
+                      href={`https://wa.me/9779715551396?text=${encodeURIComponent(
                         `Namaste! I am interested in inquiring about ${product.name} (${formatPrice(product.price)}). Please provide more details.`
                       )}`}
                       target="_blank"
@@ -402,7 +402,7 @@ export function BestSellers() {
                       <span>Cart</span>
                     </button>
                     <a
-                      href={`https://wa.me/9779851073936?text=${encodeURIComponent(
+                      href={`https://wa.me/9779715551396?text=${encodeURIComponent(
                         `Namaste! I am interested in inquiring about ${product.name} (${formatPrice(product.price)}). Please provide more details.`
                       )}`}
                       target="_blank"

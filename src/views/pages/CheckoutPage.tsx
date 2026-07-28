@@ -1511,11 +1511,11 @@ export default function CheckoutPage() {
 
                   <div className="space-y-2 text-xs pt-2 border-t border-orange/20">
                     <a
-                      href="tel:+9779851073936"
+                      href="tel:+9779715551396"
                       className="flex items-center gap-2.5 text-peach hover:text-orange-bright transition-colors font-medium"
                     >
                       <PhoneCall className="w-3.5 h-3.5 text-orange shrink-0" />
-                      <span>+977 9851073936 (Call Support)</span>
+                      <span>+977 9715551396 (Call Support)</span>
                     </a>
 
                     <a

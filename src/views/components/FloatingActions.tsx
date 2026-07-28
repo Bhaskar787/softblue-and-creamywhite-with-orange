@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { ArrowUp } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
-const WHATSAPP_NUMBER = '919876543210';
+const WHATSAPP_NUMBER = '9779715551396';
 const WHATSAPP_MESSAGE = "Namaste! I'd like to know more about your Rudraksha.";
 
 export function FloatingActions() {

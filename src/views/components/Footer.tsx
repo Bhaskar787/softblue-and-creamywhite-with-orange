@@ -71,7 +71,7 @@ export function Footer() {
             </h4>
             <div className="flex flex-col gap-3 text-peach/85 text-sm font-body">
               <p>support@rudrantra.com</p>
-              <p>+91 98765 43210</p>
+              <p>+977 9715551396</p>
               <p>Thamel, Kathmandu, Nepal</p>
             </div>
       

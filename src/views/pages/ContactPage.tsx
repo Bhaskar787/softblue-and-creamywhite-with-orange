@@ -169,7 +169,7 @@ export default function ContactPage() {
                           required
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          placeholder="e.g. +91 98765 43210"
+                          placeholder="e.g. +977 9715551396"
                           className="w-full px-4 py-3 bg-white border-2 border-navy/20 rounded-xl text-xs sm:text-sm font-bold text-navy-deep placeholder:text-navy/50 focus:outline-none focus:border-orange transition-all"
                         />
                       </div>
@@ -266,7 +266,7 @@ export default function ContactPage() {
                     <div className="space-y-0.5">
                       <span className="text-[10px] font-heading font-bold uppercase tracking-wider text-orange">PHONE / WHATSAPP</span>
                       <p className="font-heading font-bold text-xs sm:text-sm text-peach">+977-9715551396</p>
-                      <p className="font-body text-xs text-peach/70">+91 98765 43210 (Toll Free Support)</p>
+                      <p className="font-body text-xs text-peach/70">+977 9715551396 (WhatsApp & Call Support)</p>
                     </div>
                   </div>
 

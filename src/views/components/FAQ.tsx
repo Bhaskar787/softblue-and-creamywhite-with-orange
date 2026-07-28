@@ -298,16 +298,16 @@ export function FAQ() {
                 </p>
               </div>
               <div className="flex flex-col gap-3 pt-4 border-t border-[#E2D9CC]">
-                <a href="tel:+919876543210" className="flex items-center gap-3 text-xs sm:text-sm font-body text-[#334155] hover:text-[#0F172A] transition-colors font-medium">
-                  <Phone className="w-4 h-4 text-[hsl(17.14deg_96.08%_70%)] shrink-0" /> +91 98765 43210
+                <a href="tel:+9779715551396" className="flex items-center gap-3 text-xs sm:text-sm font-body text-[#334155] hover:text-[#0F172A] transition-colors font-medium">
+                  <Phone className="w-4 h-4 text-[hsl(17.14deg_96.08%_70%)] shrink-0" /> +977 9715551396
                 </a>
                 <p className="text-[9px] sm:text-[10px] text-[#64748B] uppercase tracking-widest pl-7">
-                  Available Mon-Sat, 10am - 6pm IST
+                  Available Mon-Sat, 10am - 6pm NPT
                 </p>
               </div>
               <div className="flex flex-col gap-3">
                 <a
-                  href="https://wa.me/919876543210"
+                  href="https://wa.me/9779715551396"
                   target="_blank"
                   rel="noreferrer"
                   className="w-full py-2.5 sm:py-3 bg-[#0F172A] text-[hsl(17.14deg_96.08%_70%)] border border-[#0F172A] text-xs sm:text-sm font-heading font-bold uppercase tracking-wider rounded-xl text-center hover:bg-[hsl(17.14deg_96.08%_70%)] hover:text-[#0F172A] transition-all shadow-md"

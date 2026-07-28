@@ -208,7 +208,7 @@ export function CustomizeOrder() {
                     </div>
                     <div>
                       <label className="text-xs sm:text-sm font-heading font-bold uppercase tracking-wider text-[#0F172A] block mb-2">Phone / WhatsApp *</label>
-                      <input type="tel" required placeholder="+91 98765 43210" className="w-full bg-white border border-[#E2D9CC] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] transition-colors shadow-xs" />
+                      <input type="tel" required placeholder="+977 9715551396" className="w-full bg-white border border-[#E2D9CC] rounded-xl px-4 py-3.5 text-xs sm:text-sm font-semibold text-[#0F172A] placeholder:text-[#94A3B8] focus:outline-none focus:border-[hsl(17.14deg_96.08%_70%)] transition-colors shadow-xs" />
                     </div>
                   </div>
                   <div>

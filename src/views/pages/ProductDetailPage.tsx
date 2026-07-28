@@ -545,7 +545,7 @@ export default function ProductDetailPage() {
                 </button>
 
                 <a
-                  href={`https://wa.me/9779851073936?text=${encodeURIComponent(
+                  href={`https://wa.me/9779715551396?text=${encodeURIComponent(
                     `Namaste! I want to inquire about ${product.name} (Price: ${formatPrice(effectivePrice * quantity)}, Size: ${selectedSize.label}, Capping: ${selectedCapping}). Please assist.`
                   )}`}
                   target="_blank"
