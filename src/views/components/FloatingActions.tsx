@@ -3,7 +3,7 @@ import { ArrowUp } from 'lucide-react';
 import { FaWhatsapp } from 'react-icons/fa';
 
 const WHATSAPP_NUMBER = '9779715551396';
-const WHATSAPP_MESSAGE = "Namaste! I'd like to know more about your Rudraksha.";
+const WHATSAPP_MESSAGE = "Namaste! I'd like to know more about your Rudraksha and Spritual Products.";
 
 export function FloatingActions() {
   const [showScrollTop, setShowScrollTop] = useState(false);
