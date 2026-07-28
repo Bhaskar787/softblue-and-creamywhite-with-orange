@@ -66,18 +66,13 @@ function CheckoutHeader() {
     <header className="sticky top-0 z-[100] w-full bg-navy-deep border-b border-orange/30 shadow-lg py-3.5 px-4 sm:px-8">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Rudrantra Brand Logo */}
-        <Link href="/" className="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-full border border-orange overflow-hidden flex items-center justify-center p-1 relative shrink-0">
-            <div className="absolute inset-0 bg-orange/10 rounded-full animate-sacred-glow"></div>
-            <img
-              src="https://res.cloudinary.com/deiusxdk9/image/upload/v1771952737/rudrantra/cms/rswcale9xcfa697s2kvw.png"
-              alt="Rudrantra Logo"
-              className="w-full h-full object-cover rounded-full mix-blend-screen"
-            />
-          </div>
-          <span className="font-display text-lg sm:text-2xl font-bold tracking-widest bg-gradient-to-r from-orange via-[#FDEEE9] to-orange bg-clip-text text-transparent whitespace-nowrap">
-            RUDRANTRA
-          </span>
+        <Link href="/" className="flex items-center group shrink-0">
+          <img
+            src="/images/rudrantralogofinal.png"
+            alt="Rudrantra Ventures Pvt. Ltd."
+            className="h-14 sm:h-16 md:h-18 w-auto max-h-[60px] sm:max-h-[68px] md:max-h-[76px] object-contain select-none transition-transform duration-300 group-hover:scale-105"
+            draggable={false}
+          />
         </Link>
 
         {/* Security & Trust Badges */}

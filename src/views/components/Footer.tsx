@@ -15,23 +15,17 @@ export function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-10 mb-16 md:mb-20">
           
           {/* Col 1 */}
-          <div className="flex flex-col gap-6">
-            <Link href="/" className="flex items-center gap-3">
-              <div className="w-14 h-14 rounded-full border-2 border-orange overflow-hidden flex items-center justify-center bg-peach-soft shadow-sacred-glow shrink-0">
-                <img 
-                  src="https://res.cloudinary.com/deiusxdk9/image/upload/v1771952737/rudrantra/cms/rswcale9xcfa697s2kvw.png" 
-                  alt="Rudrantra Logo" 
-                  className="w-full h-full object-cover rounded-full"
-                />
-              </div>
-              <div>
-     <span className="font-display text-base sm:text-lg font-bold tracking-widest text-orange-gradient block">
-  Rudrantra
-</span>
-                <span className="text-[10px] font-heading font-bold text-orange tracking-widest mt-1 block">ॐ नमः शिवाय</span>
-              </div>
+          <div className="flex flex-col gap-4">
+            <Link href="/" className="flex items-center shrink-0 group w-fit">
+              <img
+                src="/images/rudrantralogofinal.png"
+                alt="Rudrantra Ventures Pvt. Ltd."
+                className="h-15 sm:h-16 md:h-18 w-auto max-h-[100px] md:max-h-[112px] object-contain select-none transition-transform duration-300 group-hover:scale-105"
+                draggable={false}
+              />
             </Link>
-            <p className="text-peach/90 font-body text-sm leading-relaxed max-w-xs mt-2">
+            <span className="text-[11px] font-heading font-bold text-orange tracking-widest block">ॐ नमः शिवाय</span>
+            <p className="text-peach/90 font-body text-sm leading-relaxed max-w-xs mt-1">
               Sacred Rudraksha from the Arun Valley, Nepal. Blessed at Pashupatinath, lab-certified, and delivered worldwide since 1973.
             </p>
           </div>

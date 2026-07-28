@@ -46,30 +46,25 @@ export function Navbar() {
           : 'bg-[#0E1B26] border-orange/20'
       }`}
     >
-      <div className="max-w-[1440px] mx-auto px-2 sm:px-4 lg:px-4 xl:px-8 flex items-center justify-between h-16 sm:h-20 gap-1.5 sm:gap-4 lg:gap-3 xl:gap-6">
+      <div className="max-w-[1440px] mx-auto px-2 sm:px-4 lg:px-6 xl:px-8 flex items-center justify-between h-16 sm:h-20 lg:h-24 gap-2 sm:gap-4 lg:gap-3 xl:gap-6">
 
         {/* LEFT: Menu Button + Brand Logo */}
-        <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-4 shrink-0">
           <button
             onClick={() => setIsMenuOpen(true)}
-            className="p-1.5 sm:p-2 -ml-1 sm:-ml-2 text-orange hover:text-orange-bright transition-colors focus:outline-none shrink-0"
+            className="p-1.5 sm:p-2 -ml-1 sm:-ml-2 text-orange hover:text-orange-bright transition-colors focus:outline-none shrink-0 flex items-center justify-center"
             aria-label="Open Menu"
           >
-            <Menu className="w-5 h-5 sm:w-7 sm:h-7" />
+            <Menu className="w-6 h-6 sm:w-7 sm:h-7" />
           </button>
 
-          <Link href="/" className="flex items-center gap-1.5 sm:gap-3 group shrink-0">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 xl:w-11 xl:h-11 rounded-full border border-orange overflow-hidden flex items-center justify-center p-1 relative shrink-0">
-              <div className="absolute inset-0 bg-orange/10 rounded-full animate-sacred-glow"></div>
-              <img
-                src="https://res.cloudinary.com/deiusxdk9/image/upload/v1771952737/rudrantra/cms/rswcale9xcfa697s2kvw.png"
-                alt="Rudrantra Logo"
-                className="w-full h-full object-cover rounded-full mix-blend-screen"
-              />
-            </div>
-            <span className="font-display text-base sm:text-lg lg:text-lg xl:text-2xl font-bold tracking-widest bg-gradient-to-r from-orange via-[#FDEEE9] to-orange bg-clip-text text-transparent whitespace-nowrap">
-              Rudrantra
-            </span>
+          <Link href="/" className="flex items-center shrink-0 group py-1">
+            <img
+              src="/images/rudrantralogofinal.png"
+              alt="Rudrantra Ventures Pvt. Ltd."
+              className="h-12 sm:h-16 lg:h-18 xl:h-17 w-auto object-contain select-none transition-transform duration-300 group-hover:scale-[1.02]"
+              draggable={false}
+            />
           </Link>
         </div>
 

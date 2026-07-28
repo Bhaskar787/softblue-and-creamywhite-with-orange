@@ -58,14 +58,21 @@ export function MenuDrawer() {
       >
 
         {/* Header */}
-        <div className="flex items-center justify-between p-5 md:p-6 border-b border-orange/10">
-          <span className="font-display text-2xl sm:text-3xl text-orange tracking-widest">Rudrantra</span>
+        <div className="flex items-center justify-between p-4 sm:p-5 md:p-6 border-b border-orange/10">
+          <Link href="/" onClick={() => setIsMenuOpen(false)} className="flex items-center shrink-0 group">
+            <img
+              src="/images/rudrantralogofinal.png"
+              alt="Rudrantra Ventures Pvt. Ltd."
+              className="h-16 sm:h-16 md:h-18 w-auto max-h-[80px] md:max-h-[92px] object-contain select-none transition-transform duration-300 group-hover:scale-105"
+              draggable={false}
+            />
+          </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close menu"
-            className="p-2 text-orange/70 hover:text-orange hover:rotate-90 transition-all duration-300"
+            className="p-2 text-orange/70 hover:text-orange hover:rotate-90 transition-all duration-300 shrink-0"
           >
-            <X className="w-5 h-5 sm:w-6 sm:h-6" />
+            <X className="w-6 h-6 sm:w-7 sm:h-7" />
           </button>
         </div>
 
